@@ -13,7 +13,32 @@ for n in range(1,6):
     oldtitles=[re.sub(r'^\d+\.\s*','',h.text_content().strip()) for h in before.xpath('./h2')]
     newtitles=[re.sub(r'^\d+\.\s*','',h.text_content().strip()) for h in a.xpath('./h2')]
     removed=[s for s in oldtitles if s not in newtitles]
-    assert not removed or removed==['Escenarios de transformación y desafíos de adopción']
+    cambios_permitidos={
+        'Escenarios de transformación y desafíos de adopción',
+        'Caso integrador: gestionar TurnoYa de principio a fin',
+        # Reestructuración pedagógica 2026-09-16: los contenidos se conservan,
+        # pero estos títulos se renombraron o pasaron a ser subsecciones de un
+        # bloque explícito de Scrum o Kanban.
+        'Roles en Scrum',
+        'Product Backlog: organizar las necesidades',
+        'Calidad y Definition of Done',
+        'Tallas de remera: estimación inicial',
+        'Story Points: tamaño relativo del trabajo',
+        'Planning Poker: estimación colaborativa',
+        'Capacidad y disponibilidad del equipo',
+        'Velocidad del equipo y pronósticos',
+        'Planificar un Sprint',
+        'Hacer visible el trabajo',
+        'Tableros, carriles y límites WIP',
+        'Gestionar impedimentos y bloqueos',
+        'Lead Time y Cycle Time',
+        'Throughput: ritmo de finalización',
+        'Burndown: observar trabajo pendiente',
+        'Burnup: separar avance y alcance',
+        'Gestionar riesgos y dependencias',
+        'Retrospectivas: mejorar la forma de trabajar',
+    }
+    assert set(removed).issubset(cambios_permitidos), removed
     assert len(html.parse(str(folder/'contenido.html')).xpath('//h1'))==1
     assert 'Síntesis' in newtitles[-1]
     with ZipFile(folder/'Contenido.docx') as z:

@@ -2,7 +2,9 @@
 
 Fecha: 15 de septiembre de 2026. Primera etapa de revisión de Gestión de Proyectos Ágiles.
 
-Estado vigente: cinco fuentes de Contenido mejoradas, cinco Word actualizados, libro auxiliar y temario en Word generados. Texto, temas, listas, tablas, imágenes y enlaces conservados y comprobados. Paginación definitiva y disponibilidad audiovisual completa pendientes. Los apartados de diagnóstico describen la edición anterior; el trabajo realizado se registra al final.
+Estado vigente: cinco fuentes de Contenido mejoradas y reestructuradas por contexto, cinco Word actualizados, libro auxiliar y temario en Word generados. Texto, listas, tablas, imágenes, enlaces y marcadores internos comprobados. La vista auxiliar completa no muestra desbordes ni imágenes rotas. Paginación definitiva y disponibilidad audiovisual completa pendientes. Los apartados de diagnóstico describen la edición anterior; el trabajo realizado se registra al final.
+
+La edición más reciente aplica la orientación de Ingeniería en IA a los cinco módulos: menor densidad, vocabulario en orden de aprendizaje y un caso conductor que progresa desde fundamentos hasta operación. El módulo 4 incluye referencias visuales oficiales de Trello y Jira; Notion se presenta como complemento opcional. Ver `ORIENTACION-INGENIERIA-IA.md`.
 
 ## Objetivo confirmado
 
@@ -140,6 +142,22 @@ El apartado de contenidos del programa está elaborado; los demás campos instit
 
 Los cinco Word se generaron con un exportador nativo común: título y portada editables, índice con enlaces internos, títulos coloreados, listas reales, tablas con encabezados repetidos, destacados moderados, figuras con pies y enlaces externos. Se dividieron 101 párrafos extensos en bloques menores conservando el texto. Se actualizó el libro auxiliar completo, se generó `Programa - contenidos.docx` y se refrescó el TXT temporal.
 
-El control automático acredita conservación en Word de los párrafos, títulos, listas, celdas y pies de la fuente; conservación de los temas originales; 22 figuras, 37 tablas y 171 elementos de lista nativos entre los cinco módulos. Las vistas del DOCX no detectan imágenes rotas ni desbordes horizontales. No se modificaron otros entregables.
+El control automático acredita conservación en Word de los párrafos, títulos, listas, celdas y pies de la fuente; conservación o integración explícita de los temas originales; 24 figuras, 42 tablas y 231 elementos de lista nativos entre los cinco módulos. Las vistas del DOCX no detectan imágenes rotas ni desbordes horizontales. No se modificaron otros entregables.
 
 Pendiente de certificación final: `render_docx.py` falla porque no existe `soffice.exe` en el entorno empaquetado. Sin ese motor no puede acreditarse la paginación final con el control exigido. Las vistas del navegador son auxiliares. Los enlaces audiovisuales se consultaron, pero los bloqueos de YouTube y Scrum.org y el error de acceso de Mountain Goat impidieron certificar disponibilidad completa. No afirmar que esta edición es perfecta o que todos los videos están verificados.
+## Revisión pedagógica del módulo 1 y orientación a IA
+
+Actualización del 15 de septiembre de 2026: el módulo 1 recibió una segunda edición a partir de la observación de Pablo sobre densidad y vocabulario anticipado. Se retiró la presentación prematura de roles Scrum y la comparación con Kanban, se simplificaron digresiones y se incorporó un caso conductor de IA.
+
+Actualización del 16 de septiembre de 2026: los módulos 2 a 5 se adaptaron al mismo enfoque. Scrum se enseña antes de compararlo; la planificación separa beneficio, comportamiento y calidad técnica; el seguimiento incorpora riesgos de IA y un recorrido Trello → Jira → Notion opcional; equipos, calidad y casos cierran con trazabilidad y responsabilidad. La revisión estructural y la vista auxiliar no muestran pérdidas, recursos rotos ni desbordes. Sigue pendiente la validación de paginación nativa porque el entorno empaquetado no incluye `soffice.exe`.
+
+## Separación explícita de frameworks aplicada el 16 de septiembre de 2026
+
+- Todos los módulos incorporan etiquetas y transiciones visibles para concepto general, Scrum, Kanban, XP, Lean, prácticas complementarias, ingeniería, herramientas, escala y casos de IA.
+- Módulo 1: proyecto, participantes, restricciones y ciclo de vida anteceden a la comparación de enfoques; la agilidad, su origen, Manifiesto, principios y entrega de valor forman un bloque continuo.
+- Módulo 2: Scrum se completa antes de abrir Kanban; XP y Lean tienen bloques propios; Scrumban y otras combinaciones aparecen después de enseñar los enfoques por separado.
+- Módulo 3: Product Backlog y Definition of Done se identifican con Scrum. Historias, INVEST, criterios, DoR, refinamiento y técnicas de priorización se presentan como prácticas complementarias, con sus límites.
+- Módulo 4: la secuencia es conceptos generales → Scrum completo → Kanban completo → temas transversales → herramientas → comparación e integración. Incluye un caso de Sprint, un caso de soporte Kanban y un caso final con dos tipos de demanda.
+- Módulo 5: separa prácticas generales de equipo, eventos de Scrum, Kaizen, ingeniería, coordinación organizacional y casos.
+
+Se actualizaron el título y los contenidos del módulo 4 en el programa. Los cinco Word, el libro completo y `Programa - contenidos.docx` fueron regenerados. El control automático confirma 24 figuras, 42 tablas, enlaces internos únicos y correspondencia entre cada fuente y su Word. La vista auxiliar cubrió todo el material y no encontró desbordes ni imágenes rotas. No se hizo commit ni push.

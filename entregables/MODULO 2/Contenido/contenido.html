@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -73,6 +73,17 @@ li{ margin-bottom:7px; }
 .content > h2:last-of-type ~ p{ margin-bottom:6px; font-size:9.8pt; line-height:1.4; }
 @media screen and (max-width:800px){ .page{ width:100%; margin:0; box-shadow:none; } .opener,.content{ padding-left:7vw; padding-right:7vw; } .chapter-map ol{ columns:1; } .mito{ display:block; background:var(--coral-soft); } .recursos-audiovisuales{ grid-template-columns:1fr; } }
 @media print{ body{ background:#fff; } .page{ width:auto; margin:0; box-shadow:none; } .opener{ min-height:265mm; } a{ color:inherit; } }
+
+.marco-contexto,.transicion-marco{margin:22px 0 14px;padding:13px 16px;border-radius:9px;break-inside:avoid;font:9.8pt/1.5 "Segoe UI",Arial,sans-serif;}
+.marco-contexto{background:#eef5fb;border:1px solid #cdddea;border-left:6px solid var(--blue);color:#29465f;}
+.marco-contexto strong{display:block;margin-bottom:4px;color:var(--navy);font-size:8.2pt;letter-spacing:.1em;text-transform:uppercase;}
+.contexto-scrum{background:#eaf4fa;border-color:#c7dfed;border-left-color:#2878a9;}
+.contexto-kanban{background:#e8f6f3;border-color:#c9e8e2;border-left-color:#16877b;}
+.contexto-xp,.contexto-ingenieria{background:#f2edf8;border-color:#dfd3ed;border-left-color:#76549f;}
+.contexto-lean,.contexto-organizacion{background:#fbf2dd;border-color:#eddbae;border-left-color:#c68a24;}
+.contexto-caso{background:#fbeeee;border-color:#ebcccc;border-left-color:#c25555;}
+.transicion-marco{background:#fbf8f1;border-top:1px solid #e6dcc8;border-bottom:1px solid #e6dcc8;color:#536173;font-style:italic;}
+.transicion-marco strong{color:#815b19;font-style:normal;}
 </style>
 </head>
 <body>
@@ -82,49 +93,90 @@ li{ margin-bottom:7px; }
   <div class="eyebrow">Gestión de Proyectos Ágiles · UBP</div>
   <h1>Metodologías y Marcos de Trabajo Ágiles</h1>
   <p class="subtitle">Scrum, Kanban, XP y Lean como sistemas complementarios para gobernar el trabajo, el flujo y la calidad.</p>
-  <nav class="chapter-map" aria-label="Contenidos del módulo"><div class="label">En este módulo</div><ol><li><a href="#seccion-1">Panorama de metodologías y marcos ágiles</a></li><li><a href="#seccion-2">Scrum: visión general y ejemplo de funcionamiento</a></li><li><a href="#seccion-3">Fundamentos de Scrum: empirismo y valores</a></li><li><a href="#seccion-4">Roles en Scrum</a></li><li><a href="#seccion-5">Artefactos y compromisos de Scrum</a></li><li><a href="#seccion-6">Eventos de Scrum y desarrollo de un Sprint</a></li><li><a href="#seccion-7">Kanban: origen, principios y visualización</a></li><li><a href="#seccion-8">Flujo de trabajo y límites WIP en Kanban</a></li><li><a href="#seccion-9">Extreme Programming (XP) y prácticas de desarrollo</a></li><li><a href="#seccion-10">Lean aplicado al desarrollo de software</a></li><li><a href="#seccion-11">Scrumban y Scrum con Kanban</a></li><li><a href="#seccion-12">Otros enfoques ágiles: Crystal, FDD y DSDM</a></li><li><a href="#seccion-13">Comparación entre metodologías y marcos ágiles</a></li><li><a href="#seccion-14">Selección del enfoque y caso resuelto</a></li><li><a href="#seccion-15">Recursos audiovisuales sugeridos</a></li><li><a href="#seccion-16">Síntesis del módulo</a></li></ol></nav>
+  <nav class="chapter-map" aria-label="Contenidos del módulo"><div class="label">En este módulo</div>
+<ol>
+<li><a href="#seccion-1">Panorama de metodologías y marcos ágiles</a></li>
+<li><a href="#seccion-2">Scrum: visión general y ejemplo de funcionamiento</a></li>
+<li><a href="#seccion-3">Fundamentos de Scrum: empirismo y valores</a></li>
+<li><a href="#seccion-4">Responsabilidades del Scrum Team</a></li>
+<li><a href="#seccion-5">Artefactos y compromisos de Scrum</a></li>
+<li><a href="#seccion-6">Eventos de Scrum y desarrollo de un Sprint</a></li>
+<li><a href="#seccion-7">Kanban: origen, principios y visualización</a></li>
+<li><a href="#seccion-8">Flujo de trabajo y límites WIP en Kanban</a></li>
+<li><a href="#seccion-9">Extreme Programming (XP) y prácticas de desarrollo</a></li>
+<li><a href="#seccion-10">Lean aplicado al desarrollo de software</a></li>
+<li><a href="#seccion-11">Scrumban y Scrum con Kanban</a></li>
+<li><a href="#seccion-12">Otros enfoques ágiles: Crystal, FDD y DSDM</a></li>
+<li><a href="#seccion-13">Comparación entre metodologías y marcos ágiles</a></li>
+<li><a href="#seccion-14">Selección del enfoque y caso resuelto</a></li>
+<li><a href="#seccion-recursos">Recursos audiovisuales sugeridos</a></li>
+<li><a href="#seccion-sintesis">Síntesis del módulo</a></li>
+</ol></nav>
 </header>
-<article class="content" data-edicion="2026-09-15">
-<blockquote class="epigraph">
-<p>"Individuos e interacciones sobre procesos y herramientas; software funcionando sobre documentación extensiva; colaboración con el cliente sobre negociación contractual; respuesta ante el cambio sobre seguimiento de un plan." — Manifiesto Ágil, 2001</p>
-</blockquote>
-
-<p>En el Módulo 1 aprendimos a elegir un enfoque según incertidumbre, valor y restricciones. Ahora observamos Scrum en funcionamiento y comprendemos sus fundamentos antes de profundizar responsabilidades, artefactos y eventos. Después estudiamos Kanban y Lean, con XP y otros enfoques como ampliación. La finalidad es explicar qué problema resuelve cada mecanismo y qué condiciones necesita para funcionar.</p><h2 id="seccion-1">1. Panorama de metodologías y marcos ágiles</h2>
-<p>Antes de profundizar una alternativa, conviene recordar qué estamos comparando. Scrum estructura la colaboración y el aprendizaje; Kanban gestiona el flujo; XP integra prácticas de ingeniería con colaboración y planificación; Lean ofrece principios para mejorar el sistema completo. Sus alcances se superponen y pueden complementarse, pero no son recetas equivalentes.</p>
-<table class="tabla-comparativa">
-<caption>Recorrido del módulo y profundidad de estudio</caption>
-<thead><tr><th scope="col">Alternativa</th><th scope="col">Qué vamos a estudiar</th><th scope="col">Relación con los roles</th></tr></thead>
+<article class="content" data-edicion="2026-09-15" data-revision-ia="2026-09-16" data-reestructuracion-frameworks="2026-09-16">
+<p>El equipo del asistente universitario con IA ya sabe por qué necesita aprender en ciclos cortos. Ahora debe decidir <em>cómo</em> organizar ese aprendizaje: quién ordena las necesidades, cómo se convierte una idea en un resultado verificable y cuándo se modifica el plan.</p>
+<p>En este módulo vamos a recorrer primero <strong>Scrum</strong> como un sistema completo. Recién después estudiaremos <strong>Kanban, XP y Lean</strong>. Así, cada nombre aparecerá después de comprender el problema que resuelve.</p>
+<h3>Cómo recorrer este módulo</h3>
+<ol>
+<li>Ubicar cada enfoque en un mapa común.</li>
+<li>Comprender Scrum completo: fundamentos, responsabilidades, artefactos y eventos.</li>
+<li>Comprender Kanban como sistema de gestión del flujo.</li>
+<li>Distinguir las prácticas técnicas de XP y los principios Lean.</li>
+<li>Comparar, combinar y elegir enfoques sin mezclar sus reglas.</li>
+</ol>
+<div class="marco-contexto contexto-general">
+<strong>CONCEPTO GENERAL</strong> Estas ideas sirven para distintos enfoques. Cuando una práctica pertenezca a un marco concreto, lo indicaremos expresamente.</div>
+<h2 id="seccion-1">1. Panorama de metodologías y marcos ágiles</h2>
+<p>No existe una única “metodología ágil” que sirva para cualquier situación. Los enfoques de este módulo ponen el foco en preguntas diferentes.</p>
+<table>
+<caption>Mapa inicial: qué pregunta ayuda a responder cada enfoque</caption>
+<thead><tr>
+<th>Enfoque</th>
+<th>Pregunta central</th>
+<th>Se desarrolla en</th>
+</tr></thead>
 <tbody>
-<tr><td>Scrum</td><td>El sistema completo: equipo, objetivos, artefactos, eventos y empirismo.</td><td>Define Product Owner, Scrum Master y Developers.</td></tr>
-<tr><td>Kanban</td><td>Visualización, políticas, límites de trabajo en curso y mejora del flujo.</td><td>No exige adoptar los roles de Scrum; las responsabilidades del servicio deben quedar claras.</td></tr>
-<tr><td>XP</td><td>Colaboración con negocio y prácticas técnicas que sostienen la capacidad de cambio.</td><td>Contempla funciones de cliente, desarrollo y acompañamiento; no exige Scrum Master.</td></tr>
-<tr><td>Lean</td><td>Valor, desperdicios, aprendizaje y optimización del conjunto.</td><td>No establece el equipo Scrum como estructura obligatoria.</td></tr>
-<tr><td>Scrumban, Crystal, FDD y DSDM</td><td>Combinaciones y enfoques con necesidades específicas de organización y gobierno.</td><td>Las responsabilidades dependen del enfoque y de los acuerdos de adopción.</td></tr>
+<tr>
+<td>Scrum</td>
+<td>¿Cómo aprender y producir valor mediante ciclos breves con objetivos?</td>
+<td>Secciones 2 a 6</td>
+</tr>
+<tr>
+<td>Kanban</td>
+<td>¿Cómo hacer visible y mejorar el flujo continuo de trabajo?</td>
+<td>Secciones 7 y 8</td>
+</tr>
+<tr>
+<td>XP</td>
+<td>¿Qué prácticas técnicas ayudan a cambiar software sin perder calidad?</td>
+<td>Sección 9</td>
+</tr>
+<tr>
+<td>Lean</td>
+<td>¿Cómo aumentar valor y reducir esperas, errores y trabajo innecesario?</td>
+<td>Sección 10</td>
+</tr>
 </tbody>
 </table>
-<p>Scrum y Kanban tendrán un desarrollo operativo mayor. XP y Lean se estudian por sus aportes a calidad y mejora; Crystal, FDD y DSDM amplían el panorama. Esta distribución responde al propósito de aprendizaje, no a una clasificación de popularidad. El mapa tampoco agota todos los enfoques existentes.</p>
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Al comparar alternativas, verificá si estás eligiendo una estructura de equipo, un mecanismo de flujo, un sistema de desarrollo o una práctica particular. Adoptar una no significa necesariamente descartar las demás.</div>
-
-
+<div class="analogia"><p><strong>Analogía de un hospital.</strong> La guardia, una cirugía programada y la mejora de un tratamiento pertenecen al mismo sistema, pero no se organizan igual. En proyectos ocurre lo mismo: la naturaleza de la demanda y el tipo de incertidumbre orientan la elección.</p></div>
+<p>No comparamos todavía roles ni reuniones. Primero vamos a comprender cada enfoque desde adentro.</p>
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>El primer bloque completo corresponde a Scrum.</div>
+<div class="marco-contexto contexto-scrum">
+<strong>CONTEXTO: SCRUM</strong> Desde aquí trabajamos dentro de Scrum. Sus responsabilidades, eventos y artefactos no deben atribuirse automáticamente a Kanban, Lean u otros enfoques.</div>
 <h2 id="seccion-2">2. Scrum: visión general y ejemplo de funcionamiento</h2>
 
-<p>¿Cómo pasa un equipo de una necesidad de negocio a un resultado que permita aprender? <strong>Scrum es un marco de trabajo ligero para generar valor mediante soluciones adaptativas a problemas complejos.</strong> Fue desarrollado por Ken Schwaber y Jeff Sutherland y utiliza ciclos llamados <strong>Sprints</strong>, de duración fija de un mes o menos. Dentro de ellos, el equipo construye resultados utilizables, inspecciona lo ocurrido y adapta su trabajo.</p>
-<p>Como vimos en el mapa del Módulo 1, un marco establece una estructura que se completa con prácticas apropiadas. Scrum define responsabilidades, eventos, artefactos y reglas, pero no prescribe un lenguaje de programación, una herramienta de testing ni una técnica única de estimación. Su nombre retoma la metáfora del rugby: el equipo coordina el avance hacia una meta compartida, en lugar de limitarse a trasladar trabajo entre especialistas aislados.</p>
-<h3>2.1 Ejemplo inicial de Scrum en una app bancaria</h3>
-<p>Retomemos QR, la funcionalidad del caso anterior. Ahora observamos un ciclo de trabajo, no todo el proyecto. Los términos que aparecen se definen brevemente aquí y se desarrollan en las secciones siguientes.</p>
+<p><strong>Scrum</strong> es un marco liviano para generar valor mediante soluciones adaptativas a problemas complejos. No describe cada técnica de trabajo: establece una estructura mínima para convertir ideas en resultados, inspeccionarlos y decidir el siguiente paso.</p>
+<h3>2.1 El ciclo en lenguaje cotidiano</h3>
 <ol>
-<li>El <strong>Product Owner</strong> comunica el resultado de producto que se busca: facilitar pagos seguros. Ordena las necesidades en el <strong>Product Backlog</strong>, la lista de trabajo que puede mejorar la app.</li>
-<li>En la <strong>Sprint Planning</strong>, el equipo acuerda un <strong>objetivo del Sprint</strong>: permitir que un usuario confirme un pago QR y consulte su comprobante. Los <strong>Developers</strong>, las personas que construyen la solución, seleccionan trabajo viable y preparan su plan, el <strong>Sprint Backlog</strong>.</li>
-<li>Durante el Sprint diseñan, programan, integran y prueban. Cada día, en la <strong>Daily Scrum</strong>, inspeccionan el avance hacia la meta y adaptan el plan. El <strong>Scrum Master</strong> ayuda a que Scrum se comprenda y sea efectivo, y promueve la resolución de impedimentos sin asignar tareas al equipo.</li>
-<li>El trabajo que cumple la <strong>Definition of Done</strong>, el acuerdo de calidad para considerarlo terminado, forma un <strong>Incremento</strong> utilizable. En la <strong>Sprint Review</strong>, el equipo y los interesados revisan los resultados y las oportunidades de adaptación; no esperan esa reunión para liberar valor si ya pueden hacerlo.</li>
-<li>En la <strong>Sprint Retrospective</strong>, el equipo mejora su manera de trabajar. Si las pruebas mostraron confusión en la confirmación de pagos, se adapta el trabajo de producto; si hubo esperas por un ambiente de pruebas, se decide cómo mejorar ese proceso. El siguiente Sprint comienza inmediatamente después.</li>
+<li>Ordenar las necesidades conocidas del producto.</li>
+<li>Elegir un objetivo breve y trabajo posible para acercarse a él.</li>
+<li>Construir un resultado utilizable durante un período de un mes o menos.</li>
+<li>Inspeccionar el resultado con personas interesadas.</li>
+<li>Mejorar tanto el producto como la forma de trabajar y repetir el ciclo.</li>
 </ol>
-<p>La secuencia muestra el conjunto. Ahora vamos a estudiar sus partes: quiénes participan, qué información comparten, cómo se desarrolla el ciclo y qué fundamentos explican sus reglas. No confundas una lista de tareas completadas con una meta alcanzada ni una reunión realizada con aprendizaje efectivo.</p>
-
-
-
-
-
+<div class="analogia"><p><strong>Analogía del GPS.</strong> El destino orienta; la ruta actual es un plan. Cada tramo recorrido aporta información real sobre tránsito y desvíos. Recalcular no significa conducir sin rumbo: significa conservar el destino y adaptar el camino con evidencia.</p></div>
+<p>En el asistente universitario, un primer ciclo podría buscar que el sistema responda consultas de inscripción usando un conjunto aprobado de documentos. El resultado deberá ser verificable por estudiantes y por la oficina de alumnos; “investigar modelos” por sí solo no demuestra que exista una capacidad utilizable.</p>
 <figure class="image-figure">
 <img src="assets/scrum-equipo-empirismo.png" alt="Un equipo Scrum articula dirección de producto, facilitación y construcción dentro de ciclos de inspección y adaptación.">
 <figcaption><strong>Lectura visual.</strong> La imagen vuelve visible que Scrum coordina responsabilidades diferentes alrededor de un mismo incremento; no es una secuencia de reuniones aisladas.</figcaption>
@@ -135,70 +187,59 @@ li{ margin-bottom:7px; }
 <figcaption>Las responsabilidades producen decisiones, los eventos crean oportunidades de inspección y los artefactos aportan evidencia. Los tres elementos solo generan agilidad cuando alimentan el ciclo empírico completo.</figcaption>
 </figure>
 
-<div class="mito"><strong>Mito:</strong> Scrum y Kanban son recetas rivales entre las que hay que elegir una sola. <strong>Realidad:</strong> Scrum organiza ciclos de inspección y responsabilidades; Kanban gestiona el flujo. Pueden complementarse si cada regla conserva un propósito explícito.</div>
-
-
 <h2 id="seccion-3">3. Fundamentos de Scrum: empirismo y valores</h2>
-<p>Scrum es un marco ligero para generar valor mediante soluciones adaptativas a problemas complejos. Cuando no podemos predecir con confianza cómo responderán los usuarios o cuál solución funcionará, necesitamos combinar conocimiento disponible con experimentos, observación y ajustes. No todo trabajo de software tiene el mismo nivel de incertidumbre: una rutina conocida puede convivir con una necesidad de negocio todavía desconocida. Scrum ayuda a gestionar esa incertidumbre; no elimina el análisis ni sustituye el conocimiento técnico.</p><div class="criterio-profesional"><strong>Criterio profesional:</strong> Evaluá Scrum como un sistema completo: si falta transparencia, inspección o capacidad real de adaptación, cumplir ceremonias no alcanza para ejercer control empírico.</div>
-<h3>3.1 El pilar teórico de Scrum: la teoría empírica de control de procesos</h3>
-
-<p>En un proceso definido, condiciones conocidas permiten anticipar resultados con suficiente confianza. En un proceso empírico, el plan se contrasta regularmente con resultados y se adapta al aprendizaje. Un producto digital puede combinar ambos: automatizar una operación conocida y experimentar con una experiencia de usuario nueva. Scrum se apoya en <strong>empirismo y pensamiento Lean</strong>; por eso conviene estudiar sus fundamentos antes de memorizar roles y reuniones.</p><p>La teoría empírica de control de procesos se sostiene sobre tres pilares fundamentales, que constituyen el corazón conceptual de todo el marco Scrum:</p>
-
+<p>Scrum se apoya en el <strong>empirismo</strong>: aprender de la experiencia y decidir con lo observado. Lean aporta foco en lo esencial y reducción del desperdicio.</p>
+<h3>3.1 Los tres pilares</h3>
 <ul>
-<li><strong>Transparencia</strong>: todos los aspectos relevantes del proceso y del trabajo deben ser visibles para quienes son responsables del resultado. Esto significa que el estado real del producto, el progreso del equipo, los impedimentos que enfrenta y los criterios de calidad deben estar expresados en un lenguaje común y comprensible para todos los interesados, sin ambigüedades ni maquillaje. En la práctica, la transparencia se materializa en artefactos visibles como el tablero de tareas, el Product Backlog priorizado y públicamente accesible, y una definición de "Terminado" (Definition of Done) compartida y acordada por todo el equipo. Si un desarrollador dice que una funcionalidad "está lista" pero en realidad no fue probada, no hay transparencia, y toda decisión posterior tomada sobre esa información falsa estará viciada.</li>
-<li><strong>Inspección</strong>: los artefactos de Scrum y el progreso hacia los objetivos deben ser inspeccionados frecuentemente para detectar variaciones o problemas no deseados. Esta inspección no debe ser tan frecuente que entorpezca el trabajo, pero sí lo suficientemente regular como para detectar desviaciones a tiempo. Los eventos de Scrum —especialmente la Daily Scrum, la Sprint Review y la Sprint Retrospective— existen precisamente para habilitar momentos formales y recurrentes de inspección.</li>
-<li><strong>Adaptación</strong>: si como resultado de una inspección se determina que uno o más aspectos del proceso se desvían de límites aceptables, o que el producto resultante no será aceptable, el proceso o el material que se está procesando debe ajustarse cuanto antes para minimizar futuras desviaciones. La adaptación es la razón de ser de todo el ciclo: de nada sirve inspeccionar si, frente a un problema detectado, el equipo no tiene la autonomía o la voluntad de cambiar el rumbo.</li>
+<li>
+<strong>Transparencia:</strong> el trabajo y sus criterios deben ser visibles y entendibles. Si “respuesta correcta” significa algo distinto para cada persona, la inspección engaña.</li>
+<li>
+<strong>Inspección:</strong> se observa el producto y el progreso con frecuencia suficiente para detectar problemas. Inspeccionar no es vigilar personas.</li>
+<li>
+<strong>Adaptación:</strong> cuando la evidencia contradice el plan, se ajusta el producto o la forma de trabajar. Observar sin actuar no produce aprendizaje.</li>
 </ul>
+<p>Para el asistente, transparencia implica conocer qué documentos usa y qué pruebas debe superar. Inspección significa revisar respuestas con una muestra preparada y con usuarios. Adaptación puede llevar a corregir fuentes, reformular una función o reducir el alcance del ciclo.</p>
+<h3>3.2 Los cinco valores</h3>
+<p><strong>Compromiso, foco, apertura, respeto y coraje</strong> orientan las decisiones. Coraje puede significar mostrar que una respuesta convincente es incorrecta; apertura, comunicar el hallazgo; respeto, discutir la evidencia sin atacar a quien propuso la solución.</p>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Una reunión solo aporta valor si mejora transparencia, inspección o adaptación.</p></div>
+<h2 id="seccion-4">4. Responsabilidades del Scrum Team</h2>
 
-<p>Estos tres pilares no funcionan de manera aislada: se retroalimentan en un ciclo continuo. Sin transparencia, la inspección es inútil porque se inspecciona información falsa o incompleta; sin inspección, la adaptación es imposible porque no hay forma de detectar que algo debe cambiar; y sin adaptación, la inspección se convierte en un ejercicio burocrático sin consecuencias prácticas. Comprender este ciclo es fundamental porque explica por qué Scrum tiene la estructura de eventos y artefactos que tiene: cada elemento del marco existe para sostener alguno de estos tres pilares.</p>
-
-<h3>3.2 Los cinco valores de Scrum</h3>
-
-<p>Además de sus pilares teóricos, la Guía de Scrum define cinco valores que deben encarnar las personas que trabajan bajo este marco, y que son condición necesaria para que los pilares de transparencia, inspección y adaptación funcionen en la práctica: <strong>compromiso</strong> (el equipo se compromete personalmente a alcanzar sus objetivos), <strong>foco</strong> (el trabajo se concentra en los objetivos del Sprint y del equipo), <strong>apertura</strong> (el equipo y los interesados acuerdan ser abiertos sobre el trabajo y los desafíos), <strong>respeto</strong> (los miembros del equipo se respetan mutuamente como personas capaces e independientes) y <strong>coraje</strong> (el equipo tiene el coraje de hacer lo correcto y de enfrentar problemas difíciles). Estos valores no son declaraciones decorativas: un equipo que carece de apertura, por ejemplo, difícilmente logrará transparencia real, porque los miembros ocultarán problemas por miedo a consecuencias negativas. Del mismo modo, sin coraje, un Scrum Master difícilmente podrá señalar a la gerencia que un plazo es irrealista, o un desarrollador difícilmente admitirá en la Daily Scrum que está bloqueado hace dos días.</p>
-
-
-<h2 id="seccion-4">4. Roles en Scrum</h2>
-
-<div class="analogia"><p><strong>Analogía: una expedición compartida.</strong> El Product Owner ayuda a definir qué resultado merece alcanzarse y ordenar opciones; los Developers deciden cómo avanzar y producen un resultado utilizable; el Scrum Master ayuda a que la colaboración y el marco funcionen. Ninguno puede resolver solo todos los problemas. La analogía no crea una jerarquía de comandante y subordinados: Scrum reúne esas responsabilidades en un equipo autogestionado, y la seguridad y la calidad siguen siendo condiciones del trabajo.</p></div><p>Si el equipo necesita decidir prioridades, organizar la construcción y mejorar su proceso, ¿cómo evita confundir esas responsabilidades? El <strong>Scrum Team</strong> está compuesto por un Product Owner, un Scrum Master y Developers. La Guía de Scrum 2020 denomina estas funciones <em>accountabilities</em>, responsabilidades por las que se rinde cuentas. No son tres niveles jerárquicos ni tres subequipos separados.</p>
-<p>El equipo Scrum es multifuncional y autogestionado: reúne las habilidades necesarias para crear valor y decide internamente quién hace qué, cuándo y cómo. Los interesados externos siguen aportando conocimiento y feedback, pero no se convierten por eso en integrantes del equipo ni reemplazan sus responsabilidades.</p>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Hacé explícita la responsabilidad que se ejerce en cada decisión. Si una persona también construye producto mientras cumple otra función, no confundas esa participación con autoridad para asignar tareas o modificar unilateralmente la calidad requerida.</div>
-
-<h3>4.1 Product Owner (Dueño del Producto)</h3>
-
-<p>El Product Owner es responsable de maximizar el valor del producto resultante del trabajo del equipo Scrum y de la gestión efectiva del Product Backlog. Comunica el objetivo del producto y ordena el trabajo atendiendo a valor, riesgo, dependencias y aprendizaje. Representar necesidades del negocio no significa ser el único que conversa con usuarios ni decidir la implementación técnica. Es una persona, no un comité, para mantener una responsabilidad clara sobre las prioridades.</p>
-
-<p>Entre sus responsabilidades concretas se incluyen: desarrollar y comunicar explícitamente el objetivo del producto (Product Goal); crear y comunicar con claridad los elementos del Product Backlog; ordenar los elementos del Product Backlog según prioridad de valor; asegurar que el Product Backlog sea transparente, visible y comprendido por todos; y asegurar que el equipo de desarrollo entienda los elementos del backlog al nivel necesario. Un ejemplo concreto: en una empresa que desarrolla una aplicación de e-commerce, el Product Owner es quien decide si, en el próximo Sprint, el equipo debe priorizar la implementación de un nuevo método de pago (porque análisis de mercado indican que se están perdiendo ventas por falta de esa opción) o la optimización del buscador de productos (porque los datos de analítica muestran una alta tasa de abandono en esa función). Esa decisión no es técnica sino estratégica y de negocio, y por eso recae en el Product Owner y no en el equipo técnico.</p>
-
-<h3>4.2 Scrum Master</h3>
-
-<p>Si una dificultad afecta al equipo, el Scrum Master no tiene que resolver personalmente cada problema: ayuda a que se identifique y se elimine, favoreciendo la autonomía y la colaboración. Su responsabilidad incluye la efectividad del equipo Scrum, no solamente coordinar reuniones. La facilitación es parte de su trabajo, pero «facilitador ágil» no es un reemplazo oficial del nombre Scrum Master.</p>
-
-<p>El Scrum Master es responsable de establecer Scrum tal como se define en la Guía de Scrum, ayudando a todos —el equipo Scrum y la organización en su conjunto— a comprender la teoría y la práctica de Scrum. Es un error muy común, especialmente entre quienes se inician en el estudio de Scrum, asimilar al Scrum Master con la figura de un jefe de proyecto tradicional. Esto es incorrecto: el Scrum Master no asigna tareas, no dirige al equipo ni toma decisiones de producto. Su rol es el de un líder servicial (servant leader) y facilitador: elimina impedimentos que bloquean el progreso del equipo, protege al equipo de interrupciones externas y presiones inadecuadas, facilita los eventos de Scrum cuando es necesario o solicitado, y actúa como coach del equipo en autogestión y multifuncionalidad.</p>
-
-<p>El Scrum Master también cumple un rol clave hacia la organización: ayuda a los líderes y gerentes a entender y aplicar un enfoque empírico, elimina barreras entre los interesados (stakeholders) y el equipo Scrum, y lidera, entrena y guía a la organización en su adopción de Scrum. Un ejemplo concreto de intervención de un Scrum Master: si durante un Sprint el equipo se ve bloqueado porque el área de infraestructura tarda cinco días en aprovisionar un servidor de pruebas —cuando ese trámite debería tardar horas—, el Scrum Master es quien identifica ese impedimento, lo escala a quien corresponda y trabaja para que ese cuello de botella no vuelva a repetirse en Sprints futuros, ya sea negociando un acuerdo de nivel de servicio con el área de infraestructura o promoviendo la automatización del aprovisionamiento.</p>
-
-<h3>4.3 Equipo de Desarrollo (Developers)</h3>
-
-<p>Los Developers son las personas del equipo Scrum comprometidas a crear cualquier aspecto de un incremento utilizable en cada Sprint. Son responsables de crear un plan para el Sprint (el Sprint Backlog), incorporar la calidad adhiriéndose a una Definición de Terminado, adaptar su plan diariamente hacia el objetivo del Sprint, y responsabilizarse mutuamente como profesionales. Una característica fundamental del equipo de desarrollo en Scrum es que debe ser <strong>multifuncional</strong> (cross-functional): debe contar, en su conjunto, con todas las habilidades necesarias para crear valor en cada Sprint, sin depender de personas externas al equipo para completar el trabajo comprometido. Por ejemplo, un equipo de desarrollo de un producto web típico podría estar compuesto por desarrolladores backend, desarrolladores frontend, un diseñador UX/UI y un especialista en testing, todos trabajando de forma integrada, sin fronteras rígidas entre "el equipo de programación" y "el equipo de testing".</p>
-
-<p>La Guía de Scrum 2020 describe un <strong>equipo Scrum de normalmente diez personas o menos, contando Product Owner, Scrum Master y Developers</strong>. La referencia de tres a nueve Developers corresponde a versiones anteriores y no es la orientación actual. El criterio es tener habilidades suficientes para generar valor sin una coordinación que vuelva lento al conjunto; no cumplir una cuota de especialidades.</p>
-<p>Scrum Master y Product Owner son responsabilidades específicas de Scrum, no puestos obligatorios de cualquier equipo ágil. Además, si también trabajan en elementos del Sprint Backlog, participan como Developers. Las responsabilidades no desaparecen por esa combinación y deben mantenerse comprensibles para el equipo.</p>
-
+<p>Scrum define tres <strong>responsabilidades</strong> dentro de un único Scrum Team. No son niveles jerárquicos ni cargos presentes en Kanban por obligación.</p>
+<h3>4.1 Product Owner: orientar valor</h3>
+<p>El <strong>Product Owner</strong> responde por maximizar el valor y por gestionar eficazmente el Product Backlog: explicita el Product Goal, comunica y ordena sus elementos y asegura que la lista sea visible y entendida. Puede delegar tareas de redacción, pero conserva la responsabilidad.</p>
+<p>En el caso conductor, conversa con estudiantes, oficina de alumnos, seguridad y equipo técnico para decidir qué necesidad atender primero. No asigna cómo programar ni promete resultados que el equipo no evaluó.</p>
+<h3>4.2 Developers: crear un incremento utilizable</h3>
+<p>Los <strong>Developers</strong> son quienes crean cualquier aspecto del incremento. En IA pueden incluir perfiles de datos, software, experiencia de usuario, evaluación y operaciones. Juntos elaboran el plan del Sprint, incorporan calidad, adaptan el plan y se responsabilizan profesionalmente.</p>
+<p>El término no significa solamente “programadores”. El conjunto debe poseer o adquirir las capacidades necesarias; aun así puede coordinar dependencias externas de manera visible.</p>
+<h3>4.3 Scrum Master: ayudar a que Scrum funcione</h3>
+<p>El <strong>Scrum Master</strong> responde por establecer Scrum y mejorar la efectividad del equipo. Enseña, facilita, ayuda a remover impedimentos y trabaja con la organización. No distribuye tareas ni recibe el Daily como reporte.</p>
 <table>
-<caption>Tabla 1. Roles del equipo Scrum y sus responsabilidades principales</caption>
-<tr><th>Rol</th><th>Responsabilidad principal</th><th>Ejemplos de actividades concretas</th><th>Qué NO hace</th></tr>
-<tr><td>Product Owner</td><td>Maximizar el valor del producto y responder por la gestión del Product Backlog</td><td>Comunicar el Product Goal, ordenar trabajo, dialogar con interesados y colaborar en la planificación</td><td>No asigna tareas técnicas ni decide unilateralmente cómo se implementa una funcionalidad</td></tr>
-<tr><td>Scrum Master</td><td>Garantizar que Scrum se comprenda y se aplique correctamente</td><td>Facilitar eventos, eliminar impedimentos, entrenar al equipo y a la organización en agilidad</td><td>No es un jefe de proyecto, no asigna trabajo ni evalúa el desempeño individual</td></tr>
-<tr><td>Developers</td><td>Crear incrementos utilizables y sostener la calidad</td><td>Dimensionar, seleccionar y planificar trabajo; construir y probar; adaptar el plan hacia el Sprint Goal</td><td>No reemplazan al Product Owner en el orden del Product Backlog; sí colaboran con negocio e interesados</td></tr>
+<caption>Una decisión, tres responsabilidades</caption>
+<thead><tr>
+<th>Situación</th>
+<th>Aporte principal</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Las respuestas sobre becas son menos confiables que las de inscripción.</td>
+<td>El Product Owner revisa prioridad y valor con interesados.</td>
+</tr>
+<tr>
+<td>Hay que mejorar datos, interfaz y pruebas.</td>
+<td>Developers adaptan el plan técnico y mantienen la calidad.</td>
+</tr>
+<tr>
+<td>La validación queda bloqueada por aprobaciones tardías.</td>
+<td>El Scrum Master ayuda al equipo y a la organización a mejorar ese sistema.</td>
+</tr>
+</tbody>
 </table>
-
-
 <h2 id="seccion-5">5. Artefactos y compromisos de Scrum</h2>
 
 <p>¿Cómo sabe el equipo qué mejorar, qué está intentando lograr ahora y qué resultado ya puede utilizarse? Los <strong>artefactos de Scrum</strong> hacen visible trabajo o valor. Cada uno tiene un <strong>compromiso</strong> asociado que orienta las decisiones: Product Goal para el Product Backlog, Sprint Goal para el Sprint Backlog y Definition of Done para el Incremento. Un artefacto no es necesariamente un archivo ni una herramienta particular.</p>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Un artefacto es útil solo si refleja el estado real del trabajo y su compromiso asociado orienta decisiones. Un backlog visible pero desactualizado produce una transparencia ficticia.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Un artefacto es útil solo si refleja el estado real del trabajo y su compromiso asociado orienta decisiones. Un backlog visible pero desactualizado produce una transparencia ficticia.</div>
 
 <h3>5.1 Product Backlog</h3>
 
@@ -216,93 +257,78 @@ li{ margin-bottom:7px; }
 <p>Un elemento que no cumple la DoD no forma parte de un Incremento, no se libera y no se presenta en la Review como terminado: vuelve al Product Backlog para consideración futura. El Product Owner puede aportar feedback y decisiones de valor, pero no convertir en terminado un trabajo que incumple la DoD ni rechazar discrecionalmente esa condición cuando se cumple. Las decisiones de publicación pueden tener otros requisitos de negocio o gobierno, que deben distinguirse del estado de calidad del Incremento.</p>
 <table class="tabla-comparativa">
 <caption>Artefactos y compromisos en el ejemplo de pagos QR</caption>
-<thead><tr><th scope="col">Artefacto</th><th scope="col">Compromiso</th><th scope="col">Ejemplo</th></tr></thead>
+<thead><tr>
+<th scope="col">Artefacto</th>
+<th scope="col">Compromiso</th>
+<th scope="col">Ejemplo</th>
+</tr></thead>
 <tbody>
-<tr><td>Product Backlog</td><td>Product Goal</td><td>Mejorar pagos seguros; contiene necesidades de QR, comprobantes y otras mejoras.</td></tr>
-<tr><td>Sprint Backlog</td><td>Sprint Goal</td><td>Permitir confirmar un pago QR y consultar su comprobante; incluye el trabajo seleccionado y el plan de los Developers.</td></tr>
-<tr><td>Incremento</td><td>Definition of Done</td><td>La capacidad de pago integrada, probada y utilizable, con las medidas de calidad acordadas.</td></tr>
+<tr>
+<td>Product Backlog</td>
+<td>Product Goal</td>
+<td>Mejorar pagos seguros; contiene necesidades de QR, comprobantes y otras mejoras.</td>
+</tr>
+<tr>
+<td>Sprint Backlog</td>
+<td>Sprint Goal</td>
+<td>Permitir confirmar un pago QR y consultar su comprobante; incluye el trabajo seleccionado y el plan de los Developers.</td>
+</tr>
+<tr>
+<td>Incremento</td>
+<td>Definition of Done</td>
+<td>La capacidad de pago integrada, probada y utilizable, con las medidas de calidad acordadas.</td>
+</tr>
 </tbody>
 </table>
 
 
 <h2 id="seccion-6">6. Eventos de Scrum y desarrollo de un Sprint</h2>
 
-<p>Scrum se estructura alrededor de un ciclo temporal fijo llamado Sprint, dentro del cual ocurren otros cuatro eventos formales: Sprint Planning, Daily Scrum, Sprint Review y Sprint Retrospective. Todos los eventos tienen una duración máxima (timebox), lo que significa que no pueden extenderse indefinidamente: esto protege el tiempo del equipo y obliga a mantener la disciplina y el foco. A continuación desarrollamos cada uno en profundidad.</p>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Cada evento debe producir una decisión o una adaptación observable. Si una reunión no modifica el plan, el producto o la forma de trabajar, revisá su propósito antes de agregar más agenda.</div>
-
-<h3>6.1 El Sprint</h3>
-
-<p>El <strong>Sprint</strong> es un evento de duración fija de <strong>un mes o menos</strong> que contiene todo el trabajo necesario para avanzar hacia el Product Goal, incluidos planificación, construcción, Daily Scrum, Review y Retrospective. Dos semanas es una elección posible, no una duración obligatoria. La cadencia permite inspeccionar resultados y adaptar el rumbo con regularidad.</p>
-<p>Durante el Sprint no se realizan cambios que pongan en peligro el Sprint Goal, la calidad no disminuye y el Product Backlog se refina según sea necesario. Los Developers pueden clarificar y renegociar alcance con el Product Owner conforme se aprende. Por ejemplo, una integración QR más difícil de lo esperado puede llevar a revisar el trabajo seleccionado sin perder la meta de confirmar un pago seguro. El siguiente Sprint comienza inmediatamente al concluir el anterior.</p>
-
-<p>Un aspecto importante es que un Sprint puede cancelarse antes de que se cumpla su tiempo, pero esto es una decisión exclusiva del Product Owner y solo debería ocurrir si el objetivo del Sprint queda obsoleto —por ejemplo, si un cambio drástico en la estrategia de la empresa vuelve irrelevante todo lo que se estaba construyendo—. En la práctica, la cancelación de Sprints es un evento poco frecuente, porque implica un costo alto en términos de planificación desperdiciada.</p>
-
-<h3>6.2 Sprint Planning (Planificación del Sprint)</h3>
-
-<p>La <strong>Sprint Planning</strong> inicia el Sprint. El equipo Scrum responde tres preguntas: ¿por qué es valioso este Sprint?, ¿qué puede completarse? y ¿cómo se hará el trabajo? El Product Owner propone cómo aumentar el valor del producto y todo el equipo colabora para definir el Sprint Goal. Mediante diálogo con el Product Owner, los Developers seleccionan elementos y elaboran el plan técnico. La selección es un <strong>pronóstico de trabajo, no una promesa de alcance invariable</strong>: el compromiso del Sprint Backlog es el Sprint Goal.</p>
-<p>La duración máxima es de ocho horas para un Sprint de un mes. Para Sprints más cortos, el evento suele ser más breve; la guía no obliga a aplicar una proporción matemática ni fija cuatro horas como máximo específico para un Sprint de dos semanas.</p>
-
-<p>Un ejemplo concreto: en la Sprint Planning de un equipo que desarrolla una app de delivery de comida, el Product Owner presenta como objetivo del Sprint "mejorar la experiencia de seguimiento del pedido en tiempo real". A partir de ahí, el equipo revisa los elementos priorizados del Product Backlog relacionados con ese objetivo (por ejemplo: "como usuario quiero ver un mapa con la ubicación del repartidor", "como usuario quiero recibir notificaciones push cuando el pedido cambia de estado"), estima su esfuerzo, pronostica cuántos elementos puede completar en las próximas dos semanas considerando su desempeño pasado, disponibilidad y Definición de Terminado, y descompone cada elemento en tareas técnicas concretas (por ejemplo: "integrar API de geolocalización", "diseñar componente de mapa", "implementar servicio de notificaciones push").</p>
-
-<h3>6.3 Daily Scrum (Reunión diaria)</h3>
-
-<p>La Daily Scrum es un evento de 15 minutos, de duración fija, que se realiza todos los días laborables del Sprint para que los Developers inspeccionen el progreso hacia el objetivo del Sprint y adapten el Sprint Backlog según sea necesario, ajustando el trabajo planeado para las próximas 24 horas. No es, como suele malinterpretarse, una reunión de reporte de estado hacia un jefe: es un mecanismo de coordinación interna entre pares, cuyo propietario es el equipo de desarrollo. Una estructura habitual (aunque no obligatoria en la Guía de Scrum actual, que deja libertad sobre el formato) es que cada miembro responda brevemente tres preguntas: ¿qué hice ayer que contribuyó al objetivo del Sprint?, ¿qué haré hoy?, y ¿veo algún impedimento que me bloquea o que bloquea al equipo? La Daily Scrum mejora las comunicaciones, identifica impedimentos tempranamente, promueve la toma de decisiones rápida y, en consecuencia, reduce reuniones innecesarias, sin impedir otras conversaciones de coordinación cuando el trabajo las requiere.</p>
-
-<p>Un punto que conviene destacar en clase: el Scrum Master no dirige necesariamente la Daily Scrum. Su responsabilidad es asegurar que el evento ocurra y que se mantenga dentro del timebox de 15 minutos, pero son los propios Developers quienes conducen la conversación. Si durante la Daily Scrum surge un tema que requiere una discusión extensa —por ejemplo, un desacuerdo sobre el diseño de una arquitectura—, lo correcto es anotarlo y tratarlo en una reunión separada inmediatamente después, para no extender el evento diario más allá de su timebox.</p>
-
-<h3>6.4 Sprint Review (Revisión del Sprint)</h3>
-
-<p>El propósito de la Sprint Review es inspeccionar el resultado del Sprint y determinar futuras adaptaciones. El equipo Scrum presenta los resultados de su trabajo a los interesados clave (stakeholders: clientes, usuarios, gerentes, otros equipos) y se discute el progreso hacia el objetivo del producto. Este no es un evento de "demostración" pasiva en el que el equipo simplemente muestra pantallas: es un evento colaborativo de trabajo, en el que el Product Owner explica qué elementos del backlog se completaron y cuáles no, los Developers muestran el trabajo hecho y responden preguntas sobre el incremento, y todos los presentes discuten qué hacer a continuación, revisando el mercado, el presupuesto, el cronograma potencial y las capacidades disponibles. Como resultado de esta discusión, el Product Backlog puede ajustarse para reflejar nuevas oportunidades. El límite es de cuatro horas para un Sprint de un mes; en Sprints más cortos el evento suele ser más breve.</p>
-
-<p>Ejemplo concreto: en la Sprint Review del equipo de la app de delivery, se muestra en vivo el mapa de seguimiento del pedido funcionando en un entorno de pruebas, con un repartidor real moviéndose en el mapa. Un stakeholder del área comercial pregunta si es posible, en un Sprint futuro, agregar una estimación del tiempo de llegada basada en tráfico en tiempo real; esa idea, surgida en la reunión, se convierte en un nuevo elemento candidato para el Product Backlog, que el Product Owner evaluará y priorizará posteriormente.</p>
-
-<h3>6.5 Sprint Retrospective (Retrospectiva del Sprint)</h3>
-
-<p>La Sprint Retrospective cierra el Sprint y tiene como propósito planificar formas de aumentar la calidad y la efectividad del equipo. El equipo Scrum inspecciona cómo fue el último Sprint en relación con las personas, las relaciones, los procesos y las herramientas utilizadas, identifica los elementos que funcionaron bien y las áreas de mejora, y discute cómo se realizará el trabajo (no qué se hará: eso corresponde a la Sprint Planning). A diferencia de la Sprint Review, que se centra en el producto, la Retrospectiva se centra en el proceso y en la dinámica del equipo. La duración máxima recomendada es de tres horas para un Sprint de un mes.</p>
-
-<p>Una técnica muy utilizada para estructurar esta reunión es la dinámica "Empezar / Dejar de hacer / Seguir haciendo" (Start / Stop / Continue), en la que cada miembro del equipo aporta ideas en tres columnas: qué prácticas nuevas debería empezar a adoptar el equipo, qué prácticas actuales generan fricción y deberían dejar de hacerse, y qué prácticas funcionan bien y deben mantenerse. Por ejemplo, un equipo podría concluir en su retrospectiva que debe "empezar" a documentar decisiones técnicas en un espacio compartido, "dejar de" hacer revisiones de código (code reviews) de más de 400 líneas porque generan cuellos de botella, y "seguir" realizando pair programming en las tareas más complejas porque redujo notablemente los bugs en producción. La Retrospectiva concluye idealmente con al menos una mejora concreta y accionable que el equipo se compromete a implementar en el Sprint siguiente.</p>
-
-<table>
-<caption>Tabla 2. Eventos de Scrum: duración y objetivo</caption>
-<tr><th>Evento</th><th>Duración máxima (timebox)</th><th>Frecuencia</th><th>Objetivo principal</th></tr>
-<tr><td>Sprint</td><td>Un mes o menos, con duración fija</td><td>El siguiente comienza al concluir el anterior</td><td>Crear valor y permitir inspección y adaptación hacia el Product Goal</td></tr>
-<tr><td>Sprint Planning</td><td>8 horas para un Sprint de un mes; suele ser más breve para Sprints más cortos</td><td>Al inicio de cada Sprint</td><td>Definir el objetivo del Sprint y el plan de trabajo (Sprint Backlog)</td></tr>
-<tr><td>Daily Scrum</td><td>15 minutos</td><td>Todos los días laborables del Sprint</td><td>Inspeccionar el progreso diario y adaptar el plan a corto plazo</td></tr>
-<tr><td>Sprint Review</td><td>4 horas para un Sprint de un mes; suele ser más breve para Sprints más cortos</td><td>Hacia el final de cada Sprint</td><td>Inspeccionar resultados y progreso con interesados y determinar adaptaciones</td></tr>
-<tr><td>Sprint Retrospective</td><td>3 horas para un Sprint de un mes; suele ser más breve para Sprints más cortos</td><td>Concluye el Sprint, después de la Review</td><td>Inspeccionar el proceso de trabajo del equipo y planificar mejoras</td></tr>
-</table>
-
-
+<p>Los eventos de Scrum crean una <strong>cadencia</strong> para inspeccionar y adaptar. Todos ocurren dentro del Sprint; no son ceremonias para controlar ocupación.</p>
+<h3>6.1 Sprint</h3>
+<p>Es el período de un mes o menos en el que se crea valor. Su duración permanece estable para aportar ritmo. Durante él no se hacen cambios que pongan en riesgo el Sprint Goal ni se reduce calidad; el alcance puede aclararse y renegociarse al aprender.</p>
+<h3>6.2 Sprint Planning</h3>
+<p>El Scrum Team acuerda por qué el Sprint es valioso, qué puede hacerse y cómo se realizará. El resultado inicial es el Sprint Backlog. Seleccionar elementos es un <strong>pronóstico</strong>; el compromiso es el Sprint Goal.</p>
+<h3>6.3 Daily Scrum</h3>
+<p>Durante quince minutos, los Developers inspeccionan el progreso hacia el Sprint Goal y adaptan su plan. Pueden usar las preguntas que les resulten útiles. No es un reporte al Scrum Master ni reemplaza conversar cuando aparece un bloqueo.</p>
+<h3>6.4 Sprint Review</h3>
+<p>Scrum Team e interesados inspeccionan el resultado y conversan sobre cambios del contexto. Es una sesión de trabajo, no solo una demostración ni una aprobación para liberar.</p>
+<h3>6.5 Sprint Retrospective</h3>
+<p>El Scrum Team analiza cómo aumentar calidad y efectividad y decide mejoras. Para un Sprint de un mes tiene un máximo de tres horas; en Sprints más cortos suele durar menos.</p>
+<h3>6.6 Caso completo: un Sprint del asistente universitario</h3>
+<ol>
+<li>
+<strong>Objetivo:</strong> responder consultas frecuentes de inscripción con información aprobada y mostrar la fuente utilizada.</li>
+<li>
+<strong>Plan:</strong> preparar veinte consultas representativas, conectar los documentos vigentes, construir la interacción y registrar respuestas incorrectas.</li>
+<li>
+<strong>Inspección diaria:</strong> el equipo detecta que varios documentos usan nombres distintos para el mismo trámite y ajusta el plan.</li>
+<li>
+<strong>Incremento:</strong> una versión utilizable cumple la Definition of Done y supera el umbral acordado en la muestra. El umbral es didáctico y no garantiza desempeño futuro.</li>
+<li>
+<strong>Review:</strong> estudiantes y personal prueban el resultado; aparece la necesidad de indicar cuándo la información puede estar desactualizada.</li>
+<li>
+<strong>Retrospectiva:</strong> el equipo decide involucrar antes a la persona que valida documentos.</li>
+</ol>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> En IA, un experimento puede enseñar que una alternativa no funciona. Para llamarlo incremento de Scrum, el resultado debe ser utilizable y cumplir la Definition of Done.</p></div>
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>Cerramos Scrum. Cambian las reglas: Kanban gestiona flujo y no prescribe los roles ni los eventos de Scrum.</div>
+<div class="marco-contexto contexto-kanban">
+<strong>CONTEXTO: KANBAN</strong> Desde aquí analizamos Kanban como sistema de gestión del trabajo y del flujo. Kanban no exige Sprints ni los roles de Scrum.</div>
 <h2 id="seccion-7">7. Kanban: origen, principios y visualización</h2>
 
-<p>Kanban es un método —el término más preciso, ya que a diferencia de Scrum no define roles ni eventos obligatorios— para gestionar y mejorar el flujo de trabajo a través de sistemas basados en conocimiento, como el desarrollo de software. Su origen no está en la informática sino en la industria manufacturera japonesa: fue desarrollado por Taiichi Ohno, ingeniero de Toyota, durante las décadas de 1940 y 1950, como parte del Sistema de Producción Toyota (Toyota Production System, TPS), precursor de lo que hoy se conoce como manufactura "lean" o esbelta. La palabra "kanban" (看板) significa literalmente "tarjeta visual" o "señal visual" en japonés. Ohno se inspiró, según se cuenta, en el sistema de reposición de las góndolas de los supermercados estadounidenses: un supermercado no fabrica ni pide mercadería de forma especulativa, sino que repone un producto en la góndola recién cuando el cliente lo consume, señalizando esa necesidad de reposición mediante una tarjeta o etiqueta. Trasladado a la fábrica, esto significaba que cada estación de trabajo en la línea de ensamblaje solo debía producir piezas cuando la estación siguiente, "aguas abajo", señalizaba —mediante una tarjeta física kanban— que las necesitaba, en lugar de producir de forma continua y acumular inventario excedente (un desperdicio, en términos lean).</p>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Antes de implementar Kanban, dibujá el flujo que realmente existe, incluidas esperas y retrabajos. Un tablero idealizado oculta justamente los problemas que el método debe revelar.</div>
-
-<p>Este principio, conocido como sistema de "extracción" o "pull" (en contraposición a los sistemas de "empuje" o "push", en los que se produce según un plan predefinido sin considerar la demanda real), permitió a Toyota reducir drásticamente el inventario en proceso, detectar cuellos de botella con rapidez y mejorar la calidad general del sistema productivo. David J. Anderson fue quien, a fines de la década de 2000, adaptó estos principios al trabajo de conocimiento y particularmente al desarrollo de software, formalizando lo que hoy se conoce como el "Método Kanban". La lógica de fondo es idéntica: en lugar de asignar trabajo de forma anticipada según un plan rígido, el equipo "extrae" nuevas tareas del backlog únicamente cuando tiene capacidad disponible para procesarlas, visualizando todo el flujo en un tablero.</p>
-
-<h3>7.1 Principios fundamentales del Método Kanban</h3>
-
-<p>Anderson estructuró el Método Kanban alrededor de un conjunto reducido de principios y prácticas, pensados para poder aplicarse de forma incremental sobre un proceso de trabajo ya existente, sin necesidad de reestructurar roles ni la organización desde cero (a diferencia de Scrum, que exige adoptar de entrada roles y eventos específicos). Los principios centrales son:</p>
-
-<ul>
-<li><strong>Empezar con lo que ya se hace</strong>: Kanban no exige un cambio radical inmediato de procesos, roles o responsabilidades; se implementa por encima del proceso actual del equipo, respetando los roles, títulos y responsabilidades existentes, y se van introduciendo mejoras de forma evolutiva.</li>
-<li><strong>Acordar perseguir el cambio evolutivo e incremental</strong>: en lugar de imponer una transformación radical (que suele generar resistencia y miedo dentro de la organización), Kanban promueve mejoras pequeñas y continuas basadas en el consenso del equipo, lo cual reduce la resistencia al cambio.</li>
-<li><strong>Respetar el proceso actual, los roles, las responsabilidades y los cargos</strong>: este principio refuerza que Kanban no busca desmantelar la estructura organizacional existente, sino optimizarla, lo cual lo hace especialmente apto para equipos de soporte, mantenimiento u operaciones que ya tienen roles bien definidos y no necesariamente ágiles en sentido estricto.</li>
-<li><strong>Fomentar actos de liderazgo en todos los niveles</strong>: la mejora continua no depende únicamente de gerentes o líderes formales; cualquier miembro del equipo, en cualquier nivel, puede y debe proponer mejoras al flujo de trabajo.</li>
-</ul>
-
-<p>Sobre esta base, el método define seis prácticas centrales: visualizar el flujo de trabajo, limitar el trabajo en curso (WIP), gestionar el flujo, hacer explícitas las políticas del proceso, implementar ciclos de retroalimentación, y mejorar colaborativamente usando modelos y el método científico (es decir, experimentar con cambios pequeños, medir su efecto y ajustar).</p>
-
-<h3>7.2 El tablero Kanban y la visualización del flujo</h3>
-
-<p>La herramienta más característica y reconocible de Kanban es el tablero (Kanban board), una representación visual del flujo de trabajo dividida en columnas que representan los distintos estados por los que atraviesa una tarea, desde que se identifica como necesaria hasta que se entrega completamente terminada. Un tablero simple para un equipo de desarrollo de software podría tener las columnas "Por Hacer" (To Do), "En Desarrollo" (In Progress), "En Revisión de Código" (Code Review), "En Testing" (QA) y "Terminado" (Done). Cada tarea se representa mediante una tarjeta física (en un tablero físico con post-its) o digital (en herramientas como Trello, Jira o Azure DevOps configuradas en modo Kanban), que se desplaza de izquierda a derecha a medida que avanza en el flujo. Esta visualización cumple una función crítica: hace visible instantáneamente el estado real del trabajo para todo el equipo y los interesados, sin necesidad de reportes adicionales, retomando así el pilar de transparencia que comparte con Scrum, aunque Kanban no lo formule explícitamente en esos términos.</p>
-
-
+<p><strong>Kanban</strong> es una estrategia para optimizar el flujo de valor mediante un sistema de trabajo visible. Puede aplicarse sobre un proceso existente y no exige Product Owner, Scrum Master, Sprints ni una reunión particular.</p>
+<h3>7.1 De la señal industrial al trabajo del conocimiento</h3>
+<p>El término proviene de señales visuales utilizadas en sistemas productivos japoneses. En trabajo del conocimiento, las tarjetas hacen visible una demanda que no se puede observar físicamente. La inspiración histórica no vuelve idénticos a una fábrica y a un equipo de software.</p>
+<h3>7.2 Qué debe mostrar un tablero</h3>
+<p>Un tablero representa estados reales y políticas. Para el asistente podríamos usar “Opciones”, “Preparado”, “En construcción”, “En validación” y “Terminado”. Una tarjeta bloqueada permanece visible; moverla a una columna de espera no elimina el trabajo iniciado.</p>
+<p>El sistema necesita una definición clara de cuándo una tarjeta entra y sale de cada estado. Las columnas por sí solas no constituyen Kanban.</p>
+<div class="analogia"><p><strong>Analogía de una autopista.</strong> Agregar autos a un embotellamiento no aumenta la velocidad de llegada. Limitar el ingreso permite terminar lo iniciado y revela dónde se forma la cola.</p></div>
 <h2 id="seccion-8">8. Flujo de trabajo y límites WIP en Kanban</h2>
 
-<p>Un <strong>límite WIP</strong> establece cuántos ítems pueden permanecer iniciados en una etapa o en todo el sistema. Si Desarrollo admite tres y contiene tres, no ingresa una cuarta tarjeta. Si una pasa a Testing y quedan dos, el límite de Desarrollo permite incorporar otra; pero si Testing está saturado, la política del equipo puede priorizar ayudar a terminar antes de iniciar más. Son dos acuerdos relacionados: limitar la cantidad de trabajo y decidir cómo atender el cuello de botella. Mover una tarjeta bloqueada no la convierte en trabajo terminado.</p><div class="criterio-profesional"><strong>Criterio profesional:</strong> Elegí límites WIP para acelerar la finalización, no para mantener a cada persona ocupada. Cuando una etapa se satura, la respuesta profesional es colaborar aguas abajo antes de iniciar más trabajo.</div>
+<p>Un <strong>límite WIP</strong> establece cuántos ítems pueden permanecer iniciados en una etapa o en todo el sistema. Si Desarrollo admite tres y contiene tres, no ingresa una cuarta tarjeta. Si una pasa a Testing y quedan dos, el límite de Desarrollo permite incorporar otra; pero si Testing está saturado, la política del equipo puede priorizar ayudar a terminar antes de iniciar más. Son dos acuerdos relacionados: limitar la cantidad de trabajo y decidir cómo atender el cuello de botella. Mover una tarjeta bloqueada no la convierte en trabajo terminado.</p>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Elegí límites WIP para acelerar la finalización, no para mantener a cada persona ocupada. Cuando una etapa se satura, la respuesta profesional es colaborar aguas abajo antes de iniciar más trabajo.</div>
 
 <p>Una referencia útil es la <strong>Ley de Little</strong>: en condiciones de estabilidad y con límites del sistema consistentes, el trabajo en curso promedio equivale a la tasa promedio de finalización multiplicada por el tiempo promedio dentro del sistema. Si medimos desde que se inicia el trabajo hasta que termina, ese tiempo es <strong>Cycle Time</strong>. Si contamos desde la solicitud, medimos un horizonte de <strong>Lead Time</strong> que también puede incluir la espera anterior al inicio. Es indispensable mantener los mismos límites al comparar indicadores.</p>
 <p>Por ejemplo, un flujo estable con seis elementos en curso en promedio y dos finalizaciones por día tiene un tiempo promedio dentro del sistema de tres días. Es una relación entre promedios, no una fecha garantizada para cada tarjeta. Si el throughput se mantiene, reducir WIP se relaciona con un tiempo promedio menor; la ley no demuestra por sí sola que bajar cualquier límite aumente la productividad. Un límite demasiado bajo también puede impedir aprovechar capacidad.</p>
@@ -313,8 +339,13 @@ li{ margin-bottom:7px; }
 
 
 
-<div class="mito"><strong>Mito:</strong> Poner un límite WIP reduce productividad porque deja gente sin tareas nuevas. <strong>Realidad:</strong> el límite desplaza el foco de iniciar hacia terminar y hace que el equipo ayude donde el sistema está bloqueado.</div>
+<div class="mito">
+<strong>Mito:</strong> Poner un límite WIP reduce productividad porque deja gente sin tareas nuevas. <strong>Realidad:</strong> el límite desplaza el foco de iniciar hacia terminar y hace que el equipo ayude donde el sistema está bloqueado.</div>
 
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>Cerramos Kanban. Ahora observaremos prácticas técnicas propias de XP.</div>
+<div class="marco-contexto contexto-xp">
+<strong>CONTEXTO: EXTREME PROGRAMMING</strong> Este bloque reúne prácticas técnicas de desarrollo. Pueden complementar otros marcos, pero no forman parte obligatoria de Scrum o Kanban.</div>
 <h2 id="seccion-9">9. Extreme Programming (XP) y prácticas de desarrollo</h2>
 
 <p>¿De qué sirve entregar con frecuencia si cada cambio rompe una funcionalidad anterior? XP aborda la capacidad de construir y cambiar software con confianza. <strong>No es solamente una colección de técnicas</strong>: también integra valores, colaboración estrecha con el cliente, planificación y entregas pequeñas. En esta materia profundizamos sus prácticas de ingeniería porque complementan los mecanismos de gestión estudiados.</p>
@@ -322,7 +353,8 @@ li{ margin-bottom:7px; }
 
 <p>Extreme Programming, o Programación Extrema (XP), fue creada por Kent Beck a fines de la década de 1990, mientras trabajaba en el proyecto Chrysler Comprehensive Compensation System. A diferencia de Scrum y Kanban, que se concentran principalmente en la organización del proceso de trabajo, XP pone el foco en las <strong>prácticas técnicas de ingeniería de software</strong>: cómo se escribe, se prueba, se integra y se diseña el código. Beck partió de la observación de que muchos proyectos fallaban no por falta de buena gestión, sino por prácticas técnicas deficientes que generaban software frágil, difícil de modificar y plagado de errores. XP toma varias prácticas de ingeniería que ya existían de forma dispersa en la industria y las combina, llevándolas —de ahí el nombre "extrema"— a su expresión más disciplinada y consistente. A continuación se desarrollan las prácticas técnicas más representativas de XP.</p>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Usá XP para sostener la capacidad de cambio del producto. Sin pruebas, integración frecuente y refactorización, cada iteración agrega funcionalidad pero también aumenta el costo del próximo cambio.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Usá XP para sostener la capacidad de cambio del producto. Sin pruebas, integración frecuente y refactorización, cada iteración agrega funcionalidad pero también aumenta el costo del próximo cambio.</div>
 
 <h3>9.1 Programación en pares (Pair Programming)</h3>
 
@@ -338,7 +370,8 @@ li{ margin-bottom:7px; }
 
 <h3>9.4 Refactoring (Refactorización)</h3>
 
-<p>El refactoring es el proceso disciplinado de mejorar la estructura interna, la legibilidad y el diseño del código existente, sin alterar su comportamiento externo observable. La idea central es que el código, al igual que cualquier estructura que se modifica con el tiempo, tiende a acumular lo que Ward Cunningham denominó "deuda técnica": atajos, duplicaciones y decisiones de diseño que fueron razonables en su momento pero que, sin mantenimiento, dificultan cada vez más agregar nuevas funcionalidades. Refactorizar de forma continua y en pequeños pasos —apoyándose siempre en una batería sólida de pruebas automatizadas, típicamente generada mediante TDD, que ayuda a detectar cambios de comportamiento, sin garantizar ausencia de defectos— evita que esa deuda técnica se acumule hasta un punto en el que el sistema se vuelve prácticamente inmodificable. Un ejemplo típico de refactoring es extraer un bloque de código duplicado en varias partes del sistema hacia una única función reutilizable, o renombrar variables y funciones con nombres poco claros por nombres que expresan mejor su propósito.</p><h3>9.5 Otras prácticas de XP</h3>
+<p>El refactoring es el proceso disciplinado de mejorar la estructura interna, la legibilidad y el diseño del código existente, sin alterar su comportamiento externo observable. La idea central es que el código, al igual que cualquier estructura que se modifica con el tiempo, tiende a acumular lo que Ward Cunningham denominó "deuda técnica": atajos, duplicaciones y decisiones de diseño que fueron razonables en su momento pero que, sin mantenimiento, dificultan cada vez más agregar nuevas funcionalidades. Refactorizar de forma continua y en pequeños pasos —apoyándose siempre en una batería sólida de pruebas automatizadas, típicamente generada mediante TDD, que ayuda a detectar cambios de comportamiento, sin garantizar ausencia de defectos— evita que esa deuda técnica se acumule hasta un punto en el que el sistema se vuelve prácticamente inmodificable. Un ejemplo típico de refactoring es extraer un bloque de código duplicado en varias partes del sistema hacia una única función reutilizable, o renombrar variables y funciones con nombres poco claros por nombres que expresan mejor su propósito.</p>
+<h3>9.5 Otras prácticas de XP</h3>
 
 <p>Además de las cuatro prácticas centrales desarrolladas arriba, XP incluye otras prácticas complementarias que conviene mencionar: el <strong>diseño simple</strong> (implementar siempre la solución más simple posible que satisfaga los requisitos actuales, evitando la sobreingeniería especulativa); la <strong>propiedad colectiva del código</strong> (cualquier miembro del equipo puede modificar cualquier parte del código, sin "dueños" exclusivos de módulos, lo cual reduce cuellos de botella y silos de conocimiento); los <strong>estándares de codificación</strong> compartidos por todo el equipo (para que el código se lea de forma consistente, como si lo hubiera escrito una sola persona); el <strong>ritmo sostenible</strong> (evitar las horas extra sistemáticas, ya que la fatiga acumulada deteriora la calidad del código y la productividad a mediano plazo); y las <strong>entregas pequeñas y frecuentes</strong> (releases pequeños que ponen software funcionando en manos de los usuarios lo antes posible, similar en espíritu a la entrega incremental de Scrum).</p>
 
@@ -352,33 +385,57 @@ li{ margin-bottom:7px; }
 
 
 
+<h3>9.6 XP e inteligencia artificial</h3>
+<p>Las prácticas técnicas también ayudan en productos con IA, pero debemos distinguir tipos de prueba. Un test automatizado puede verificar que una API respete permisos y formatos; un conjunto de evaluación examina la calidad de respuestas sobre casos conocidos. Ninguno demuestra por sí solo ausencia de errores en todas las consultas futuras.</p>
+<p>Un asistente generativo puede proponer tests o revisar código, pero el equipo conserva el criterio, verifica los resultados y protege datos sensibles. Eso no reemplaza el aprendizaje compartido de la programación en pareja.</p>
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>XP se concentró en ingeniería. Lean amplía la mirada al valor y al sistema completo.</div>
+<div class="marco-contexto contexto-lean">
+<strong>CONTEXTO: LEAN</strong> Este bloque observa valor, desperdicio y mejora del sistema completo. Lean aporta principios para decidir; no prescribe los eventos ni los roles de Scrum.</div>
 <h2 id="seccion-10">10. Lean aplicado al desarrollo de software</h2>
 
 <p>El pensamiento Lean, cuya raíz —igual que Kanban— se encuentra en el Sistema de Producción Toyota, fue adaptado al desarrollo de software principalmente por Mary y Tom Poppendieck a comienzos de la década de 2000, en su influyente libro "Lean Software Development: An Agile Toolkit". La idea central del pensamiento Lean es maximizar el valor entregado al cliente mientras se minimiza el desperdicio (en japonés, "muda") en todas sus formas. Los Poppendieck tradujeron los célebres "siete desperdicios" identificados originalmente en la manufactura por Taiichi Ohno a equivalentes específicos del desarrollo de software, lo cual constituye una de las herramientas didácticas más útiles para que un equipo identifique ineficiencias en su propio proceso.</p>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Buscá desperdicio en el tiempo total del sistema, no solo en la actividad de desarrollo. Las esperas, traspasos y trabajo parcialmente terminado suelen costar más que programar una funcionalidad.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Buscá desperdicio en el tiempo total del sistema, no solo en la actividad de desarrollo. Las esperas, traspasos y trabajo parcialmente terminado suelen costar más que programar una funcionalidad.</div>
 
 <h3>10.1 Los siete desperdicios aplicados a desarrollo de software</h3>
 
 <ol>
-<li><strong>Trabajo parcialmente hecho (código a medio terminar)</strong>: código escrito pero no integrado, no testeado o no desplegado, que no genera ningún valor real hasta que se completa. Un módulo desarrollado al 80% que queda "congelado" porque el equipo cambió de prioridad es desperdicio puro: consumió recursos y no entrega ningún valor mientras permanece incompleto.</li>
-<li><strong>Funcionalidades extra (sobreproducción)</strong>: construir funcionalidades que el usuario no pidió, no necesita o no usará, basándose en suposiciones no validadas sobre lo que "podría" ser útil en el futuro. Es habitual en equipos que, por exceso de celo técnico, agregan opciones de configuración, parámetros o casos de uso especulativos que rara vez se utilizan, y que además incrementan la complejidad de mantenimiento del sistema.</li>
-<li><strong>Reaprendizaje (relearning)</strong>: el tiempo perdido cuando el conocimiento generado durante el desarrollo no queda documentado ni compartido, y el equipo (u otras personas) deben volver a investigar o redescubrir algo que ya se había resuelto anteriormente. Por ejemplo, un desarrollador que resuelve un problema complejo de integración con una API externa, pero no documenta la solución, obliga a que un colega enfrente el mismo problema desde cero meses después.</li>
-<li><strong>Traspasos (handoffs)</strong>: la pérdida de contexto, información y motivación que ocurre cada vez que el trabajo pasa de una persona o equipo a otro sin comunicación directa suficiente —por ejemplo, cuando un analista de negocio redacta requerimientos que luego entrega, sin más diálogo, a un equipo de desarrollo separado geográfica u organizacionalmente—. Cada traspaso introduce el riesgo de malentendidos y la pérdida de matices que solo el autor original conocía.</li>
-<li><strong>Cambios de tarea (task switching)</strong>: el costo cognitivo y de productividad que genera que una persona trabaje simultáneamente en múltiples proyectos o tareas no relacionadas, un problema directamente vinculado con la ausencia de límites WIP explicados en la sección de Kanban. Cada cambio de contexto tiene un costo real de "recarga mental" que reduce la eficiencia neta del trabajo.</li>
-<li><strong>Retrasos (delays)</strong>: el tiempo que una tarea pasa esperando —esperando una aprobación, esperando que otro equipo libere un recurso, esperando la disponibilidad de un ambiente de pruebas— sin que nadie esté trabajando activamente en ella. Estos tiempos de espera suelen ser, en la práctica, la porción más grande del lead time total de una tarea, muy superior al tiempo de trabajo activo.</li>
-<li><strong>Defectos</strong>: errores, bugs o fallas que se detectan tarde en el ciclo de desarrollo (o, peor aún, ya en producción, afectando a usuarios reales), y cuyo costo de corrección puede aumentar al propagarse el defecto y ampliar su impacto cuanto más tarde se detectan respecto del momento en que fueron introducidos. Este desperdicio es la razón por la cual prácticas como TDD e integración continua —vistas en la sección de XP— son tan valoradas desde la perspectiva Lean: detectan defectos casi en el instante en que se producen.</li></ol>
+<li>
+<strong>Trabajo parcialmente hecho (código a medio terminar)</strong>: código escrito pero no integrado, no testeado o no desplegado, que no genera ningún valor real hasta que se completa. Un módulo desarrollado al 80% que queda "congelado" porque el equipo cambió de prioridad es desperdicio puro: consumió recursos y no entrega ningún valor mientras permanece incompleto.</li>
+<li>
+<strong>Funcionalidades extra (sobreproducción)</strong>: construir funcionalidades que el usuario no pidió, no necesita o no usará, basándose en suposiciones no validadas sobre lo que "podría" ser útil en el futuro. Es habitual en equipos que, por exceso de celo técnico, agregan opciones de configuración, parámetros o casos de uso especulativos que rara vez se utilizan, y que además incrementan la complejidad de mantenimiento del sistema.</li>
+<li>
+<strong>Reaprendizaje (relearning)</strong>: el tiempo perdido cuando el conocimiento generado durante el desarrollo no queda documentado ni compartido, y el equipo (u otras personas) deben volver a investigar o redescubrir algo que ya se había resuelto anteriormente. Por ejemplo, un desarrollador que resuelve un problema complejo de integración con una API externa, pero no documenta la solución, obliga a que un colega enfrente el mismo problema desde cero meses después.</li>
+<li>
+<strong>Traspasos (handoffs)</strong>: la pérdida de contexto, información y motivación que ocurre cada vez que el trabajo pasa de una persona o equipo a otro sin comunicación directa suficiente —por ejemplo, cuando un analista de negocio redacta requerimientos que luego entrega, sin más diálogo, a un equipo de desarrollo separado geográfica u organizacionalmente—. Cada traspaso introduce el riesgo de malentendidos y la pérdida de matices que solo el autor original conocía.</li>
+<li>
+<strong>Cambios de tarea (task switching)</strong>: el costo cognitivo y de productividad que genera que una persona trabaje simultáneamente en múltiples proyectos o tareas no relacionadas, un problema directamente vinculado con la ausencia de límites WIP explicados en la sección de Kanban. Cada cambio de contexto tiene un costo real de "recarga mental" que reduce la eficiencia neta del trabajo.</li>
+<li>
+<strong>Retrasos (delays)</strong>: el tiempo que una tarea pasa esperando —esperando una aprobación, esperando que otro equipo libere un recurso, esperando la disponibilidad de un ambiente de pruebas— sin que nadie esté trabajando activamente en ella. Estos tiempos de espera suelen ser, en la práctica, la porción más grande del lead time total de una tarea, muy superior al tiempo de trabajo activo.</li>
+<li>
+<strong>Defectos</strong>: errores, bugs o fallas que se detectan tarde en el ciclo de desarrollo (o, peor aún, ya en producción, afectando a usuarios reales), y cuyo costo de corrección puede aumentar al propagarse el defecto y ampliar su impacto cuanto más tarde se detectan respecto del momento en que fueron introducidos. Este desperdicio es la razón por la cual prácticas como TDD e integración continua —vistas en la sección de XP— son tan valoradas desde la perspectiva Lean: detectan defectos casi en el instante en que se producen.</li>
+</ol>
 
 <h3>10.2 Principios Lean aplicados al software</h3>
 
 <p>Más allá de los siete desperdicios, los Poppendieck sintetizaron siete principios Lean adaptados al desarrollo de software, que conviene mencionar brevemente porque atraviesan de forma transversal a todos los marcos ágiles estudiados en este módulo: eliminar el desperdicio; amplificar el aprendizaje (mediante ciclos cortos de retroalimentación, como los que ofrecen Scrum y XP); decidir lo más tarde posible (postergar decisiones irreversibles hasta tener la mayor información posible, en lugar de comprometerse anticipadamente sobre supuestos inciertos); entregar lo más rápido posible (para generar valor y aprendizaje real cuanto antes); dar autonomía al equipo (empoderar a quienes hacen el trabajo para tomar decisiones, en lugar de centralizar el control); construir integridad (tanto conceptual —coherencia del producto desde la perspectiva del usuario— como técnica —arquitectura sólida y mantenible—); y ver el todo (optimizar el sistema completo, no partes aisladas, evitando el error común de mejorar un área a costa de perjudicar el flujo general).</p>
 
 
-<h3>10.3 Caso real: Toyota y la calidad dentro del proceso</h3><p>Toyota explica su sistema de producción a partir de dos pilares: <strong>jidoka</strong>, detener y atender anormalidades para evitar que los defectos continúen, y <strong>Just in Time</strong>, producir lo necesario, cuando se necesita y en la cantidad necesaria. También destaca la mejora cotidiana. Es un caso industrial real, no un equipo de software que utiliza Scrum. Fuente: <a href="https://global.toyota/en/company/vision-and-philosophy/production-system/">Toyota Production System</a>, consulta del 15 de septiembre de 2026.</p><p><strong>Aplicación razonada:</strong> si una prueba importante falla, seguir agregando funcionalidades puede ampliar el retrabajo. Investigar la falla antes de continuar traduce una preocupación por calidad en una decisión de trabajo. La transferencia es conceptual: las necesidades digitales pueden cambiar y el proceso de una fábrica no se copia literalmente a un equipo de producto.</p><h2 id="seccion-11">11. Scrumban y Scrum con Kanban</h2>
+<h3>10.3 Caso real: Toyota y la calidad dentro del proceso</h3>
+<p>Toyota explica su sistema de producción a partir de dos pilares: <strong>jidoka</strong>, detener y atender anormalidades para evitar que los defectos continúen, y <strong>Just in Time</strong>, producir lo necesario, cuando se necesita y en la cantidad necesaria. También destaca la mejora cotidiana. Es un caso industrial real, no un equipo de software que utiliza Scrum. Fuente: <a href="https://global.toyota/en/company/vision-and-philosophy/production-system/">Toyota Production System</a>, consulta del 15 de septiembre de 2026.</p>
+<p><strong>Aplicación razonada:</strong> si una prueba importante falla, seguir agregando funcionalidades puede ampliar el retrabajo. Investigar la falla antes de continuar traduce una preocupación por calidad en una decisión de trabajo. La transferencia es conceptual: las necesidades digitales pueden cambiar y el proceso de una fábrica no se copia literalmente a un equipo de producto.</p>
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>Ya estudiamos Scrum, Kanban, XP y Lean por separado. Recién ahora analizamos combinaciones.</div>
+<div class="marco-contexto contexto-combinacion">
+<strong>COMPARACIÓN E INTEGRACIÓN</strong> Recién después de comprender cada enfoque por separado podemos compararlos o combinarlos sin mezclar sus reglas.</div>
+<h2 id="seccion-11">11. Scrumban y Scrum con Kanban</h2>
 
 <p>Scrumban es un enfoque híbrido que combina elementos de Scrum y de Kanban, buscando capturar lo mejor de ambos mundos. Surgió originalmente como una estrategia de transición: equipos que ya trabajaban con Scrum, y que deseaban migrar gradualmente hacia Kanban (o viceversa), comenzaron a experimentar con una combinación de ambos, y esa combinación terminó consolidándose como un enfoque legítimo en sí mismo, útil para analizar el trabajo de mantenimiento de software y de soporte, donde el trabajo no siempre llega en forma de historias planificables con anticipación sino como un flujo constante e impredecible de tickets, incidentes o pequeñas mejoras.</p>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Adoptá Scrumban cuando exista una razón operativa concreta —por ejemplo, demanda impredecible— y definí qué conserva de Scrum y qué controla con Kanban; no lo uses como nombre para reglas ambiguas.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Adoptá Scrumban cuando exista una razón operativa concreta —por ejemplo, demanda impredecible— y definí qué conserva de Scrum y qué controla con Kanban; no lo uses como nombre para reglas ambiguas.</div>
 
 <p>En una adopción de Scrumban pueden conservarse instancias de planificación, coordinación diaria y retrospectiva, junto con políticas de extracción de trabajo y límites WIP. No existe un único conjunto universal de roles y cadencias bajo esa etiqueta: el equipo debe explicitar qué conserva, qué cambia y por qué. Por ejemplo, un servicio de soporte puede trabajar con flujo continuo y reposición bajo demanda, y mantener una retrospectiva quincenal sin afirmar que esa reunión convierte al servicio en Scrum.</p>
 <p>También puede utilizarse <strong>Scrum con Kanban</strong>: se conservan las responsabilidades, eventos, artefactos y reglas de Scrum y se incorporan prácticas de flujo. Un tablero y límites WIP no obligan a abandonar Scrum ni convierten automáticamente el sistema en otro marco. En Scrum, lo que se protege durante el Sprint es su objetivo; el alcance del trabajo seleccionado puede clarificarse y renegociarse con el Product Owner conforme se aprende.</p>
@@ -388,7 +445,8 @@ li{ margin-bottom:7px; }
 
 <p>Además de los marcos desarrollados en profundidad en este módulo, existen otros enfoques ágiles con propuestas específicas de organización del trabajo, pero que resulta importante conocer al menos de forma conceptual, tanto por su valor histórico como porque algunas de sus ideas fueron incorporadas, de forma implícita, en otros enfoques.</p>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Considerá estos enfoques por el problema que resuelven, no por su etiqueta. Criticidad, tamaño, fecha fija y necesidad de modelado son variables más importantes que la popularidad.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Considerá estos enfoques por el problema que resuelven, no por su etiqueta. Criticidad, tamaño, fecha fija y necesidad de modelado son variables más importantes que la popularidad.</div>
 
 <h3>12.1 Crystal</h3>
 
@@ -404,45 +462,142 @@ li{ margin-bottom:7px; }
 
 <table>
 <caption>Tabla 3. Otros marcos ágiles: resumen comparativo</caption>
-<tr><th>Marco</th><th>Autor(es) / origen</th><th>Idea central</th><th>Contexto de uso más apto</th></tr>
-<tr><td>Crystal</td><td>Alistair Cockburn</td><td>Familia de metodologías "calibradas" según tamaño de equipo y criticidad del sistema</td><td>Organizaciones con proyectos de distinta criticidad que necesitan un enfoque flexible y adaptable</td></tr>
-<tr><td>Feature Driven Development (FDD)</td><td>Jeff De Luca y Peter Coad</td><td>Proceso organizado alrededor de funcionalidades (features) concretas y valiosas para el cliente</td><td>Proyectos grandes, con arquitecturas complejas, que requieren fuerte modelado de dominio</td></tr>
-<tr><td>Dynamic Systems Development Method (DSDM)</td><td>Consorcio DSDM (Reino Unido, 1994)</td><td>Fija tiempo y costo; el alcance es la variable ajustable, priorizado con MoSCoW</td><td>Proyectos con plazos y presupuestos rígidos e innegociables (sector público, contratos con penalidades)</td></tr>
+<tr>
+<th>Marco</th>
+<th>Autor(es) / origen</th>
+<th>Idea central</th>
+<th>Contexto de uso más apto</th>
+</tr>
+<tr>
+<td>Crystal</td>
+<td>Alistair Cockburn</td>
+<td>Familia de metodologías "calibradas" según tamaño de equipo y criticidad del sistema</td>
+<td>Organizaciones con proyectos de distinta criticidad que necesitan un enfoque flexible y adaptable</td>
+</tr>
+<tr>
+<td>Feature Driven Development (FDD)</td>
+<td>Jeff De Luca y Peter Coad</td>
+<td>Proceso organizado alrededor de funcionalidades (features) concretas y valiosas para el cliente</td>
+<td>Proyectos grandes, con arquitecturas complejas, que requieren fuerte modelado de dominio</td>
+</tr>
+<tr>
+<td>Dynamic Systems Development Method (DSDM)</td>
+<td>Consorcio DSDM (Reino Unido, 1994)</td>
+<td>Fija tiempo y costo; el alcance es la variable ajustable, priorizado con MoSCoW</td>
+<td>Proyectos con plazos y presupuestos rígidos e innegociables (sector público, contratos con penalidades)</td>
+</tr>
 </table>
 
 
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>Completado el panorama, comparamos y seleccionamos según el contexto.</div>
+<div class="marco-contexto contexto-combinacion">
+<strong>COMPARACIÓN E INTEGRACIÓN</strong> Recién después de comprender cada enfoque por separado podemos compararlos o combinarlos sin mezclar sus reglas.</div>
 <h2 id="seccion-13">13. Comparación entre metodologías y marcos ágiles</h2>
 
 <p>Habiendo desarrollado en profundidad Scrum, Kanban, XP, Lean y Scrumban, resulta útil sintetizar sus diferencias y similitudes en una tabla comparativa que permita visualizar de un vistazo las características distintivas de cada enfoque. Esta comparación será la base sobre la que se apoyará el criterio de selección desarrollado en la sección final del módulo.</p>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Compará enfoques por mecanismo de control, tipo de demanda y disciplina técnica. Una lista de ventajas aisladas no permite decidir qué comportamiento producirá cada opción en el sistema real.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Compará enfoques por mecanismo de control, tipo de demanda y disciplina técnica. Una lista de ventajas aisladas no permite decidir qué comportamiento producirá cada opción en el sistema real.</div>
 
 <p>Para facilitar la lectura, la comparación se presenta en dos tablas que mantienen las mismas dimensiones. Leé una misma fila en ambas para contrastar los cinco enfoques.</p>
 <table class="tabla-comparativa">
 <caption>Tabla 4A. Comparación: Scrum, Kanban y XP</caption>
-<thead><tr><th scope="col">Dimensión</th><th scope="col">Scrum</th><th scope="col">Kanban</th><th scope="col">Extreme Programming (XP)</th></tr></thead>
+<thead><tr>
+<th scope="col">Dimensión</th>
+<th scope="col">Scrum</th>
+<th scope="col">Kanban</th>
+<th scope="col">Extreme Programming (XP)</th>
+</tr></thead>
 <tbody>
-<tr><td>Naturaleza</td><td>Marco de trabajo con responsabilidades, eventos y artefactos definidos</td><td>Método de gestión y mejora del flujo</td><td>Enfoque de desarrollo que integra valores, colaboración, planificación y prácticas técnicas</td></tr>
-<tr><td>Unidad de planificación</td><td>Sprint de duración fija de un mes o menos</td><td>Flujo con reposición de trabajo según políticas y capacidad</td><td>Iteraciones y entregas pequeñas; no depende de adoptar Scrum</td></tr>
-<tr><td>Roles definidos</td><td>Product Owner, Scrum Master, Developers</td><td>Parte de responsabilidades existentes; pueden evolucionar sin exigir Scrum Master</td><td>Funciones de cliente, desarrollo, pruebas y acompañamiento; no exige Scrum Master</td></tr>
-<tr><td>Mecanismo de control del trabajo</td><td>Objetivos, calidad e inspección y adaptación; el alcance seleccionado es un pronóstico</td><td>Control del WIP, políticas explícitas, métricas y feedback</td><td>Feedback de negocio y técnico, planificación y construcción con calidad</td></tr>
-<tr><td>Cambio de alcance durante el ciclo</td><td>Puede clarificarse y renegociarse con el Product Owner sin poner en peligro el Sprint Goal</td><td>Se gestiona con políticas explícitas, capacidad y límites WIP; no implica interrumpir toda tarea iniciada</td><td>Se revisa mediante colaboración, prioridades y planificación de iteraciones</td></tr>
-<tr><td>Foco principal</td><td>Gestión del proceso de trabajo en equipo</td><td>Optimización y visualización del flujo</td><td>Calidad técnica del código y del producto</td></tr>
-<tr><td>Caso de uso típico</td><td>Desarrollo de producto con backlog priorizable en ciclos</td><td>Equipos de soporte, mantenimiento o flujo de trabajo impredecible</td><td>Cualquier equipo que busca elevar su disciplina de ingeniería</td></tr>
+<tr>
+<td>Naturaleza</td>
+<td>Marco de trabajo con responsabilidades, eventos y artefactos definidos</td>
+<td>Método de gestión y mejora del flujo</td>
+<td>Enfoque de desarrollo que integra valores, colaboración, planificación y prácticas técnicas</td>
+</tr>
+<tr>
+<td>Unidad de planificación</td>
+<td>Sprint de duración fija de un mes o menos</td>
+<td>Flujo con reposición de trabajo según políticas y capacidad</td>
+<td>Iteraciones y entregas pequeñas; no depende de adoptar Scrum</td>
+</tr>
+<tr>
+<td>Roles definidos</td>
+<td>Product Owner, Scrum Master, Developers</td>
+<td>Parte de responsabilidades existentes; pueden evolucionar sin exigir Scrum Master</td>
+<td>Funciones de cliente, desarrollo, pruebas y acompañamiento; no exige Scrum Master</td>
+</tr>
+<tr>
+<td>Mecanismo de control del trabajo</td>
+<td>Objetivos, calidad e inspección y adaptación; el alcance seleccionado es un pronóstico</td>
+<td>Control del WIP, políticas explícitas, métricas y feedback</td>
+<td>Feedback de negocio y técnico, planificación y construcción con calidad</td>
+</tr>
+<tr>
+<td>Cambio de alcance durante el ciclo</td>
+<td>Puede clarificarse y renegociarse con el Product Owner sin poner en peligro el Sprint Goal</td>
+<td>Se gestiona con políticas explícitas, capacidad y límites WIP; no implica interrumpir toda tarea iniciada</td>
+<td>Se revisa mediante colaboración, prioridades y planificación de iteraciones</td>
+</tr>
+<tr>
+<td>Foco principal</td>
+<td>Gestión del proceso de trabajo en equipo</td>
+<td>Optimización y visualización del flujo</td>
+<td>Calidad técnica del código y del producto</td>
+</tr>
+<tr>
+<td>Caso de uso típico</td>
+<td>Desarrollo de producto con backlog priorizable en ciclos</td>
+<td>Equipos de soporte, mantenimiento o flujo de trabajo impredecible</td>
+<td>Cualquier equipo que busca elevar su disciplina de ingeniería</td>
+</tr>
 </tbody>
 </table>
 
 <table class="tabla-comparativa">
 <caption>Tabla 4B. Comparación: Lean y Scrumban</caption>
-<thead><tr><th scope="col">Dimensión</th><th scope="col">Lean</th><th scope="col">Scrumban</th></tr></thead>
+<thead><tr>
+<th scope="col">Dimensión</th>
+<th scope="col">Lean</th>
+<th scope="col">Scrumban</th>
+</tr></thead>
 <tbody>
-<tr><td>Naturaleza</td><td>Pensamiento y principios de gestión</td><td>Combinación con acuerdos específicos de cadencia y flujo</td></tr>
-<tr><td>Unidad de planificación</td><td>No prescribe una unidad de tiempo específica</td><td>Según los acuerdos de adopción</td></tr>
-<tr><td>Roles definidos</td><td>No prescribe los roles de Scrum</td><td>No tiene una lista universal; las responsabilidades deben explicitarse</td></tr>
-<tr><td>Mecanismo de control del trabajo</td><td>Valor, aprendizaje y mejora del sistema completo</td><td>Políticas de flujo y cadencias coherentes con la demanda</td></tr>
-<tr><td>Cambio de alcance durante el ciclo</td><td>Decidir responsablemente con información suficiente y atender al valor</td><td>Depende de los objetivos y políticas acordados</td></tr>
-<tr><td>Foco principal</td><td>Eliminación de desperdicio y maximización de valor</td><td>Flujo continuo con estructura de mejora periódica</td></tr>
-<tr><td>Caso de uso típico</td><td>Cualquier organización que busca mejorar eficiencia general</td><td>Equipos con mezcla de trabajo planificado y reactivo</td></tr>
+<tr>
+<td>Naturaleza</td>
+<td>Pensamiento y principios de gestión</td>
+<td>Combinación con acuerdos específicos de cadencia y flujo</td>
+</tr>
+<tr>
+<td>Unidad de planificación</td>
+<td>No prescribe una unidad de tiempo específica</td>
+<td>Según los acuerdos de adopción</td>
+</tr>
+<tr>
+<td>Roles definidos</td>
+<td>No prescribe los roles de Scrum</td>
+<td>No tiene una lista universal; las responsabilidades deben explicitarse</td>
+</tr>
+<tr>
+<td>Mecanismo de control del trabajo</td>
+<td>Valor, aprendizaje y mejora del sistema completo</td>
+<td>Políticas de flujo y cadencias coherentes con la demanda</td>
+</tr>
+<tr>
+<td>Cambio de alcance durante el ciclo</td>
+<td>Decidir responsablemente con información suficiente y atender al valor</td>
+<td>Depende de los objetivos y políticas acordados</td>
+</tr>
+<tr>
+<td>Foco principal</td>
+<td>Eliminación de desperdicio y maximización de valor</td>
+<td>Flujo continuo con estructura de mejora periódica</td>
+</tr>
+<tr>
+<td>Caso de uso típico</td>
+<td>Cualquier organización que busca mejorar eficiencia general</td>
+<td>Equipos con mezcla de trabajo planificado y reactivo</td>
+</tr>
 </tbody>
 </table>
 
@@ -451,7 +606,8 @@ li{ margin-bottom:7px; }
 
 <p>Comprender en profundidad cada marco de trabajo es solo la mitad del aprendizaje: la otra mitad, igualmente importante para un profesional de sistemas, es desarrollar el criterio necesario para decidir cuál aplicar —o cómo combinarlos— en una situación real. No existe un marco "superior" en abstracto; existe, en todo caso, un marco más adecuado para un conjunto de condiciones específicas. A continuación se detallan los criterios prácticos más relevantes que un profesional debería considerar al momento de elegir (o recomendar) un enfoque ágil.</p>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Seleccioná y combiná prácticas a partir de evidencia del contexto. Si no podés explicar qué problema resuelve cada regla adoptada, es probable que estés copiando un marco sin criterio.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Seleccioná y combiná prácticas a partir de evidencia del contexto. Si no podés explicar qué problema resuelve cada regla adoptada, es probable que estés copiando un marco sin criterio.</div>
 
 
 
@@ -485,29 +641,36 @@ li{ margin-bottom:7px; }
 <h3>14.6 Caso resuelto: elegir un enfoque para un equipo con producto e incidentes</h3>
 <p>El equipo de seis personas que desarrolla la app bancaria debe mejorar los pagos y atender incidentes de producción. El trabajo urgente interrumpe el objetivo de Sprint, Testing acumula tareas y la integración manual introduce defectos. ¿Debe abandonar Scrum? Primero necesita distinguir las causas.</p>
 <ol class="caso-resuelto">
-<li><strong>Diagnosticar la demanda.</strong> Durante dos semanas registra entradas, urgencias reales, tiempo de espera en Testing y defectos. Distingue incidentes críticos de pedidos que pueden esperar. El problema no es simplemente “demasiado trabajo”: hay interrupciones y un cuello de botella.</li>
-<li><strong>Conservar Scrum de forma coherente.</strong> Mantiene Product Owner, Scrum Master y Developers; los tres artefactos y sus compromisos; Planning, Daily, Review y Retrospectiva dentro del Sprint. Acuerda un objetivo alcanzable y pronostica el trabajo considerando la demanda reactiva observada. No promete que cada elemento seleccionado quedará terminado.</li>
-<li><strong>Agregar políticas Kanban.</strong> Visualiza el trabajo planificado y los incidentes en un mismo sistema, establece límites WIP y explicita qué califica como urgente. Cuando llega una urgencia, Developers y Product Owner revisan el impacto y renegocian alcance sin poner en peligro el objetivo del Sprint. Si lo vuelve obsoleto, el Product Owner puede cancelar el Sprint; no es una autorización para ignorar el objetivo.</li>
-<li><strong>Destrabar y prevenir.</strong> Si Testing llega al límite, el equipo ayuda a terminar antes de iniciar más tareas. Incorpora integración continua, pruebas automatizadas y trabajo en pares donde aporte valor. Estas prácticas de XP atienden la fragilidad técnica, no sustituyen la gestión de prioridades.</li>
-<li><strong>Comprobar la decisión.</strong> Durante cuatro semanas observa tiempo de ciclo, entregas, defectos e impacto de las urgencias sobre el objetivo. Si el trabajo reactivo domina de forma sostenida, evalúa separar un servicio con Kanban o adoptar otro diseño explícito. Ajustar requiere evidencia, no defender la etiqueta inicial.</li>
+<li>
+<strong>Diagnosticar la demanda.</strong> Durante dos semanas registra entradas, urgencias reales, tiempo de espera en Testing y defectos. Distingue incidentes críticos de pedidos que pueden esperar. El problema no es simplemente “demasiado trabajo”: hay interrupciones y un cuello de botella.</li>
+<li>
+<strong>Conservar Scrum de forma coherente.</strong> Mantiene Product Owner, Scrum Master y Developers; los tres artefactos y sus compromisos; Planning, Daily, Review y Retrospectiva dentro del Sprint. Acuerda un objetivo alcanzable y pronostica el trabajo considerando la demanda reactiva observada. No promete que cada elemento seleccionado quedará terminado.</li>
+<li>
+<strong>Agregar políticas Kanban.</strong> Visualiza el trabajo planificado y los incidentes en un mismo sistema, establece límites WIP y explicita qué califica como urgente. Cuando llega una urgencia, Developers y Product Owner revisan el impacto y renegocian alcance sin poner en peligro el objetivo del Sprint. Si lo vuelve obsoleto, el Product Owner puede cancelar el Sprint; no es una autorización para ignorar el objetivo.</li>
+<li>
+<strong>Destrabar y prevenir.</strong> Si Testing llega al límite, el equipo ayuda a terminar antes de iniciar más tareas. Incorpora integración continua, pruebas automatizadas y trabajo en pares donde aporte valor. Estas prácticas de XP atienden la fragilidad técnica, no sustituyen la gestión de prioridades.</li>
+<li>
+<strong>Comprobar la decisión.</strong> Durante cuatro semanas observa tiempo de ciclo, entregas, defectos e impacto de las urgencias sobre el objetivo. Si el trabajo reactivo domina de forma sostenida, evalúa separar un servicio con Kanban o adoptar otro diseño explícito. Ajustar requiere evidencia, no defender la etiqueta inicial.</li>
 </ol>
 <p><strong>Decisión:</strong> Scrum complementado con prácticas Kanban y de XP, porque todavía sirve el objetivo de producto y se conserva el marco completo. No lo llamamos automáticamente Scrumban. La decisión cambiaría si dejara de ser útil trabajar por Sprints o si se modificaran elementos esenciales de Scrum.</p>
 
-<p class="fuentes-oficiales"><strong>Fuente normativa de Scrum:</strong> <a href="https://scrumguides.org/scrum-guide.html">The Scrum Guide, edición 2020</a>, de Ken Schwaber y Jeff Sutherland. Sus reglas se distinguen aquí de ejemplos y prácticas opcionales. Consulta: 15 de septiembre de 2026.</p><h2 id="seccion-15">Recursos audiovisuales sugeridos</h2>
+<p class="fuentes-oficiales"><strong>Fuente normativa de Scrum:</strong> <a href="https://scrumguides.org/scrum-guide.html">The Scrum Guide, edición 2020</a>, de Ken Schwaber y Jeff Sutherland. Sus reglas se distinguen aquí de ejemplos y prácticas opcionales. Consulta: 15 de septiembre de 2026.</p>
+<h2 id="seccion-recursos">Recursos audiovisuales sugeridos</h2>
 <p>Estos recursos complementan las explicaciones y permiten observar otras presentaciones de los conceptos. El contenido esencial está desarrollado en este documento.</p>
 <ul class="recursos-audiovisuales">
-<li><strong><a href="https://www.youtube.com/watch?v=gy1c4_YixCo">A Brief Overview of the Scrum Framework</a></strong><br>Scrum.org presenta en pocos minutos cómo se relacionan responsabilidades, eventos y artefactos; sirve para reconstruir el marco como sistema antes de comparar alternativas.</li>
-<li><strong><a href="https://www.youtube.com/watch?v=-xudUyGsNfc">What is Scrum: An Introduction to the Scrum Framework</a></strong><br>La explicación oficial profundiza empirismo, roles, eventos, artefactos y mitos frecuentes, y muestra cómo Scrum puede complementarse con Kanban y prácticas técnicas.</li>
+<li>
+<strong><a href="https://www.youtube.com/watch?v=gy1c4_YixCo">A Brief Overview of the Scrum Framework</a></strong><br>Scrum.org presenta en pocos minutos cómo se relacionan responsabilidades, eventos y artefactos; sirve para reconstruir el marco como sistema antes de comparar alternativas.</li>
+<li>
+<strong><a href="https://www.youtube.com/watch?v=-xudUyGsNfc">What is Scrum: An Introduction to the Scrum Framework</a></strong><br>La explicación oficial profundiza empirismo, roles, eventos, artefactos y mitos frecuentes, y muestra cómo Scrum puede complementarse con Kanban y prácticas técnicas.</li>
 </ul>
 
 
-<h2 id="seccion-16">Síntesis del módulo</h2>
+<h2 id="seccion-sintesis">Síntesis del módulo</h2>
 
-<p>Comenzamos con un mapa de alternativas y observamos Scrum en un ciclo de trabajo sobre pagos QR. Después de comprender los fundamentos, estudiamos sus roles —Product Owner, Scrum Master y Developers—, sus artefactos y compromisos, y sus cinco eventos. El fundamento empírico explica por qué funciona: transparencia para inspeccionar información confiable y adaptación para decidir con lo aprendido. Los valores de Scrum sostienen esa colaboración; realizar reuniones no alcanza por sí solo.</p>
-<p>En Scrum, el Product Owner responde por valor y gestión del Product Backlog, los Developers construyen incrementos utilizables y adaptan su plan, y el Scrum Master establece Scrum y favorece la efectividad del equipo. No son cargos universales de toda metodología ágil. El trabajo seleccionado para un Sprint es un pronóstico y su objetivo orienta la adaptación; la Definition of Done determina cuándo el resultado cumple la calidad requerida. La Review no es una puerta obligatoria para liberar valor.</p>
-<p>Estudiamos Kanban como gestión del flujo con políticas, límites WIP y feedback; XP como un enfoque de desarrollo del que profundizamos prácticas de ingeniería; y Lean como una perspectiva de valor, aprendizaje y desperdicios. Pair programming, TDD, integración continua y refactorización ayudan a sostener la capacidad de cambio, pero adoptar prácticas aisladas no equivale a implementar XP completo. También distinguimos Scrumban de Scrum complementado con Kanban, y ampliamos el panorama con Crystal, FDD y DSDM.</p>
-<p>La comparación y el caso resuelto mostraron que elegir requiere diagnosticar demanda, habilidades, autonomía, restricciones y riesgos. Ningún nombre garantiza calidad ni reemplaza obligaciones de gobierno. La combinación es útil cuando cada práctica tiene un propósito y sus reglas son coherentes. En el Módulo 3 vamos a profundizar cómo formular objetivos, ordenar necesidades y planificar el producto; este módulo deja la estructura necesaria para comprender esas decisiones.</p>
-<p class="cierre-narrativo"><strong>Conexión del recorrido.</strong> Conocemos qué problema busca resolver cada marco y cómo colaboran sus participantes. En el Módulo 3 vamos a convertir necesidades en objetivos, opciones de backlog y experimentos de producto, sin confundir una práctica opcional con una regla de Scrum.</p></article>
+<p>En este módulo recorrimos primero Scrum como sistema: empirismo y valores, responsabilidades, artefactos, compromisos y eventos. El Sprint del asistente universitario mostró cómo un objetivo conecta trabajo, evidencia y adaptación sin prometer que todo experimento producirá un incremento útil.</p>
+<p>Después estudiamos Kanban para gestionar flujo, XP para sostener capacidad de cambio y Lean para pensar valor y desperdicio. También ubicamos Scrumban y otros enfoques como ampliación.</p>
+<p>La elección profesional parte del problema: demanda, incertidumbre, habilidades, riesgos y restricciones. Un nombre o una herramienta no garantiza agilidad.</p>
+<p><strong>Conexión del recorrido.</strong> Ya comprendemos cómo se organiza el trabajo. En el Módulo 3 convertiremos necesidades en objetivos, backlog, criterios y experimentos de producto.</p></article>
 </main>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -73,6 +73,17 @@ li{ margin-bottom:7px; }
 .content > h2:last-of-type ~ p{ margin-bottom:6px; font-size:9.8pt; line-height:1.4; }
 @media screen and (max-width:800px){ .page{ width:100%; margin:0; box-shadow:none; } .opener,.content{ padding-left:7vw; padding-right:7vw; } .chapter-map ol{ columns:1; } .mito{ display:block; background:var(--coral-soft); } .recursos-audiovisuales{ grid-template-columns:1fr; } }
 @media print{ body{ background:#fff; } .page{ width:auto; margin:0; box-shadow:none; } .opener{ min-height:265mm; } a{ color:inherit; } }
+
+.marco-contexto,.transicion-marco{margin:22px 0 14px;padding:13px 16px;border-radius:9px;break-inside:avoid;font:9.8pt/1.5 "Segoe UI",Arial,sans-serif;}
+.marco-contexto{background:#eef5fb;border:1px solid #cdddea;border-left:6px solid var(--blue);color:#29465f;}
+.marco-contexto strong{display:block;margin-bottom:4px;color:var(--navy);font-size:8.2pt;letter-spacing:.1em;text-transform:uppercase;}
+.contexto-scrum{background:#eaf4fa;border-color:#c7dfed;border-left-color:#2878a9;}
+.contexto-kanban{background:#e8f6f3;border-color:#c9e8e2;border-left-color:#16877b;}
+.contexto-xp,.contexto-ingenieria{background:#f2edf8;border-color:#dfd3ed;border-left-color:#76549f;}
+.contexto-lean,.contexto-organizacion{background:#fbf2dd;border-color:#eddbae;border-left-color:#c68a24;}
+.contexto-caso{background:#fbeeee;border-color:#ebcccc;border-left-color:#c25555;}
+.transicion-marco{background:#fbf8f1;border-top:1px solid #e6dcc8;border-bottom:1px solid #e6dcc8;color:#536173;font-style:italic;}
+.transicion-marco strong{color:#815b19;font-style:normal;}
 </style>
 </head>
 <body>
@@ -84,51 +95,104 @@ li{ margin-bottom:7px; }
   <p class="subtitle">Del proyecto como esfuerzo temporal a la agilidad como respuesta profesional frente a la incertidumbre.</p>
   <nav class="chapter-map" aria-label="Contenidos del módulo">
     <div class="label">En este módulo</div>
-    <ol><li><a href="#seccion-1">Concepto de proyecto y gestión de proyectos</a></li><li><a href="#seccion-2">Proyecto, producto y operación</a></li><li><a href="#seccion-3">Quiénes participan en un proyecto: stakeholders y roles</a></li><li><a href="#seccion-4">Alcance, tiempo, costo y calidad</a></li><li><a href="#seccion-5">Qué es la agilidad</a></li><li><a href="#seccion-6">Origen de la agilidad</a></li><li><a href="#seccion-7">El Manifiesto Ágil</a></li><li><a href="#seccion-8">Los 12 principios ágiles</a></li><li><a href="#seccion-9">Entrega de valor</a></li><li><a href="#seccion-10">Enfoques, metodologías y marcos de trabajo</a></li><li><a href="#seccion-11">Ciclo de vida y procesos de gestión de un proyecto</a></li><li><a href="#seccion-12">Gestión predictiva y modelo en cascada</a></li><li><a href="#seccion-13">Enfoques predictivos, iterativos e incrementales</a></li><li><a href="#seccion-14">Gestión del cambio en enfoques predictivos y ágiles</a></li><li><a href="#seccion-15">Comparación y selección de enfoques</a></li><li><a href="#seccion-16">Recursos audiovisuales sugeridos</a></li><li><a href="#seccion-17">Síntesis del módulo</a></li></ol></nav>
+    <ol>
+<li><a href="#seccion-1">Concepto de proyecto y gestión de proyectos</a></li>
+<li><a href="#seccion-2">Proyecto, producto y operación</a></li>
+<li><a href="#seccion-3">Quiénes participan en un proyecto: stakeholders y roles</a></li>
+<li><a href="#seccion-4">Alcance, tiempo, costo y calidad</a></li>
+<li><a href="#seccion-5">Ciclo de vida y procesos de gestión de un proyecto</a></li>
+<li><a href="#seccion-6">Gestión predictiva y modelo en cascada</a></li>
+<li><a href="#seccion-7">Enfoques predictivos, iterativos e incrementales</a></li>
+<li><a href="#seccion-8">Gestión del cambio en enfoques predictivos y ágiles</a></li>
+<li><a href="#seccion-9">Qué es la agilidad</a></li>
+<li><a href="#seccion-10">Origen de la agilidad</a></li>
+<li><a href="#seccion-11">El Manifiesto Ágil</a></li>
+<li><a href="#seccion-12">Los 12 principios ágiles</a></li>
+<li><a href="#seccion-13">Entrega de valor</a></li>
+<li><a href="#seccion-14">Enfoques, metodologías y marcos de trabajo</a></li>
+<li><a href="#seccion-15">Comparación y selección de enfoques</a></li>
+<li><a href="#seccion-recursos">Recursos audiovisuales sugeridos</a></li>
+<li><a href="#seccion-sintesis">Síntesis del módulo</a></li>
+</ol></nav>
 </header>
-<article class="content" data-edicion="2026-09-15">
-<blockquote class="epigraph">
-<p>"Individuos e interacciones sobre procesos y herramientas. Software funcionando sobre documentación extensiva. Colaboración con el cliente sobre negociación contractual. Respuesta ante el cambio sobre seguimiento de un plan." — Manifiesto por el Desarrollo Ágil de Software, 2001</p>
-</blockquote>
-
-<p>Imaginá que participás en el desarrollo de una aplicación bancaria. El equipo tiene una fecha de entrega, un presupuesto y una lista inicial de funcionalidades. Cuando los clientes prueban una primera versión, descubren que necesitan pagar mediante códigos QR, algo que no estaba previsto. ¿Conviene mantener el plan, incorporar el pedido o postergar otra funcionalidad? Este caso nos va a acompañar: primero vamos a comprender qué estamos gestionando y después cómo elegir una forma de trabajo que permita tomar esa decisión con evidencia.</p>
-<p>El recorrido de la materia avanza gradualmente: en este módulo vas a estudiar los fundamentos y reconocer las alternativas; en el Módulo 2 vas a comprender cómo funcionan Scrum, Kanban y otros enfoques. Los módulos siguientes profundizan planificación y producto, estimación y seguimiento, y equipos y mejora continua. No necesitás conocer esos nombres de antemano: los vamos a explicar cuando aparezcan.</p>
-
-
+<article class="content" data-edicion="2026-09-15" data-revision-ia="2026-09-15" data-reestructuracion-frameworks="2026-09-16">
+<p>Imaginá que una universidad te pide un asistente con inteligencia artificial para responder consultas sobre horarios y trámites. La primera idea parece sencilla: cargar información y abrir un chat. Al probarlo descubrís que algunas preguntas son ambiguas, que ciertos documentos están desactualizados y que una respuesta convincente puede ser incorrecta. ¿Cómo organizás el trabajo para aprender esto a <strong>tiempo</strong> y entregar algo útil?</p>
+<p>En esta materia vas a aprender a <strong>gestionar proyectos de forma ágil</strong>: avanzar con un plan, comprobar resultados y ajustar decisiones a partir de lo que aprendés. El caso del asistente universitario es un <strong>escenario didáctico</strong>. No necesitás saber entrenar modelos ni conocer ninguna herramienta para seguirlo.</p>
+<h3>Cómo recorrer este módulo</h3>
+<ol>
+<li>Comprender qué es un proyecto, qué se gestiona y quiénes intervienen.</li>
+<li>Reconocer límites, ciclo de vida y decisiones de cambio.</li>
+<li>Comparar enfoques predictivos, iterativos e incrementales.</li>
+<li>Comprender la agilidad, su origen, valores y principios.</li>
+<li>Elegir un enfoque según incertidumbre, riesgo y evidencia, incluido un proyecto de IA.</li>
+</ol>
+<p>Los nombres de los marcos aparecerán en el panorama de la sección 10. Sus roles, reuniones y reglas se explican en el <strong>Módulo 2</strong>, después de comprender para qué sirven. Aquí nos concentramos en los fundamentos.</p>
+<div class="marco-contexto contexto-general">
+<strong>CONCEPTO GENERAL</strong> Estas ideas sirven para distintos enfoques. Cuando una práctica pertenezca a un marco concreto, lo indicaremos expresamente.</div>
 <h2 id="seccion-1">1. Concepto de proyecto y gestión de proyectos</h2>
 
-<p>Antes de hablar de metodologías, marcos de trabajo o herramientas, es necesario detenerse en una pregunta que parece obvia pero que en la práctica profesional genera confusiones permanentes: ¿qué es exactamente un proyecto? El Project Management Institute (PMI), en su Guía del PMBOK, define un proyecto como "un esfuerzo temporal que se lleva a cabo para crear un producto, servicio o resultado único". Esta definición, aunque breve, condensa dos atributos que son la clave de todo lo que vendrá después: la temporalidad y la unicidad. Un proyecto tiene un principio y un fin definidos —no se extiende indefinidamente en el tiempo— y produce algo que no existía antes de esa manera, con esas características particulares, para ese contexto específico.</p>
-
-<p>Pensemos en ejemplos del mundo del software, que es el terreno donde se va a mover la mayor parte de esta materia. El desarrollo de una aplicación móvil de e-commerce para una pyme que hasta ahora solo vendía en un local físico es un proyecto: tiene un inicio (la firma del contrato o el kick-off), un conjunto de entregables únicos (la app, la integración con la pasarela de pagos, el panel de administración) y un final (la puesta en producción y el cierre formal). Lo mismo ocurre con la migración de un sistema legado de facturación a una arquitectura de microservicios, o con la implementación de un nuevo CRM en una empresa de seguros. En todos los casos hay un objetivo acotado, un conjunto de recursos asignados temporalmente y una fecha —aunque sea estimada— en la que el esfuerzo llega a su fin.</p>
-
-<p>La gestión de proyectos, entonces, es la disciplina que se ocupa de aplicar conocimientos, habilidades, herramientas y técnicas a las actividades del proyecto para satisfacer sus requisitos. No es simplemente "organizar tareas": implica planificar el alcance, estimar tiempos y costos, gestionar riesgos, coordinar personas con intereses distintos, comunicar avances, tomar decisiones bajo incertidumbre y, en última instancia, entregar un resultado que genere valor para quien lo encargó. Un gestor de proyectos de software no es solamente quien arma un cronograma en una herramienta como Jira o MS Project: es quien articula la visión del negocio con la capacidad técnica del equipo, quien negocia expectativas con el cliente y quien detecta a tiempo que un riesgo técnico puede convertirse en un problema de alcance o de presupuesto.</p>
-
-<p>Es importante notar que la gestión de proyectos no es una invención reciente ni exclusiva de la industria del software. Sus raíces se remontan a la ingeniería civil y militar del siglo XX —la construcción de la represa Hoover en los años 30, los grandes programas aeroespaciales de la NASA en los 60— donde ya se usaban técnicas de planificación como los diagramas de Gantt (desarrollados por Henry Gantt a principios del siglo XX) o el método del camino crítico (Critical Path Method, CPM), creado en 1957 por DuPont y Remington Rand. La industria del software adoptó y adaptó estas prácticas a partir de los años 70 y 80, cuando los proyectos de desarrollo empezaron a crecer en tamaño y complejidad, y se hizo evidente que "programar sin más" no alcanzaba para entregar sistemas confiables, a tiempo y dentro de presupuesto.</p>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Antes de elegir herramientas o ceremonias, formulá el resultado único que justifica el proyecto, el límite temporal del esfuerzo y el valor esperado. Si esos tres elementos no pueden explicarse con claridad, todavía no existe una base suficiente para planificar.</div>
-
-
+<p>¿Crear un asistente y atender consultas todos los días son el mismo trabajo? Para organizarlos bien necesitamos distinguir el esfuerzo de construir una solución de su funcionamiento cotidiano.</p>
+<p>Un <strong>proyecto</strong> es un esfuerzo temporal para crear un producto, servicio o resultado único. Tiene un inicio y un cierre. Temporal no significa breve: puede durar semanas o años. Único tampoco significa que nadie haya hecho algo parecido; significa que el resultado responde a condiciones y necesidades particulares.</p>
+<div class="analogia"><p><strong>Analogía de una mudanza.</strong> Mudarte tiene un objetivo, un inicio y un final: dejarte instalado en la nueva vivienda. Empacar, contratar transporte y coordinar horarios son actividades del proyecto. Vivir después en esa casa es otra cosa. En tecnología, construir y poner a prueba el asistente es el proyecto; atender consultas una vez disponible pertenece a su funcionamiento.</p></div>
+<h3>1.1 Un proyecto necesita límites</h3>
+<p>En nuestro caso, un primer <strong>proyecto</strong> podría ser preparar y evaluar un asistente para consultas sobre inscripciones en seis semanas. Necesitamos acordar qué información utilizará, quién revisará las respuestas, cuánto podemos gastar y cómo reconoceremos un resultado aceptable. La fecha y el <strong>alcance</strong> son supuestos del ejemplo, no una receta para todos los proyectos de IA.</p>
+<h3>1.2 Qué significa gestionar</h3>
+<p>La <strong>gestión de proyectos</strong> coordina conocimientos, personas, recursos y decisiones para alcanzar el objetivo. Incluye planificar, gestionar riesgos, comunicar avances y revisar resultados. No alcanza con repartir tareas: podemos completar muchas actividades y aun así entregar una solución que no sirve.</p>
+<p>Por ejemplo, “cargar veinte documentos” describe trabajo realizado. “Responder correctamente consultas de inscripción con información vigente” expresa una capacidad que necesitamos comprobar. El tablero ayuda a organizar el trabajo; las pruebas permiten saber si conseguimos el resultado.</p>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Antes de elegir una herramienta, explicá qué problema querés resolver, para quién y cómo vas a reconocer que está resuelto.</p></div>
 <h2 id="seccion-2">2. Proyecto, producto y operación</h2>
 
-<p>Uno de los errores más comunes entre quienes se inician en la gestión de proyectos es confundir tres conceptos que están relacionados pero que no son lo mismo: proyecto, producto y operación. Distinguirlos con claridad es fundamental porque cada uno implica una lógica de gestión distinta, con objetivos, métricas de éxito y horizontes temporales diferentes.</p>
+<p>Uno de los errores más comunes entre quienes se inician en la gestión de proyectos es confundir tres conceptos que están relacionados pero que no son lo mismo: <strong>proyecto</strong>, <strong>producto</strong> y operación. Distinguirlos con claridad es fundamental porque cada uno implica una lógica de gestión distinta, con objetivos, métricas de éxito y horizontes temporales diferentes.</p>
 
+<h3>2.1 Diferentes horizontes</h3>
 <p>Un <strong>proyecto</strong>, como vimos, es un esfuerzo temporal con un principio y un fin, orientado a crear algo único. Un <strong>producto</strong>, en cambio, es el resultado tangible o intangible que ese proyecto —o una sucesión de proyectos e iteraciones— genera, y que tiene un ciclo de vida propio que puede extenderse durante años: nace, crece, madura y eventualmente declina o se discontinúa. Pensemos en Spotify: el desarrollo inicial de la plataforma fue (o incluyó) uno o varios proyectos, pero Spotify como producto sigue vivo, evolucionando constantemente a través de nuevas funcionalidades, cada una de las cuales puede gestionarse como un proyecto o como parte de un flujo continuo de trabajo.</p>
 
 <p>La <strong>operación</strong>, por su parte, es el conjunto de actividades permanentes y repetitivas que mantienen el negocio funcionando día a día. Si el proyecto fue desarrollar el sistema de facturación electrónica de una empresa, la operación es el proceso diario de emitir facturas, procesar pagos y responder consultas de soporte una vez que el sistema ya está en producción. La operación no tiene fecha de fin: es continua, cíclica, y su éxito se mide con indicadores de eficiencia y estabilidad (tiempo de actividad del sistema, tickets resueltos por día, tasa de errores) más que con el cumplimiento de un alcance único.</p>
 
-<p>En el mundo del desarrollo de software esta distinción se vuelve particularmente relevante cuando hablamos de equipos de producto versus equipos de proyecto. Un equipo de producto trabaja de manera continua sobre una misma base de código o plataforma, incorporando mejoras de forma incremental durante meses o años, sin que exista necesariamente una fecha de "cierre". Un equipo de proyecto, en cambio, se conforma para un objetivo acotado —por ejemplo, migrar la infraestructura a la nube— y se disuelve o se reasigna una vez que ese objetivo se cumple. Muchas organizaciones ágiles modernas tienden a organizar su trabajo alrededor de productos persistentes en lugar de proyectos discretos, precisamente porque el software rara vez "termina": se libera una versión, se recibe feedback, se ajusta, y el ciclo continúa indefinidamente mientras el producto siga vigente en el mercado.</p>
-
+<h3>2.2 Equipos y continuidad</h3>
+<p>En el mundo del desarrollo de software esta distinción se vuelve particularmente relevante cuando hablamos de equipos de <strong>producto</strong> versus equipos de <strong>proyecto</strong>. Un equipo de producto trabaja de manera continua sobre una misma base de código o plataforma, incorporando mejoras de forma incremental durante meses o años, sin que exista necesariamente una fecha de "cierre". Un equipo de proyecto, en cambio, se conforma para un objetivo acotado —por ejemplo, migrar la infraestructura a la nube— y se disuelve o se reasigna una vez que ese objetivo se cumple.</p>
+<p>Muchas organizaciones ágiles modernas tienden a organizar su trabajo alrededor de productos persistentes en lugar de proyectos discretos, precisamente porque el software rara vez "termina": se libera una versión, se recibe feedback, se ajusta, y el ciclo continúa indefinidamente mientras el producto siga vigente en el mercado.</p>
 <table class="tabla-comparativa">
 <caption>Comparación entre proyecto, producto y operación</caption>
 <thead>
-<tr><th scope="col">Dimensión</th><th scope="col">Proyecto</th><th scope="col">Producto</th><th scope="col">Operación</th></tr>
+<tr>
+<th scope="col">Dimensión</th>
+<th scope="col">Proyecto</th>
+<th scope="col">Producto</th>
+<th scope="col">Operación</th>
+</tr>
 </thead>
 <tbody>
-<tr><td>Duración</td><td>Temporal, con fecha de inicio y fin</td><td>Puede extenderse por años, mientras tenga vigencia en el mercado</td><td>Continua, sin fecha de finalización prevista</td></tr>
-<tr><td>Objetivo</td><td>Entregar un resultado único y definido</td><td>Generar y sostener valor para los usuarios a lo largo del tiempo</td><td>Mantener el funcionamiento estable del negocio día a día</td></tr>
-<tr><td>Equipo</td><td>Se conforma y se disuelve según el proyecto</td><td>Suele ser estable, dedicado de forma permanente al producto</td><td>Personal fijo de soporte, mantenimiento y atención</td></tr>
-<tr><td>Ejemplo en software</td><td>Desarrollar una nueva app de pagos móviles</td><td>La app de pagos evolucionando con nuevas features durante años</td><td>Mesa de ayuda que atiende incidentes de la app en producción</td></tr>
-<tr><td>Métrica de éxito</td><td>Cumplimiento de alcance, tiempo, costo y calidad pactados</td><td>Adopción, retención, satisfacción del usuario, ingresos generados</td><td>Disponibilidad, tiempo de respuesta, resolución de incidentes</td></tr>
+<tr>
+<td>Duración</td>
+<td>Temporal, con fecha de inicio y fin</td>
+<td>Puede extenderse por años, mientras tenga vigencia en el mercado</td>
+<td>Continua, sin fecha de finalización prevista</td>
+</tr>
+<tr>
+<td>Objetivo</td>
+<td>Entregar un resultado único y definido</td>
+<td>Generar y sostener valor para los usuarios a lo largo del tiempo</td>
+<td>Mantener el funcionamiento estable del negocio día a día</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>Se conforma y se disuelve según el proyecto</td>
+<td>Suele ser estable, dedicado de forma permanente al producto</td>
+<td>Personal fijo de soporte, mantenimiento y atención</td>
+</tr>
+<tr>
+<td>Ejemplo en software</td>
+<td>Desarrollar una nueva app de pagos móviles</td>
+<td>La app de pagos evolucionando con nuevas features durante años</td>
+<td>Mesa de ayuda que atiende incidentes de la app en producción</td>
+</tr>
+<tr>
+<td>Métrica de éxito</td>
+<td>Cumplimiento de alcance, tiempo, costo y calidad pactados</td>
+<td>Adopción, retención, satisfacción del usuario, ingresos generados</td>
+<td>Disponibilidad, tiempo de respuesta, resolución de incidentes</td>
+</tr>
 </tbody>
 </table>
 
@@ -137,65 +201,111 @@ li{ margin-bottom:7px; }
 <figcaption><strong>Una misma solución, tres horizontes de gestión.</strong> El proyecto crea un resultado acotado; el producto aprende y evoluciona; la operación sostiene disponibilidad y continuidad. La distinción cambia equipos, decisiones y métricas, aunque el sistema observado sea el mismo.</figcaption>
 </figure>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Definí la unidad de gestión antes de elegir sus métricas. Un hito de proyecto puede cumplirse y, aun así, el producto puede no ser adoptado o la operación puede resultar insostenible; cada horizonte necesita evidencia de éxito diferente.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Definí la unidad de gestión antes de elegir sus métricas. Un hito de proyecto puede cumplirse y, aun así, el producto puede no ser adoptado o la operación puede resultar insostenible; cada horizonte necesita evidencia de éxito diferente.</div>
 
 
 <h2 id="seccion-3">3. Quiénes participan en un proyecto: stakeholders y roles</h2>
 
-<p>Ningún proyecto existe en el vacío: siempre hay personas y organizaciones cuyos intereses se ven afectados, directa o indirectamente, por su desarrollo y su resultado. A este conjunto de individuos, grupos u organizaciones se los denomina <strong>stakeholders</strong> (interesados o partes interesadas), y su identificación y gestión adecuada es uno de los factores más determinantes del éxito o fracaso de un proyecto —de hecho, buena parte de los proyectos de software que fracasan lo hacen no por problemas técnicos, sino por una gestión deficiente de las expectativas y necesidades de sus stakeholders.</p>
-
-<p>Entre los stakeholders más habituales de un proyecto de software encontramos al <strong>sponsor</strong> o patrocinador, que es quien autoriza y financia el proyecto, y ante quien el gestor de proyecto rinde cuentas sobre el avance y los resultados; el <strong>cliente</strong>, que encarga o contrata la solución, y los <strong>usuarios</strong>, que la utilizan y aportan experiencia sobre sus necesidades; el <strong>equipo de desarrollo</strong>, compuesto por programadores, diseñadores UX/UI, testers, arquitectos de software y otros perfiles técnicos que construyen el producto; y actores externos como proveedores de infraestructura en la nube, entes reguladores (por ejemplo, en proyectos que manejan datos sensibles y deben cumplir con normativas de protección de datos) o competidores cuyo comportamiento en el mercado puede influir en las decisiones del proyecto.</p>
-
-<h3>3.1 Participantes y responsabilidades generales</h3>
-<p>Ser interesado y desempeñar un rol no son conceptos excluyentes. <strong>Stakeholder</strong> describe la relación de una persona u organización con el proyecto; <strong>rol</strong> describe una función y sus responsabilidades. Quien patrocina el proyecto es un interesado y, además, cumple la función de sponsor. El cliente que contrata o financia una solución tampoco es necesariamente su usuario: en la app bancaria, el banco encarga el desarrollo y los clientes del banco utilizan la aplicación.</p>
-<p>Un <strong>director o gerente de proyecto</strong> coordina la gestión del esfuerzo cuando la organización establece esa función. Su autoridad depende de los acuerdos y de la estructura organizacional; no implica necesariamente asignar cada tarea ni imponer una jerarquía técnica. Analistas, diseñadores, especialistas en seguridad, programadores y testers aportan habilidades profesionales que pueden organizarse de diferentes maneras. El enfoque elegido no determina por sí solo todos los cargos de la organización.</p>
-<h3>3.2 Primera aproximación a los roles de Scrum</h3>
-<p>En el Módulo 2 vamos a estudiar Scrum en profundidad. Por ahora, reconocé tres responsabilidades de ese marco: <strong>Product Owner</strong>, orientado a maximizar el valor; <strong>Scrum Master</strong>, responsable de establecer Scrum y favorecer la efectividad; y <strong>Developers</strong>, quienes construyen un resultado utilizable y sostienen su calidad. No son cargos obligatorios en todo proyecto ágil. Developers reúne las habilidades necesarias para construir el producto, además de programación.</p><table class="tabla-comparativa">
-<caption>Participantes generales y responsabilidades específicas de Scrum</caption>
-<thead><tr><th scope="col">Nombre</th><th scope="col">Función principal</th><th scope="col">Alcance</th></tr></thead>
+<p>El equipo construye un asistente que responde con claridad, pero la oficina de alumnos descubre que cita una fecha del año anterior. ¿Quién tenía que revisar la información? La <strong>calidad</strong> del resultado depende de reconocer a las personas involucradas y acordar cómo participan.</p>
+<p>Un <strong>stakeholder</strong>, o parte interesada, es una persona, grupo u organización que puede afectar al proyecto o verse afectado por él. Un <strong>rol</strong> es una función con responsabilidades. Una misma persona puede ser parte interesada y desempeñar un rol.</p>
+<h3>3.1 Personas que necesitamos reconocer</h3>
+<table>
+<caption>Participantes del asistente universitario</caption>
+<thead><tr>
+<th>Participante</th>
+<th>Qué aporta o necesita</th>
+<th>Ejemplo de participación</th>
+</tr></thead>
 <tbody>
-<tr><td>Sponsor o patrocinador</td><td>Respaldar el proyecto y habilitar recursos y decisiones de gobierno.</td><td>Función organizacional; no es una responsabilidad definida por Scrum.</td></tr>
-<tr><td>Director o gerente de proyecto</td><td>Coordinar la gestión del proyecto según la autoridad acordada.</td><td>Depende de la organización; no es una responsabilidad del equipo Scrum.</td></tr>
-<tr><td>Product Owner</td><td>Maximizar el valor y orientar las prioridades del producto.</td><td>Responsabilidad definida por Scrum; el título también puede utilizarse fuera de él.</td></tr>
-<tr><td>Scrum Master</td><td>Establecer Scrum y favorecer la efectividad y autogestión del equipo.</td><td>Responsabilidad de Scrum; no es un requisito de toda forma de trabajo ágil.</td></tr>
-<tr><td>Developers</td><td>Construir resultados utilizables con la calidad requerida.</td><td>Responsabilidad definida por Scrum, que reúne distintas especialidades.</td></tr>
+<tr>
+<td>Patrocinador o sponsor</td>
+<td>Respaldo, recursos y decisiones dentro de su autoridad.</td>
+<td>Autorizar el piloto y su presupuesto.</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>La necesidad por la que encarga la solución.</td>
+<td>La universidad solicita mejorar la atención.</td>
+</tr>
+<tr>
+<td>Usuarios</td>
+<td>Experiencia directa de uso.</td>
+<td>Estudiantes prueban si entienden las respuestas.</td>
+</tr>
+<tr>
+<td>Equipo que construye</td>
+<td>Habilidades técnicas y de diseño.</td>
+<td>Preparar datos, integrar el sistema y verificarlo.</td>
+</tr>
+<tr>
+<td>Especialistas del dominio</td>
+<td>Conocimiento del problema y sus reglas.</td>
+<td>La oficina de alumnos valida fechas y trámites.</td>
+</tr>
+<tr>
+<td>Operaciones y seguridad</td>
+<td>Continuidad del servicio y controles necesarios.</td>
+<td>Revisar acceso a información y respuesta a incidentes.</td>
+</tr>
 </tbody>
 </table>
-<p>Un Scrum Master no es un gerente de proyecto con otro nombre. Tampoco todo equipo ágil necesita un Scrum Master: Kanban, por ejemplo, no exige introducir esa responsabilidad. Una organización puede combinar enfoques o usar títulos similares, pero debemos mirar qué función cumple cada persona. En el Módulo 2, en <strong>Roles en Scrum</strong>, vamos a profundizar responsabilidades, límites y ejemplos de colaboración.</p>
-<h3>3.3 Participación, comunicación y matriz RACI</h3>
-
-<p>Gestionar adecuadamente a los stakeholders implica identificarlos temprano, comprender su nivel de interés y de poder o influencia sobre el proyecto, y definir estrategias de comunicación diferenciadas para cada grupo. Un stakeholder con alto poder y alto interés —como el sponsor que financia el proyecto— requiere una gestión cercana y participativa; un stakeholder con bajo poder pero alto interés —como un grupo de usuarios finales entusiasmados con el nuevo sistema— puede gestionarse manteniéndolo bien informado sin necesariamente involucrarlo en cada decisión. Esta clasificación, conocida habitualmente como matriz de poder-interés, es una herramienta simple pero muy efectiva para priorizar los esfuerzos de comunicación y gestión de expectativas a lo largo de todo el ciclo de vida del proyecto.</p>
-
-<p>Otra herramienta ampliamente utilizada para clarificar responsabilidades entre stakeholders y miembros del equipo es la matriz RACI, cuyo nombre es un acrónimo de los cuatro tipos de participación que puede tener una persona respecto de una actividad o decisión del proyecto: Responsable (quien ejecuta el trabajo), Accountable o Aprobador (quien rinde cuentas finales por el resultado y tiene autoridad de decisión, idealmente una única persona por actividad), Consultado (quien debe ser consultado antes de tomar la decisión, típicamente porque aporta conocimiento experto) e Informado (quien debe ser notificado del resultado, aunque no participe de la decisión). En un proyecto de software, por ejemplo, la decisión de migrar la base de datos a un nuevo motor podría tener al arquitecto de software como Responsable de ejecutar el análisis técnico, al gerente de tecnología como Aprobador final, al equipo de seguridad de la información como Consultado, y al equipo de soporte como Informado una vez tomada la decisión. Construir esta matriz al inicio del proyecto evita ambigüedades costosas sobre quién debe decidir qué, y es una práctica habitual tanto en proyectos predictivos como en proyectos ágiles de cierta escala, aunque en equipos ágiles pequeños y autoorganizados suele aplicarse de manera mucho más informal.</p>
-
+<p>El cliente y el usuario pueden ser personas diferentes: la universidad encarga el asistente, mientras los estudiantes lo utilizan. Tampoco alcanza con escuchar a quien paga. Quienes usan, mantienen o resultan afectados por el sistema aportan información que puede cambiar decisiones importantes.</p>
+<h3>3.2 Especialidad y responsabilidad son distintas</h3>
+<p>Programación, ciencia de datos, diseño y pruebas son especialidades. Decidir prioridades o aprobar un piloto son responsabilidades. Ser especialista en modelos no te convierte automáticamente en quien decide qué problema debe atenderse primero.</p>
+<div class="analogia"><p><strong>Analogía de una producción audiovisual.</strong> Saber operar la cámara no equivale a decidir qué historia se quiere contar. Ambas funciones se necesitan y deben coordinarse. En un proyecto de IA, quien conoce los modelos y quien conoce las necesidades de los usuarios tienen que conversar para construir una solución útil.</p></div>
+<p>Algunas organizaciones designan a una persona para coordinar la gestión del <strong>proyecto</strong>. Su autoridad depende de los acuerdos establecidos. Los marcos de trabajo que estudiaremos después pueden distribuir responsabilidades de otra manera; todavía no necesitamos sus nombres para entender quién aporta, quién decide y quién realiza el trabajo.</p>
+<h3>3.3 Comunicar y acordar quién decide</h3>
+<p>La matriz de <strong>poder e interés</strong> ayuda a pensar qué participación necesita cada parte interesada. Quien puede autorizar recursos y está involucrado requiere una comunicación cercana; un usuario necesita canales para aportar experiencia. La matriz orienta la atención, pero no justifica ignorar a personas con poca autoridad que pueden sufrir las consecuencias de una decisión.</p>
+<p>La <strong>matriz RACI</strong> permite aclarar la participación en una actividad: R realiza el trabajo; A responde por el resultado y tiene la autoridad acordada; C aporta conocimiento antes de decidir; I recibe información. Es una herramienta opcional, no una exigencia de toda gestión ágil.</p>
+<p>Para revisar los documentos del asistente, una persona del equipo prepara el material (R), la persona autorizada de la oficina de alumnos responde por su vigencia (A), otras áreas aportan aclaraciones (C) y soporte conoce la versión aprobada (I). La letra A no significa que esa persona deba imponer cada decisión técnica.</p>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Para cada decisión importante, identificá quién conoce el problema, quién puede decidir, quién realiza el trabajo y quién necesita conocer el resultado.</p></div>
 <figure class="image-figure">
 <img src="assets/mapa-stakeholders.png" alt="Diversos stakeholders rodean un producto digital central y se conectan con él según su autoridad, conocimiento técnico y responsabilidad.">
-<figcaption><strong>El mapa de interesados es una arquitectura de decisiones.</strong> Sponsor, usuarios, producto, facilitación, desarrollo, seguridad, proveedor y regulación no participan del mismo modo: algunos deciden, otros ejecutan, aportan conocimiento o necesitan información.</figcaption>
-</figure>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Gestionar stakeholders no significa comunicar más, sino diseñar la participación adecuada. Para cada decisión crítica, determiná quién aporta conocimiento, quién tiene autoridad, quién ejecuta y quién necesita conocer el resultado; una reunión masiva rara vez resuelve esa distinción.</div>
-
+<figcaption>Las personas involucradas aportan necesidades, recursos y conocimientos diferentes. La ilustración representa su colaboración alrededor de una solución; no prescribe un organigrama ni roles de un marco específico.</figcaption></figure>
 
 <h2 id="seccion-4">4. Alcance, tiempo, costo y calidad</h2>
 
-<p>Uno de los conceptos más citados —y a veces mal utilizados— en la gestión de proyectos es el de la triple restricción (triple constraint), también conocido como el "triángulo de hierro" del proyecto. La idea central es sencilla: todo proyecto está limitado por tres variables que se encuentran en tensión permanente entre sí —alcance, tiempo y costo— y que la calidad del resultado depende del equilibrio que se logre entre ellas.</p>
+<p>Uno de los conceptos más citados —y a veces mal utilizados— en la gestión de proyectos es el de la triple restricción (triple constraint), también conocido como el "triángulo de hierro" del <strong>proyecto</strong>. La idea central es sencilla: todo proyecto está limitado por tres variables que se encuentran en tensión permanente entre sí —<strong>alcance</strong>, tiempo y costo— y que la calidad del resultado depende del equilibrio que se logre entre ellas.</p>
 
-<p>El <strong>alcance</strong> define qué es lo que el proyecto va a entregar: qué funcionalidades tendrá el sistema, qué características incluye el producto, qué está dentro y qué está fuera de los límites del trabajo acordado. El <strong>tiempo</strong> se refiere al cronograma: cuánto va a durar el proyecto, cuáles son sus hitos y su fecha de entrega. El <strong>costo</strong> representa el presupuesto disponible, que en un proyecto de software suele estar dominado por el costo de las horas-persona del equipo, aunque también incluye licencias, infraestructura en la nube y otros insumos. La <strong>calidad</strong>, que algunos autores ubican como una cuarta restricción y otros como el resultado del equilibrio entre las tres primeras, se refiere al grado en que el producto entregado cumple con los requisitos funcionales y no funcionales esperados, y con los estándares profesionales de construcción de software (buenas prácticas de código, pruebas adecuadas, seguridad, performance).</p>
-
-<p>La lógica de la triple restricción establece que estas variables están interrelacionadas: si se modifica una, inevitablemente impacta en al menos una de las otras dos, y por lo tanto en la calidad del resultado final. Supongamos un proyecto de desarrollo de una app bancaria con un alcance, un cronograma y un presupuesto ya definidos. Si a mitad de camino el cliente solicita agregar una nueva funcionalidad de pagos por código QR (es decir, aumenta el alcance) sin mover la fecha de entrega ni el presupuesto, lo más probable es que la calidad se resienta: el equipo tendrá que apurar el desarrollo, recortar pruebas o acumular deuda técnica para cumplir con el nuevo alcance en el mismo tiempo. Alternativamente, el gestor de proyecto podría negociar una extensión del cronograma, un incremento del presupuesto (para sumar más desarrolladores, aunque esto no siempre acelera linealmente el trabajo, como advierte la conocida "ley de Brooks"), o la eliminación de otra funcionalidad de menor prioridad para compensar el nuevo pedido.</p>
-
-<p>Una forma frecuente de organizar una entrega adaptativa es fijar un horizonte corto y una capacidad de equipo, y seleccionar alcance según valor y viabilidad. Eso no implica que todo proyecto ágil tenga presupuesto y fecha final invariables. En una planificación predictiva, alcance, cronograma y presupuesto forman una referencia acordada que también puede revisarse mediante control de cambios. En ambos enfoques hay restricciones; lo que cambia es cómo se decide y con qué frecuencia se contrasta el plan con nueva información.</p>
+<h3>4.1 Qué limita el proyecto</h3>
+<p>El <strong>alcance</strong> define qué es lo que el proyecto va a entregar: qué funcionalidades tendrá el sistema, qué características incluye el producto, qué está dentro y qué está fuera de los límites del trabajo acordado. El <strong>tiempo</strong> se refiere al cronograma: cuánto va a durar el proyecto, cuáles son sus hitos y su fecha de entrega. El <strong>costo</strong> representa el presupuesto disponible, que en un proyecto de software suele estar dominado por el costo de las horas-persona del equipo, aunque también incluye licencias, infraestructura en la nube y otros insumos.</p>
+<p>La <strong>calidad</strong>, que algunos autores ubican como una cuarta restricción y otros como el resultado del equilibrio entre las tres primeras, se refiere al grado en que el producto entregado cumple con los requisitos funcionales y no funcionales esperados, y con los estándares profesionales de construcción de software (buenas prácticas de código, pruebas adecuadas, seguridad, performance).</p>
+<h3>4.2 Cómo negociar un cambio</h3>
+<p>La lógica de la triple restricción establece que estas variables están interrelacionadas: si se modifica una, inevitablemente impacta en al menos una de las otras dos, y por lo tanto en la <strong>calidad</strong> del resultado final. Supongamos un <strong>proyecto</strong> de desarrollo de una app bancaria con un alcance, un cronograma y un presupuesto ya definidos. Si a mitad de camino el cliente solicita agregar una nueva funcionalidad de pagos por código QR (es decir, aumenta el alcance) sin mover la fecha de entrega ni el presupuesto, lo más probable es que la calidad se resienta: el equipo tendrá que apurar el desarrollo, recortar pruebas o acumular deuda técnica para cumplir con el nuevo alcance en el mismo tiempo.</p>
+<p>Alternativamente, el gestor de proyecto podría negociar una extensión del cronograma, un incremento del presupuesto (para sumar más desarrolladores, aunque esto no siempre acelera linealmente el trabajo, como advierte la conocida "ley de Brooks"), o la eliminación de otra funcionalidad de menor prioridad para compensar el nuevo pedido.</p>
+<p>Una forma frecuente de organizar una entrega adaptativa es fijar un horizonte corto y una capacidad de equipo, y seleccionar <strong>alcance</strong> según <strong>valor</strong> y viabilidad. Eso no implica que todo proyecto ágil tenga presupuesto y fecha final invariables. En una planificación predictiva, alcance, cronograma y presupuesto forman una referencia acordada que también puede revisarse mediante control de cambios. En ambos enfoques hay restricciones; lo que cambia es cómo se decide y con qué frecuencia se contrasta el plan con nueva información.</p>
 
 <table class="tabla-comparativa">
 <caption>La triple restricción: comportamiento en cada enfoque</caption>
 <thead>
-<tr><th scope="col">Variable</th><th scope="col">Enfoque predictivo (tradicional)</th><th scope="col">Enfoque ágil</th></tr>
+<tr>
+<th scope="col">Variable</th>
+<th scope="col">Enfoque predictivo (tradicional)</th>
+<th scope="col">Enfoque ágil</th>
+</tr>
 </thead>
 <tbody>
-<tr><td>Alcance</td><td>Se define con detalle suficiente para establecer una referencia; los cambios se evalúan.</td><td>Se desarrolla y ordena progresivamente; puede renegociarse según aprendizaje y restricciones.</td></tr>
-<tr><td>Tiempo</td><td>Se planifica con hitos y fechas acordadas, que pueden ser restricciones firmes.</td><td>Puede fijarse la duración del ciclo, como en Scrum; eso no fija por sí solo la fecha final del producto.</td></tr>
-<tr><td>Costo</td><td>Se presupuestan recursos y trabajo; los cambios requieren evaluar su impacto.</td><td>Un equipo estable facilita prever el costo por período; el presupuesto total depende del horizonte y los acuerdos.</td></tr>
-<tr><td>Qué se adapta ante un cambio</td><td>Se analiza qué referencia puede revisarse y se obtiene la autorización necesaria.</td><td>Se revisan prioridades y alcance respetando objetivos, calidad y controles necesarios.</td></tr>
+<tr>
+<td>Alcance</td>
+<td>Se define con detalle suficiente para establecer una referencia; los cambios se evalúan.</td>
+<td>Se desarrolla y ordena progresivamente; puede renegociarse según aprendizaje y restricciones.</td>
+</tr>
+<tr>
+<td>Tiempo</td>
+<td>Se planifica con hitos y fechas acordadas, que pueden ser restricciones firmes.</td>
+<td>Puede acordarse un ciclo de trabajo breve; eso no fija por sí solo la fecha final del producto.</td>
+</tr>
+<tr>
+<td>Costo</td>
+<td>Se presupuestan recursos y trabajo; los cambios requieren evaluar su impacto.</td>
+<td>Un equipo estable facilita prever el costo por período; el presupuesto total depende del horizonte y los acuerdos.</td>
+</tr>
+<tr>
+<td>Qué se adapta ante un cambio</td>
+<td>Se analiza qué referencia puede revisarse y se obtiene la autorización necesaria.</td>
+<td>Se revisan prioridades y alcance respetando objetivos, calidad y controles necesarios.</td>
+</tr>
 </tbody>
 </table>
 
@@ -204,211 +314,96 @@ li{ margin-bottom:7px; }
 <figcaption>La triple restricción no ofrece una fórmula automática: hace visible la negociación. Cuando una variable cambia, el equipo debe decidir cuál de las restantes se adapta y qué impacto acepta sobre calidad y riesgo.</figcaption>
 </figure>
 
-<div class="mito"><strong>Mito:</strong> Si el equipo trabaja más rápido, puede absorber cualquier aumento de alcance sin modificar el plan. <strong>Realidad:</strong> La capacidad tiene límites y las horas extra no crean productividad lineal. Un cambio exige repriorizar alcance, renegociar tiempo o costo, o explicitar el riesgo que se está aceptando.</div>
+<div class="mito">
+<strong>Mito:</strong> Si el equipo trabaja más rápido, puede absorber cualquier aumento de alcance sin modificar el plan. <strong>Realidad:</strong> La capacidad tiene límites y las horas extra no crean productividad lineal. Un cambio exige repriorizar alcance, renegociar tiempo o costo, o explicitar el riesgo que se está aceptando.</div>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Frente a un pedido nuevo, no respondas primero con una fecha. Hacé visible qué variable cambia, qué alternativa se desplaza y qué efecto tendría cada opción sobre calidad, riesgo y valor.</div>
-
-
-<p class="bloque-narrativo"><strong>Del proyecto al aprendizaje.</strong> Ya sabemos qué buscamos, quién participa y qué restricciones existen. Ahora podemos preguntar cómo avanzar cuando todavía no conocemos toda la solución.</p><h2 id="seccion-5">5. Qué es la agilidad</h2>
-<div class="analogia"><p><strong>Analogía: un viaje con GPS.</strong> La agilidad se parece a elegir un destino, iniciar una ruta razonable y recalcular al encontrar un corte. Recalcular no cambia automáticamente el destino ni autoriza ignorar las reglas de tránsito. En un proyecto, el destino es el resultado buscado; la ruta es el plan; las observaciones del equipo y de los usuarios permiten ajustarlo. La comparación termina ahí: el valor de un producto no está definido tan claramente como una dirección. También debemos comprobar si el destino elegido resuelve una necesidad real.</p></div><p>Primero vamos a comprender la agilidad, su origen y el Manifiesto. Después compararemos enfoques y veremos cómo organizar ciclos de aprendizaje y entrega. Así podremos elegir una forma de trabajo por su propósito y sus límites.</p><p>Trabajar de manera ágil no significa hacer todo más rápido ni aceptar cualquier pedido de inmediato. Significa acortar el tiempo entre una decisión y la evidencia que permite revisarla. En lugar de esperar a tener toda la app bancaria terminada, el equipo puede entregar una capacidad utilizable, observar qué dificultades encuentran los usuarios y ajustar las prioridades antes de invertir en el resto. Esa entrega necesita calidad suficiente para ser usada: una pantalla incompleta no demuestra que el problema esté resuelto.</p>
-<p>En la expresión habitual <strong>«metodologías ágiles»</strong> se agrupan diferentes maneras de llevar esas ideas a la práctica. No existe una única metodología llamada Agile ni una lista universal de reuniones o roles ágiles. Scrum, Kanban y XP aportan mecanismos diferentes; conocerlos sirve para elegir con criterio, no para aplicar una etiqueta al equipo.</p>
-<ul>
-<li><strong>Se planifica:</strong> la profundidad y el horizonte del plan se ajustan a lo que realmente sabemos.</li>
-<li><strong>Se controla:</strong> el progreso se contrasta con resultados utilizables y con señales de valor, no solo con tareas iniciadas.</li>
-<li><strong>Se colabora:</strong> negocio, usuarios y equipo aportan información para resolver dudas y revisar decisiones.</li>
-<li><strong>Se adapta:</strong> cambiar prioridades exige considerar capacidad, calidad y restricciones; no elimina los acuerdos.</li>
-</ul>
-<p>Al finalizar este módulo vas a poder distinguir una respuesta ágil de una improvisación. En el siguiente vas a ver cómo los marcos y métodos organizan ese trabajo cotidiano.</p>
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Antes de llamar ágil a un proceso, identificá qué resultado se entrega, de quién se obtiene feedback y qué decisión puede cambiar con esa evidencia. La frecuencia de las reuniones no responde esas preguntas.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Frente a un pedido nuevo, no respondas primero con una fecha. Hacé visible qué variable cambia, qué alternativa se desplaza y qué efecto tendría cada opción sobre calidad, riesgo y valor.</div>
 
 
-<h2 id="seccion-6">6. Origen de la agilidad</h2>
+<p class="bloque-narrativo"><strong>Del proyecto al aprendizaje.</strong> Ya sabemos qué buscamos, quién participa y qué restricciones existen. Ahora podemos preguntar cómo avanzar cuando todavía no conocemos toda la solución.</p>
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>Con los límites del proyecto claros, comparamos cómo organizar su ciclo de vida y responder al cambio.</div>
+<div class="marco-contexto contexto-general">
+<strong>CONCEPTO GENERAL</strong> Estas ideas sirven para distintos enfoques. Cuando una práctica pertenezca a un marco concreto, lo indicaremos expresamente.</div>
+<h2 id="seccion-5">5. Ciclo de vida y procesos de gestión de un proyecto</h2>
 
-<p>La agilidad no surgió de la nada ni fue el invento repentino de un grupo de personas en un fin de semana, aunque su momento fundacional formal —la redacción del Manifiesto Ágil en 2001— sí ocurrió en apenas unos días. En realidad, la agilidad es la sistematización y el nombre que se le dio a un conjunto de prácticas e ideas que distintos equipos y consultores venían desarrollando y experimentando de manera más o menos independiente desde fines de los años 80 y durante los años 90, como respuesta a las limitaciones cada vez más evidentes del enfoque cascada aplicado al desarrollo de software.</p>
-
-<p>Durante los años 90, varios profesionales del desarrollo de software, insatisfechos con los resultados que obtenían los proyectos gestionados bajo metodologías pesadas y altamente documentadas, comenzaron a proponer alternativas. Kent Beck desarrolló Extreme Programming (XP) en el contexto del proyecto de nómina de Chrysler (el "Chrysler Comprehensive Compensation System"), enfatizando prácticas técnicas como la programación en pares, el desarrollo guiado por pruebas (TDD) y las entregas frecuentes. Ken Schwaber y Jeff Sutherland formalizaron Scrum a mediados de la década, inspirados en un artículo de 1986 de Hirotaka Takeuchi e Ikujiro Nonaka publicado en Harvard Business Review, titulado "The New New Product Development Game", que describía cómo equipos de empresas como Honda, Canon o Fuji-Xerox trabajaban de manera multidisciplinaria y superpuesta —en lugar de secuencial— tomando como metáfora el rugby, donde todo el equipo avanza junto ("scrum") en lugar de pasarse el balón de un especialista a otro. Otros marcos como Crystal (Alistair Cockburn), Feature-Driven Development (FDD) y el desarrollo adaptativo de software (Jim Highsmith) surgieron en paralelo, cada uno con su propio énfasis pero compartiendo una preocupación común.</p>
-
-<p>La incertidumbre no pertenece exclusivamente al software: también puede aparecer en obras, servicios y proyectos científicos. En productos digitales suele ser importante porque construir una primera versión revela necesidades y comportamientos que no conocíamos. El problema de gestión es decidir qué podemos anticipar con confianza y qué debemos aprender mediante pruebas, sin suponer que una industria siempre trabaja de una sola manera.</p><p>En febrero de 2001, diecisiete de estos profesionales —entre ellos Kent Beck, Ward Cunningham, Martin Fowler, Jim Highsmith, Jon Kern, Brian Marick, Robert C. Martin, Ken Schwaber, Jeff Sutherland y Alistair Cockburn, entre otros— se reunieron en un resort de esquí en Snowbird, Utah, con el objetivo de encontrar puntos en común entre sus distintos enfoques y, eventualmente, ponerles un nombre compartido. De ese encuentro surgió el término "ágil" (que se prefirió a otras alternativas discutidas, como "adaptativo" o "liviano") y el documento que hoy se conoce como el Manifiesto por el Desarrollo Ágil de Software, que analizaremos en detalle en el próximo apartado.</p>
-
-<figure class="image-figure">
-<img src="assets/snowbird-origen-agilidad.png" alt="Diecisiete profesionales reunidos en un refugio de montaña integran distintas corrientes de trabajo en una propuesta común.">
-<figcaption><strong>Snowbird fue un punto de convergencia, no un comienzo desde cero.</strong> La escena representa cómo prácticas y experiencias previas se pusieron en común hasta formular un conjunto compartido de valores.</figcaption>
-</figure>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Cuando evalúes una práctica ágil, buscá el problema que intentaba resolver y la evidencia que genera. Copiar una ceremonia sin comprender su propósito histórico suele conservar la forma y perder la capacidad de adaptación.</div>
-
-
-<h2 id="seccion-7">7. El Manifiesto Ágil</h2>
-
-<p>El Manifiesto Ágil es, sin dudas, el documento fundacional de todo el movimiento ágil, y su redacción —breve, directa, casi provocadora para la época— explica en buena medida por qué logró una difusión tan amplia en la industria del software durante las dos décadas siguientes. El manifiesto no propone una metodología específica ni un conjunto de herramientas: propone un cambio de mentalidad, expresado a través de cuatro valores centrales y doce principios que los desarrollan.</p>
-
-<p>El texto completo de los cuatro valores, tal como fue redactado en 2001, dice así: "Estamos descubriendo formas mejores de desarrollar software tanto por nuestra propia experiencia como ayudando a terceros. A través de este trabajo hemos llegado a valorar: Individuos e interacciones sobre procesos y herramientas. Software funcionando sobre documentación extensiva. Colaboración con el cliente sobre negociación contractual. Respuesta ante el cambio sobre seguimiento de un plan. Es decir, aunque valoramos los elementos de la derecha, valoramos más los de la izquierda."</p>
-
-<p>Esta última frase —"aunque valoramos los elementos de la derecha, valoramos más los de la izquierda"— es clave y frecuentemente se pasa por alto o se malinterpreta. El manifiesto no dice que los procesos, las herramientas, la documentación, los contratos o los planes no tengan valor: dice que, ante una situación de tensión entre ambos elementos de cada par, el juicio ágil prioriza el de la izquierda. No es un manifiesto "anti-documentación" ni "anti-planificación": es un manifiesto que establece un orden de prioridades cuando esos elementos entran en conflicto.</p>
-
-<table class="tabla-comparativa">
-<caption>Los cuatro valores del Manifiesto Ágil</caption>
-<thead>
-<tr><th scope="col">Valor priorizado</th><th scope="col">Valor secundario (no descartado)</th><th scope="col">Qué significa en la práctica</th></tr>
-</thead>
-<tbody>
-<tr><td>Individuos e interacciones</td><td>Procesos y herramientas</td><td>Las personas y su comunicación directa resuelven problemas mejor que la sola aplicación mecánica de un proceso o una herramienta, aunque procesos y herramientas sigan siendo útiles como soporte.</td></tr>
-<tr><td>Software funcionando</td><td>Documentación extensiva</td><td>Un incremento de producto que funciona y puede mostrarse al cliente vale más como evidencia de avance real que un documento extenso que describe lo que se planea construir.</td></tr>
-<tr><td>Colaboración con el cliente</td><td>Negociación contractual</td><td>Trabajar codo a codo con el cliente durante todo el proyecto, ajustando el rumbo según su feedback, genera mejores resultados que limitarse a cumplir literalmente lo firmado en un contrato inicial.</td></tr>
-<tr><td>Respuesta ante el cambio</td><td>Seguimiento de un plan</td><td>La capacidad de adaptarse cuando cambian las condiciones o el conocimiento del problema es más valiosa que la rigidez de cumplir un plan que quedó desactualizado.</td></tr>
-</tbody>
-</table>
-
-<p>Vale la pena detenerse en cada uno de estos cuatro valores con algo más de profundidad, porque cada uno responde a un problema concreto que los firmantes del manifiesto habían identificado en su experiencia profesional. El primer valor, individuos e interacciones sobre procesos y herramientas, surge de la observación de que muchos proyectos fracasaban no por falta de metodología formal, sino por falta de comunicación fluida entre las personas involucradas: equipos que se comunicaban únicamente a través de documentos formales, con largos tiempos de espera entre una consulta y su respuesta, perdían la posibilidad de resolver ambigüedades con rapidez. Un equipo pequeño que se sienta junto al Product Owner y conversa directamente sobre un requisito ambiguo resuelve esa ambigüedad en minutos; el mismo problema, canalizado a través de un proceso formal de solicitud de cambios documentado, puede tardar semanas.</p>
-
-<p>El segundo valor, software funcionando sobre documentación extensiva, responde a la constatación de que la documentación, aunque útil, no es el objetivo del proyecto: el objetivo es un producto que funcione y resuelva el problema del cliente. Documentos extensos de requisitos y diseño pueden dar una falsa sensación de control y avance, cuando en realidad no garantizan que el software resultante funcione correctamente ni que responda a lo que el cliente realmente necesita. Mostrar software funcionando, aunque sea parcial, es una forma mucho más honesta y verificable de medir el progreso real de un proyecto.</p>
-
-<p>El tercer valor, colaboración con el cliente sobre negociación contractual, apunta a superar la lógica adversarial que muchas veces se establece entre el proveedor de desarrollo y el cliente cuando el vínculo se rige exclusivamente por un contrato cerrado de alcance fijo. En esa lógica, cualquier cambio solicitado por el cliente se convierte en una negociación de "orden de cambio" con implicancias de costo y tiempo, lo cual desalienta la adaptación y genera fricción. La propuesta ágil es construir una relación de colaboración continua, donde el cliente participa activamente durante todo el desarrollo —revisando incrementos, dando feedback, reordenando prioridades— en lugar de limitarse a firmar un contrato al inicio y recibir el producto terminado al final.</p>
-
-<p>El cuarto valor, respuesta ante el cambio sobre seguimiento de un plan, sintetiza quizás el espíritu más profundo de la agilidad: reconocer que, en un entorno de alta incertidumbre como el desarrollo de software, ningún plan elaborado al inicio del proyecto puede anticipar con precisión todo lo que va a ocurrir. Aferrarse rígidamente a ese plan inicial, incluso cuando la realidad ha demostrado que estaba equivocado o desactualizado, es una fuente frecuente de fracasos de proyecto. La agilidad propone, en cambio, tratar al cambio no como una amenaza a evitar sino como una fuente de ventaja competitiva: la capacidad de adaptarse rápido a nueva información es, en sí misma, un activo estratégico.</p>
-
-<div class="mito"><strong>Mito:</strong> El Manifiesto Ágil propone trabajar sin procesos, documentación, contratos ni planes. <strong>Realidad:</strong> Reconoce el valor de todos esos elementos, pero establece una prioridad cuando entran en tensión. La práctica profesional consiste en producir la evidencia y la documentación necesarias sin sustituir con ellas la colaboración, el aprendizaje ni el producto funcionando.</div>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Aplicá los valores como criterios de desempate. Si una práctica formal mejora la coordinación o reduce un riesgo real, mantenela; si solo produce cumplimiento aparente y retrasa feedback útil, rediseñala.</div>
-
-
-<h2 id="seccion-8">8. Los 12 principios ágiles</h2>
-
-<p>Además de los cuatro valores, el Manifiesto Ágil incluye doce principios que los desarrollan y les dan un carácter más operativo, más cercano a la práctica cotidiana de un equipo de desarrollo. Estos principios no deben leerse como una lista de reglas aisladas, sino como un conjunto coherente que, en su totalidad, describe una forma particular de entender y gestionar el trabajo de desarrollo de software.</p>
-
-<ol>
-<li><strong>Nuestra mayor prioridad es satisfacer al cliente mediante la entrega temprana y continua de software con valor.</strong> Este principio invierte la lógica tradicional de "entregar todo al final": propone que el cliente empiece a recibir y a usar partes del producto lo antes posible, de manera que el valor comience a generarse tempranamente y no recién al cierre del proyecto, que en un enfoque tradicional puede estar meses o años después del inicio.</li>
-<li><strong>Aceptamos que los requisitos cambien, incluso en etapas tardías del desarrollo. Los procesos ágiles aprovechan el cambio para proporcionar ventaja competitiva al cliente.</strong> A diferencia del enfoque cascada, donde un cambio tardío se percibe como una amenaza al cronograma y al presupuesto, la agilidad concibe al cambio como una oportunidad: si el mercado cambió o el cliente aprendió algo nuevo, adaptarse a esa información es más valioso que sostener ciegamente un plan desactualizado.</li>
-<li><strong>Entregamos software funcionando frecuentemente, en periodos de un par de semanas hasta un par de meses, con preferencia por los periodos breves.</strong> Este principio establece el ritmo cadenciado que caracteriza a los marcos ágiles como Scrum, cuyos sprints suelen durar entre una y cuatro semanas. Entregar con esta frecuencia permite obtener feedback real del cliente de manera constante, en lugar de esperar a una única entrega final.</li>
-<li><strong>Las personas del negocio y los desarrolladores deben trabajar juntas de forma cotidiana a través del proyecto.</strong> Se enfatiza aquí la colaboración diaria y directa entre quienes conocen el negocio (por ejemplo, el Product Owner) y quienes construyen la solución técnica, evitando la separación estricta entre "quien pide" y "quien ejecuta" que caracterizaba a muchos proyectos tradicionales, donde el contacto era esporádico y mediado por documentos.</li>
-<li><strong>Los proyectos se construyen en torno a individuos motivados. Hay que darles el entorno y el apoyo que necesitan, y confiar en ellos para que hagan el trabajo.</strong> Este principio pone el foco en la motivación intrínseca de las personas y en la confianza como base de la gestión, en contraposición a modelos de control estricto y microgestión que asumen que los equipos necesitan supervisión constante para rendir adecuadamente.</li>
-<li><strong>El método más eficiente y efectivo de comunicar información al equipo de desarrollo y entre sus miembros es la conversación cara a cara.</strong> Aunque este principio fue escrito antes de la masificación del trabajo remoto y de las herramientas de videoconferencia, su espíritu se mantiene vigente: la comunicación sincrónica y directa —hoy incluyendo videollamadas— resuelve ambigüedades con más rapidez y riqueza que la comunicación exclusivamente escrita y asincrónica.</li>
-<li><strong>El software funcionando es la principal medida de progreso.</strong> Este principio retoma el segundo valor del manifiesto y lo convierte en criterio de medición: no se mide el avance de un proyecto ágil por la cantidad de documentos producidos o por el porcentaje de tareas "completadas" en un cronograma, sino por la cantidad de funcionalidad real, probada y utilizable que el equipo ha entregado.</li>
-<li><strong>Los procesos ágiles promueven el desarrollo sostenible. Los promotores, desarrolladores y usuarios deberían ser capaces de mantener un ritmo constante de forma indefinida.</strong> Se rechaza aquí la lógica de "sprints finales" con sobrecarga de trabajo (crunch) que históricamente ha caracterizado a muchos proyectos de software bajo presión de entrega. La sostenibilidad del ritmo de trabajo es, según este principio, condición necesaria para la calidad y la productividad a largo plazo.</li>
-<li><strong>La atención continua a la excelencia técnica y al buen diseño mejora la agilidad.</strong> La velocidad de entrega no debe lograrse a costa de la calidad técnica: por el contrario, un código bien diseñado, con buenas prácticas de arquitectura y pruebas automatizadas, es lo que permite sostener un ritmo ágil de entregas en el tiempo, evitando que la acumulación de deuda técnica frene al equipo en el futuro.</li>
-<li><strong>La simplicidad, o el arte de maximizar la cantidad de trabajo no realizado, es esencial.</strong> Este principio, quizás el más contraintuitivo a primera vista, propone que buena parte del valor de un equipo ágil está en decidir qué NO hacer: evitar construir funcionalidades que nadie va a usar, evitar sobre-diseñar soluciones para problemas que todavía no existen, y concentrar el esfuerzo en lo que realmente aporta valor al cliente en el momento presente.</li>
-<li><strong>Las mejores arquitecturas, requisitos y diseños emergen de equipos autoorganizados.</strong> Se confía en la capacidad del equipo técnico —que tiene el conocimiento más cercano al detalle de la implementación— para tomar las mejores decisiones de diseño, en lugar de imponer esas decisiones desde una autoridad externa jerárquica y alejada del trabajo cotidiano de construcción del software.</li>
-<li><strong>A intervalos regulares, el equipo reflexiona sobre cómo ser más efectivo y ajusta su comportamiento en consecuencia.</strong> Este principio da fundamento a la práctica de la retrospectiva, una de las ceremonias centrales de Scrum y de otros marcos ágiles, en la que el equipo se detiene periódicamente a evaluar su propio proceso de trabajo y a proponer mejoras concretas para el ciclo siguiente, instalando una cultura de mejora continua.</li>
-</ol>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> No audites la agilidad contando ceremonias. Observá si el equipo entrega valor con frecuencia, incorpora feedback, sostiene calidad técnica y ajusta su forma de trabajo con evidencia; los principios se reconocen en esos comportamientos.</div>
-
-
-<h2 id="seccion-9">9. Entrega de valor</h2>
-
-<p>Si hay una idea que atraviesa transversalmente tanto los cuatro valores como los doce principios del Manifiesto Ágil, esa idea es la entrega de valor como criterio último de éxito de un proyecto. En la gestión ágil, el valor no se define en abstracto: se define siempre en relación con el cliente o usuario final, y se entiende como la utilidad real que una funcionalidad, un producto o un incremento le aporta a quien lo va a usar o a quien financia el proyecto.</p>
-
-<p>Este eje en el valor implica un cambio profundo respecto de la manera tradicional de medir el éxito de un proyecto. En un enfoque predictivo clásico, el éxito suele medirse en función del cumplimiento del "triángulo de hierro": ¿se entregó dentro del alcance pactado, en el tiempo estimado y dentro del presupuesto asignado? Esta métrica, aunque relevante, dice muy poco sobre si lo que se construyó efectivamente sirve, se usa y genera el impacto de negocio esperado. Existen numerosos casos documentados de proyectos que se completaron "a tiempo y en presupuesto" según los criterios tradicionales, pero cuyo producto resultante fue un fracaso comercial porque no resolvía el problema real de los usuarios o porque el mercado había cambiado durante el desarrollo.</p>
-
-<p>La gestión ágil pone el foco en el valor y en el aprendizaje continuo: ¿qué capacidad utilizable entregamos?, ¿qué comportamiento cambió en los usuarios?, ¿qué feedback obtuvimos? Esto no vuelve irrelevantes tiempo y presupuesto ni implica que los enfoques predictivos ignoren el valor. Permite distinguir la entrega de una funcionalidad del beneficio que realmente produce. En Scrum, el Product Owner responde por maximizar ese valor y ordenar el Product Backlog; en otros sistemas de trabajo, la responsabilidad se organiza según sus acuerdos.</p>
-
-<p>Priorizar por valor implica también aceptar que no todo lo que se podría construir merece ser construido, al menos no en el corto plazo. Técnicas como el análisis costo-beneficio, la priorización MoSCoW (must have, should have, could have, won't have) o el uso de métricas de impacto de negocio (por ejemplo, cuánto podría incrementar una funcionalidad la tasa de conversión de un e-commerce) son herramientas habituales para tomar estas decisiones de priorización de manera más objetiva y menos guiada por intuiciones o preferencias personales de quienes participan del proyecto.</p>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Tratá el valor como una hipótesis que debe medirse. Antes de priorizar una funcionalidad, explicitá para quién crea valor, qué comportamiento esperás modificar y qué señal permitiría decidir si la inversión funcionó.</div>
-
-
-<p class="bloque-narrativo"><strong>De los valores a las decisiones de trabajo.</strong> El Manifiesto orienta nuestras prioridades. Los enfoques y marcos ofrecen maneras de organizar el trabajo para ponerlas a prueba.</p><h2 id="seccion-10">10. Enfoques, metodologías y marcos de trabajo</h2>
-<p>¿Scrum, Kanban y «predictivo» son opciones del mismo tipo? No exactamente. Para ubicarnos vamos a distinguir el criterio general de organización del trabajo, la estructura elegida y las prácticas concretas. Los términos se usan de manera variable en la bibliografía; esta distinción nos ayuda a estudiar sin convertir los nombres en categorías rígidas.</p>
-<table class="tabla-comparativa">
-<caption>Un mapa para entender el vocabulario de la materia</caption>
-<thead><tr><th scope="col">Concepto</th><th scope="col">Qué describe</th><th scope="col">Ejemplo</th></tr></thead>
-<tbody>
-<tr><td>Enfoque</td><td>La lógica general para planificar, aprender y organizar las entregas.</td><td>Predictivo o adaptativo; iterativo e incremental describen cómo se construye y entrega.</td></tr>
-<tr><td>Metodología o método</td><td>Una manera organizada de trabajar con principios, procedimientos y prácticas.</td><td>El Método Kanban orienta la gestión y mejora del flujo.</td></tr>
-<tr><td>Marco de trabajo</td><td>Una estructura que el equipo completa con prácticas adecuadas al contexto.</td><td>Scrum establece responsabilidades, eventos, artefactos y reglas.</td></tr>
-<tr><td>Práctica</td><td>Una técnica que puede utilizarse dentro de distintos sistemas de trabajo.</td><td>Programación en pares o desarrollo guiado por pruebas.</td></tr>
-<tr><td>Herramienta</td><td>Un soporte para representar, coordinar o automatizar el trabajo.</td><td>Un tablero digital; usarlo no convierte por sí solo al equipo en ágil.</td></tr>
-</tbody>
-</table>
-<p>Podemos planificar anticipadamente una parte estable del proyecto y trabajar de forma adaptativa en otra donde necesitamos aprender. <strong>Iterar</strong> significa revisar y mejorar una solución; <strong>incrementar</strong> significa agregar una capacidad utilizable. Estas características pueden combinarse: no son cuatro casilleros necesariamente excluyentes. Más adelante vamos a desarrollar sus diferencias con ejemplos.</p>
-<h3>10.1 Panorama de las alternativas</h3>
-<p>Este es un primer mapa, no una lista que debas memorizar. En el Módulo 2 vamos a desarrollar Scrum y Kanban, estudiar prácticas de XP y principios Lean, y comparar combinaciones y otras alternativas.</p>
-<table class="tabla-comparativa">
-<caption>Qué aporta cada alternativa al trabajo sobre un producto</caption>
-<thead><tr><th scope="col">Alternativa</th><th scope="col">Aporte principal</th><th scope="col">Pregunta que ayuda a responder</th></tr></thead>
-<tbody>
-<tr><td>Scrum</td><td>Organizar la creación de valor y el aprendizaje en ciclos con objetivos y responsabilidades claras.</td><td>¿Cómo coordinamos el equipo para avanzar hacia una meta y revisar los resultados?</td></tr>
-<tr><td>Kanban</td><td>Visualizar y mejorar el flujo, controlando cuánto trabajo se inicia.</td><td>¿Dónde se acumula trabajo y cómo podemos terminarlo de manera más previsible?</td></tr>
-<tr><td>Extreme Programming (XP)</td><td>Integrar colaboración y prácticas de desarrollo que sostienen la calidad y la capacidad de cambio.</td><td>¿Cómo construimos software que podamos modificar con confianza?</td></tr>
-<tr><td>Lean</td><td>Orientar la gestión hacia el valor, el aprendizaje y la reducción de desperdicios.</td><td>¿Qué actividad o espera consume recursos sin contribuir al resultado?</td></tr>
-<tr><td>Scrumban y combinaciones</td><td>Articular prácticas de cadencia y de flujo con acuerdos explícitos.</td><td>¿Qué combinación responde a nuestra demanda sin crear reglas contradictorias?</td></tr>
-</tbody>
-</table>
-<p>Las alternativas no son una escala de mejores a peores ni un catálogo exhaustivo. Elegimos qué estudiar con más detalle por su aporte a los objetivos de esta materia. Para comprenderlas primero necesitamos examinar el ciclo de vida, los enfoques de planificación y las restricciones del proyecto.</p>
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Elegí primero qué problema de gestión necesitás resolver y después qué marco, método o práctica puede ayudarte. Una herramienta nueva o un título de puesto no reemplazan ese diagnóstico.</div>
-
-
-<h2 id="seccion-11">11. Ciclo de vida y procesos de gestión de un proyecto</h2>
-
-<p>¿En qué momento se decide que una idea merece convertirse en un proyecto y cómo se reconoce que ese esfuerzo terminó? El <strong>ciclo de vida</strong> comprende el recorrido del proyecto desde su inicio hasta su cierre. Puede organizarse en fases como exploración, construcción y puesta en producción, según el contexto. No hay una lista única de fases obligatoria para todos los proyectos.</p>
-<p>Para gestionar ese recorrido necesitamos iniciar, planificar, ejecutar, monitorear y controlar, y cerrar. Estos son <strong>grupos de procesos de gestión, no cinco fases necesariamente consecutivas</strong>: planificar y controlar pueden repetirse dentro de distintas fases. Los presentamos por separado para comprender su propósito, sin convertirlos en una secuencia rígida de trabajo.</p>
-
-<h3>11.1 Inicio</h3>
-<p>Al iniciar se define la razón de ser del proyecto: qué problema resuelve, qué oportunidad de negocio aprovecha, quién lo patrocina y qué resultado de alto nivel se espera. Se elabora el acta de constitución del proyecto (project charter), se identifica a los primeros stakeholders y se realiza un análisis preliminar de viabilidad. En un proyecto de software, el inicio suele incluir una primera exploración técnica: ¿es viable construir esto con la tecnología disponible?, ¿qué riesgos técnicos existen?, ¿cuál es el orden de magnitud del esfuerzo necesario?</p>
-
-<h3>11.2 Planificación</h3>
-<p>Aquí se detalla cómo se va a alcanzar el objetivo definido en el inicio. Se desarrolla el plan de gestión del proyecto, que incluye la definición del alcance, la estructura de descomposición del trabajo (EDT o WBS), el cronograma, el presupuesto, el plan de gestión de riesgos, el plan de comunicaciones y la definición de roles y responsabilidades. En proyectos de software con enfoque predictivo, esta planificación puede ser extensa y detallada, documentando requisitos funcionales y no funcionales antes de escribir una sola línea de código. En enfoques ágiles, en cambio, la planificación es más liviana al inicio y se retoma de manera continua a lo largo de todo el proyecto, iteración tras iteración.</p>
-
-<h3>11.3 Ejecución</h3>
-<p>Ejecutar consiste en realizar el trabajo: se escribe el código, se diseñan las interfaces, se configuran los servidores, se prueban las funcionalidades. Este trabajo suele consumir la mayor parte del presupuesto y del tiempo del proyecto, y en la que el equipo de desarrollo tiene el rol más protagónico. La calidad de la planificación previa impacta directamente en la fluidez de esta etapa: una mala definición de requisitos en la planificación puede generar retrabajo durante la ejecución.</p>
-
-<h3>11.4 Monitoreo y control</h3>
-<p>El monitoreo y control acompaña la ejecución y la planificación y consiste en comparar el avance real contra lo planificado, identificar desvíos, gestionar cambios de alcance, controlar riesgos emergentes y tomar acciones correctivas. En un proyecto de software esto incluye el seguimiento de métricas como velocidad del equipo, cantidad de bugs detectados, cobertura de pruebas o cumplimiento de hitos (milestones). En los enfoques ágiles también se inspeccionan resultados y se ajusta el trabajo con frecuencia. Scrum lo organiza mediante eventos como la Daily Scrum y la Sprint Review; Kanban inspecciona el flujo y sus políticas. No todos los enfoques ágiles utilizan los mismos eventos.</p>
-
-<h3>11.5 Cierre</h3>
-<p>Finalmente, el proyecto se cierra formalmente: se entrega el producto o resultado final, se documentan las lecciones aprendidas, se liberan los recursos asignados (personas, presupuesto, infraestructura) y se obtiene la aceptación formal del cliente o del sponsor. En software, el cierre puede incluir el pase a un equipo de mantenimiento u operaciones, la firma de un acta de aceptación y una instancia de retrospectiva final donde el equipo reflexiona sobre qué funcionó bien y qué se podría mejorar en proyectos futuros.</p>
-
-<p>Estas funciones de gestión también son necesarias cuando trabajamos de manera ágil. En la app bancaria, por ejemplo, se autoriza el proyecto, se planifica una primera entrega, se construye y prueba, se inspeccionan los resultados y se ajusta el trabajo siguiente. El aprendizaje puede llevar a revisar el plan sin reiniciar todo el proyecto. El cierre de una entrega tampoco equivale necesariamente al cierre del proyecto o al fin de la vida del producto.</p>
-
+<p>¿El trabajo empieza cuando programamos o cuando reconocemos el problema? El <strong>ciclo de vida</strong> abarca el recorrido del proyecto desde su inicio hasta su cierre. Sus fases dependen del contexto: explorar, construir y poner en funcionamiento es una organización posible.</p>
+<p>Para gestionar ese recorrido necesitamos iniciar, planificar, ejecutar, monitorear y controlar, y cerrar. Son <strong>funciones de gestión</strong> que pueden repetirse y superponerse; no cinco etapas obligatorias que se realizan una sola vez.</p>
+<h3>5.1 Inicio</h3>
+<p>Reconocemos la necesidad, el resultado buscado, las personas involucradas y las primeras restricciones. En el asistente, acordamos qué consultas abordar y quién puede autorizar el piloto. Un acta de constitución, también llamada project charter, puede registrar la autorización y los acuerdos de alto nivel.</p>
+<h3>5.2 Planificación</h3>
+<p>Decidimos cómo avanzar, qué recursos necesitamos y qué riesgos debemos investigar. Una estructura de descomposición del trabajo (EDT o WBS) divide el trabajo en partes para facilitar su planificación. Según el contexto, utilizamos esa u otras formas de organizarlo. Para el piloto planificamos preparar documentos, construir una primera capacidad y evaluar respuestas; revisamos el detalle a medida que aprendemos.</p>
+<h3>5.3 Ejecución</h3>
+<p>Realizamos el trabajo previsto. En un <strong>proyecto</strong> de IA incluye preparar datos, integrar componentes, diseñar la interacción y efectuar pruebas. Entrenar o elegir un modelo es solo una parte del sistema.</p>
+<h3>5.4 Monitoreo y control</h3>
+<p>Comparamos resultados con objetivos, reconocemos problemas y decidimos ajustes. Si la respuesta usa un documento obsoleto, investigamos la causa y revisamos el trabajo. Seguimos <strong>tiempo</strong> y recursos, pero también <strong>calidad</strong> y utilidad. Un porcentaje de tareas completadas no basta para describir la confiabilidad del asistente.</p>
+<h3>5.5 Cierre</h3>
+<p>Acordamos la aceptación del resultado, registramos aprendizajes y dejamos claras las responsabilidades siguientes. Puede terminar el <strong>proyecto</strong> piloto mientras el <strong>producto</strong> sigue evolucionando y operaciones atiende incidentes. Cerrar una entrega tampoco significa necesariamente cerrar todo el proyecto.</p>
+<div class="analogia"><p><strong>Analogía de organizar una expedición.</strong> Necesitás acordar el destino, preparar recursos, avanzar y comprobar las condiciones. Si una ruta deja de ser segura, revisás el plan durante el viaje. Llegar también exige verificar el resultado y ordenar el regreso. Las funciones se conectan; no son compartimentos sin comunicación.</p></div>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Volver a planificar cuando aparece evidencia relevante es una forma de control responsable.</p></div>
 <figure class="diagrama-conceptual image-figure visual-editorial">
 <img src="assets/diagrama-ciclo-vida-editorial.png" alt="Ciclo de vida de un proyecto con monitoreo transversal y retroalimentación entre cierre y planificación">
 <figcaption>El esquema distingue funciones de gestión. No representa cinco fases obligatorias: el monitoreo acompaña la ejecución y el aprendizaje puede llevar a planificar nuevamente dentro de una misma fase del proyecto.</figcaption>
 </figure>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Usá los procesos de gestión para reconocer qué decisión debe tomarse y qué evidencia la respalda. No las conviertas en barreras rígidas: si el monitoreo revela un supuesto inválido, volver a planificar es control responsable, no retroceso.</div>
-
-
-<h2 id="seccion-12">12. Gestión predictiva y modelo en cascada</h2>
+<h2 id="seccion-6">6. Gestión predictiva y modelo en cascada</h2>
 
 <p>¿Cuándo tiene sentido decidir gran parte del trabajo antes de comenzar a construir? El <strong>enfoque predictivo</strong> busca anticipar alcance, plazos, recursos y riesgos a partir de requisitos suficientemente conocidos. <strong>Cascada</strong> (waterfall) es un modelo de desarrollo secuencial frecuentemente asociado a ese enfoque, pero no son sinónimos: una gestión predictiva puede incluir entregas parciales, revisiones y ajustes.</p>
-<p>En una representación estricta de cascada, el desarrollo avanza por etapas como requisitos, diseño, implementación y verificación, con aprobaciones antes de avanzar. El nombre alude al paso de una etapa a otra. Volver sobre decisiones previas es posible, aunque puede exigir retrabajo considerable. Para evaluar este modelo importa observar cuándo se validan las hipótesis y cuánto cuesta corregirlas, no suponer que todo proyecto predictivo funciona exactamente igual.</p>
+<p>En una representación estricta de cascada, el desarrollo avanza por etapas como requisitos, diseño, implementación y verificación, con aprobaciones antes de avanzar. El nombre alude al paso de una etapa a otra. Volver sobre decisiones previas es posible, aunque puede exigir retrabajo considerable. Para evaluar este modelo importa observar cuándo se validan las hipótesis y cuánto cuesta corregirlas, no suponer que todo <strong>proyecto</strong> <strong>predictivo</strong> funciona exactamente igual.</p>
 
-<p>El origen formal de este modelo suele atribuirse a un artículo de Winston Royce publicado en 1970, titulado "Managing the Development of Large Software Systems". Es interesante —y a menudo señalado como una ironía histórica— que Royce en ese mismo artículo advertía sobre las limitaciones de un enfoque puramente secuencial y recomendaba iterar entre fases y validar tempranamente con prototipos; sin embargo, la industria adoptó masivamente la versión simplificada y estrictamente secuencial del modelo, probablemente porque encajaba muy bien con la lógica de contratos de precio fijo y con la necesidad de las organizaciones de contar con hitos de control claros y auditable.</p>
-
-<p>En un proyecto gestionado bajo el enfoque cascada, el proceso típico comienza con una fase extensa de relevamiento y documentación de requisitos, en la que se intenta capturar de la manera más completa y precisa posible todo lo que el sistema deberá hacer. Sobre esa base se elabora un diseño detallado —arquitectura del sistema, modelo de datos, diseño de interfaces— que luego se traduce en código durante la fase de implementación. Una vez desarrollado el sistema completo (o una parte significativa de él), se ejecuta una fase de pruebas y verificación, y finalmente el sistema se libera a producción, entrando en una fase de mantenimiento que puede extenderse durante años.</p>
-
-<p>Este enfoque presenta ventajas claras en determinados contextos: cuando los requisitos son estables y bien comprendidos desde el inicio, cuando existen restricciones contractuales o regulatorias que exigen documentación exhaustiva y aprobaciones formales en cada etapa (por ejemplo, en proyectos de software para la industria aeroespacial, médica o de defensa), o cuando el costo de introducir cambios en etapas avanzadas es extremadamente alto (como en sistemas embebidos en hardware que, una vez fabricado, es muy costoso modificar). La planificación detallada permite, además, estimar con mayor precisión presupuestos y plazos al inicio del proyecto, algo que muchas organizaciones —y especialmente los departamentos de compras o los organismos públicos que licitan desarrollos— valoran y en muchos casos exigen.</p>
-
-<p>Sin embargo, el enfoque cascada muestra debilidades importantes cuando se aplica a proyectos de software con alta incertidumbre, donde los requisitos no pueden conocerse completamente por adelantado (porque dependen de aprendizajes que solo se obtienen viendo el producto funcionando) o donde el contexto de negocio cambia con rapidez. El problema central es que los errores de comprensión de los requisitos, si no se detectan hasta la fase de pruebas —es decir, casi al final del proyecto—, resultan extremadamente costosos de corregir, porque implican rehacer diseño e implementación ya completados. Los informes CHAOS documentaron dificultades de proyectos de software, aunque sus cifras históricas no permiten atribuir todos los problemas al modelo en cascada. La necesidad de detectar malentendidos antes y responder al aprendizaje impulsó la búsqueda de enfoques alternativos.</p>
-
-<h3>12.1 El informe CHAOS y la evidencia empírica sobre el fracaso de proyectos</h3>
-<p>¿Qué significa afirmar que un proyecto fue exitoso? El informe CHAOS de The Standish Group, publicado inicialmente en 1994, clasificó como exitosos al 16,2 % de los proyectos relevados, como cancelados al 31,1 % y como completados con desvíos al 52,7 %. Su definición de éxito consideraba tiempo, presupuesto y funcionalidades originalmente previstas. Son datos históricos de ese relevamiento, no una tasa actual ni una medición exclusiva de proyectos en cascada.</p>
-<p>El informe fue ampliamente citado en el debate sobre la gestión de software, pero necesita una lectura crítica. Cumplir el plan original no demuestra por sí solo que el producto genere valor; desviarse de él tampoco prueba automáticamente un fracaso. Además, diferencias entre muestras, tamaños de proyecto y definiciones impiden convertir estas cifras en una prueba de que un enfoque causa mejores resultados que otro. Su utilidad aquí es abrir una pregunta: ¿con qué evidencia evaluamos el éxito y qué dejamos fuera de esa evaluación?</p>
-
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Evaluá el enfoque predictivo por su ajuste al contexto, no por una caricatura. Es valioso cuando la estabilidad, la auditabilidad y el costo de cambio justifican decidir temprano; se vuelve riesgoso cuando esa certeza es solo una suposición.</div>
+<p>El artículo de Winston Royce de 1970 sobre grandes sistemas de software suele citarse al discutir este modelo. Su propuesta también advertía riesgos del desarrollo puramente secuencial y planteaba revisiones. Por eso debemos evaluar cómo trabaja un <strong>proyecto</strong> concreto, en lugar de suponer que todas las organizaciones aplican una cascada idéntica.</p>
+<p>En un <strong>proyecto</strong> gestionado bajo el enfoque cascada, el proceso típico comienza con una fase extensa de relevamiento y documentación de requisitos, en la que se intenta capturar de la manera más completa y precisa posible todo lo que el sistema deberá hacer. Sobre esa base se elabora un diseño detallado —arquitectura del sistema, modelo de datos, diseño de interfaces— que luego se traduce en código durante la fase de implementación.</p>
+<p>Una vez desarrollado el sistema completo (o una parte significativa de él), se ejecuta una fase de pruebas y verificación, y finalmente el sistema se libera a producción, entrando en una fase de mantenimiento que puede extenderse durante años.</p>
+<h3>6.1 Cuándo aporta y qué riesgo tiene</h3>
+<p>Este enfoque presenta ventajas claras en determinados contextos: cuando los requisitos son estables y bien comprendidos desde el inicio, cuando existen restricciones contractuales o regulatorias que exigen documentación exhaustiva y aprobaciones formales en cada etapa (por ejemplo, en proyectos de software para la industria aeroespacial, médica o de defensa), o cuando el <strong>costo</strong> de introducir cambios en etapas avanzadas es extremadamente alto (como en sistemas embebidos en hardware que, una vez fabricado, es muy costoso modificar).</p>
+<p>La planificación detallada permite, además, estimar con mayor precisión presupuestos y plazos al inicio del <strong>proyecto</strong>, algo que muchas organizaciones —y especialmente los departamentos de compras o los organismos públicos que licitan desarrollos— valoran y en muchos casos exigen.</p>
+<p>Cuando la solución contiene mucha <strong>incertidumbre</strong>, esperar hasta el final para comprobarla puede hacer costosa la corrección. En el asistente, decidir todas las respuestas antes de probar consultas reales podría ocultar documentos contradictorios o necesidades mal comprendidas. Necesitamos obtener esa información antes de ampliar la construcción.</p>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Evaluá el enfoque predictivo por su ajuste al contexto, no por una caricatura. Es valioso cuando la estabilidad, la auditabilidad y el costo de cambio justifican decidir temprano; se vuelve riesgoso cuando esa certeza es solo una suposición.</div>
 
 
-<h2 id="seccion-13">13. Enfoques predictivos, iterativos e incrementales</h2>
+<h2 id="seccion-7">7. Enfoques predictivos, iterativos e incrementales</h2>
 
-<p>Para comprender en profundidad el terreno sobre el que se asienta la agilidad, es necesario distinguir con precisión tres términos que suelen mencionarse juntos pero que refieren a características distintas de cómo se organiza el trabajo de un proyecto: predictivo, iterativo e incremental. Estas categorías no son necesariamente excluyentes —de hecho, la mayoría de los marcos ágiles combinan características iterativas e incrementales— pero entenderlas por separado ayuda a evitar la simplificación de reducir todo a una dicotomía entre "cascada" y "ágil".</p>
+<p>Para comprender en profundidad el terreno sobre el que se asienta la <strong>agilidad</strong>, es necesario distinguir con precisión tres términos que suelen mencionarse juntos pero que refieren a características distintas de cómo se organiza el trabajo de un <strong>proyecto</strong>: predictivo, iterativo e incremental. Estas categorías no son necesariamente excluyentes —de hecho, la mayoría de los marcos ágiles combinan características iterativas e incrementales— pero entenderlas por separado ayuda a evitar la simplificación de reducir todo a una dicotomía entre "cascada" y "ágil".</p>
 
 <p>El enfoque <strong>predictivo</strong>, como vimos en el apartado anterior, busca anticipar alcance, cronograma, presupuesto y riesgos cuando existe información suficientemente confiable. Puede organizar el desarrollo de manera secuencial, pero no obliga a una única entrega ni prohíbe revisar el plan. El énfasis está en establecer una referencia que permita coordinar y controlar el trabajo.</p>
 
-<p>El enfoque <strong>iterativo</strong>, en cambio, organiza el trabajo en ciclos repetidos (iteraciones) durante los cuales se revisa y refina el producto o partes de él. En un desarrollo iterativo, el equipo puede construir una primera versión rudimentaria de una funcionalidad, obtener feedback, y luego volver sobre esa misma funcionalidad para mejorarla en una iteración posterior. La clave del enfoque iterativo es que permite aprender y ajustar el rumbo a medida que el proyecto avanza, en lugar de intentar definirlo todo de antemano. Un ejemplo clásico es el desarrollo de un algoritmo de recomendación: en la primera iteración se implementa una versión simple basada en popularidad, se mide su desempeño, y en iteraciones sucesivas se van incorporando variables más sofisticadas (historial del usuario, comportamiento de usuarios similares, contexto temporal) según lo que el aprendizaje de cada ciclo indique que aporta más valor.</p>
-
-<p>El enfoque <strong>incremental</strong> organiza el trabajo en partes o "incrementos" que se van entregando de manera sucesiva, cada uno añadiendo funcionalidad nueva y utilizable sobre lo ya construido, hasta completar el producto final. A diferencia del enfoque iterativo, donde se vuelve sobre lo mismo para mejorarlo, en el enfoque incremental cada entrega agrega algo nuevo que antes no existía. Pensemos en el desarrollo de una plataforma de streaming de video: un primer incremento podría ser la posibilidad de ver contenido en un catálogo fijo; un segundo incremento agrega la función de listas personalizadas; un tercero suma recomendaciones; un cuarto incorpora la posibilidad de descargar contenido offline. Cada incremento es funcional por sí mismo y aporta valor al usuario, aun cuando el producto completo todavía no esté terminado.</p>
-
-<p>En la práctica, los marcos ágiles modernos —Scrum es el ejemplo paradigmático— combinan ambos enfoques: son iterativos porque trabajan en ciclos cortos y repetidos (los sprints) donde se revisa constantemente el rumbo del producto, y son incrementales porque cada sprint produce un incremento de producto potencialmente entregable, que se suma a lo construido en sprints anteriores. Esta combinación —iterativo-incremental— es lo que permite a los equipos ágiles aprender rápido (gracias a la naturaleza iterativa) y, al mismo tiempo, mostrar avances tangibles y utilizables de manera constante (gracias a la naturaleza incremental).</p>
-
+<h3>7.1 Mejorar y ampliar son movimientos distintos</h3>
+<p>El enfoque <strong>iterativo</strong>, en cambio, organiza el trabajo en ciclos repetidos (iteraciones) durante los cuales se revisa y refina el producto o partes de él. En un desarrollo iterativo, el equipo puede construir una primera versión rudimentaria de una funcionalidad, obtener feedback, y luego volver sobre esa misma funcionalidad para mejorarla en una iteración posterior. La clave del enfoque iterativo es que permite aprender y ajustar el rumbo a medida que el proyecto avanza, en lugar de intentar definirlo todo de antemano.</p>
+<p>Un ejemplo clásico es el desarrollo de un algoritmo de recomendación: en la primera iteración se implementa una versión simple basada en popularidad, se mide su desempeño, y en iteraciones sucesivas se van incorporando variables más sofisticadas (historial del usuario, comportamiento de usuarios similares, contexto temporal) según lo que el aprendizaje de cada ciclo indique que aporta más valor.</p>
+<p>El enfoque <strong>incremental</strong> organiza el trabajo en partes o "incrementos" que se van entregando de manera sucesiva, cada uno añadiendo funcionalidad nueva y utilizable sobre lo ya construido, hasta completar el producto final. A diferencia del enfoque iterativo, donde se vuelve sobre lo mismo para mejorarlo, en el enfoque incremental cada entrega agrega algo nuevo que antes no existía. Pensemos en el desarrollo de una plataforma de streaming de video: un primer incremento podría ser la posibilidad de ver contenido en un catálogo fijo; un segundo incremento agrega la función de listas personalizadas; un tercero suma recomendaciones; un cuarto incorpora la posibilidad de descargar contenido offline.</p>
+<p>Cada incremento es funcional por sí mismo y aporta valor al usuario, aun cuando el producto completo todavía no esté terminado.</p>
+<p>Podemos <strong>iterar e incrementar</strong> al mismo tiempo. El asistente mejora sus respuestas de inscripción después de las pruebas (iteración) y luego agrega consultas sobre becas verificadas (incremento). La combinación permite aprender sobre lo construido y ampliar la capacidad del producto. Un experimento que no produce una mejora todavía puede aportar aprendizaje; no lo confundimos con una entrega utilizable.</p>
 <table class="tabla-comparativa">
 <caption>Predictivo, iterativo e incremental: características centrales</caption>
 <thead>
-<tr><th scope="col">Enfoque</th><th scope="col">Lógica de trabajo</th><th scope="col">Cuándo aporta más valor</th><th scope="col">Ejemplo</th></tr>
+<tr>
+<th scope="col">Enfoque</th>
+<th scope="col">Lógica de trabajo</th>
+<th scope="col">Cuándo aporta más valor</th>
+<th scope="col">Ejemplo</th>
+</tr>
 </thead>
 <tbody>
-<tr><td>Predictivo</td><td>Planificación detallada al inicio, ejecución secuencial</td><td>Requisitos estables, alta necesidad de previsibilidad contractual</td><td>Desarrollo de firmware para un dispositivo médico certificado</td></tr>
-<tr><td>Iterativo</td><td>Ciclos repetidos que refinan el mismo producto o componente</td><td>Alta incertidumbre sobre la solución óptima, necesidad de aprender haciendo</td><td>Ajuste sucesivo de un algoritmo de recomendación</td></tr>
-<tr><td>Incremental</td><td>Entregas sucesivas que suman funcionalidad nueva y usable</td><td>Necesidad de generar valor temprano y en partes</td><td>Lanzamiento progresivo de funciones en una app de streaming</td></tr>
+<tr>
+<td>Predictivo</td>
+<td>Establecer referencias de alcance, tiempo y recursos con información confiable; no obliga a una ejecución secuencial.</td>
+<td>Requisitos estables, alta necesidad de previsibilidad contractual</td>
+<td>Desarrollo de firmware para un dispositivo médico certificado</td>
+</tr>
+<tr>
+<td>Iterativo</td>
+<td>Ciclos repetidos que refinan el mismo producto o componente</td>
+<td>Alta incertidumbre sobre la solución óptima, necesidad de aprender haciendo</td>
+<td>Ajuste sucesivo de un algoritmo de recomendación</td>
+</tr>
+<tr>
+<td>Incremental</td>
+<td>Entregas sucesivas que suman funcionalidad nueva y usable</td>
+<td>Necesidad de generar valor temprano y en partes</td>
+<td>Lanzamiento progresivo de funciones en una app de streaming</td>
+</tr>
 </tbody>
 </table>
 
@@ -417,103 +412,442 @@ li{ margin-bottom:7px; }
 <figcaption>Una iteración revisa y mejora una solución; un incremento suma una capacidad utilizable. Un enfoque ágil combina ambos movimientos: aprende sobre lo construido y entrega valor adicional en ciclos breves.</figcaption>
 </figure>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> No describas un proceso como ágil solo porque divide el cronograma en etapas. Preguntá si cada ciclo produce aprendizaje que cambia decisiones y si cada entrega agrega una capacidad realmente utilizable.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> No describas un proceso como ágil solo porque divide el cronograma en etapas. Preguntá si cada ciclo produce aprendizaje que cambia decisiones y si cada entrega agrega una capacidad realmente utilizable.</div>
 
 
-<h2 id="seccion-14">14. Gestión del cambio en enfoques predictivos y ágiles</h2>
+<h2 id="seccion-8">8. Gestión del cambio en enfoques predictivos y ágiles</h2>
 
-<p>La manera en que cada enfoque de gestión de proyectos concibe y gestiona el cambio es, quizás, el punto de mayor contraste entre la gestión tradicional y la gestión ágil, y merece un desarrollo específico más allá de lo ya mencionado en apartados anteriores. En la gestión tradicional, el cambio se gestiona a través de un proceso formal llamado control de cambios (change control), que típicamente involucra la presentación de una solicitud de cambio, su análisis de impacto sobre alcance, tiempo y costo, su aprobación por parte de un comité de control de cambios (Change Control Board) y, recién entonces, su incorporación al plan del proyecto. Este proceso tiene la virtud de mantener la disciplina y la trazabilidad del proyecto, evitando lo que se conoce como "scope creep" o expansión descontrolada del alcance, pero tiene como contrapartida una lentitud considerable: entre la identificación de la necesidad de un cambio y su efectiva incorporación al proyecto pueden pasar semanas.</p>
+<p>Durante el piloto, los estudiantes piden que el asistente inscriba automáticamente a una materia. ¿Alcanza con agregar esa tarea? El pedido transforma una solución que informa en otra que actúa sobre un trámite; cambia el riesgo y requiere revisar permisos, validación y <strong>alcance</strong>.</p>
+<p>La <strong>gestión del cambio</strong> permite registrar una necesidad nueva, analizar sus consecuencias y decidir qué hacer. En una gestión predictiva se evalúa cómo afecta a las referencias acordadas de alcance, tiempo y costo. El procedimiento de aprobación depende de la organización y de la importancia de la decisión.</p>
+<p>En una gestión adaptativa revisamos las necesidades con frecuencia y ajustamos prioridades según <strong>evidencia</strong>. Eso no elimina acuerdos contractuales, controles de seguridad ni decisiones de autorización. Aceptar un cambio tampoco significa comenzarlo de inmediato.</p>
+<h3>8.1 Una secuencia para decidir</h3>
+<ol>
+<li>Comprender qué problema resuelve el pedido y para quién.</li>
+<li>Identificar impacto, riesgos, dependencias y controles necesarios.</li>
+<li>Comparar el pedido con el trabajo pendiente y la capacidad disponible.</li>
+<li>Acordar si se incorpora, se investiga, se posterga o se rechaza.</li>
+<li>Registrar la decisión y comprobar después si produce el beneficio esperado.</li>
+</ol>
+<p>La <strong>expansión descontrolada del alcance</strong>, o scope creep, aparece cuando se incorpora trabajo sin revisar los acuerdos y sus efectos. La alternativa ágil requiere hacer visible la decisión. Para nuestro piloto podemos investigar la inscripción automática y continuar ofreciendo información validada; todavía no prometemos una función cuya viabilidad no comprobamos.</p>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Ante un pedido nuevo, explicá qué cambia, qué trabajo se desplazaría y quién tiene autoridad para acordarlo.</p></div>
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>Ya entendemos el problema de gestión. Ahora podemos presentar la agilidad como una respuesta a contextos con incertidumbre.</div>
+<div class="marco-contexto contexto-agilidad">
+<strong>FUNDAMENTOS DE AGILIDAD</strong> Este bloque explica por qué surge la agilidad, qué valores la orientan y cómo convierte incertidumbre en aprendizaje y entrega de valor.</div>
+<h2 id="seccion-9">9. Qué es la agilidad</h2>
+<div class="analogia"><p><strong>Analogía: un viaje con GPS.</strong> La agilidad se parece a elegir un destino, iniciar una ruta razonable y recalcular al encontrar un corte. Recalcular no cambia automáticamente el destino ni autoriza ignorar las reglas de tránsito. En un proyecto, el destino es el resultado buscado; la ruta es el plan; las observaciones del equipo y de los usuarios permiten ajustarlo. La comparación termina ahí: el valor de un producto no está definido tan claramente como una dirección. También debemos comprobar si el destino elegido resuelve una necesidad real.</p></div>
+<p>Primero vamos a comprender la <strong>agilidad</strong>, su origen y el Manifiesto. Después compararemos enfoques y veremos cómo organizar ciclos de <strong>aprendizaje</strong> y entrega. Así podremos elegir una forma de trabajo por su propósito y sus límites.</p>
+<h3>9.1 Aprender con evidencia</h3>
+<p>Trabajar de manera ágil no significa hacer todo más rápido ni aceptar cualquier pedido de inmediato. Significa acortar el <strong>tiempo</strong> entre una decisión y la <strong>evidencia</strong> que permite revisarla. En lugar de esperar a tener toda la app bancaria terminada, el equipo puede entregar una capacidad utilizable, observar qué dificultades encuentran los usuarios y ajustar las prioridades antes de invertir en el resto. Esa entrega necesita calidad suficiente para ser usada: una pantalla incompleta no demuestra que el problema esté resuelto.</p>
+<p>La expresión <strong>metodologías ágiles</strong> agrupa distintas maneras de organizar ese trabajo. No existe una única receta llamada Agile ni una lista universal de reuniones o roles. En la sección 10 vamos a conocer el mapa de alternativas.</p>
+<ul>
+<li>
+<strong>Se planifica:</strong> la profundidad y el horizonte del plan se ajustan a lo que realmente sabemos.</li>
+<li>
+<strong>Se controla:</strong> el progreso se contrasta con resultados utilizables y con señales de valor, no solo con tareas iniciadas.</li>
+<li>
+<strong>Se colabora:</strong> negocio, usuarios y equipo aportan información para resolver dudas y revisar decisiones.</li>
+<li>
+<strong>Se adapta:</strong> cambiar prioridades exige considerar capacidad, calidad y restricciones; no elimina los acuerdos.</li>
+</ul>
+<p>Al finalizar este módulo vas a poder distinguir una respuesta ágil de una improvisación. En el siguiente vas a ver cómo los marcos y métodos organizan ese trabajo cotidiano.</p>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Antes de llamar ágil a un proceso, identificá qué resultado se entrega, de quién se obtiene feedback y qué decisión puede cambiar con esa evidencia. La frecuencia de las reuniones no responde esas preguntas.</div>
 
-<p>En una gestión adaptativa, las necesidades nuevas se registran, se evalúan y se comparan con las prioridades vigentes con frecuencia. La app bancaria puede incorporar QR después de examinar valor esperado, capacidad, seguridad y obligaciones regulatorias. Si se utiliza Scrum, el Product Owner ordena el Product Backlog y colabora con los Developers para revisar el alcance sin poner en peligro el objetivo del Sprint. Esa es una forma específica de organizar el cambio, no una regla de toda metodología ágil.</p>
-<p>La agilidad <strong>no elimina aprobaciones contractuales, controles de seguridad ni análisis de impacto</strong>. La organización conserva los que sean necesarios y procura que resulten proporcionados al riesgo. Algunas decisiones pueden resolverse dentro del equipo; otras requieren intervención de legales, del sponsor o de un regulador. La diferencia deseable es obtener feedback y decidir oportunamente, no trabajar sin gobierno.</p>
 
-<p>Esta diferencia tiene implicancias profundas sobre el tipo de proyectos para los que cada enfoque resulta más adecuado. En contextos donde la incertidumbre es alta —por ejemplo, el desarrollo de un producto digital nuevo, dirigido a un mercado que todavía no se comprende completamente, y donde el equipo espera aprender y ajustar el rumbo a medida que avanza— la capacidad de incorporar cambios de manera ágil y sin fricción es una ventaja decisiva. En contextos donde la incertidumbre es baja y los requisitos están bien establecidos y son estables —por ejemplo, el desarrollo de un sistema que debe cumplir con una especificación regulatoria fija y auditable— el control de cambios formal de la gestión tradicional puede ser, en cambio, una salvaguarda necesaria antes que un obstáculo.</p>
+<h2 id="seccion-10">10. Origen de la agilidad</h2>
 
-<p>La flexibilidad requiere disciplina: hacer visibles las necesidades, explicar prioridades, limitar el trabajo iniciado y contrastar lo realizado con resultados utilizables. Las estimaciones son pronósticos, no una medición exacta de la capacidad ni una garantía de entrega. En Scrum, los Developers adaptan su plan y la Review permite revisar resultados con interesados; con Kanban, las políticas de selección y los límites de trabajo en curso controlan el flujo. Vamos a desarrollar esos mecanismos en el Módulo 2.</p>
+<p>¿Por qué empezó a cuestionarse la idea de definirlo todo al principio? En software, construir y probar una solución suele revelar necesidades que los documentos iniciales no habían previsto. Si esa información llega al final, corregir puede exigir rehacer mucho trabajo.</p>
+<p>Durante los años noventa, distintos equipos y profesionales desarrollaron formas de trabajar con colaboración cercana, entregas frecuentes y <strong>aprendizaje</strong>. No surgió una única receta: había propuestas con énfasis diferentes en organización, <strong>calidad</strong> técnica y adaptación.</p>
+<p>En febrero de <strong>2001</strong>, diecisiete profesionales se reunieron en <strong>Snowbird, Utah</strong>, y formularon el Manifiesto por el Desarrollo Ágil de Software. El encuentro puso en común experiencias previas; no inventó de cero la colaboración ni las entregas parciales.</p>
+<p>Para este módulo importa comprender el problema que intentaban resolver: obtener evidencia y responder a ella durante el desarrollo. Los nombres y mecanismos de sus propuestas se estudian después. La <a href="https://agilemanifesto.org/history.html">historia oficial del Manifiesto</a> permite ampliar este contexto.</p>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Una práctica resulta útil por el problema que ayuda a resolver. Comprender su propósito permite adaptarla con criterio.</p></div>
+<figure class="image-figure">
+<img src="assets/snowbird-origen-agilidad.png" alt="Diecisiete profesionales reunidos en un refugio de montaña integran distintas corrientes de trabajo en una propuesta común.">
+<figcaption><strong>Snowbird fue un punto de convergencia, no un comienzo desde cero.</strong> La escena representa cómo prácticas y experiencias previas se pusieron en común hasta formular un conjunto compartido de valores.</figcaption>
+</figure>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Aceptar el cambio no significa incorporarlo de inmediato. Registrá la necesidad, evaluá su valor y su urgencia, comparala con el trabajo ya priorizado y decidí en el momento de planificación adecuado sin desestabilizar el objetivo vigente.</div>
+<h2 id="seccion-11">11. El Manifiesto Ágil</h2>
+
+<p>Si el equipo completó cien páginas de documentación, pero el asistente responde con información incorrecta, ¿podemos decir que avanzó lo suficiente? El Manifiesto nos ayuda a pensar qué debemos priorizar cuando distintas actividades compiten por <strong>tiempo</strong> y atención.</p>
+<p>El <strong>Manifiesto Ágil</strong> expresa cuatro valores. No define una herramienta ni prescribe reuniones o roles. Plantea prioridades: procesos, documentación, contratos y planes siguen siendo útiles; su cumplimiento no debe reemplazar la colaboración ni la comprobación del resultado.</p>
+<table>
+<caption>Lectura de los cuatro valores aplicada al asistente</caption>
+<thead><tr>
+<th>Qué se prioriza</th>
+<th>Qué se conserva como apoyo</th>
+<th>Ejemplo</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Las personas y sus interacciones.</td>
+<td>Procesos y herramientas.</td>
+<td>Conversar con la oficina de alumnos para resolver una fecha ambigua.</td>
+</tr>
+<tr>
+<td>Una solución de software que funciona.</td>
+<td>Documentación suficiente y útil.</td>
+<td>Evaluar respuestas con consultas de prueba y registrar fuentes y resultados.</td>
+</tr>
+<tr>
+<td>Colaboración con el cliente.</td>
+<td>Acuerdos contractuales.</td>
+<td>Revisar el piloto con la universidad y negociar cambios explícitamente.</td>
+</tr>
+<tr>
+<td>Adaptación a nueva información.</td>
+<td>Planificación.</td>
+<td>Corregir documentos desactualizados antes de agregar más temas.</td>
+</tr>
+</tbody>
+</table>
+<h3>11.1 Personas y colaboración</h3>
+<p>Cuando aparece una duda, necesitamos a las personas capaces de resolverla. Un formulario o un tablero pueden registrar el problema, pero no conocen por sí mismos cuál es la fecha correcta de inscripción. La conversación aclara el significado; registrar la decisión evita que se pierda.</p>
+<h3>11.2 Resultado y documentación</h3>
+<p>El asistente debe permitir realizar la tarea prevista con <strong>calidad</strong> suficiente. Una demostración vistosa no acredita que las respuestas sean confiables. La documentación de fuentes, limitaciones y pruebas también aporta <strong>valor</strong> porque permite revisar y mantener el sistema.</p>
+<h3>11.3 Colaboración y acuerdos</h3>
+<p>Colaborar significa revisar necesidades y resultados con el cliente durante el trabajo. Los acuerdos siguen fijando responsabilidades, recursos y límites. Si cambia el <strong>alcance</strong>, se analiza el impacto y se acuerda cómo continuar.</p>
+<h3>11.4 Adaptación y planificación</h3>
+<p>El plan es una hipótesis de cómo alcanzar el objetivo con lo que sabemos hoy. Si las pruebas muestran un error importante, revisamos prioridades. Cambiar el plan requiere una razón y una decisión; aceptar cualquier pedido de inmediato produciría desorden.</p>
+<div class="analogia"><p><strong>Analogía de aprender a cocinar.</strong> La receta orienta, pero necesitás comprobar la cocción antes de servir. Si el resultado todavía no está listo, completar los pasos escritos no lo vuelve adecuado. En un proyecto, el plan guía y las pruebas aportan información para decidir. La analogía no sustituye las evaluaciones técnicas ni las obligaciones del producto.</p></div>
+<div class="mito"><p><strong>Mito.</strong> Trabajar de forma ágil significa prescindir de documentación y planes. <strong>Realidad.</strong> Necesitamos los que ayuden a coordinar, verificar y mantener el resultado; también necesitamos revisar lo que hacemos cuando la evidencia contradice el plan.</p></div>
+<p>Podés consultar la <a href="https://agilemanifesto.org/iso/es/manifesto.html">redacción original de los cuatro valores</a>. La tabla presenta una explicación aplicada, no una transcripción.</p>
+<h2 id="seccion-12">12. Los 12 principios ágiles</h2>
+
+<p>Los valores orientan decisiones. Los <strong>doce principios</strong> desarrollan cómo llevar esa orientación al trabajo. Para estudiarlos, los agrupamos por preguntas; la agrupación es didáctica y conserva la numeración original.</p>
+<h3>12.1 Cómo entregar y aprender</h3>
+<ul>
+<li>
+<strong>1. Valor temprano.</strong> Entregar capacidades útiles pronto y continuar mejorándolas. En el asistente, empezar por consultas de inscripción bien verificadas puede ayudar antes que abarcar todos los trámites sin comprobarlos.</li>
+<li>
+<strong>2. Aceptar cambios.</strong> Aprovechar información nueva, incluso avanzada la construcción. Si cambió una fecha, revisar los documentos importa más que conservar una respuesta ya implementada. Primero evaluamos el impacto.</li>
+<li>
+<strong>3. Entregas frecuentes.</strong> Reducir la espera para comprobar software que funciona. En nuestro ejemplo, preparar revisiones periódicas permite descubrir errores antes de ampliar el piloto. La frecuencia depende del contexto.</li>
+<li>
+<strong>7. Progreso verificable.</strong> Observar software funcionando como evidencia principal del avance del desarrollo. En IA, comprobar el funcionamiento incluye evaluar respuestas y limitaciones; que el chat se abra no es suficiente.</li>
+</ul>
+<h3>12.2 Cómo colaborar</h3>
+<ul>
+<li>
+<strong>4. Negocio y construcción juntos.</strong> Quienes conocen los trámites y quienes implementan el asistente colaboran de forma cotidiana. Separarlos hasta la entrega aumenta el riesgo de entender mal las reglas.</li>
+<li>
+<strong>5. Apoyo y confianza.</strong> Dar a las personas motivadas el entorno y los recursos que necesitan. Pedir evaluación de respuestas sin acceso a documentos vigentes impide hacer bien el trabajo.</li>
+<li>
+<strong>6. Comunicación directa.</strong> La conversación cara a cara es el medio que el texto original prioriza para comunicar información. Una videollamada puede ayudar a aclarar una duda en un equipo remoto; los registros escritos siguen siendo necesarios para compartir acuerdos y trabajar de manera asincrónica.</li>
+<li>
+<strong>11. Autoorganización.</strong> Permitir que el equipo aporte su conocimiento para construir requisitos, arquitectura y diseño. La autonomía se ejerce dentro de objetivos, límites y responsabilidades acordadas.</li>
+</ul>
+<h3>12.3 Cómo sostener y mejorar el trabajo</h3>
+<ul>
+<li>
+<strong>8. Ritmo sostenible.</strong> Mantener una forma de trabajo que pueda sostenerse. Extender jornadas de manera permanente puede deteriorar la revisión y ocultar problemas de organización.</li>
+<li>
+<strong>9. Excelencia técnica.</strong> Cuidar diseño y calidad para poder cambiar con confianza. En el asistente, registrar versiones de documentos y repetir pruebas ayuda a reconocer qué modificación provocó un error.</li>
+<li>
+<strong>10. Simplicidad.</strong> Evitar trabajo que no contribuye al objetivo. Si un buscador de preguntas frecuentes resuelve la necesidad, sumar un agente complejo necesita una justificación.</li>
+<li>
+<strong>12. Reflexión y mejora.</strong> Revisar periódicamente cómo trabajamos y ajustar el proceso. Si la validación de documentos demora las entregas, acordar revisiones más pequeñas puede ser un experimento de mejora.</li>
+</ul>
+<p>Estas explicaciones son paráfrasis y ejemplos. La <a href="https://agilemanifesto.org/iso/es/principles.html">redacción original de los doce principios</a> permite reconocer su contexto de desarrollo de software.</p>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Evaluá los principios en comportamientos observables: qué se entrega, cómo se aprende, cómo se colabora y cómo se cuida la calidad.</p></div>
+<h2 id="seccion-13">13. Entrega de valor</h2>
+
+<p>El asistente genera respuestas más largas y usa un modelo más grande. ¿Eso significa que es más útil? Solo podemos responder si sabemos qué problema queríamos resolver y qué cambió para las personas que lo utilizan.</p>
+<p>El <strong>valor</strong> es el beneficio que una solución aporta a sus usuarios o a la organización. No equivale a la cantidad de funcionalidades ni al tamaño del modelo. En nuestro caso puede ser que los estudiantes encuentren información vigente y sepan cuándo consultar a una persona.</p>
+<h3>13.1 Actividad, capacidad y beneficio</h3>
+<table>
+<caption>Tres formas de describir el avance</caption>
+<thead><tr>
+<th>Nivel</th>
+<th>Ejemplo</th>
+<th>Qué falta comprobar</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Actividad</td>
+<td>Cargar documentos.</td>
+<td>Si son correctos y están vigentes.</td>
+</tr>
+<tr>
+<td>Capacidad entregada</td>
+<td>Responder consultas con referencia al documento utilizado.</td>
+<td>Si las respuestas permiten resolver la consulta.</td>
+</tr>
+<tr>
+<td>Beneficio</td>
+<td>Estudiantes encuentran la respuesta correcta con menos dificultad.</td>
+<td>Si ocurre en condiciones reales y para distintos grupos.</td>
+</tr>
+</tbody>
+</table>
+<p>Antes de construir, expresamos una <strong>hipótesis de valor</strong>: “si ofrecemos respuestas verificadas sobre inscripción, los estudiantes podrán resolver esas consultas con menos dificultad”. Elegimos señales para evaluarla, como corrección de respuestas, tiempo para resolver la tarea y necesidad de asistencia. Los resultados de un conjunto pequeño de pruebas no garantizan el comportamiento de todos los usuarios.</p>
+<p>Priorizar implica comparar beneficio esperado, esfuerzo, riesgo y dependencias. Podemos apoyarnos en análisis <strong>costo</strong>-beneficio o en categorías de prioridad. En el Módulo 3 estudiaremos estas técnicas con detalle; aquí importa entender por qué algunas necesidades deben atenderse antes que otras.</p>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Antes de proponer una funcionalidad, escribí para quién sería útil, qué mejoraría y con qué evidencia evaluarías esa mejora.</p></div>
+<p class="bloque-narrativo">Ya tenemos criterios para juzgar las decisiones. Ahora podemos conocer las formas de organizar el trabajo sin confundirlas con herramientas.</p>
+<h2 id="seccion-14">14. Enfoques, metodologías y marcos de trabajo</h2>
+<p>¿Un enfoque, un marco y una herramienta son lo mismo? Para ubicarnos necesitamos distinguir la lógica de organización, la estructura de trabajo y los medios que utilizamos para coordinarlo. Este mapa introduce cada alternativa antes de comparar sus reglas.</p>
+<table class="tabla-comparativa">
+<caption>Un mapa para entender el vocabulario de la materia</caption>
+<thead><tr>
+<th scope="col">Concepto</th>
+<th scope="col">Qué describe</th>
+<th scope="col">Ejemplo</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enfoque</td>
+<td>La lógica general para planificar, aprender y organizar las entregas.</td>
+<td>Predictivo o adaptativo; iterativo e incremental describen cómo se construye y entrega.</td>
+</tr>
+<tr>
+<td>Metodología o método</td>
+<td>Una manera organizada de trabajar con principios, procedimientos y prácticas.</td>
+<td>Kanban ayuda a observar cómo avanzan las tareas y a terminar trabajo antes de iniciar más.</td>
+</tr>
+<tr>
+<td>Marco de trabajo</td>
+<td>Una estructura que el equipo completa con prácticas adecuadas al contexto.</td>
+<td>Scrum organiza el trabajo en ciclos breves, con objetivos, responsabilidades y revisión de resultados.</td>
+</tr>
+<tr>
+<td>Práctica</td>
+<td>Una técnica que puede utilizarse dentro de distintos sistemas de trabajo.</td>
+<td>Dos personas trabajan juntas sobre el código, o se escribe una prueba de comportamiento antes de implementarlo.</td>
+</tr>
+<tr>
+<td>Herramienta</td>
+<td>Un soporte para representar, coordinar o automatizar el trabajo.</td>
+<td>Un tablero digital; usarlo no convierte por sí solo al equipo en ágil.</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos planificar anticipadamente una parte estable del proyecto y trabajar de forma adaptativa en otra donde necesitamos aprender. <strong>Iterar</strong> significa revisar y mejorar una solución; <strong>incrementar</strong> significa agregar una capacidad utilizable. Estas características pueden combinarse: no son cuatro casilleros necesariamente excluyentes. Más adelante vamos a desarrollar sus diferencias con ejemplos.</p>
+<h3>14.1 Panorama de las alternativas</h3>
+<p>Este es un primer mapa, no una lista que debas memorizar. En el Módulo 2 vamos a desarrollar Scrum y Kanban, estudiar prácticas de XP y principios Lean, y comparar combinaciones y otras alternativas.</p>
+<table class="tabla-comparativa">
+<caption>Qué aporta cada alternativa al trabajo sobre un producto</caption>
+<thead><tr>
+<th scope="col">Alternativa</th>
+<th scope="col">Aporte principal</th>
+<th scope="col">Pregunta que ayuda a responder</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Scrum</td>
+<td>Organizar la creación de valor y el aprendizaje en ciclos con objetivos y responsabilidades claras.</td>
+<td>¿Cómo coordinamos el equipo para avanzar hacia una meta y revisar los resultados?</td>
+</tr>
+<tr>
+<td>Kanban</td>
+<td>Visualizar y mejorar el flujo, controlando cuánto trabajo se inicia.</td>
+<td>¿Dónde se acumula trabajo y cómo podemos terminarlo de manera más previsible?</td>
+</tr>
+<tr>
+<td>Extreme Programming (XP)</td>
+<td>Integrar colaboración y prácticas de desarrollo que sostienen la calidad y la capacidad de cambio.</td>
+<td>¿Cómo construimos software que podamos modificar con confianza?</td>
+</tr>
+<tr>
+<td>Lean</td>
+<td>Orientar la gestión hacia el valor, el aprendizaje y la reducción de desperdicios.</td>
+<td>¿Qué actividad o espera consume recursos sin contribuir al resultado?</td>
+</tr>
+<tr>
+<td>Scrumban y combinaciones</td>
+<td>Combinar revisiones periódicas con el seguimiento de cómo avanzan las tareas, mediante acuerdos claros.</td>
+<td>¿Qué combinación responde a nuestra demanda sin crear reglas contradictorias?</td>
+</tr>
+</tbody>
+</table>
+<p>Las alternativas no son una escala de mejores a peores ni un catálogo exhaustivo. Elegimos qué estudiar con más detalle por su aporte a los objetivos de esta materia. Para comprenderlas primero necesitamos examinar el ciclo de vida, los enfoques de planificación y las restricciones del <strong>proyecto</strong>.</p>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Elegí primero qué problema de gestión necesitás resolver y después qué marco, método o práctica puede ayudarte. Una herramienta nueva o un título de puesto no reemplazan ese diagnóstico.</div>
 
 
+<div class="transicion-marco">
+<strong>Cambio de contexto. </strong>Cerramos los fundamentos. Aplicaremos criterios para elegir sin convertir un enfoque en una receta universal.</div>
+<div class="marco-contexto contexto-combinacion">
+<strong>COMPARACIÓN E INTEGRACIÓN</strong> Recién después de comprender cada enfoque por separado podemos compararlos o combinarlos sin mezclar sus reglas.</div>
 <h2 id="seccion-15">15. Comparación y selección de enfoques</h2>
 
-<p>Después de haber recorrido los fundamentos del enfoque predictivo y de la agilidad, es momento de sintetizar la comparación entre ambos —y de incorporar una tercera categoría cada vez más presente en la práctica profesional: los enfoques híbridos, que combinan elementos de gestión predictiva y ágil según las necesidades específicas de cada proyecto u organización.</p>
+<p>Después de haber recorrido los fundamentos del enfoque <strong>predictivo</strong> y de la <strong>agilidad</strong>, es momento de sintetizar la comparación entre ambos —y de incorporar una tercera categoría cada vez más presente en la práctica profesional: los enfoques híbridos, que combinan elementos de gestión predictiva y ágil según las necesidades específicas de cada proyecto u organización.</p>
 
-<p>Ningún enfoque es intrínsecamente superior al otro en abstracto: la elección adecuada depende del contexto del proyecto, y en particular de dos variables clave que conviene evaluar de manera explícita antes de decidir cómo gestionar un proyecto. La primera es el grado de incertidumbre o claridad de los requisitos: ¿sabemos con precisión qué hay que construir, o vamos a descubrirlo a medida que avanzamos? La segunda es el costo del cambio en etapas avanzadas: ¿qué tan costoso —en tiempo, dinero o riesgo— es corregir un error o incorporar un cambio una vez que el desarrollo está avanzado?</p>
+<p>Ningún enfoque es intrínsecamente superior al otro en abstracto: la elección adecuada depende del contexto del <strong>proyecto</strong>, y en particular de dos variables clave que conviene evaluar de manera explícita antes de decidir cómo gestionar un proyecto. La primera es el grado de <strong>incertidumbre</strong> o claridad de los requisitos: ¿sabemos con precisión qué hay que construir, o vamos a descubrirlo a medida que avanzamos? La segunda es el costo del cambio en etapas avanzadas: ¿qué tan costoso —en tiempo, dinero o riesgo— es corregir un error o incorporar un cambio una vez que el desarrollo está avanzado?</p>
 
-<p>Cuando los requisitos son claros y estables, y el costo de cambiar en etapas avanzadas es alto, el enfoque predictivo suele ser la opción más razonable: permite planificar con precisión, cumplir con exigencias contractuales o regulatorias, y minimizar sorpresas. Cuando los requisitos son inciertos o van a evolucionar durante el proyecto, y el costo de aprender y ajustar el rumbo es relativamente bajo (como suele ocurrir en el desarrollo de software, donde iterar sobre el código es, en general, mucho menos costoso que iterar sobre una construcción física), el enfoque ágil se vuelve claramente preferible, porque permite validar hipótesis tempranamente y evitar invertir grandes esfuerzos en construir algo que termine no siendo lo que el cliente necesitaba.</p>
+<p>Cuando los requisitos son claros y estables, y el <strong>costo</strong> de cambiar en etapas avanzadas es alto, el enfoque <strong>predictivo</strong> suele ser la opción más razonable: permite planificar con precisión, cumplir con exigencias contractuales o regulatorias, y minimizar sorpresas. Cuando los requisitos son inciertos o van a evolucionar durante el proyecto, y el costo de aprender y ajustar el rumbo es relativamente bajo (como suele ocurrir en el desarrollo de software, donde iterar sobre el código es, en general, mucho menos costoso que iterar sobre una construcción física), el enfoque ágil se vuelve claramente preferible, porque permite validar hipótesis tempranamente y evitar invertir grandes esfuerzos en construir algo que termine no siendo lo que el cliente necesitaba.</p>
 
-<p>Los <strong>enfoques híbridos</strong> pueden ser útiles cuando un proyecto combina componentes de distinta naturaleza. En la implementación de un ERP industrial, la infraestructura y la configuración base pueden planificarse de forma más predictiva por sus contratos, licencias y arquitectura conocida; las integraciones y personalizaciones pueden desarrollarse en ciclos de aprendizaje con usuarios. La combinación debe responder a esas diferencias, no a una etiqueta. El PMBOK es una guía del cuerpo de conocimientos de dirección de proyectos, no una metodología que deba ejecutarse como un procedimiento único. Tampoco planificar a largo plazo convierte automáticamente un enfoque ágil en híbrido. Los marcos de escalado, como SAFe, se estudiarán más adelante, después de comprender el trabajo de un equipo.</p>
-
+<p>Un <strong>enfoque híbrido</strong> combina formas de gestión cuando diferentes partes del trabajo lo justifican. En el asistente, podemos planificar anticipadamente la revisión de permisos y trabajar en ciclos de prueba sobre las respuestas. La combinación necesita acuerdos claros. Planificar a largo plazo no convierte automáticamente un trabajo ágil en híbrido.</p>
 <table class="tabla-comparativa">
 <caption>Comparación integral: enfoque predictivo, ágil e híbrido</caption>
 <thead>
-<tr><th scope="col">Criterio</th><th scope="col">Predictivo</th><th scope="col">Ágil</th><th scope="col">Híbrido</th></tr>
+<tr>
+<th scope="col">Criterio</th>
+<th scope="col">Predictivo</th>
+<th scope="col">Ágil</th>
+<th scope="col">Híbrido</th>
+</tr>
 </thead>
 <tbody>
-<tr><td>Requisitos</td><td>Definidos y documentados en detalle al inicio</td><td>Emergen y se refinan durante el proyecto</td><td>Parte definida al inicio, parte emergente</td></tr>
-<tr><td>Planificación</td><td>Extensa, detallada, de largo plazo</td><td>Liviana al inicio, continua a lo largo del proyecto</td><td>Planificación macro de largo plazo + planificación ágil de detalle</td></tr>
-<tr><td>Gestión del cambio</td><td>Formal, a través de control de cambios</td><td>Frecuente, con políticas y acuerdos de cambio explícitos</td><td>Control de cambios para hitos macro, flexibilidad en la ejecución</td></tr>
-<tr><td>Entregas al cliente</td><td>Entregas e hitos acordados; pueden existir entregas parciales</td><td>Frecuentes, por ciclos o por flujo según el enfoque</td><td>Hitos formales combinados con entregas incrementales</td></tr>
-<tr><td>Contextos favorables</td><td>Requisitos estables, alta exigencia regulatoria o contractual</td><td>Alta incertidumbre, necesidad de aprender y adaptar rápido</td><td>Proyectos grandes y complejos con componentes de distinta naturaleza</td></tr>
-<tr><td>Ejemplo de proyecto</td><td>Software embebido para un dispositivo médico certificado</td><td>Desarrollo de una nueva app de consumo masivo</td><td>Implementación de un ERP con integraciones a medida</td></tr>
+<tr>
+<td>Requisitos</td>
+<td>Definidos y documentados en detalle al inicio</td>
+<td>Emergen y se refinan durante el proyecto</td>
+<td>Parte definida al inicio, parte emergente</td>
+</tr>
+<tr>
+<td>Planificación</td>
+<td>Extensa, detallada, de largo plazo</td>
+<td>Liviana al inicio, continua a lo largo del proyecto</td>
+<td>Planificación macro de largo plazo + planificación ágil de detalle</td>
+</tr>
+<tr>
+<td>Gestión del cambio</td>
+<td>Formal, a través de control de cambios</td>
+<td>Frecuente, con políticas y acuerdos de cambio explícitos</td>
+<td>Control de cambios para hitos macro, flexibilidad en la ejecución</td>
+</tr>
+<tr>
+<td>Entregas al cliente</td>
+<td>Entregas e hitos acordados; pueden existir entregas parciales</td>
+<td>Frecuentes, por ciclos o por flujo según el enfoque</td>
+<td>Hitos formales combinados con entregas incrementales</td>
+</tr>
+<tr>
+<td>Contextos favorables</td>
+<td>Requisitos estables, alta exigencia regulatoria o contractual</td>
+<td>Alta incertidumbre, necesidad de aprender y adaptar rápido</td>
+<td>Proyectos grandes y complejos con componentes de distinta naturaleza</td>
+</tr>
+<tr>
+<td>Ejemplo de proyecto</td>
+<td>Software embebido para un dispositivo médico certificado</td>
+<td>Desarrollo de una nueva app de consumo masivo</td>
+<td>Implementación de un ERP con integraciones a medida</td>
+</tr>
 </tbody>
 </table>
 
-<p>En definitiva, la decisión sobre qué enfoque adoptar —predictivo, ágil o híbrido— no debería tomarse por moda ni por convicción ideológica, sino como resultado de un análisis honesto del contexto del proyecto: el nivel de certeza sobre lo que hay que construir, la volatilidad del entorno de negocio, las exigencias contractuales o regulatorias, la cultura de la organización y la capacidad y madurez del equipo para trabajar de manera autoorganizada. Un buen gestor de proyectos de software del siglo XXI no es aquel que domina un único enfoque, sino aquel capaz de diagnosticar correctamente qué combinación de prácticas predictivas y ágiles resulta más adecuada para cada proyecto particular, y de adaptar esa combinación a medida que el propio proyecto evoluciona.</p>
-
-<p>Cynefin, desarrollado por Dave Snowden, ayuda a pensar el contexto de una decisión. Distingue dominios claro, complicado, complejo y caótico, además de una zona de confusión cuando no sabemos todavía en qué contexto estamos. En lo claro existen relaciones causa-efecto reconocibles y prácticas conocidas; en lo complicado hace falta análisis experto; en lo complejo necesitamos experimentar de manera segura, observar patrones y ajustar; en lo caótico primero debemos estabilizar la situación. Configurar una red con especificaciones conocidas puede requerir análisis experto; explorar una experiencia de usuario nueva requiere pruebas y aprendizaje; responder a una caída crítica exige contener el incidente antes de investigar con calma. No es un selector automático de metodologías: en un mismo proyecto pueden coexistir decisiones de distintos dominios.</p>
-
-<p>Esta idea conecta con una reflexión final que conviene tener presente a lo largo de toda la materia: la agilidad no es un fin en sí mismo ni una religión metodológica, sino una respuesta racional a un tipo particular de problema de gestión, el que se presenta cuando la incertidumbre es alta y el aprendizaje solo puede lograrse construyendo y observando. Comprender esta lógica de fondo —y no simplemente memorizar los nombres de las ceremonias o los roles de Scrum— es lo que permitirá, en los módulos siguientes de esta materia, aplicar los marcos ágiles con criterio profesional genuino, en lugar de aplicarlos de manera mecánica o dogmática en contextos donde quizás no sean la mejor opción disponible.</p>
+<p>En definitiva, la decisión sobre qué enfoque adoptar —<strong>predictivo</strong>, ágil o híbrido— no debería tomarse por moda ni por convicción ideológica, sino como resultado de un análisis honesto del contexto del <strong>proyecto</strong>: el nivel de certeza sobre lo que hay que construir, la volatilidad del entorno de negocio, las exigencias contractuales o regulatorias, la cultura de la organización y la capacidad y madurez del equipo para trabajar de manera autoorganizada.</p>
+<p>Un buen gestor de proyectos de software del siglo XXI no es aquel que domina un único enfoque, sino aquel capaz de diagnosticar correctamente qué combinación de prácticas predictivas y ágiles resulta más adecuada para cada proyecto particular, y de adaptar esa combinación a medida que el propio proyecto evoluciona.</p>
+<p>El marco <strong>Cynefin</strong> ayuda a pensar el contexto de una decisión. Cuando conocemos relaciones causa-efecto podemos aplicar prácticas establecidas; cuando el problema exige experiencia técnica necesitamos análisis; cuando el resultado depende de interacciones difíciles de anticipar necesitamos experimentar de manera acotada; ante una crisis primero debemos estabilizar. No selecciona automáticamente una metodología. En el asistente, configurar un permiso conocido y explorar si una respuesta ayuda al estudiante son problemas diferentes.</p>
+<p>Esta idea conecta con una reflexión final que conviene tener presente a lo largo de toda la materia: la <strong>agilidad</strong> no es un fin en sí mismo ni una religión metodológica, sino una respuesta racional a un tipo particular de problema de gestión, el que se presenta cuando la <strong>incertidumbre</strong> es alta y el aprendizaje solo puede lograrse construyendo y observando. Comprender esta lógica de fondo —y no simplemente memorizar los nombres de las ceremonias o los roles de Scrum— es lo que permitirá, en los módulos siguientes de esta materia, aplicar los marcos ágiles con criterio profesional genuino, en lugar de aplicarlos de manera mecánica o dogmática en contextos donde quizás no sean la mejor opción disponible.</p>
 
 <h3>15.1 Caso resuelto: incorporar pagos QR en una app bancaria</h3>
 
 <p>Retomemos la app bancaria presentada al estudiar la triple restricción. El proyecto debe habilitar una nueva versión en doce semanas por un compromiso regulatorio. El equipo estable tiene seis integrantes y no puede ampliarse durante ese período. A mitad del trabajo, las pruebas con clientes revelan que el pago mediante código QR tendría alto valor, pero esa funcionalidad no estaba incluida. Los siguientes datos son <strong>supuestos didácticos</strong> para mostrar cómo se razona la decisión.</p>
 
 <ol class="caso-resuelto">
-<li><strong>Separar restricciones negociables y no negociables.</strong> La fecha regulatoria y el equipo disponible fijan tiempo y costo. También son obligatorios los requisitos de seguridad, trazabilidad y cumplimiento. El alcance comercial restante sí puede reordenarse.</li>
-<li><strong>Clasificar la incertidumbre.</strong> Las reglas regulatorias están documentadas y requieren evidencia auditable, por lo que admiten planificación predictiva. La experiencia de pago QR contiene incertidumbre de uso: hay que observar si las personas comprenden el escaneo, la confirmación y los errores.</li>
-<li><strong>Elegir un enfoque híbrido deliberado.</strong> Se mantiene un plan de hitos para certificación y cumplimiento, mientras la experiencia QR se desarrolla en iteraciones de dos semanas. El pedido aparece al cumplirse seis de las doce semanas: quedan tres ciclos de dos semanas, no seis. Se debe comprobar qué versión utilizable de QR cabe en ese tiempo antes de prometer su incorporación.</li>
-<li><strong>Renegociar alcance con transparencia.</strong> La persona responsable de las prioridades de producto compara QR con funcionalidades todavía no iniciadas; si se utiliza Scrum, esa responsabilidad corresponde al Product Owner. Para este caso se supone que el equipo verificó la viabilidad técnica y que postergar cupones libera esfuerzo suficiente para una primera versión de QR. Sin esa comprobación, el intercambio de funcionalidades no demuestra que se pueda cumplir la fecha.</li>
-<li><strong>Definir evidencia de progreso.</strong> Para cumplimiento, la evidencia son controles implementados, pruebas y trazabilidad aprobadas. Para QR, son incrementos utilizables revisados con clientes y métricas de tarea como finalización, errores y abandono.</li>
-<li><strong>Revisar la decisión.</strong> Si las pruebas tempranas muestran que QR no resuelve el problema o introduce un riesgo que no puede mitigarse, el backlog se vuelve a priorizar. La decisión inicial no se protege por orgullo: se contrasta con evidencia.</li>
+<li>
+<strong>Separar restricciones negociables y no negociables.</strong> La fecha regulatoria y el equipo disponible fijan tiempo y costo. También son obligatorios los requisitos de seguridad, trazabilidad y cumplimiento. El alcance comercial restante sí puede reordenarse.</li>
+<li>
+<strong>Clasificar la incertidumbre.</strong> Las reglas regulatorias están documentadas y requieren evidencia auditable, por lo que admiten planificación predictiva. La experiencia de pago QR contiene incertidumbre de uso: hay que observar si las personas comprenden el escaneo, la confirmación y los errores.</li>
+<li>
+<strong>Elegir un enfoque híbrido deliberado.</strong> Se mantiene un plan de hitos para certificación y cumplimiento, mientras la experiencia QR se desarrolla en iteraciones de dos semanas. El pedido aparece al cumplirse seis de las doce semanas: quedan tres ciclos de dos semanas, no seis. Se debe comprobar qué versión utilizable de QR cabe en ese tiempo antes de prometer su incorporación.</li>
+<li>
+<strong>Renegociar alcance con transparencia.</strong> La persona autorizada para decidir prioridades compara QR con funcionalidades no iniciadas y consulta la viabilidad con el equipo. Para este caso se supone que postergar cupones libera esfuerzo suficiente para una primera versión. Sin esa comprobación, intercambiar funcionalidades no demuestra que se cumpla la fecha.</li>
+<li>
+<strong>Definir evidencia de progreso.</strong> Para cumplimiento, la evidencia son controles implementados, pruebas y trazabilidad aprobadas. Para QR, son incrementos utilizables revisados con clientes y métricas de tarea como finalización, errores y abandono.</li>
+<li>
+<strong>Revisar la decisión.</strong> Si las pruebas tempranas muestran que QR no resuelve el problema o introduce un riesgo que no puede mitigarse, se reordena el trabajo pendiente. La decisión inicial se contrasta con evidencia.</li>
 </ol>
 
 <table class="tabla-caso-resuelto">
 <caption>Resultado de la decisión sobre el proyecto bancario</caption>
 <thead>
-<tr><th scope="col">Dimensión</th><th scope="col">Decisión</th><th scope="col">Fundamento</th></tr>
+<tr>
+<th scope="col">Dimensión</th>
+<th scope="col">Decisión</th>
+<th scope="col">Fundamento</th>
+</tr>
 </thead>
 <tbody>
-<tr><td>Tiempo</td><td>Mantener doce semanas</td><td>Es una restricción regulatoria externa.</td></tr>
-<tr><td>Costo</td><td>Mantener el equipo de seis personas</td><td>Sumar personas a mitad del proyecto no garantiza aceleración y agrega coordinación.</td></tr>
-<tr><td>Alcance</td><td>Incorporar QR y postergar cupones</td><td>Se intercambia alcance según valor, sin degradar controles obligatorios.</td></tr>
-<tr><td>Enfoque</td><td>Híbrido</td><td>Combina hitos auditables con aprendizaje iterativo sobre la experiencia.</td></tr>
-<tr><td>Calidad</td><td>No negociable</td><td>Seguridad, pruebas y trazabilidad no se usan como variable de ajuste.</td></tr>
+<tr>
+<td>Tiempo</td>
+<td>Mantener doce semanas</td>
+<td>Es una restricción regulatoria externa.</td>
+</tr>
+<tr>
+<td>Costo</td>
+<td>Mantener el equipo de seis personas</td>
+<td>Sumar personas a mitad del proyecto no garantiza aceleración y agrega coordinación.</td>
+</tr>
+<tr>
+<td>Alcance</td>
+<td>Incorporar QR y postergar cupones</td>
+<td>Se intercambia alcance según valor, sin degradar controles obligatorios.</td>
+</tr>
+<tr>
+<td>Enfoque</td>
+<td>Híbrido</td>
+<td>Combina hitos auditables con aprendizaje iterativo sobre la experiencia.</td>
+</tr>
+<tr>
+<td>Calidad</td>
+<td>No negociable</td>
+<td>Seguridad, pruebas y trazabilidad no se usan como variable de ajuste.</td>
+</tr>
 </tbody>
 </table>
 
-<div class="criterio-profesional"><strong>Criterio profesional:</strong> Elegí el enfoque por componentes de incertidumbre y riesgo, no solo por la etiqueta general del proyecto. Un mismo producto puede requerir control predictivo para obligaciones estables y ciclos ágiles para decisiones que dependen de aprendizaje.</div>
+<div class="criterio-profesional">
+<strong>Criterio profesional:</strong> Elegí el enfoque por componentes de incertidumbre y riesgo, no solo por la etiqueta general del proyecto. Un mismo producto puede requerir control predictivo para obligaciones estables y ciclos ágiles para decisiones que dependen de aprendizaje.</div>
 
 
-<p class="fuentes-oficiales"><strong>Fuentes de los fundamentos:</strong> <a href="https://agilemanifesto.org/iso/es/manifesto.html">Manifiesto por el Desarrollo Ágil de Software</a> y <a href="https://agilemanifesto.org/iso/es/principles.html">sus doce principios</a>. Los ejemplos del módulo explican su aplicación; no son resultados atribuidos a los firmantes. Consulta: 15 de septiembre de 2026.</p><h2 id="seccion-16">Recursos audiovisuales sugeridos</h2>
+<p class="fuentes-oficiales"><strong>Fuentes de los fundamentos:</strong> <a href="https://agilemanifesto.org/iso/es/manifesto.html">Manifiesto por el Desarrollo Ágil de Software</a> y <a href="https://agilemanifesto.org/iso/es/principles.html">sus doce principios</a>. Los ejemplos del módulo explican su aplicación; no son resultados atribuidos a los firmantes. Consulta: 15 de septiembre de 2026.</p>
+<h3>15.2 Gestión ágil de un proyecto de IA</h3>
+<p>Retomemos el asistente universitario. Elegir un modelo no resuelve por sí solo la vigencia de los documentos, la calidad de las respuestas ni la experiencia de los estudiantes. Necesitamos gestionar el <strong>sistema completo</strong> y comprobarlo en su contexto de uso.</p>
+<p>En proyectos de IA pueden aparecer incertidumbres sobre datos disponibles y comportamiento del sistema. El trabajo ágil permite planificar pruebas acotadas, aprender y decidir si conviene continuar. No garantiza que el siguiente experimento mejore el resultado ni elimina la necesidad de controles.</p>
+<ol>
+<li>
+<strong>Definir un problema pequeño.</strong> Empezar por consultas de inscripción con documentos autorizados y vigentes.</li>
+<li>
+<strong>Preparar una referencia sencilla.</strong> Probar primero un buscador de preguntas frecuentes. Esa referencia, llamada línea de base o baseline, permite comparar si una solución más compleja aporta una mejora.</li>
+<li>
+<strong>Acordar la evaluación.</strong> Seleccionar consultas de prueba, describir qué cuenta como respuesta correcta y revisar fuentes, errores y límites. Las preguntas usadas para ajustar el sistema no deben ser la única evidencia para evaluarlo.</li>
+<li>
+<strong>Comparar antes de ampliar.</strong> Probar el asistente con revisión humana. Registrar resultados y condiciones para poder repetir la evaluación.</li>
+<li>
+<strong>Decidir el siguiente paso.</strong> Corregir problemas, ampliar gradualmente o mantener la referencia sencilla si resuelve mejor la necesidad.</li>
+</ol>
+<p>Los experimentos generan <strong>aprendizaje</strong>; una entrega genera una capacidad utilizable. Si el asistente falla en las pruebas, aprendimos qué revisar, pero todavía no contamos con un resultado apto para ampliar a todos los estudiantes.</p>
+<p>El <a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/">AI RMF de NIST</a> plantea gestionar y evaluar riesgos durante el ciclo de vida de los sistemas de IA. Es un marco voluntario, no una metodología ágil ni una exigencia de esta materia. Nos ayuda a reconocer que la evaluación debe acompañar la construcción y el uso.</p>
+<h3>15.3 IA que ayuda a gestionar el trabajo</h3>
+<p>Hay una segunda relación: podemos utilizar IA para apoyar la gestión. Un asistente puede preparar un resumen de consultas o un borrador de tareas. Un <strong>agente de IA</strong> puede, según su configuración y permisos, encadenar acciones y utilizar herramientas para completar un objetivo. Que un producto se anuncie como agente no significa que sea infalible o que trabaje sin límites.</p>
+<div class="analogia"><p><strong>Analogía de una persona que prepara una agenda.</strong> Puede reunir propuestas, detectar asuntos pendientes y redactar un orden del día. Quienes tienen responsabilidad deben comprobar la información y decidir. Un agente puede ahorrar parte de esa preparación, pero un resumen incorrecto también puede orientar mal el trabajo.</p></div>
+<p>Un ejemplo de apoyo sería agrupar consultas repetidas y proponer borradores de tareas para mejorar el asistente. Una persona revisa si esos borradores representan necesidades reales antes de incorporarlos. El equipo mantiene claras las responsabilidades, los permisos y qué acciones requieren revisión.</p>
+<p>En el <strong>Módulo 4</strong> estudiaremos herramientas de seguimiento con ejemplos visuales: Trello para comprender tableros, Jira para organizar y seguir trabajo más completo, y Notion como opción complementaria de documentación y tareas. Jira y Notion ofrecen funciones de IA y agentes; la disponibilidad depende de la configuración y del acceso contratado. No es necesario contar con funciones pagas para comprender los fundamentos.</p>
+<p>Fuentes de herramientas consultadas el 15 de septiembre de 2026: <a href="https://trello.com/en/guide/trello-101">tableros y tarjetas en Trello</a>, <a href="https://www.atlassian.com/software/jira/ai">IA en Jira</a> y <a href="https://www.notion.com/help/notion-agent">Notion Agent</a>. Estas capacidades pueden cambiar; los ejemplos deben explicar la decisión de gestión que apoyan.</p>
+<div class="criterio-profesional"><p><strong>Criterio profesional.</strong> Separá qué estás gestionando de con qué lo gestionás: un proyecto que construye IA puede usar un tablero sencillo, y un proyecto sin IA puede utilizar un agente como apoyo.</p></div>
+<h2 id="seccion-recursos">Recursos audiovisuales sugeridos</h2>
 
 <ul class="recursos-audiovisuales">
-<li><a href="https://www.youtube.com/watch?v=rf8Gi2RLKWQ"><strong>The Agile Manifesto - 4 Agile Values Explained</strong></a>, de CollabNet VersionOne. Se recomienda para volver sobre la relación “valoramos más” sin interpretar que los elementos de la derecha carecen de valor.</li>
-<li><a href="https://www.youtube.com/watch?v=8Nrw8pho6cY"><strong>Agile vs Waterfall: Waterfall Wins! + FREE CHEAT SHEET</strong></a>, de Development That Pays. Se recomienda porque muestra, mediante un caso concreto, que la previsibilidad del contexto puede volver razonable un enfoque predictivo y obliga a justificar la elección metodológica.</li>
+<li>
+<a href="https://www.youtube.com/watch?v=rf8Gi2RLKWQ"><strong>The Agile Manifesto - 4 Agile Values Explained</strong></a>, de CollabNet VersionOne. Se recomienda para volver sobre la relación “valoramos más” sin interpretar que los elementos de la derecha carecen de valor.</li>
+<li>
+<a href="https://www.youtube.com/watch?v=8Nrw8pho6cY"><strong>Agile vs Waterfall: Waterfall Wins! + FREE CHEAT SHEET</strong></a>, de Development That Pays. Se recomienda porque muestra, mediante un caso concreto, que la previsibilidad del contexto puede volver razonable un enfoque predictivo y obliga a justificar la elección metodológica.</li>
 </ul>
 
 
-<h2 id="seccion-17">Síntesis del módulo</h2>
+<h2 id="seccion-sintesis">Síntesis del módulo</h2>
 
-<p>Partimos de una app bancaria cuyo plan debe revisarse ante una necesidad nueva. Distinguimos proyecto, producto y operación y presentamos la agilidad como entrega de valor, aprendizaje y adaptación. El mapa de enfoques, metodologías, marcos y prácticas permitió ubicar Scrum, Kanban, XP y Lean sin confundirlos con alternativas idénticas ni convertir una herramienta en prueba de agilidad.</p>
-
-<p>Examinamos el ciclo de vida y distinguimos sus fases de los procesos de iniciar, planificar, ejecutar, monitorear y controlar, y cerrar. También diferenciamos gestión predictiva y cascada, y explicamos iteración e incremento como características que pueden combinarse. Alcance, tiempo, costo y calidad requieren decisiones explícitas en cualquier enfoque. Los stakeholders aportan intereses y conocimiento; los roles describen responsabilidades. Reconocimos Product Owner, Scrum Master y Developers como responsabilidades de Scrum, no como una estructura obligatoria de todo equipo ágil.</p>
-
-<p>También reconstruimos el origen histórico de la agilidad como respuesta a las limitaciones del enfoque tradicional en un contexto de aceleración de los ciclos de negocio impulsado por internet, y analizamos en detalle el Manifiesto Ágil de 2001: sus cuatro valores, sus doce principios, y la idea central que los atraviesa —la entrega continua de valor real al cliente como criterio último de éxito de un proyecto—. Cerramos comparando la gestión del cambio en contextos ágiles y tradicionales, y estableciendo criterios concretos para decidir cuándo conviene un enfoque predictivo, un enfoque ágil o una combinación híbrida de ambos.</p>
-
-<p>Estos conceptos no deben entenderse como compartimentos aislados: constituyen un cuerpo de conocimiento integrado que será la base sobre la cual, en los próximos módulos de esta materia, se profundizará en los marcos ágiles específicos —Scrum, Kanban, Extreme Programming— y en las técnicas concretas de planificación, estimación, seguimiento y mejora continua que un profesional de sistemas necesita dominar para liderar proyectos de software con éxito en el contexto actual de la industria.</p>
-
-<p class="cierre-narrativo"><strong>Conexión del recorrido.</strong> En el próximo módulo pasamos de los criterios de agilidad a sus formas de trabajo: primero fundamentos de Scrum, luego responsabilidades, artefactos y eventos, y después Kanban y Lean para comparar decisiones con contexto.</p></article>
+<p>Gestionar un <strong>proyecto</strong> requiere reconocer el resultado buscado, las personas involucradas y las restricciones. Proyecto, <strong>producto</strong> y operación tienen horizontes distintos; completar el primero no demuestra por sí solo que el producto resulte útil o pueda mantenerse.</p>
+<ul>
+<li>
+<strong>Agilidad.</strong> Planificar, obtener evidencia y adaptar decisiones.</li>
+<li>
+<strong>Manifiesto.</strong> Priorizar colaboración, software que funciona y respuesta a nueva información, conservando los apoyos necesarios.</li>
+<li>
+<strong>Valor.</strong> Comprobar el beneficio para quienes usan o reciben la solución.</li>
+<li>
+<strong>Iteración e incremento.</strong> Mejorar lo construido y agregar capacidades utilizables.</li>
+<li>
+<strong>Elección de enfoque.</strong> Considerar incertidumbre, restricciones y costo de corregir.</li>
+<li>
+<strong>Ingeniería en IA.</strong> Gestionar datos, evaluaciones, integración y operación como partes de un sistema.</li>
+</ul>
+<p>Los casos del asistente universitario y de la app bancaria muestran cómo revisar prioridades sin ignorar <strong>calidad</strong> ni acuerdos. La IA también puede ayudar a preparar información de gestión; esa ayuda necesita verificación y responsabilidades claras.</p>
+<p class="cierre-narrativo"><strong>Próximo paso.</strong> En el Módulo 2 vamos a comprender Scrum antes de sus roles y reglas. Después estudiaremos Kanban y Lean para comparar cómo organizan y mejoran el trabajo.</p></article>
 </main>
 </body>
 </html>

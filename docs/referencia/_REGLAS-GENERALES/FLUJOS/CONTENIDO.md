@@ -6,7 +6,7 @@ Este documento es la fuente de verdad para escribir o enriquecer el archivo de C
 
 La tarea debe identificar la carpeta de la materia y el número de módulo. El archivo objetivo habitual es `<MATERIA>/entregables/MODULO <N>/Contenido/contenido.html`.
 
-Si falta un dato que impide identificar un único archivo, solicitarlo. Editar solamente el HTML de Contenido y, cuando corresponda, `IMAGENES-PROPUESTAS.md` junto a él. No modificar Microobjetivos, Glosario, Actividades, Evaluaciones, Presentaciones, exportaciones ni otros módulos salvo pedido explícito.
+Si falta un dato que impide identificar un único archivo, solicitarlo. Editar solamente el HTML de Contenido y, cuando corresponda, `IMAGENES-PROPUESTAS.md` junto a él. No modificar Microobjetivos, Glosario, Actividades, Evaluaciones, Presentaciones, exportaciones ni otros módulos salvo pedido explícito. Cuando el pedido abarque la materia completa, también pueden actualizarse el programa, la documentación y los exportadores necesarios para conservar coherencia.
 
 ## Preparación obligatoria
 
@@ -37,7 +37,7 @@ Cuando el usuario solicite el patrón de enriquecimiento completo, incorporar:
 
 Si el archivo no existe o el usuario pide crearlo nuevamente, desarrollar el temario completo siguiendo el arco narrativo de `ESTRUCTURA-MATERIA.md`: apertura, objetivos o propósito, teoría en orden lógico, aplicación guiada, comparaciones pertinentes y síntesis final. Definir con el usuario cualquier insumo oficial ausente que pueda alterar sustancialmente el temario.
 
-Usar HTML semántico limpio con un solo `h1`, jerarquía coherente, tablas cuando comparen dimensiones reales y `Síntesis del módulo` como último `h2`. La extensión orientativa no es una cuota que deba rellenarse.
+Usar HTML semántico limpio con un solo `h1`, jerarquía coherente, tablas cuando comparen dimensiones reales y `Síntesis del módulo` como último `h2`. Puede conservarse un bloque `<style>` interno común para la edición y exportación; no agregar JavaScript ni dispersar estilos en cada elemento. La extensión orientativa no es una cuota que deba rellenarse.
 
 ## Investigación y estilo
 
@@ -53,9 +53,17 @@ Antes de terminar, comprobar:
 - contenido original preservado cuando se trató de un enriquecimiento;
 - un solo `h1` y `Síntesis del módulo` como cierre;
 - cantidades, estructura semántica y accesibilidad de los elementos pedidos;
-- ausencia de CSS/JS inline nuevo;
+- ausencia de atributos `style` dispersos y de JavaScript nuevo; el bloque `<style>` editorial común sí puede conservarse;
 - videos abiertos y verificados en la ejecución actual;
 - ninguna imagen generada sin aprobación.
+
+Si el módulo presenta varios enfoques, comprobar además:
+
+- cada bloque identifica por texto el contexto vigente;
+- el vocabulario aparece después de su definición;
+- existe una transición antes de cambiar de framework, nivel o sistema de trabajo;
+- las prácticas opcionales se distinguen de las reglas obligatorias;
+- la comparación y la combinación aparecen después de enseñar las alternativas por separado.
 
 El Contenido final siempre se entrega en Word para Gestión y futuras materias. Si la tarea es solo diagnóstico o edición de fuente, indicar que la exportación final sigue pendiente. Para toda entrega de Contenido terminado, aplicar estas comprobaciones:
 

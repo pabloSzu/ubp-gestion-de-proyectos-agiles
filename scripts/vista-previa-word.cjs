@@ -4,8 +4,12 @@ const {chromium}=require('C:/Users/Pablo/.cache/codex-runtimes/codex-primary-run
 const base=path.resolve(__dirname,'..');
 async function main(){
  const browser=await chromium.launch({headless:true,executablePath:['C:/Program Files/Google/Chrome/Application/chrome.exe','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(fs.existsSync)});
- for(let n of (process.argv.includes('--programa')?[0]:[1,2,3,4,5])){
-  const file=n?path.join(base,'entregables',`MODULO ${n}`,'Contenido','Contenido.docx'):path.join(base,'Programa - contenidos.docx'),out=path.join(base,'.qa','edicion-contenido',n?`vista-modulo-${n}`:'vista-programa');fs.mkdirSync(out,{recursive:true});
+ const moduleArg=process.argv.find(x=>x.startsWith('--modulo='));
+ const modulesArg=process.argv.find(x=>x.startsWith('--modulos='));
+ const modules=process.argv.includes('--programa')?[0]:moduleArg?[Number(moduleArg.split('=')[1])]:modulesArg?modulesArg.split('=')[1].split(',').map(Number):[1,2,3,4,5];
+ if(modules.some(n=>!Number.isInteger(n)||n<0||n>5))throw new Error('Módulo inválido');
+ for(let n of modules){
+  const file=n?path.join(base,'entregables',`MODULO ${n}`,'Contenido','Contenido.docx'):path.join(base,'Programa - contenidos.docx'),out=path.join(base,'.qa',process.argv.includes('--revision-ia')?'revision-pedagogica-ia':'edicion-contenido',n?`vista-modulo-${n}`:'vista-programa');fs.mkdirSync(out,{recursive:true});
   const page=await browser.newPage({viewport:{width:920,height:1200},deviceScaleFactor:1});
   await page.setContent('<html><head><style>body{margin:0;background:#777}.docx-wrapper{padding:20px!important}.docx-wrapper>section.docx{margin:0 auto 20px!important}</style></head><body><div id="container"></div></body></html>');
   await page.addScriptTag({path:path.join(base,'node_modules/jszip/dist/jszip.min.js')});await page.addScriptTag({path:path.join(base,'node_modules/docx-preview/dist/docx-preview.min.js')});

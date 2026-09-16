@@ -1,6 +1,6 @@
 """Word académico editable: estilos, listas, tablas, enlaces y recursos del HTML."""
 from pathlib import Path
-import re,json
+import re,json,argparse
 from lxml import html
 from docx import Document
 from docx.shared import Cm,Pt,RGBColor
@@ -43,7 +43,7 @@ def clean(ts):
         if s: out.append((s,b,i,u)); previous_space=s.endswith(' ')
     if out: out[-1]=(out[-1][0].rstrip(),*out[-1][1:])
     return out
-def chunks(ts,limit=115):
+def chunks(ts,limit=85):
     raw=''.join(t[0] for t in ts)
     if len(raw.split())<=limit: return [ts]
     boundaries=[m.end() for m in re.finditer(r'[.!?](?:[”"\)])?\s+(?=[A-ZÁÉÍÓÚÑ¿¡])',raw)]
@@ -70,6 +70,7 @@ def runs(p,ts):
             # Evitar que el tema por defecto o un visor sustituyan la tipografía.
             r.font.name='Calibri'
             if p.style.name=='Normal': r.font.size=Pt(11)
+            if b and p.style.name=='Normal': r.font.color.rgb=RGBColor.from_string('12655D')
 def numbering(doc,ordered,level=0):
     root=doc.part.numbering_part.element
     aid=max([int(e.get(qn('w:abstractNumId'))) for e in root.findall(qn('w:abstractNum'))]+[-1])+1
@@ -185,7 +186,7 @@ class Builder:
             wrapper=html.Element('figure'); wrapper.append(e); self.block(wrapper)
         elif tag in ('div','blockquote','section','aside'):
             css=e.get('class',''); selected=fill
-            for key,color in [('analogia','F2EDF8'),('mito','FBEEEE'),('criterio-profesional','E8F6F3'),('caso-resuelto','EAF4FA'),('epigraph','FBF2DD')]:
+            for key,color in [('analogia','F2EDF8'),('mito','FBEEEE'),('criterio-profesional','E8F6F3'),('caso-resuelto','EAF4FA'),('epigraph','FBF2DD'),('contexto-scrum','EAF4FA'),('contexto-kanban','E8F6F3'),('contexto-xp','F2EDF8'),('contexto-ingenieria','F2EDF8'),('contexto-lean','FBF2DD'),('contexto-organizacion','FBF2DD'),('contexto-caso','FBEEEE'),('marco-contexto','EEF5FB'),('transicion-marco','FBF8F1')]:
                 if key in css: selected=color; break
             # Cajas existentes con texto directo permanecen editables.
             if not any(c.tag in ('p','h2','h3','h4','ul','ol','figure','table','div') for c in e): self.paragraph(e,fill=selected)
@@ -251,8 +252,14 @@ class Builder:
         for e in article: self.block(e)
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    group=parser.add_mutually_exclusive_group()
+    group.add_argument('--modulo',type=int,choices=range(1,6),help='Actualizar solamente este Word y el libro completo.')
+    group.add_argument('--modulos',type=int,nargs='+',choices=range(1,6),help='Actualizar estos Word y el libro completo.')
+    args=parser.parse_args()
     report=[]
-    for n in range(1,6):
+    selected=[args.modulo] if args.modulo else (args.modulos if args.modulos else range(1,6))
+    for n in selected:
         folder=BASE/'entregables'/f'MODULO {n}'/'Contenido'; tree=html.parse(str(folder/'contenido.html'))
         doc=Document(); styles(doc,PALETTE[n-1]); builder=Builder(doc,folder); builder.module(tree,n)
         doc.core_properties.title=f'Gestión de Proyectos Ágiles Módulo {n}'
