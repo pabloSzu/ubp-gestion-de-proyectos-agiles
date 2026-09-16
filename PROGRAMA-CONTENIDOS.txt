@@ -1,0 +1,50 @@
+GESTIÓN DE PROYECTOS ÁGILES
+Contenidos del programa
+
+Módulo 1: Gestión de Proyectos y Fundamentos de Agilidad
+› Proyecto, producto y operación. Gestión de proyectos: propósito, ciclo de vida, alcance, tiempo, costo y calidad. Interesados y responsabilidades. Incertidumbre y adaptación. Qué significa trabajar de forma ágil. Origen de la agilidad. Manifiesto Ágil: valores y doce principios. Entrega de valor y aprendizaje mediante feedback. Enfoques predictivos, iterativos, incrementales, adaptativos e híbridos. Gestión del cambio. Diferencias entre enfoques, marcos, métodos y prácticas. Comparación y selección de formas de trabajo.
+
+Módulo 2: Metodologías y Marcos de Trabajo Ágiles
+› Panorama de enfoques ágiles. Scrum: fundamentos, empirismo, pensamiento Lean y valores. Scrum Team: Product Owner, Scrum Master y Developers o equipo de desarrollo. Artefactos y compromisos: Product Backlog y Product Goal, Sprint Backlog y Sprint Goal, Incremento y Definition of Done. Sprint, Sprint Planning, Daily Scrum, Sprint Review y Sprint Retrospective. Kanban: principios, visualización, políticas explícitas, gestión del flujo y límites del trabajo en curso. Lean: valor, desperdicios y mejora del sistema. Extreme Programming y prácticas técnicas. Combinaciones de enfoques: Scrumban y Scrum con Kanban. Introducción a Crystal, FDD y DSDM. Criterios de selección y casos de aplicación.
+
+Módulo 3: Planificación Ágil y Gestión del Producto
+› Visión, objetivos y necesidades del producto. Identificación de usuarios e interesados y comunicación con ellos. Organización del Product Backlog. Épicas, funcionalidades, historias de usuario y tareas. Formato de historias e INVEST. Criterios de aceptación. Definition of Done y Definition of Ready: diferencias y alcance. Refinamiento del backlog. Priorización: MoSCoW, Kano, WSJF y matriz de valor y esfuerzo. Producto mínimo viable y validación de hipótesis. Roadmap y planificación de lanzamientos. Gestión del alcance y de los cambios. Casos de decisiones de producto.
+
+Módulo 4: Estimación, Ejecución y Seguimiento del Proyecto
+› Estimación y pronósticos bajo incertidumbre. Tallas de remera, puntos de historia y Planning Poker. Capacidad y disponibilidad del equipo. Velocidad y sus límites como medida para pronosticar. Planificación del Sprint. Visualización del trabajo: tableros, carriles, políticas y límites WIP. Impedimentos, bloqueos, riesgos y dependencias. Métricas de flujo: lead time, cycle time y throughput. Diagrama de flujo acumulado, burndown y burnup. Interpretación de datos para tomar decisiones. Jira, Trello y otras herramientas de seguimiento: organización del trabajo, tableros, filtros e informes; criterios de elección y límites.
+
+Módulo 5: Equipos, Liderazgo, Mejora Continua y Casos de Estudio
+› Composición, estabilidad y autogestión de equipos. Liderazgo de servicio. Comunicación, colaboración, feedback y gestión de conflictos. Relación con interesados. Trabajo remoto y equipos distribuidos. Inspección y adaptación del producto y de la forma de trabajar. Retrospectivas y mejora continua mediante Kaizen. Calidad y deuda técnica. Integración, entrega y despliegue continuos. DevOps y responsabilidad compartida. Coordinación entre equipos: Scrum of Scrums, SAFe y LeSS. Agilidad y gobierno organizacional. Casos reales de proyectos exitosos, desafíos comunes de adopción y análisis de decisiones. Caso didáctico integrador de gestión ágil.
+
+
+NOTAS INTERNAS DE ELABORACIÓN
+
+Este listado es el apartado de contenidos del programa, con el formato por módulos solicitado por Pablo. No constituye todavía un programa académico completo con todos los campos institucionales. No se inventaron carga horaria, correlatividades, régimen de aprobación ni condiciones de evaluación.
+
+Se conservaron los cinco módulos y los temas de la materia existente. El desarrollo de los módulos 1 y 2 fue reordenado; los cinco contenidos fueron mejorados y exportados a Word el 15 de septiembre de 2026. La revisión definitiva de paginación permanece pendiente por falta de LibreOffice en el entorno.
+
+Mínimos proporcionados por Pablo
+
+1. Fundamentos de la gestión ágil: principios, Manifiesto Ágil.
+2. Frameworks ágiles: Scrum, Kanban, Lean.
+3. Gestión de equipos y roles: Product Owner, Scrum Master, equipo de desarrollo.
+4. Herramientas ágiles: Jira, Trello, herramientas de seguimiento.
+5. Casos de estudio en gestión ágil: proyectos exitosos y desafíos comunes.
+
+Relación entre mínimos y módulos
+
+- Fundamentos, Manifiesto y principios: Módulo 1; aplicación en los demás módulos.
+- Scrum, Kanban y Lean: Módulo 2; aplicaciones de planificación, seguimiento y mejora en módulos 3, 4 y 5.
+- Roles: Módulo 2. Gestión, liderazgo y colaboración del equipo: Módulo 5.
+- Jira, Trello y seguimiento: Módulo 4.
+- Casos y desafíos: Toyota como transferencia conceptual en el Módulo 2; Sentinel del FBI y colaboración de liderazgo en ING, con fuentes, contexto y límites de interpretación, en el Módulo 5. Los escenarios didácticos se identifican expresamente como tales. El despliegue de Sentinel es un resultado documentado; no demuestra que la agilidad sea su causa exclusiva.
+
+Ampliaciones que ya aparecen en el material existente
+
+XP, Crystal, FDD, DSDM, técnicas de priorización, estimación, DevOps y escalado amplían los mínimos. Durante la revisión se debe equilibrar su profundidad para que Scrum, Kanban, Lean, personas, herramientas y casos reales mantengan el protagonismo. No son requisitos universitarios adicionales inferidos.
+
+Terminología
+
+Se conserva “frameworks ágiles” en el registro del mínimo recibido. En el desarrollo se distinguen sus alcances: Scrum es un marco; Kanban aborda la gestión del flujo; Lean aporta pensamiento y principios. No se presentan como recetas idénticas ni se inventan roles obligatorios para Kanban o Lean.
+
+Estado: temario elaborado y disponible en Word. Los cinco contenidos fueron mejorados y exportados a Word. Pendientes de certificación: paginación definitiva y disponibilidad completa de los recursos audiovisuales.

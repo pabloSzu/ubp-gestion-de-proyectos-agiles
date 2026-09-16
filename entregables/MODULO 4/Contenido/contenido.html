@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestión de Proyectos Ágiles · Módulo 4</title>
+<style>
+:root{
+  --ink:#172333; --soft:#536173; --faint:#7c8794; --line:#dfe5eb; --paper:#ffffff; --cream:#fbf8f1;
+  --navy:#173f67; --blue:#2878a9; --blue-soft:#eaf4fa; --teal:#16877b; --teal-soft:#e8f6f3;
+  --amber:#c68a24; --amber-soft:#fbf2dd; --plum:#76549f; --plum-soft:#f2edf8; --coral:#c25555; --coral-soft:#fbeeee;
+}
+@page{ size:A4; margin:16mm 0; }
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ margin:0; background:#e8edf2; color:var(--ink); font:11.25pt/1.64 Georgia,"Times New Roman",serif; }
+.page{ width:190mm; margin:8mm auto; background:var(--paper); box-shadow:0 8px 34px rgba(18,39,61,.16); }
+.opener{ min-height:265mm; padding:27mm 23mm 20mm; color:#fff; background:linear-gradient(145deg,#102d4a 0%,#184f72 62%,#14796f 100%); position:relative; overflow:hidden; break-after:page; display:flex; flex-direction:column; }
+.opener::before,.opener::after{ content:""; position:absolute; border-radius:50%; pointer-events:none; }
+.opener::before{ width:250mm; height:250mm; right:-145mm; top:-125mm; border:1px solid rgba(255,255,255,.14); box-shadow:0 0 0 18mm rgba(255,255,255,.035),0 0 0 38mm rgba(255,255,255,.025); }
+.opener::after{ width:110mm; height:110mm; left:-60mm; bottom:-60mm; background:radial-gradient(circle,rgba(198,138,36,.52),transparent 68%); }
+.opener>*{ position:relative; z-index:1; }
+.module-number{ font:800 76pt/.82 "Segoe UI",Arial,sans-serif; color:rgba(255,255,255,.14); margin-top:16mm; }
+.eyebrow{ font:800 8.5pt/1.3 "Segoe UI",Arial,sans-serif; letter-spacing:.16em; text-transform:uppercase; color:#f2bd55; }
+.opener h1{ font-size:31pt; line-height:1.08; max-width:145mm; margin:7px 0 13px; letter-spacing:-.015em; }
+.opener .subtitle{ max-width:137mm; margin:0; color:rgba(255,255,255,.84); font-size:13pt; font-style:italic; text-align:left; }
+.chapter-map{ margin-top:auto; padding-top:15px; border-top:1px solid rgba(255,255,255,.24); }
+.chapter-map .label{ font:800 8pt "Segoe UI",Arial,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.64); }
+.chapter-map ol{ columns:2; column-gap:18mm; margin:10px 0 0; padding:0; list-style-position:inside; font:9pt/1.75 "Segoe UI",Arial,sans-serif; color:rgba(255,255,255,.9); }
+.chapter-map li{ break-inside:avoid; }
+.content{ padding:18mm 23mm 24mm; }
+.epigraph{ margin:0 0 24px; padding:16px 19px; background:var(--cream); border:1px solid #ece3d2; border-left:5px solid var(--amber); border-radius:8px; break-inside:avoid; }
+.epigraph p{ margin:0; color:#374657; font-size:11.4pt; font-style:italic; text-align:left; }
+p{ margin:0 0 11px; text-align:justify; hyphens:auto; }
+strong{ color:#111c29; }
+h2{ position:relative; margin:32px 0 12px; padding:12px 15px 11px 18px; border-radius:0 9px 9px 0; border-left:5px solid var(--blue); background:linear-gradient(90deg,var(--blue-soft),#fff 88%); color:var(--navy); font-size:18pt; line-height:1.18; break-after:avoid; }
+h2:nth-of-type(4n+2){ border-left-color:var(--teal); background:linear-gradient(90deg,var(--teal-soft),#fff 88%); color:#12655d; }
+h2:nth-of-type(4n+3){ border-left-color:var(--plum); background:linear-gradient(90deg,var(--plum-soft),#fff 88%); color:#5d3e83; }
+h2:nth-of-type(4n){ border-left-color:var(--amber); background:linear-gradient(90deg,var(--amber-soft),#fff 88%); color:#815b19; }
+h2 + p{ color:#3f4d5d; font-size:11.8pt; line-height:1.62; }
+h3{ margin:23px 0 8px; padding:0 0 6px 12px; border-left:3px solid var(--teal); color:#1d5e68; font:700 13.2pt/1.25 "Segoe UI",Arial,sans-serif; break-after:avoid; }
+table{ width:100%; border-collapse:separate; border-spacing:0; margin:15px 0 20px; border:1px solid var(--line); border-radius:9px; overflow:hidden; font:9.1pt/1.42 "Segoe UI",Arial,sans-serif; }
+caption{ padding:0 0 8px; color:var(--soft); font-weight:700; text-align:left; }
+thead{ display:table-header-group; }
+th{ background:#203d59; color:#fff; padding:9px 10px; text-align:left; vertical-align:top; }
+td{ padding:9px 10px; border-top:1px solid var(--line); vertical-align:top; }
+tbody tr:nth-child(even) td{ background:#f7f9fb; }
+tr{ break-inside:avoid; }
+figure{ margin:18px 0 22px; break-inside:avoid; }
+.diagrama-conceptual{ border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fbfcfe; }
+.diagrama-conceptual svg{ width:100%; height:auto; display:block; padding:8px; }
+figcaption{ padding:10px 14px; border-top:1px solid var(--line); background:var(--cream); color:var(--soft); font:8.8pt/1.5 "Segoe UI",Arial,sans-serif; }
+.image-figure{ border:1px solid #d7dfe7; border-radius:11px; overflow:hidden; box-shadow:0 8px 24px rgba(21,52,80,.12); }
+.image-figure img{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; }
+.visual-editorial{ border-color:#cad8e5; box-shadow:0 10px 28px rgba(21,52,80,.14); }
+.visual-editorial img{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; background:#fff; }
+.criterio-profesional,.mito{ margin:17px 0 21px; padding:14px 17px; border-radius:8px; break-inside:avoid; font:9.8pt/1.56 "Segoe UI",Arial,sans-serif; }
+.criterio-profesional{ background:var(--teal-soft); border:1px solid #c9e8e2; border-left:5px solid var(--teal); }
+.criterio-profesional strong:first-child{ display:block; margin-bottom:4px; color:#0f6e65; font-size:8.2pt; letter-spacing:.1em; text-transform:uppercase; }
+.mito{ display:grid; grid-template-columns:auto 1fr; gap:7px 12px; background:linear-gradient(90deg,var(--coral-soft) 0 25%,#f5faf8 25%); border:1px solid #ead7d7; border-left:5px solid var(--coral); }
+.mito strong{ color:#a33e3e; text-transform:uppercase; letter-spacing:.06em; }
+.mito strong:nth-of-type(2){ color:#117568; }
+ol,ul{ padding-left:22px; }
+li{ margin-bottom:7px; }
+.caso-resuelto{ counter-reset:caso; margin:15px 0; padding:0; list-style:none; }
+.caso-resuelto li{ position:relative; margin:0 0 9px; padding:11px 13px 11px 45px; border:1px solid var(--line); border-radius:8px; background:#fbfcfd; break-inside:avoid; }
+.caso-resuelto li::before{ counter-increment:caso; content:counter(caso); position:absolute; left:12px; top:11px; width:23px; height:23px; border-radius:50%; display:grid; place-items:center; background:var(--plum); color:#fff; font:800 9pt "Segoe UI",Arial,sans-serif; }
+.recursos-audiovisuales{ display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0; list-style:none; }
+.recursos-audiovisuales li{ margin:0; padding:13px 15px 13px 18px; border:1px solid var(--line); border-left:5px solid #cf4137; border-radius:8px; background:#fff; break-inside:avoid; font:9.2pt/1.46 "Segoe UI",Arial,sans-serif; }
+.recursos-audiovisuales a{ color:#a52f29; text-decoration:none; }
+.recursos-audiovisuales a::after{ content:"  ↗"; }
+.content > h2:last-of-type{ margin-top:38px; }
+.content > h2:last-of-type ~ p{ margin-bottom:6px; font-size:9.8pt; line-height:1.4; }
+@media screen and (max-width:800px){ .page{ width:100%; margin:0; box-shadow:none; } .opener,.content{ padding-left:7vw; padding-right:7vw; } .chapter-map ol{ columns:1; } .mito{ display:block; background:var(--coral-soft); } .recursos-audiovisuales{ grid-template-columns:1fr; } }
+@media print{ body{ background:#fff; } .page{ width:auto; margin:0; box-shadow:none; } .opener{ min-height:265mm; } a{ color:inherit; } }
+</style>
+</head>
+<body>
+<main class="page">
+<header class="opener">
+  <div class="module-number">04</div>
+  <div class="eyebrow">Gestión de Proyectos Ágiles · UBP</div>
+  <h1>Estimación, Ejecución y Seguimiento del Proyecto</h1>
+  <p class="subtitle">Estimaciones honestas, flujo visible y métricas usadas para anticipar decisiones, no para controlar personas.</p>
+  <nav class="chapter-map" aria-label="Contenidos del módulo"><div class="label">En este módulo</div><ol><li><a href="#seccion-1">Estimar y pronosticar bajo incertidumbre</a></li><li><a href="#seccion-2">Tallas de remera: estimación inicial</a></li><li><a href="#seccion-3">Story Points: tamaño relativo del trabajo</a></li><li><a href="#seccion-4">Planning Poker: estimación colaborativa</a></li><li><a href="#seccion-5">Capacidad y disponibilidad del equipo</a></li><li><a href="#seccion-6">Velocidad del equipo y pronósticos</a></li><li><a href="#seccion-7">Planificar un Sprint</a></li><li><a href="#seccion-8">Hacer visible el trabajo</a></li><li><a href="#seccion-9">Tableros, carriles y límites WIP</a></li><li><a href="#seccion-10">Gestionar impedimentos y bloqueos</a></li><li><a href="#seccion-11">Lead Time y Cycle Time</a></li><li><a href="#seccion-12">Throughput: ritmo de finalización</a></li><li><a href="#seccion-13">Diagrama de flujo acumulado</a></li><li><a href="#seccion-14">Burndown: observar trabajo pendiente</a></li><li><a href="#seccion-15">Burnup: separar avance y alcance</a></li><li><a href="#seccion-16">Gestionar riesgos y dependencias</a></li><li><a href="#seccion-17">Herramientas para gestionar el trabajo</a></li><li><a href="#seccion-18">Fuentes para profundizar</a></li><li><a href="#seccion-19">Recursos audiovisuales sugeridos</a></li><li><a href="#seccion-20">Síntesis del módulo</a></li></ol></nav>
+</header>
+<article class="content" data-edicion="2026-09-15"><!-- GPA-REVISION-EDITORIAL-EBOOK -->
+
+<blockquote class="epigraph">
+<p>"No estimamos para acertar el futuro con exactitud; estimamos para tomar mejores decisiones hoy con la información que tenemos." — Principio de la estimación ágil.</p>
+</blockquote>
+
+<p>En el Módulo 3, TurnoYa pasó de una necesidad a un backlog ordenado. Ahora el equipo debe responder <strong>qué puede completar, cuándo podría entregarlo y cómo reconocer a tiempo un problema</strong>. Vamos a distinguir tamaño del trabajo, disponibilidad y desempeño observado; construir un plan de Sprint; visualizar flujo; interpretar métricas y gestionar riesgos. Puntos, Poker y gráficos son técnicas posibles, no requisitos universales de Scrum. También veremos cómo pronosticar con datos de flujo sin estimar cada tarjeta en puntos.</p>
+
+<h2 id="seccion-1">1. Estimar y pronosticar bajo incertidumbre</h2>
+
+<p>TurnoYa tiene una fecha deseada, pero todavía desconoce el costo de una integración. ¿Cómo comunicar una previsión sin fingir certeza?</p>
+<p>Toda estimación depende de información, supuestos y contexto. En gestión predictiva pueden definirse y descomponerse partes conocidas del alcance, estimar esfuerzo y revisar riesgos. En productos con necesidades emergentes conviene trabajar por horizontes, colaborar con quienes harán el trabajo y actualizar el pronóstico. Esto no equivale a decir que “predictivo” es siempre cascada ni que sumar horas-persona produce automáticamente una fecha: también importan secuencia, dependencias, disponibilidad y esperas.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Comunicá toda estimación como un pronóstico condicionado por supuestos. La precisión debe crecer con la evidencia; una cifra exacta al inicio suele ocultar incertidumbre, no resolverla.</div>
+
+<p>La gestión ágil parte de un diagnóstico distinto: si el alcance va a cambiar y la incertidumbre es alta, insistir en estimar en horas exactas y comprometerse con fechas fijas de entrega por tarea genera una falsa sensación de precisión que termina en incumplimientos, sobrecostos y frustración tanto del equipo como del cliente. Por eso los métodos ágiles proponen dos cambios de fondo en la forma de estimar. El primero es estimar el <strong>esfuerzo relativo</strong> en lugar del tiempo absoluto: en vez de preguntar "¿cuántas horas lleva esta historia de usuario?", el equipo pregunta "¿esta historia es más grande, más chica o del mismo tamaño que esta otra que ya hicimos?". El segundo cambio es que la estimación la hace el equipo completo que va a ejecutar el trabajo, no un gerente de proyecto o un arquitecto aislado del día a día del desarrollo, porque quienes van a programar, probar y desplegar el software son quienes mejor conocen la complejidad real de la tarea.</p>
+
+<p>La estimación relativa puede facilitar comparaciones y conversaciones, pero no garantiza que los errores se compensen. Si muchas historias comparten una integración desconocida, sus errores pueden tener el mismo sentido. Los pronósticos basados en desempeño reciente resultan útiles cuando el sistema es razonablemente comparable; requieren revisar cambios de equipo, tamaño de ítems y restricciones. Estimar en horas tampoco es incorrecto por sí mismo: la falsa precisión aparece cuando el número se trata como certeza y se ignoran sus supuestos.</p>
+
+<p>Es importante aclarar que "estimación ágil" no significa "no estimar" ni "estimar sin disciplina". Significa aceptar que toda estimación es una hipótesis basada en la información disponible en ese momento, comunicarla con el nivel de precisión que esa información permite (por eso se habla de rangos y de tamaños relativos, no de fechas exactas con dos decimales), y revisarla constantemente a medida que el equipo aprende más sobre el problema. Esta forma de estimar convive perfectamente con compromisos serios: un equipo maduro puede predecir con bastante exactitud cuántos Sprints necesita para completar un conjunto de funcionalidades, siempre que tenga un historial de velocidad estable y un backlog bien refinado.</p>
+
+<h3>1.1 La curva del cono de incertidumbre</h3>
+
+<p>El <strong>cono de incertidumbre</strong> representa la posibilidad de reducir la variación de nuestras estimaciones al obtener conocimiento. No fija un porcentaje universal de error ni se estrecha por el simple paso del tiempo: hacen falta decisiones, pruebas y reducción de riesgos. Una integración que sigue sin probarse conserva incertidumbre aunque el proyecto esté avanzado. Podemos comenzar con rangos amplios y revisarlos cuando aparezca evidencia relevante.</p>
+
+<figure class="image-figure">
+<img src="assets/estimacion-colaborativa-incertidumbre.png" alt="El equipo revela estimaciones relativas en simultáneo mientras la incertidumbre se estrecha a medida que aparece evidencia.">
+<figcaption><strong>Lectura visual.</strong> La ilustración subraya que Planning Poker sirve para compartir conocimiento y calibrar riesgos, no para adivinar horas exactas.</figcaption>
+</figure>
+
+<figure class="diagrama-conceptual image-figure visual-editorial">
+<img src="assets/diagrama-horizontes-estimacion-editorial.png" alt="Selección de técnica de estimación según horizonte e incertidumbre">
+<figcaption>La estimación se refina al acercarse la ejecución. Pedir detalle de Sprint para trabajo lejano agrega una precisión que la evidencia todavía no puede sostener.</figcaption>
+</figure>
+
+<div class="mito"><strong>Mito:</strong> Un Story Point equivale a una cantidad acordada de horas. <strong>Realidad:</strong> expresa tamaño relativo combinando volumen, complejidad e incertidumbre; la duración emerge del ritmo histórico del equipo.</div>
+
+<h2 id="seccion-2">2. Tallas de remera: estimación inicial</h2>
+
+<p>Para comparar iniciativas lejanas no necesitamos discutir si valen siete u ocho puntos. Primero necesitamos reconocer su orden de magnitud.</p>
+<p>Cuando el nivel de detalle disponible sobre una historia o una épica todavía es bajo —por ejemplo, al inicio de la planificación de un release, cuando se están priorizando grandes bloques de funcionalidad y todavía no se descompusieron en historias de usuario concretas— usar Story Points con precisión de Fibonacci puede ser prematuro y hasta contraproducente, porque simula una exactitud que el equipo todavía no tiene forma de sostener. Para estos casos se usa la técnica de <strong>T-Shirt Sizes</strong> (tallas de remera): el equipo clasifica cada ítem grande del backlog en categorías cualitativas de tamaño —XS, S, M, L, XL, y a veces XXL— sin asignar todavía un número puntual.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Aplicá T-Shirt Sizes cuando la conversación necesita orden de magnitud, no falsa exactitud. Refiná a una escala más fina recién cuando el trabajo se acerque a ejecución.</div>
+
+<p>Esta técnica tiene tres usos frecuentes en la práctica profesional. El primero es la <strong>priorización rápida de un backlog extenso</strong>: en una sesión de refinamiento de una hora, un equipo puede clasificar por talla veinte o treinta épicas sin necesidad de discutir cada una en profundidad, lo cual sería inviable con Planning Poker tradicional. El segundo es la <strong>planificación de releases o roadmaps trimestrales</strong>, donde el objetivo no es prometer una fecha exacta sino dar una noción aproximada de cuánto "cabe" en un trimestre según la capacidad histórica del equipo (por ejemplo, "en un trimestre normalmente completamos unas 3 épicas L o su equivalente"). El tercero es como <strong>paso previo al Planning Poker</strong>: primero se clasifican las épicas por talla para priorizar el orden de refinamiento, y luego, cuando una épica entra en foco cercano al Sprint, se descompone en historias de usuario más chicas que sí se estiman con Story Points en Fibonacci.</p>
+
+<table>
+<caption>Ejemplo de correspondencia orientativa entre T-Shirt Sizes y Story Points</caption>
+<tr><th>Talla</th><th>Equivalencia aproximada en Story Points</th><th>Ejemplo típico</th></tr>
+<tr><td>XS</td><td>1-2</td><td>Ajuste de un mensaje de error o de un texto de ayuda</td></tr>
+<tr><td>S</td><td>3-5</td><td>Agregar un filtro nuevo a una pantalla de listado existente</td></tr>
+<tr><td>M</td><td>8-13</td><td>Nuevo formulario de alta con validaciones y persistencia en base de datos</td></tr>
+<tr><td>L</td><td>20-40</td><td>Módulo nuevo de reportes con exportación a Excel y PDF</td></tr>
+<tr><td>XL</td><td>Más de 40 (candidata a dividir)</td><td>Integración completa con una pasarela de pagos externa</td></tr>
+</table>
+
+<p>Es importante remarcar que esta tabla es orientativa y particular de cada equipo: la correspondencia exacta entre talla y puntos se construye con la experiencia acumulada, igual que ocurre con la escala de Fibonacci. Lo que no cambia es el principio de fondo: cuanto menos se conoce sobre un ítem de trabajo, más grueso debe ser el nivel de la estimación, y esa granularidad se va afinando a medida que el ítem se acerca al momento de ejecución.</p>
+
+<h2 id="seccion-3">3. Story Points: tamaño relativo del trabajo</h2>
+
+<p>Dos historias tienen una pantalla cada una, pero una depende de una API desconocida. Contar pantallas no alcanza para comparar tamaño.</p>
+<p>Los <strong>Story Points</strong> (puntos de historia) son una técnica opcional utilizada por algunos equipos para estimar el esfuerzo relativo que demanda completar una historia de usuario. Un Story Point no representa una cantidad fija de horas ni de días: representa una combinación de tres factores que el equipo evalúa en conjunto al momento de estimar:</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Calibrá Story Points dentro del mismo equipo y contra historias de referencia. Convertirlos en horas o compararlos entre equipos destruye su valor como escala relativa.</div>
+
+<ul>
+<li><strong>Complejidad técnica</strong>: cuán difícil es el problema desde el punto de vista del diseño de la solución, la cantidad de componentes del sistema involucrados, y si existen dependencias con otros módulos o equipos.</li>
+<li><strong>Volumen de trabajo</strong>: cuánto código, cuántas pantallas, cuántos casos de prueba o cuántos pasos concretos hay que ejecutar para dar la historia por terminada.</li>
+<li><strong>Incertidumbre y riesgo</strong>: cuánto desconoce el equipo sobre esa historia; si hay tecnología nueva involucrada, si depende de un tercero, o si los criterios de aceptación no están del todo claros.</li>
+</ul>
+
+<p>Al combinar estos tres factores en un solo número, el equipo evita el error de estimar solamente "cuánto código hay que escribir" (que ignora la complejidad y el riesgo) o de estimar solamente "cuán difícil parece" (que ignora el volumen). Por eso una historia puede valer más puntos que otra no porque tenga más líneas de código, sino porque tiene más incertidumbre o más riesgo técnico asociado.</p>
+
+<p>La clave conceptual de los Story Points es la <strong>relatividad</strong>: el número en sí mismo no tiene significado absoluto, solo tiene sentido en comparación con otras historias estimadas por el mismo equipo. Decir "esta historia vale 5 puntos" solo es útil si el equipo tiene una referencia común de qué historia representó "3 puntos" y cuál representó "8 puntos" anteriormente. Por eso, al iniciar un proyecto o incorporar Story Points por primera vez, conviene que el equipo elija una o dos historias ya conocidas (idealmente ya completadas en un proyecto anterior, o una historia sencilla del propio backlog) como "historias ancla" o "historias de referencia", y calibre el resto de las estimaciones comparando contra esas anclas. Esto también explica por qué los Story Points de un equipo <strong>no son comparables entre equipos distintos</strong>: un "5" del Equipo A puede equivaler a un "8" del Equipo B, porque cada equipo construye su propia escala relativa según su experiencia, su stack tecnológico y su forma de trabajar. Comparar la velocidad de dos equipos distintos usando Story Points es un error metodológico frecuente que hay que evitar.</p>
+
+<h3>3.1 La escala de Fibonacci modificada</h3>
+
+<p>Algunos equipos usan la escala <strong>1, 2, 3, 5, 8, 13, 20, 40, 100</strong>. Se conoce como Fibonacci modificada: coincide al principio con la sucesión, pero 20, 40 y 100 son categorías ampliadas, no sumas exactas de los dos valores anteriores. Separar más los tamaños grandes evita discutir diferencias que no podemos justificar con el conocimiento disponible. Es una convención opcional, no una medición física ni una exigencia de Scrum.</p><table>
+<caption>Escala de Fibonacci modificada para Story Points</caption>
+<tr><th>Valor</th><th>Interpretación típica</th><th>Cuándo se usa</th></tr>
+<tr><td>1</td><td>Trivial, casi automático</td><td>Cambio mínimo, sin ambigüedad ni riesgo (ej. modificar un texto en la interfaz)</td></tr>
+<tr><td>2</td><td>Muy simple</td><td>Tarea pequeña y bien entendida, sin dependencias</td></tr>
+<tr><td>3</td><td>Simple</td><td>Historia estándar de complejidad baja, con algún detalle a resolver</td></tr>
+<tr><td>5</td><td>Moderada</td><td>Historia con cierta complejidad técnica o varios pasos, pero acotada</td></tr>
+<tr><td>8</td><td>Compleja</td><td>Historia grande, con más de un componente involucrado o incertidumbre relevante</td></tr>
+<tr><td>13</td><td>Muy compleja</td><td>Historia que probablemente conviene dividir en historias más chicas</td></tr>
+<tr><td>20 / 40</td><td>Excesiva</td><td>Señal de alarma: la historia es en realidad una épica que debe descomponerse antes de entrar al Sprint</td></tr>
+<tr><td>100 / ∞ / ?</td><td>No estimable</td><td>El equipo no tiene información suficiente; se necesita un spike o investigación previa</td></tr>
+</table>
+
+<p>Un ejemplo concreto ayuda a fijar la idea. Supongamos que un equipo que desarrolla un sistema de gestión de turnos médicos tiene en su backlog la historia "Como paciente quiero recibir un recordatorio por WhatsApp 24 horas antes de mi turno para no olvidarme de asistir". El equipo discute y concluye que esta historia requiere integrar una API externa de mensajería (algo que nunca hicieron antes en el proyecto), configurar un job programado que dispare el mensaje, y definir qué pasa si el paciente cambia o cancela el turno después de que el recordatorio ya fue enviado. Comparada con una historia ya estimada como "3" ("Como paciente quiero ver el historial de mis turnos anteriores en una lista"), el equipo coincide en que esta nueva historia tiene bastante más incertidumbre técnica (integración externa nunca probada) y algo más de volumen de trabajo, así que la estima en "8". Si en cambio la integración con WhatsApp ya la hubiesen implementado en una historia anterior para otro flujo, es probable que esta misma historia bajara a "5" o incluso "3", porque gran parte de la incertidumbre ya estaría resuelta. Este ejemplo ilustra bien que el número de puntos no depende solo de "qué hay que hacer" sino de "cuánto sabe el equipo sobre cómo hacerlo".</p>
+
+<h2 id="seccion-4">4. Planning Poker: estimación colaborativa</h2>
+
+<p>Una persona estima tres puntos y otra trece. La diferencia puede revelar un riesgo que el equipo todavía no compartió.</p>
+<p><strong>Planning Poker</strong> (también llamado Scrum Poker) es una técnica opcional de estimación colaborativa que puede utilizarse dentro de Scrum para asignar Story Points a las historias de usuario. Es una dinámica de grupo estructurada, diseñada específicamente para evitar dos sesgos muy comunes cuando se estima en voz alta: el sesgo de anclaje (la primera persona que da un número condiciona inconscientemente a las demás) y el sesgo de autoridad (la opinión del miembro más senior o del líder técnico pesa más de lo debido y silencia otras voces igual de válidas).</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Usá la dispersión del Planning Poker como señal de conocimiento incompleto. El objetivo no es votar rápido, sino descubrir riesgos y supuestos antes de comprometer el trabajo.</div>
+
+<h3>4.1 Cómo se juega una ronda de Planning Poker</h3>
+
+<p>Cada integrante del equipo de desarrollo recibe un mazo de cartas con los valores de la escala de Fibonacci modificada (1, 2, 3, 5, 8, 13, 20, 40, 100, más una carta de interrogación para "no sé" y a veces una carta de café para "necesito un descanso"). El Product Owner o quien facilite la sesión lee en voz alta la historia de usuario a estimar junto con sus criterios de aceptación, y el equipo puede hacer preguntas para despejar dudas antes de estimar. Una vez que la historia está clara, cada persona elige en privado la carta que representa su estimación y todos revelan sus cartas al mismo tiempo (en herramientas digitales como Jira o Planning Poker online esto se simula con un botón de "revelar"). Si todas las estimaciones coinciden o están muy próximas, el número se adopta como definitivo. Si hay dispersión significativa (por ejemplo, alguien puso "3" y otra persona puso "13"), las dos personas con los valores más extremos explican su razonamiento al resto del equipo, y luego se vuelve a votar. Este proceso se repite, típicamente en dos o tres rondas, hasta acordar una estimación con fundamento. Si persiste una diferencia importante, conviene aclarar supuestos o investigar, no promediar para cerrar la discusión.</p>
+
+<p>Por ejemplo, si en la primera ronda de votación para una historia cuatro desarrolladores votan 5, 5, 8 y 13, la persona que votó 13 podría explicar: "puse 13 porque esta historia toca la tabla de pagos y me preocupa el impacto en la conciliación contable, que nunca tocamos". Esa información, que las otras tres personas desconocían, cambia el análisis del equipo: probablemente en la segunda ronda converjan en 8, incorporando ese riesgo que antes no habían considerado. Este intercambio de perspectivas es, en definitiva, el verdadero valor de Planning Poker: no es solamente "llegar a un número", sino generar una conversación técnica que nivela el conocimiento de todo el equipo sobre la historia antes de comprometerse a construirla.</p>
+
+<h3>4.2 Ventajas de Planning Poker frente a otras formas de estimar</h3>
+
+<ul>
+<li><strong>Reduce el sesgo de anclaje y de autoridad</strong>: al revelar las cartas simultáneamente, nadie puede ajustar su voto en función de lo que ya opinaron otros, lo que protege la independencia del juicio de cada persona, especialmente de los perfiles junior que de otro modo podrían simplemente repetir el número del líder técnico.</li>
+<li><strong>Hace emerger desacuerdos productivos</strong>: la dispersión de votos es información valiosa en sí misma, porque señala historias donde el equipo tiene visiones distintas del problema, algo que conviene resolver antes de empezar a programar y no a mitad del Sprint.</li>
+<li><strong>Involucra a todo el equipo, no solo a quien va a ejecutar la tarea</strong>: en Scrum cualquier miembro del equipo puede terminar trabajando en cualquier historia, así que estimar en conjunto construye conocimiento compartido y evita el efecto silo donde solo una persona entiende una parte del sistema.</li>
+<li><strong>Puede acotar la conversación</strong>: una sesión bien facilitada dedica tiempo a los desacuerdos relevantes. Su velocidad depende del tamaño y conocimiento de las historias; no hay una cuota de tarjetas por hora.</li>
+<li><strong>Genera compromiso genuino</strong>: cuando el equipo llega al número por consenso propio, en lugar de que se lo asignen desde afuera, el compromiso con ese estimado (y con el Sprint que lo contiene) es sustancialmente mayor.</li>
+</ul>
+
+<h2 id="seccion-5">5. Capacidad y disponibilidad del equipo</h2>
+
+<p>Un Sprint dura diez días, pero no ofrece diez días completos de programación por persona. La disponibilidad real debe quedar a la vista.</p>
+<p>La <strong>capacidad del equipo</strong> es la cantidad real de trabajo que el equipo puede comprometerse a realizar durante un Sprint, considerando el tiempo efectivamente disponible de cada persona. Calcular la capacidad correctamente es un paso indispensable del Sprint Planning: sin ese cálculo, el equipo corre el riesgo de sobrecomprometerse (tomar más historias de las que puede terminar) o de subcomprometerse (dejar capacidad ociosa que podría haberse usado para entregar más valor).</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Calculá capacidad con disponibilidad real y trabajo no planificable visible. Planificar solo sobre horas teóricas aumenta el riesgo de sobrecompromiso aunque la estimación de las historias sea correcta.</div>
+
+<p>El cálculo de capacidad parte de las horas laborales teóricas disponibles y distingue disponibilidad para el trabajo seleccionado, eventos, colaboración y otras responsabilidades necesarias: reuniones recurrentes (Daily Scrum, refinamiento, retrospectiva), licencias y vacaciones programadas, tiempo dedicado a soporte de producción o a otros proyectos, y un margen de imprevistos. Veamos un ejemplo numérico completo:</p>
+
+<p>Supongamos un equipo de cinco personas y un Sprint de dos semanas (diez días hábiles). En una jornada de ocho horas, la capacidad bruta por persona sería de 80 horas (10 días × 8 horas). Sin embargo, ninguna persona dedica el 100% de su jornada a programar: hay que descontar reuniones (aproximadamente 1 hora diaria entre Daily Scrum, coordinaciones y correos, es decir 10 horas en el Sprint), y en este Sprint particular uno de los desarrolladores tiene tres días de licencia programada (24 horas menos para esa persona). El cálculo quedaría así:</p>
+
+<table>
+<caption>Ejemplo de cálculo de capacidad del equipo para un Sprint de dos semanas</caption>
+<tr><th>Integrante</th><th>Horas brutas (10 días x 8h)</th><th>Descuentos</th><th>Capacidad neta</th></tr>
+<tr><td>Desarrollador A</td><td>80</td><td>10 h (reuniones)</td><td>70</td></tr>
+<tr><td>Desarrollador B</td><td>80</td><td>10 h (reuniones)</td><td>70</td></tr>
+<tr><td>Desarrollador C</td><td>80</td><td>7 h (reuniones) + 24 h (licencia)</td><td>49</td></tr>
+<tr><td>Desarrollador D</td><td>80</td><td>10 h (reuniones)</td><td>70</td></tr>
+<tr><td>Tester E</td><td>80</td><td>10 h (reuniones)</td><td>70</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>400</strong></td><td>-</td><td><strong>329 horas</strong></td></tr>
+</table>
+
+<p>Con esta capacidad neta de 329 horas, bajo esos supuestos, el equipo tiene una referencia para examinar la selección durante Sprint Planning al descomponerlas en tareas. Muchos equipos, además, aplican un margen de seguridad adicional del 10% al 20% sobre la capacidad neta para absorber imprevistos no planificados (bugs urgentes de producción, tareas de soporte inesperadas), lo que en este ejemplo dejaría una capacidad "de planificación" cercana a las 263-296 horas. Este margen de seguridad es especialmente importante en equipos que recién empiezan a trabajar juntos o en organizaciones donde las interrupciones son frecuentes.</p>
+
+<p>Es importante no confundir capacidad con velocity (que vemos en la sección siguiente): la capacidad es una estimación prospectiva basada en horas disponibles para el Sprint que está por comenzar, mientras que la velocity es un dato histórico, medido en Story Points, sobre cuánto trabajo completó el equipo en Sprints anteriores. Ambos datos se usan en conjunto durante el Sprint Planning: la capacidad ayuda a validar que el plan de tareas es realista en horas, y la velocity ayuda a validar que la cantidad de Story Points seleccionada es consistente con el ritmo histórico del equipo.</p>
+
+<p class="criterio-profesional"><strong>Lectura del cálculo de capacidad.</strong> Para C contamos siete días de presencia: 80 − 24 − 7 = 49 horas. Las cuatro personas restantes aportan 70 cada una, por lo que el total es 329. Reservar un 15 % deja 279,65 horas orientativas. Son supuestos del ejemplo; las reuniones reales y las habilidades disponibles deben revisarse antes de planificar.</p><h2 id="seccion-6">6. Velocidad del equipo y pronósticos</h2>
+
+<p>Un tamaño de veinticuatro puntos no nos dice por sí solo cuánto tardará. Necesitamos observar qué termina este equipo y en qué condiciones.</p>
+<p>La <strong>velocity</strong> (velocidad) es la cantidad de Story Points que un equipo completa, en promedio, por Sprint. Puede apoyar pronósticos del mismo equipo cuando utiliza una escala consistente, porque permite proyectar cuántos Sprints va a necesitar el equipo para completar un conjunto de historias pendientes, sin necesidad de estimar cada tarea en horas absolutas.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Usá velocity para pronosticar al propio equipo y detectar cambios de estabilidad. Nunca la conviertas en meta ni ranking: en cuanto se premia el número, deja de medir entrega.</div>
+
+<p>La velocity se calcula sumando los Story Points de las historias que el equipo llevó a estado "Terminado" (Done, cumpliendo la Definición de Terminado) al cierre de cada Sprint. Es fundamental contar solamente las historias completadas al 100%: una historia a medio terminar no suma story points parciales a la velocity, porque el objetivo de esta métrica es reflejar el ritmo real de entrega de valor, no el esfuerzo invertido. Veamos un ejemplo con los últimos cinco Sprints de un equipo:</p>
+
+<table>
+<caption>Ejemplo de historial de velocity de un equipo a lo largo de cinco Sprints</caption>
+<tr><th>Sprint</th><th>Story Points seleccionados</th><th>Story Points completados (Done)</th></tr>
+<tr><td>Sprint 10</td><td>32</td><td>28</td></tr>
+<tr><td>Sprint 11</td><td>30</td><td>31</td></tr>
+<tr><td>Sprint 12</td><td>35</td><td>25</td></tr>
+<tr><td>Sprint 13</td><td>28</td><td>30</td></tr>
+<tr><td>Sprint 14</td><td>32</td><td>32</td></tr>
+</table>
+
+<p>La velocity promedio de este equipo en los últimos cinco Sprints es (28+31+25+30+32) / 5 = 146 / 5 = 29,2 Story Points por Sprint. Muchos equipos, en lugar de promediar todos los Sprints, usan una ventana móvil de los últimos tres Sprints para que la métrica reaccione más rápido a cambios recientes en la composición del equipo o en la naturaleza del trabajo (por ejemplo, si se incorporó una persona nueva o si el equipo empezó a trabajar en un módulo más complejo). En este caso, la velocity de los últimos tres Sprints sería (25+30+32)/3 = 29 Story Points, un valor consistente con el promedio general, lo que muestra promedios cercanos; cinco observaciones no demuestran estabilidad estadística.</p>
+
+<p>El Sprint 12 merece un comentario aparte: el equipo seleccionó 35 puntos pero solo completó 25, una caída notable respecto de su patrón habitual. Este tipo de desvío debería analizarse en la Retrospectiva de ese Sprint: puede deberse a una historia que resultó más compleja de lo estimado, a una interrupción externa (soporte urgente, ausencias no planificadas) o a una sobreestimación de la capacidad disponible. La velocity no solo sirve para proyectar el futuro: leída en su serie histórica, también es un termómetro de la salud y la estabilidad del equipo.</p>
+
+<p>Con una velocity promedio conocida, la utilidad práctica es directa: si el Product Backlog restante para un release suma 200 Story Points y la velocity promedio del equipo es de 29 puntos por Sprint, el equipo puede proyectar que necesitará aproximadamente 200 / 29 ≈ 6,9, es decir 7 Sprints, para completar ese alcance, siempre que la composición del equipo y la naturaleza del trabajo se mantengan razonablemente estables. Esta proyección, aunque no es una fecha exacta, es útil como escenario base si los datos siguen siendo comparables, porque está anclada en datos empíricos del propio equipo y se va actualizando Sprint a Sprint.</p>
+
+<p>La velocidad no permite comparar personas ni equipos con escalas distintas. Tampoco existe un número mágico de Sprints a partir del cual se vuelva confiable: hay que examinar variación, cambios del sistema y pertinencia de la muestra. Pocos datos requieren rangos más prudentes. Un promedio cercano entre ventanas no demuestra por sí solo estabilidad estadística, ni los puntos terminados miden directamente el valor obtenido por usuarios.</p>
+
+<p><strong>Cómo leer la tabla de velocidad:</strong> la selección registrada al inicio puede renegociarse durante el Sprint con el Product Owner sin poner en peligro el objetivo. Por eso un período puede terminar más puntos que los seleccionados inicialmente. Registramos ese cambio de alcance y contamos únicamente trabajo terminado según la DoD.</p><h2 id="seccion-7">7. Planificar un Sprint</h2>
+
+<p>Con prioridades, tamaño y disponibilidad a la vista, podemos construir un plan con propósito, no solo llenar una lista.</p>
+<p>En la <strong>Sprint Planning</strong>, el Scrum Team construye un plan inicial para alcanzar un objetivo de Sprint. El Product Owner aporta oportunidades y contexto; los Developers seleccionan elementos considerando desempeño pasado, capacidad futura y Definition of Done, y deciden cómo realizar el trabajo. Seleccionar elementos constituye un pronóstico, no una promesa de alcance cerrado. El compromiso del Sprint Backlog es el Sprint Goal.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Cerrá el Sprint Planning con un objetivo coherente, un alcance posible y un plan inicial adaptable. Una colección de historias que “cabe” pero no comparte propósito debilita el foco.</div>
+
+<p>La Guía Scrum establece hasta ocho horas para un Sprint de un mes; en Sprints más cortos el evento suele ser más breve, sin imponer una proporción exacta. La conversación aborda tres temas: por qué vale la pena este Sprint, qué puede completarse y cómo se realizará el trabajo. Pueden revisarse de forma iterativa, sin dividir la reunión en mitades obligatorias.</p>
+
+<h3>7.1 Por qué: acordar el objetivo del Sprint</h3>
+<p>El Product Owner propone una oportunidad de valor y el Scrum Team colabora para formular un objetivo coherente. En TurnoYa podría ser “permitir que los pacientes del piloto reciban un recordatorio útil sin contactar a recepción”. El objetivo no es “cerrar 29 puntos”: los puntos describen tamaño, no el resultado buscado.</p>
+<h3>7.2 Qué: seleccionar trabajo posible</h3>
+
+<p>Los Developers conversan con el Product Owner sobre los elementos candidatos y seleccionan lo que consideran posible. Revisan criterios, incertidumbre, dependencias, habilidades disponibles y calidad requerida. No llenan cada hora por obligación: conservar margen puede evitar que una urgencia bloquee el objetivo. La selección inicial podrá adaptarse al aprender.</p>
+
+<h3>7.3 Cómo: construir el plan inicial</h3>
+
+<p>Los Developers definen el plan para producir un incremento que cumpla la DoD. Pueden descomponer la historia del recordatorio en integración de mensajería, programación del envío, pruebas y documentación. Estimar tareas en horas es opcional; lo necesario es suficiente detalle para coordinar, reconocer dependencias e inspeccionar progreso. Nadie externo asigna cómo convertir cada elemento en un incremento.</p>
+
+<p>Retomemos las 329 horas netas calculadas antes y supongamos que el equipo reserva un 15% para contingencias: 329 × 0,85 = 279,65 horas orientativas. Una selección de dos historias de 13 puntos, una de 5 y tres de 2 suma <strong>37 puntos</strong>, no 34. Si su desempeño reciente ronda 29 puntos y el plan de tareas demanda 280 horas, ambas señales aconsejan revisar la selección, no convertir puntos en horas. El equipo puede retirar una historia de 13 puntos que no es esencial para el objetivo: quedan 24 puntos y, suponiendo que esa historia demandaba 70 horas del plan, 210 horas estimadas. Debe comprobar habilidades y dependencias; que las sumas encajen no garantiza que el trabajo pueda hacerse en paralelo.</p>
+
+<h3>7.4 El resultado del Sprint Planning</h3>
+
+<p>El resultado es el <strong>Sprint Backlog</strong>: Sprint Goal, elementos seleccionados y plan accionable. El plan se actualiza durante el Sprint; los Developers y el Product Owner renegocian alcance cuando hace falta sin poner en riesgo el objetivo ni reducir calidad. Daily Scrum inspecciona progreso hacia ese objetivo y Sprint Review inspecciona el resultado y futuras adaptaciones. No son controles de cumplimiento de una lista inmutable.</p>
+
+<h2 id="seccion-8">8. Hacer visible el trabajo</h2>
+
+<p>Si todos están ocupados y nadie puede decir qué está por terminar, falta una representación útil del trabajo.</p>
+<p>Uno de los principios más potentes de las metodologías ágiles, heredado directamente del sistema de producción Lean y de Kanban, es que <strong>hacer visible el trabajo reduce el desperdicio y mejora la toma de decisiones</strong>. Cuando el estado de cada tarea, historia o impedimento es visible para todo el equipo en un mismo lugar físico o digital, se reducen drásticamente las reuniones de "status", los malentendidos sobre quién está haciendo qué, y el tiempo que tardan los problemas en ser detectados.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Diseñá radiadores de información para provocar conversaciones y acciones. Un tablero prolijo que no revela bloqueos, envejecimiento o acumulación ofrece estética, no control.</div>
+
+<p>La gestión visual del trabajo se apoya en tres elementos principales que desarrollamos en las secciones siguientes: los <strong>tableros</strong> (Scrum o Kanban), que muestran el flujo de trabajo columna por columna; los <strong>indicadores de impedimentos</strong>, que hacen visible cualquier bloqueo apenas aparece; y los <strong>gráficos de seguimiento</strong> (burndown, burnup, CFD), que traducen el estado del tablero en tendencias que se pueden leer de un vistazo. El objetivo común de estas tres herramientas es el mismo: que cualquier persona —del equipo, del negocio, o de la dirección de la organización— pueda entender en segundos, sin necesidad de preguntarle a nadie, cómo viene el proyecto.</p>
+
+<h2 id="seccion-9">9. Tableros, carriles y límites WIP</h2>
+
+<p>Las columnas deben representar estados reales y decisiones; no solo reproducir los nombres de las áreas.</p>
+<p>El tablero (board) es la representación visual central del flujo de trabajo de un equipo ágil. Aunque los tableros Scrum y Kanban comparten la misma lógica básica —columnas que representan estados del trabajo, y tarjetas que representan historias o tareas que se mueven de izquierda a derecha— tienen diferencias de propósito y de configuración que conviene distinguir con claridad.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Configurá columnas según estados que cambian la responsabilidad o la política del trabajo. Agregar etapas sin una decisión asociada solo fragmenta el flujo.</div>
+
+<h3>9.1 El tablero Scrum</h3>
+
+<p>Un tablero utilizado con Scrum visualiza el Sprint Backlog y su evolución. Puede mostrar “Por hacer”, “En progreso”, “Revisión” y “Done”, según estados y políticas del equipo. Scrum no exige un tablero particular ni borrarlo al terminar el Sprint. El trabajo incompleto conserva su estado real y vuelve a evaluarse; no se arrastra automáticamente al Sprint siguiente. El tablero también puede incorporar prácticas Kanban sin dejar de ser Scrum.</p>
+
+<h3>9.2 El tablero Kanban</h3>
+
+<p>Un tablero Kanban, en cambio, no está atado a la duración de un Sprint: es un flujo continuo donde las tarjetas entran al tablero apenas están listas para trabajarse y salen apenas se completan, sin esperar a un evento de cierre periódico. Este enfoque es habitual en equipos de soporte, mantenimiento u operaciones, donde el trabajo llega de forma impredecible (un ticket de un cliente, un incidente de producción) y no tiene sentido forzarlo dentro de compromisos de Sprint de dos semanas. Las columnas de un tablero Kanban suelen ser más granulares que las de un tablero Scrum, porque el objetivo es visualizar con precisión cada etapa del proceso para poder detectar cuellos de botella (por ejemplo: "Backlog", "Análisis", "Desarrollo", "Testing", "Aprobación del cliente", "Desplegado").</p>
+
+<h3>9.3 Swimlanes</h3>
+
+<p>Las <strong>swimlanes</strong> ("carriles de nado") son divisiones horizontales del tablero que permiten agrupar las tarjetas por una categoría adicional, superpuesta a las columnas verticales. Los criterios de swimlane más comunes son: por tipo de ítem (una fila para historias de usuario, otra para bugs, otra para deuda técnica), por prioridad (una fila superior reservada para ítems urgentes o "expedite" que deben atravesar el tablero sin demora), o por equipo/persona responsable cuando varios subequipos comparten un mismo tablero. Las swimlanes son especialmente valiosas para que los ítems urgentes no se "pierdan" entre el resto del trabajo: una fila dedicada a incidentes críticos, ubicada siempre en la parte superior del tablero, garantiza que ese trabajo sea visible de inmediato y no compita por atención con tareas de prioridad normal.</p>
+
+<h3>9.4 Límites de trabajo en curso (WIP)</h3>
+
+<p>El concepto más importante que aporta Kanban a la gestión visual es el <strong>límite de trabajo en curso</strong> (WIP limit, por Work In Progress), que consiste en fijar un número máximo de tarjetas permitidas simultáneamente en cada columna del tablero (salvo, típicamente, en "Por hacer" y "Terminado"). Por ejemplo, un equipo puede establecer que la columna "En progreso" admite como máximo 4 tarjetas y la columna "Testing" admite como máximo 3, y una vez alcanzado ese límite, no se introduce más trabajo en esa columna hasta que se libere espacio moviendo alguna hacia adelante.</p>
+
+<p>Como vimos en el Módulo 2, los límites WIP ayudan a enfocar la finalización y a revelar acumulación. La relación de Little vincula promedios dentro de un sistema estable; no demuestra que cualquier reducción del límite mejore automáticamente cada plazo. Si Testing se satura, examiná esperas, defectos, dependencias y capacidad antes de contratar más personas. Mover tarjetas bloqueadas a otra columna no libera WIP del sistema si el trabajo sigue iniciado y sin terminar.</p>
+
+<p>Si cada persona tiene cinco tickets abiertos, empezar otro puede aumentar cambios de contexto y esperas. El equipo prueba un límite de dos ítems en progreso y ayuda a terminar antes de incorporar nuevos. Un ticket bloqueado sigue contando dentro de los límites del sistema: moverlo a “espera” no permite ocultar WIP. Se comparan tiempos y resultados antes y después de la prueba; el límite es una política para aprender y mejorar el flujo, no una garantía automática de reducción de demoras.</p>
+
+<h2 id="seccion-10">10. Gestionar impedimentos y bloqueos</h2>
+
+<p>Una aprobación pendiente ya está deteniendo una historia. ¿Quién actúa, cuándo escala y cómo evitamos repetir el bloqueo?</p>
+<p>Un <strong>impedimento</strong> (o bloqueo) es cualquier obstáculo que impide que una historia o tarea avance según lo planificado: puede ser técnico (un ambiente de pruebas caído, una dependencia de otro equipo que no entrega a tiempo), organizacional (falta de una decisión de negocio, una aprobación pendiente) o personal (una persona clave ausente sin reemplazo). La gestión ágil de impedimentos se apoya en tres principios: <strong>visibilidad inmediata</strong>, <strong>responsabilidad clara de resolución</strong>, y <strong>escalamiento rápido</strong>.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Escalá impedimentos por impacto y antigüedad, y registrá patrones. Resolver el mismo bloqueo cada Sprint sin atacar su causa es administrar síntomas.</div>
+
+<p>La visibilidad inmediata se logra marcando la tarjeta bloqueada en el tablero, típicamente con una etiqueta o un color distintivo (por ejemplo, un borde rojo o un ícono de bloqueo), de modo que cualquier persona que mire el tablero identifique al instante qué ítems no están avanzando y por qué. El impedimento debe reportarse apenas se detecta, no esperar al Daily Scrum del día siguiente si el bloqueo es severo: cuanto más tiempo pasa un impedimento sin visibilizarse, más caro resulta resolverlo, porque el trabajo se sigue acumulando detrás de ese cuello de botella.</p>
+
+<p>En Scrum, el Scrum Master ayuda a que se eliminen impedimentos y a desarrollar la capacidad del equipo; no tiene que resolver personalmente cada bloqueo ni monopolizar su detección. Quien conoce el problema puede actuar o escalarlo según acuerdos. En Kanban, la responsabilidad se establece en las políticas del servicio, sin exigir un Scrum Master. Daily Scrum permite adaptar el plan de los Developers, pero un impedimento relevante se comunica cuando se detecta.</p>
+
+<p>Muchos equipos llevan, además del tablero, un <strong>registro de impedimentos</strong> (impediment log) donde se documenta cada bloqueo con su fecha de aparición, su descripción, la persona responsable de resolverlo, y su fecha de resolución. Este registro tiene dos usos: primero, sirve de seguimiento operativo mientras el impedimento sigue abierto; segundo, y quizás más importante a largo plazo, alimenta la Retrospectiva, porque permite identificar patrones (por ejemplo, si el mismo tipo de impedimento —"esperando aprobación de diseño"— aparece Sprint tras Sprint, es una señal de que hay un problema estructural en el proceso que conviene resolver de raíz, y no solo parchear caso por caso).</p>
+
+<figure class="image-figure">
+<img src="assets/metricas-flujo-decisiones.png" alt="Un tablero, gráficos de avance y bandas de flujo permiten detectar un bloqueo y discutir una intervención concreta.">
+<figcaption><strong>Lectura visual.</strong> La imagen reúne métricas que suelen verse aisladas y muestra su propósito común: orientar decisiones tempranas sobre alcance, capacidad y cuellos de botella.</figcaption>
+</figure>
+
+<figure class="diagrama-conceptual image-figure visual-editorial">
+<img src="assets/diagrama-metricas-decision-editorial.png" alt="Qué pregunta responde cada métrica ágil de avance y flujo">
+<figcaption>Cada indicador ilumina una dimensión distinta. Combinarlos permite distinguir cambio de alcance, demora, variabilidad y acumulación antes de intervenir.</figcaption>
+</figure>
+
+<div class="mito"><strong>Mito:</strong> Una velocity más alta demuestra que un equipo es más productivo. <strong>Realidad:</strong> la escala pertenece a cada equipo y puede inflarse; sirve para pronosticar su propio trabajo, no para comparar ni premiar.</div>
+
+<h2 id="seccion-11">11. Lead Time y Cycle Time</h2>
+
+<div class="analogia"><p><strong>Analogía: la espera en una cafetería.</strong> Desde que pedís hasta que recibís el café transcurre el Lead Time. Desde que el pedido entra al proceso de preparación hasta que se entrega transcurre el Cycle Time. Ese segundo intervalo incluye esperas internas: la máquina ocupada también cuenta. Medir cuánto tardó la persona en mover sus manos no equivale a medir el tiempo de flujo. En proyectos debemos acordar qué eventos representan solicitud, inicio y entrega; sin esas fronteras, comparar tiempos puede resultar engañoso.</p></div><p>El cliente espera desde que solicita; el equipo cuenta desde que inicia. Ambas experiencias importan y deben medirse con límites claros.</p>
+<p>El <strong>Lead Time</strong> y el <strong>Cycle Time</strong> son dos métricas de flujo, propias del enfoque Kanban, que miden cuánto tiempo tarda un ítem de trabajo en atravesar el sistema, pero midiendo desde puntos de partida distintos. Ambas son especialmente valiosas porque, a diferencia de la velocity (que depende de la escala relativa de Story Points de cada equipo, no comparable entre equipos), se miden en unidades de tiempo real (días u horas), lo que las hace más intuitivas de comunicar al negocio y más fáciles de usar para dar compromisos de fecha creíbles.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Medí Lead Time desde la experiencia del solicitante y Cycle Time desde el inicio activo. La diferencia revela espera sistémica que la productividad individual no explica.</div>
+
+<p>El <strong>Lead Time</strong> mide el tiempo transcurrido desde que un ítem de trabajo es solicitado o ingresado al backlog hasta que se entrega terminado al cliente. Refleja la experiencia completa del cliente que espera esa entrega: desde su punto de vista, el "tiempo de espera" empieza el día que pidió algo, no el día en que alguien del equipo empezó a trabajarlo.</p>
+
+<p>El <strong>Cycle Time</strong> mide el tiempo transcurrido desde que el equipo efectivamente comienza a trabajar activamente en el ítem (por ejemplo, cuando la tarjeta entra a la columna "En progreso" del tablero) hasta que lo termina. Con los mismos límites de entrega y una solicitud anterior al inicio, es menor o igual al Lead Time, porque excluye el tiempo que el ítem pasó esperando en el backlog antes de que alguien empezara a trabajarlo.</p>
+
+<table>
+<caption>Lead Time, Cycle Time y Throughput: definición y fórmula</caption>
+<tr><th>Métrica</th><th>Definición</th><th>Fórmula / cálculo</th></tr>
+<tr><td>Lead Time</td><td>Tiempo desde que se solicita el ítem hasta que se entrega terminado</td><td>Fecha de entrega − fecha de solicitud/ingreso al backlog</td></tr>
+<tr><td>Cycle Time</td><td>Tiempo desde que el equipo empieza a trabajar el ítem hasta que lo termina</td><td>Fecha de entrega − fecha de inicio de trabajo activo</td></tr>
+<tr><td>Throughput</td><td>Cantidad de ítems completados por unidad de tiempo</td><td>Cantidad de ítems Done / período de tiempo (ej. por semana)</td></tr>
+</table>
+
+<p>Un ticket se solicita el lunes 1, comienza el jueves 4 y se entrega el lunes 8. Si medimos días calendario transcurridos, su Lead Time es 7 días y su Cycle Time, 4; los 3 días de diferencia corresponden a espera previa al inicio. El Cycle Time también incluye esperas y bloqueos posteriores al inicio: no equivale a horas de trabajo activo. Para intervenir hay que estudiar ambas esperas y las políticas de selección, no asumir que bajar WIP resolverá automáticamente toda demora.</p>
+
+<p>Un equipo maduro que mide su Cycle Time de forma sostenida a lo largo de muchos ítems puede dar respuestas del tipo "el 85% de nuestros tickets se resuelven en 5 días o menos" (una afirmación basada en percentiles, calculada sobre el historial real), lo cual describe una expectativa probabilística bajo condiciones comparables, no una garantía de que el próximo ticket cumplirá ese plazo.</p>
+
+<h2 id="seccion-12">12. Throughput: ritmo de finalización</h2>
+
+<p>Además de cuánto tarda una tarjeta, necesitamos saber cuántas se terminan en un período.</p>
+<p>El <strong>Throughput</strong> (rendimiento o caudal) mide la cantidad de ítems de trabajo que el equipo completa por unidad de tiempo, típicamente por semana o por Sprint. A diferencia de la velocity, que pondera cada ítem según su tamaño relativo en Story Points, el throughput cuenta ítems terminados sin ponderar por tamaño: simplemente, "¿cuántas historias/tickets/tarjetas cerramos esta semana?". Esta simplicidad es a la vez su ventaja y su limitación.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Interpretá throughput junto con tamaño y clase de servicio. Contar tickets sin controlar su heterogeneidad puede premiar fragmentación artificial y ocultar valor.</div>
+
+<p>El <strong>throughput</strong> se obtiene contando ítems terminados por período, sin exigir puntos ni estimación previa. Su estabilidad debe comprobarse con datos: tamaño, mezcla de trabajo, bloqueos y disponibilidad pueden modificarla. Si el promedio observado es ocho tarjetas semanales, 60/8 = 7,5 semanas ofrece una referencia inicial, no una fecha garantizada. Para comunicar un pronóstico necesitamos estudiar variación y condiciones futuras; contar tarjetas no mide por sí solo beneficio para usuarios.</p><p>La limitación es que, si el tamaño de los ítems varía mucho entre sí (una semana se cierran ocho tarjetas chiquitas y otra semana se cierran tres tarjetas enormes), el throughput por sí solo puede dar una imagen engañosa del ritmo real de entrega de valor. Por eso, en la práctica, muchos equipos combinan throughput con Cycle Time (para saber cuánto tarda cada ítem) y con una revisión periódica de que el tamaño de los ítems se mantenga razonablemente uniforme, dividiendo historias grandes antes de que entren al flujo de trabajo activo.</p>
+
+<h3>12.1 Ejemplo resuelto: leer tiempos y salidas juntos</h3><p>Usamos días calendario transcurridos, sin contar ambos extremos. Los datos son didácticos y todos los ítems tienen la misma definición de terminado.</p><table><thead><tr><th>Ítem</th><th>Solicitud</th><th>Inicio</th><th>Entrega</th><th>Lead Time</th><th>Cycle Time</th></tr></thead><tbody><tr><td>A</td><td>Día 1</td><td>Día 2</td><td>Día 5</td><td>4 días</td><td>3 días</td></tr><tr><td>B</td><td>Día 1</td><td>Día 3</td><td>Día 7</td><td>6 días</td><td>4 días</td></tr><tr><td>C</td><td>Día 2</td><td>Día 4</td><td>Día 8</td><td>6 días</td><td>4 días</td></tr></tbody></table><p><strong>Cálculo:</strong> el Lead Time promedio es (4 + 6 + 6)/3 = 5,33 días; el Cycle Time promedio es (3 + 4 + 4)/3 = 3,67 días. La diferencia promedio, 1,67 días, corresponde a espera anterior al inicio. Entre los días 5 y 8 inclusive se entregan tres ítems: ese es el throughput de esa ventana, no una tasa semanal calculada con otro período.</p><p><strong>Lectura profesional:</strong> observamos espera previa y tiempos internos antes de proponer una intervención. Tres observaciones no permiten asegurar un plazo para todos los pedidos futuros. También investigamos si existen tickets muy antiguos todavía sin terminar, porque no aparecen en el promedio de finalizados.</p><h2 id="seccion-13">13. Diagrama de flujo acumulado</h2>
+
+<p>Testing acumula tarjetas mientras todos siguen iniciando desarrollo. Veamos cómo aparece esa acumulación en una serie temporal.</p>
+<p>El <strong>Cumulative Flow Diagram</strong> (Diagrama de Flujo Acumulado, CFD) es, probablemente, el gráfico más rico en información de todos los que usa la gestión visual ágil, porque combina en una sola imagen el estado del trabajo en cada columna del tablero a lo largo del tiempo. El eje horizontal representa el tiempo (días o semanas) y el eje vertical representa la cantidad acumulada de ítems, con una banda de color por cada columna del tablero (por ejemplo, una banda para "Por hacer", otra apilada encima para "En progreso", otra para "Testing", y otra para "Terminado"), de modo que el ancho vertical de cada banda en un momento dado representa cuántos ítems había en esa columna en ese momento.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Observá el ancho y la tendencia de las bandas del CFD. Un cuello de botella se gestiona limitando su alimentación y aumentando capacidad donde se acumula trabajo.</div>
+
+<p>En un CFD, la separación vertical entre curvas acumuladas permite leer cantidades en estados; la pendiente de finalización refleja salidas por unidad de tiempo. Una banda de Testing que crece indica acumulación y pide investigar su causa. La separación horizontal entre entradas y salidas puede orientar sobre tiempo de flujo bajo supuestos adecuados, pero no permite seguir el tiempo exacto de una tarjeta si hay adelantamientos o cambios de orden. Para eso usamos las fechas del ítem. Definí siempre qué estados representan inicio, finalización y WIP.</p>
+
+<p>Un CFD saludable muestra bandas relativamente parejas y paralelas entre sí, con una pendiente ascendente constante en la banda de "Terminado", lo que indica un flujo estable y predecible. Un CFD problemático muestra bandas que se ensanchan de forma desigual, o una banda de "Terminado" que se aplana (deja de crecer) durante tramos largos, lo que indica que el equipo dejó de entregar valor por algún período, aun cuando puede seguir "trabajando" activamente en ítems que no terminan de cerrarse.</p>
+
+<h2 id="seccion-14">14. Burndown: observar trabajo pendiente</h2>
+
+<p>Un gráfico que no baja no explica la causa. Primero hay que preguntar qué sigue pendiente y por qué.</p>
+<p>El <strong>Burndown Chart</strong> (gráfico de trabajo pendiente) es el gráfico de seguimiento más característico de Scrum. Muestra, día a día a lo largo del Sprint, cuánto trabajo queda por completar, medido habitualmente en Story Points (aunque también puede medirse en horas restantes de tareas). El eje horizontal representa los días del Sprint, y el eje vertical representa la cantidad de trabajo pendiente; por eso la línea del gráfico, en un Sprint ideal, "baja" (desciende, "quema" el trabajo) desde el total comprometido el primer día hasta cero el último día.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Leé el burndown como tendencia del trabajo pendiente, no como mandato de seguir una diagonal. Una meseta exige investigar por qué nada termina antes de exigir “más velocidad”.</div>
+
+<p>El burndown compara trabajo restante con una referencia descendente para el período. La línea uniforme es una simplificación visual, no una predicción estadística. Estar por encima pide revisar qué está ocurriendo: puede haber trabajo que termina en lotes, cambios de alcance o un bloqueo. Los puntos seleccionados son un pronóstico; el compromiso del Sprint Backlog es el Sprint Goal. Evaluamos el objetivo y la calidad, además del gráfico, antes de decidir.</p><p>Veamos un ejemplo numérico. Un equipo comprometió 40 Story Points para un Sprint de diez días hábiles. La línea ideal desciende 4 puntos por día (40 dividido 10): día 0 en 40, día 1 en 36, día 2 en 32, y así sucesivamente hasta 0 el día 10. Supongamos que el trabajo real avanzó así:</p>
+
+<table>
+<caption>Ejemplo de Burndown Chart: trabajo pendiente real vs. ideal (Sprint de 40 puntos, 10 días)</caption>
+<tr><th>Día</th><th>Pendiente ideal</th><th>Pendiente real</th><th>Lectura</th></tr>
+<tr><td>0</td><td>40</td><td>40</td><td>Inicio del Sprint</td></tr>
+<tr><td>2</td><td>32</td><td>38</td><td>Arranque lento, típico por refinamiento de detalles técnicos</td></tr>
+<tr><td>4</td><td>24</td><td>30</td><td>Sigue algo atrasado respecto del ideal</td></tr>
+<tr><td>6</td><td>16</td><td>15</td><td>El equipo se pone al día: varias historias se cierran juntas</td></tr>
+<tr><td>8</td><td>8</td><td>10</td><td>Levemente atrasado, pero dentro de un rango manejable</td></tr>
+<tr><td>10</td><td>0</td><td>2</td><td>Quedan 2 puntos sin terminar al cierre del Sprint</td></tr>
+</table>
+
+<p>Este ejemplo muestra un patrón muy habitual en equipos Scrum: un arranque más lento de lo ideal (días 0 a 4), porque las primeras jornadas del Sprint suelen dedicarse a terminar de entender los detalles técnicos de las historias, seguido de una aceleración a mitad de Sprint cuando varias historias se completan casi en simultáneo (día 6), y un cierre con un pequeño remanente de trabajo sin terminar (2 puntos el día 10), que probablemente vuelva al Product Backlog para reingresar como candidato al próximo Sprint. Una lectura correcta del burndown no espera que la línea real sea una recta perfecta —eso casi nunca ocurre en la práctica—, sino que vigila la <em>tendencia</em>: si la línea real se aleja cada vez más de la ideal y esa distancia crece sistemáticamente día tras día, es una señal de alerta temprana de que el Sprint corre serio riesgo de no completarse, y el equipo debería reaccionar (por ejemplo, negociando con el Product Owner reducir el alcance) antes de llegar al último día.</p>
+
+<p>Una situación particular a saber leer es cuando la línea real <em>sube</em> en algún punto del Sprint en lugar de bajar. Esto ocurre cuando se agrega trabajo nuevo no planificado al Sprint (scope creep) o cuando una historia que se creía más chica se re-estima hacia arriba al descubrir complejidad oculta. Un burndown que sube es una señal de alarma que merece discutirse cuanto antes, típicamente en el Daily Scrum, para decidir si ese trabajo adicional puede absorberse con la capacidad restante o si hay que sacar otra historia del Sprint para compensarlo.</p>
+
+<h2 id="seccion-15">15. Burnup: separar avance y alcance</h2>
+
+<p>El equipo completa trabajo, pero la fecha se aleja porque entran nuevas necesidades. Separar avance y alcance permite verlo.</p>
+<p>El <strong>Burnup Chart</strong> es una variante del burndown que, en lugar de mostrar cuánto trabajo <em>falta</em>, muestra cuánto trabajo <em>ya se completó</em>, acumulado día a día, contra el alcance total del Sprint o del proyecto. La línea, en este caso, sube (de ahí el nombre "burn-up") desde cero hasta el total de puntos, y por eso el gráfico necesita dos líneas de referencia: la línea de <strong>trabajo completado</strong> (que sube progresivamente) y la línea de <strong>alcance total</strong> (que se mantiene horizontal si el alcance no cambia, o que sube en escalones si se agrega trabajo nuevo al proyecto).</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Preferí burnup cuando el alcance puede cambiar: separar lo completado del total evita atribuir al equipo un atraso que en realidad proviene de trabajo agregado.</div>
+
+<p>El burnup separa trabajo completado y alcance total, lo que ayuda a no confundir aumento de necesidades con menor avance. Sin embargo, una subida de alcance puede deberse a nuevos elementos o a cambios de estimación: el gráfico por sí solo no distingue esas causas. Hace falta revisar el registro de cambios. Tanto burnup como burndown pueden apoyar Sprint o lanzamiento según la pregunta; ninguno reemplaza inspeccionar el objetivo, calidad y resultados.</p>
+
+<table>
+<caption>Comparación entre Burndown Chart y Burnup Chart</caption>
+<tr><th>Aspecto</th><th>Burndown Chart</th><th>Burnup Chart</th></tr>
+<tr><td>Qué muestra</td><td>Trabajo pendiente, día a día</td><td>Trabajo completado acumulado, día a día</td></tr>
+<tr><td>Dirección de la línea</td><td>Desciende hacia cero</td><td>Asciende hacia el total</td></tr>
+<tr><td>Cantidad de líneas</td><td>Una línea real + una línea ideal</td><td>Línea de completado + línea de alcance total</td></tr>
+<tr><td>Visualiza cambios de alcance</td><td>El pendiente puede variar por avance, alcance o reestimación</td><td>Separa alcance de completado; la causa del cambio requiere contexto</td></tr>
+<tr><td>Uso más habitual</td><td>Seguimiento diario dentro de un Sprint</td><td>Seguimiento de un release o proyecto de varios Sprints</td></tr>
+<tr><td>Riesgo de mala interpretación</td><td>Puede confundirse "trabajo agregado" con "atraso"</td><td>Requiere leer dos líneas en simultáneo, algo más complejo a primera vista</td></tr>
+</table>
+
+<h2 id="seccion-16">16. Gestionar riesgos y dependencias</h2>
+
+<p>La integración más incierta está al final del plan. ¿Qué información conviene comprar antes de comprometer el lanzamiento?</p>
+<p>La gestión de riesgos es continua en cualquier enfoque responsable. En ágil aprovechamos ciclos cortos para revisar supuestos y actuar temprano, sin sustituir el registro de riesgos ni las responsabilidades de gobierno. Un riesgo es un evento o condición incierta; un bloqueo ya presente es un problema que requiere actuación. Pueden estar relacionados, pero no son sinónimos.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Reducí primero los riesgos que podrían invalidar el plan. Un spike temprano compra información; dejar la mayor incertidumbre para el final compra urgencia.</div>
+
+<p>El riesgo, en un proyecto ágil, se gestiona en varios momentos y con varios mecanismos complementarios. Durante el <strong>Backlog Refinement</strong>, el equipo identifica riesgos técnicos u organizacionales asociados a historias futuras (por ejemplo, una historia que depende de una API externa cuya estabilidad se desconoce) y puede decidir insertar un <strong>spike</strong> —una investigación acotada para responder una pregunta, con límite de tiempo y evidencia de salida— para reducir esa incertidumbre antes de comprometerse a estimarla y construirla en un Sprint regular. Durante el <strong>Sprint Planning</strong>, el equipo considera explícitamente el riesgo al seleccionar el orden de las historias: suele ser recomendable abordar primero, dentro de un Sprint, las historias de mayor riesgo o incertidumbre técnica, en lugar de dejarlas para el final, porque si algo sale mal conviene descubrirlo cuanto antes, con margen de tiempo restante para reaccionar. Durante el <strong>Daily Scrum</strong>, los impedimentos que reportan los miembros del equipo pueden revelar riesgos materializados u otros problemas presentes y requieren gestión inmediata. Y durante la <strong>Retrospectiva</strong>, el equipo revisa qué riesgos se concretaron durante el Sprint y qué acciones preventivas o de mitigación conviene adoptar de cara al Sprint siguiente.</p>
+
+<p>Un <strong>registro de riesgos vivo</strong> permite describir incertidumbres, probabilidad, impacto, responsable y respuesta. Evitar, mitigar, transferir y aceptar son estrategias útiles; también conviene reconocer oportunidades. La frecuencia de revisión responde a exposición y cambios, tanto en gestión ágil como predictiva. Si una integración externa amenaza el piloto, se investiga temprano, se acuerda una alternativa y se define cuándo escalar la decisión. Un bloqueo actual es un problema que requiere acción; su repetición futura puede permanecer como riesgo.</p>
+
+<p>Un riesgo particular que merece mención aparte en contextos ágiles es el <strong>riesgo de dependencias externas</strong> entre equipos o con proveedores, especialmente frecuente en organizaciones que escalan Scrum a varios equipos trabajando sobre un mismo producto. Visualizar estas dependencias (por ejemplo, con un tablero específico de dependencias entre equipos, o marcando las historias dependientes con una etiqueta especial en Jira) y tratarlas explícitamente durante eventos de sincronización entre equipos (como un Scrum of Scrums) es una práctica recomendada para que un bloqueo en un equipo no se propague de forma invisible y tardía a otro.</p>
+
+<h3>16.1 Caso resuelto: construir un pronóstico de release con evidencia</h3><p>Un equipo debe comunicar cuándo podría terminar un backlog de 180 puntos. Sus últimas cinco velocidades fueron 28, 31, 25, 30 y 32 puntos, pero el próximo Sprint tiene una licencia planificada y existe riesgo en una integración externa.</p><ol class="caso-resuelto"><li><strong>Estimar la base empírica.</strong> El promedio de cinco Sprints es 29,2 puntos y la mediana es 30. Ambos valores muestran un ritmo cercano, con una variación relevante en el Sprint de 25.</li><li><strong>No ocultar capacidad futura.</strong> La licencia reduce disponibilidad del próximo Sprint; el equipo no usa 29 como compromiso automático y planifica menos trabajo para ese ciclo.</li><li><strong>Reducir el riesgo temprano.</strong> Antes de prometer el release, incorpora un spike breve sobre la integración externa. El resultado puede cambiar tamaño y orden del backlog.</li><li><strong>Calcular un rango.</strong> Con ritmos observados de 25 a 32 puntos, 180 puntos requieren aproximadamente entre 6 y 8 Sprints. El valor central es 180/29,2 ≈ 6,2, pero no se comunica como certeza de 6.</li><li><strong>Explicitar condiciones.</strong> El rango supone equipo estable, DoD sin cambios y alcance de 180 puntos. Un burnup permitirá distinguir avance de nuevo alcance agregado.</li><li><strong>Actualizar el pronóstico.</strong> Después de cada Sprint se recalculan trabajo restante y distribución reciente; el pronóstico mejora a medida que se estrecha la incertidumbre.</li></ol><p><strong>Comunicación profesional:</strong> “Con el alcance actual y el ritmo observado, esperamos completar en 6 a 8 Sprints; revisaremos el rango luego del spike y de cada Sprint”.</p>
+
+<h2 id="seccion-17">17. Herramientas para gestionar el trabajo</h2>
+
+<div class="criterio-profesional"><p><strong>Antes de elegir una herramienta:</strong> acordá estados, políticas de selección, criterios de terminado, límites WIP y eventos de medición. Un tablero en Trello no constituye por sí solo un sistema Kanban; Jira tampoco establece automáticamente Scrum. Las funcionalidades dependen de configuración y plan, y deben revisarse al momento de utilizarlas. Fuentes: <a href="https://trello.com/en/guide/trello-101">guía oficial de Trello</a> y <a href="https://www.atlassian.com/software/jira/features/reports">reportes oficiales de Jira</a>, consulta del 15 de septiembre de 2026.</p></div><p>Antes de elegir una plataforma, definí qué decisiones necesitás tomar y qué datos tendrás que mantener.</p>
+<p>Todo lo desarrollado en este módulo —Story Points, Planning Poker, tableros, burndown/burnup, Lead Time, Cycle Time, CFD— se puede practicar sobre un pizarrón físico con tarjetas de papel, y de hecho muchos equipos ágiles empezaron así. Pero en la práctica profesional actual, la enorme mayoría de los equipos gestiona su trabajo con herramientas de software especializadas, que automatizan el cálculo de estas métricas, permiten trabajar con equipos distribuidos, e integran el seguimiento del trabajo con el resto del ciclo de vida del desarrollo (repositorios de código, integración continua, documentación).</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Elegí herramientas por la conversación y la disciplina que habilitan. Si actualizar el sistema cuesta más que la información que devuelve, la sofisticación se vuelve desperdicio.</div>
+
+<h3>17.1 Jira</h3>
+
+<p>Jira, de Atlassian, ofrece seguimiento de trabajo, backlogs, tableros y reportes. Su disponibilidad depende de la configuración, el tipo de proyecto y el plan. Una herramienta no implementa Scrum ni Kanban por sí sola: necesita políticas claras y estados actualizados. Entre sus capacidades podemos encontrar:</p>
+
+<ul>
+<li><strong>Jerarquía de trabajo:</strong> según configuración, Jira organiza épicas, elementos estándar —como historias, tareas o errores— y subtareas. Un bug es un tipo de elemento; no constituye necesariamente un nivel posterior a la subtarea. La trazabilidad debe conectar cada trabajo con su propósito y puede variar según el proyecto y el plan.</li><li><strong>Tableros Scrum y Kanban configurables</strong>: un mismo proyecto puede tener un tablero Scrum para gestionar el Sprint vigente y, en paralelo, un tablero Kanban para gestionar soporte o mantenimiento, ambos alimentados del mismo backlog subyacente si así lo requiere la organización.</li>
+<li><strong>Estimación integrada</strong>: permite asignar Story Points directamente sobre cada historia, y puede complementarse con aplicaciones de Planning Poker del Marketplace que automatiza la votación y el registro de la estimación acordada.</li>
+<li><strong>Reportes automáticos</strong>: ofrece reportes como burndown, velocity, CFD y control chart, según configuración; para leer Lead Time o Cycle Time hay que definir las transiciones incluidas, sin que el equipo tenga que calcularlos manualmente, siempre que la disciplina de actualizar el estado de las tarjetas sea consistente.</li>
+<li><strong>Automatizaciones y flujos de trabajo personalizables</strong>: se pueden definir flujos de estado propios (workflows) con reglas de transición (por ejemplo, que una historia no pueda pasar a "Terminado" si no tiene al menos un caso de prueba vinculado aprobado), y automatizar acciones repetitivas (por ejemplo, notificar automáticamente al Scrum Master cuando una tarjeta lleva más de tres días sin moverse, como alerta temprana de un posible impedimento no reportado).</li>
+<li><strong>Integración con el ecosistema de desarrollo</strong>: se conecta de forma nativa con repositorios de código (Bitbucket, GitHub), pipelines de integración continua y herramientas de documentación (Confluence), lo que permite, por ejemplo, ver directamente en la tarjeta de Jira los commits y pull requests asociados a esa historia.</li>
+</ul>
+
+<p>La contracara de esta riqueza funcional es que Jira tiene una curva de aprendizaje considerable y puede volverse complejo de administrar en equipos chicos o en organizaciones que no necesitan tanta granularidad de configuración, además de requerir licenciamiento pago a partir de cierto tamaño de equipo.</p>
+
+<h3>17.2 Trello</h3>
+
+<p><strong>Trello</strong> organiza trabajo mediante tableros, listas y tarjetas. Podemos representar estados, registrar información y colaborar sobre cada tarjeta. Esta estructura permite implementar diferentes procesos; el tablero no define por sí solo Kanban ni impide trabajar con una cadencia de Sprint. Las políticas, límites y criterios de calidad se acuerdan entre las personas.</p><p>Trello puede ser una opción para comenzar con un seguimiento visual sencillo. Si el equipo necesita jerarquías, reportes o automatizaciones, debe comprobar qué ofrece la configuración disponible, qué requiere una integración y cuánto trabajo de administración agrega. Jira ofrece alternativas más especializadas para seguimiento de software, pero elegirlo requiere justificar esa complejidad. La madurez del equipo no se mide por la marca de la herramienta ni exige utilizar Story Points.</p><h3>17.3 Otras herramientas de seguimiento</h3>
+
+<p>Además de Jira y Trello, el mercado ofrece otras plataformas de gestión ágil con propuestas de valor distintas, entre las que se destacan tres:</p>
+
+<ul>
+<li><strong>Azure DevOps</strong> (de Microsoft): una suite integral que combina gestión ágil de trabajo (con soporte nativo para Scrum, Kanban y hasta el framework CMMI) con repositorios de código, pipelines de integración y despliegue continuo, y gestión de pruebas, todo en una misma plataforma. Es una alternativa muy fuerte a Jira en organizaciones que ya usan el ecosistema Microsoft (Azure, Visual Studio), y ofrece reportes de velocity, burndown y Cumulative Flow Diagram nativos de calidad comparable a Jira.</li>
+<li><strong>Asana</strong>: una herramienta de gestión de trabajo orientada más ampliamente a la gestión de proyectos y tareas en general (no exclusivamente desarrollo de software), con vistas de tablero Kanban, listas, línea de tiempo (Gantt) y calendario. Es popular en equipos de marketing, operaciones o proyectos multidisciplinarios donde conviven tareas ágiles de desarrollo con tareas de otras áreas, aunque su soporte nativo para métricas específicamente ágiles (Story Points, velocity, burndown) es más limitado que el de Jira o Azure DevOps sin agregar integraciones de terceros.</li>
+<li><strong>Monday.com</strong>: una plataforma de gestión de trabajo muy visual y altamente personalizable, con tableros tipo planilla configurables para casi cualquier proceso (no solo desarrollo de software), fuerte en automatizaciones sin código y en la posibilidad de que equipos no técnicos de una organización adopten una lógica de tablero similar a la que usa el equipo de desarrollo, favoreciendo una comunicación más fluida entre áreas.</li>
+</ul>
+
+<table>
+<caption>Comparación breve entre Jira, Trello y otras herramientas de seguimiento ágil</caption>
+<tr><th>Herramienta</th><th>Fortaleza principal</th><th>Mejor caso de uso</th><th>Limitación relevante</th></tr>
+<tr><td>Jira</td><td>Funcionalidad ágil completa: Scrum/Kanban, Story Points, reportes automáticos, integración con desarrollo</td><td>Equipos de desarrollo de software medianos/grandes con Scrum o Kanban maduro</td><td>Curva de aprendizaje alta, configuración compleja para equipos chicos</td></tr>
+<tr><td>Trello</td><td>Simplicidad extrema, adopción inmediata</td><td>Equipos chicos o procesos Kanban informales, uso multidisciplinario</td><td>Sin Story Points, Sprints ni reportes ágiles avanzados sin Power-Ups</td></tr>
+<tr><td>Azure DevOps</td><td>Suite integral: gestión ágil + código + CI/CD + testing</td><td>Organizaciones ya integradas al ecosistema Microsoft</td><td>Menos intuitivo para equipos no técnicos</td></tr>
+<tr><td>Asana</td><td>Gestión de proyectos multidisciplinaria, vistas variadas (lista, timeline, calendario)</td><td>Equipos mixtos donde conviven tareas ágiles y no ágiles</td><td>Soporte nativo limitado para métricas ágiles específicas</td></tr>
+<tr><td>Monday.com</td><td>Alta personalización visual y automatizaciones sin código</td><td>Organizaciones que buscan un lenguaje visual común entre áreas técnicas y no técnicas</td><td>Requiere configuración manual para replicar reportes ágiles nativos de Jira</td></tr>
+</table>
+
+<p>La elección de herramienta no es un detalle menor: condiciona la disciplina de actualización del equipo (una herramienta demasiado compleja para el tamaño del equipo genera resistencia y datos desactualizados, lo que arruina la confiabilidad de todas las métricas que vimos en este módulo), y debería decidirse en función de la madurez del proceso ágil del equipo, el tamaño de la organización, y el grado de integración necesaria con otras herramientas del ciclo de vida del desarrollo. Un equipo que recién empieza a adoptar Scrum puede beneficiarse de empezar con algo simple como Trello para aprender la disciplina de mover tarjetas y visualizar el flujo, y migrar a Jira o Azure DevOps más adelante, cuando necesite el nivel de reporte y de integración que estas plataformas ofrecen.</p>
+
+<h2 id="seccion-18">Fuentes para profundizar</h2><ul><li><a href="https://scrumguides.org/scrum-guide.html">The Scrum Guide</a> (Schwaber y Sutherland, 2020). Responsabilidades, artefactos, compromisos y eventos.</li><li><a href="https://www.scrum.org/resources/blog/myth-9-story-points-are-required-scrum">Scrum.org: Myth 9 — Story Points are Required in Scrum</a>. Distinción entre el marco y prácticas de estimación.</li></ul>
+<p class="fuentes-oficiales"><strong>Fuente normativa:</strong> <a href="https://scrumguides.org/scrum-guide.html">The Scrum Guide, edición 2020</a>, para planificación, selección de trabajo y Sprint Goal. Las técnicas de estimación y los gráficos de seguimiento son complementarios y no obligatorios. Los ejemplos numéricos son didácticos. Consulta: 15 de septiembre de 2026.</p><h2 id="seccion-19">Recursos audiovisuales sugeridos</h2>
+<p>Estos recursos complementan las explicaciones y permiten observar otras presentaciones de los conceptos. El contenido esencial está desarrollado en este documento.</p>
+<ul class="recursos-audiovisuales">
+<li><strong><a href="https://www.youtube.com/watch?v=_N5gj9gzOjg">Story points &amp; the evolution of agile estimation</a></strong><br>La mesa redonda de Atlassian reúne especialistas y discute por qué el esfuerzo relativo se usa para planificar bajo incertidumbre y qué límites tiene.</li>
+<li><strong><a href="https://learn.mountaingoatsoftware.com/agile/agile-estimation-estimating-with-story-points">Agile Estimating: How Teams Estimate with Story Points</a></strong><br>Mike Cohn desarrolla comparación, puntos y Planning Poker con ejemplos. En la biblioteca oficial, buscá este título dentro de “Estimating”; es un complemento de profundización, en inglés.</li>
+</ul>
+
+<h2 id="seccion-20">Síntesis del módulo</h2>
+
+<p>Estimación, capacidad y pronóstico responden preguntas distintas. Comparamos talles, puntos y Planning Poker como prácticas opcionales; examinamos disponibilidad y velocidad histórica antes de seleccionar trabajo. En Scrum, el Sprint Planning acuerda por qué el Sprint es valioso, qué puede hacerse y cómo se organizará el trabajo. La selección es un pronóstico y el compromiso se expresa en el Sprint Goal, no en una garantía de completar cada elemento.</p>
+
+<p>Tableros, políticas e impedimentos permiten inspeccionar el trabajo; Lead Time, Cycle Time, Throughput y CFD muestran comportamiento del flujo. Burndown y burnup ayudan a conversar sobre avance y alcance, pero requieren contexto. Los riesgos se revisan continuamente en cualquier enfoque adecuado; el caso de release mostró cómo comunicar un rango condicionado y actualizarlo. Las herramientas digitales sostienen estos acuerdos: no sustituyen definiciones claras ni criterio profesional.</p>
+
+<p>El hilo conductor de todo el módulo es un mismo principio: en un entorno de alta incertidumbre como el desarrollo de software, la gestión ágil no intenta eliminar la incertidumbre con planificación exhaustiva anticipada, sino que construye mecanismos —estimación relativa, iteraciones cortas, visualización constante, métricas empíricas— para detectar desvíos cuanto antes y corregir el rumbo con el menor costo posible. Dominar estas herramientas es lo que separa a un equipo que simplemente "hace Scrum" de manera ritual de un equipo que efectivamente gestiona su proyecto con datos, criterio y capacidad de adaptación real.</p>
+<p class="cierre-narrativo"><strong>Conexión del recorrido.</strong> Las métricas hacen visibles resultados y esperas; las personas convierten esa información en decisiones. En el Módulo 5 veremos cómo colaborar, liderar y sostener mejoras, y contrastaremos la materia con casos documentados.</p></article></main>
+</body>
+</html>

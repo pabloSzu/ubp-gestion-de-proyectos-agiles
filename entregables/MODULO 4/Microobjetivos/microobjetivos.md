@@ -1,0 +1,4 @@
+- Aplicar técnicas de estimación ágil relativa (Story Points, Planning Poker, T-Shirt Sizes) para que el equipo pueda comprometerse con un alcance de Sprint realista sin depender de estimaciones exactas en horas.
+- Planificar un Sprint calculando la capacidad real del equipo y contrastándola con su velocity histórica, con la finalidad de construir un Sprint Backlog alcanzable y evitar la sobrecarga de trabajo.
+- Interpretar herramientas de seguimiento visual (tableros Scrum/Kanban, Burndown, Burnup, Cumulative Flow Diagram, Lead Time, Cycle Time y Throughput) para detectar desvíos y cuellos de botella con la anticipación suficiente como para corregirlos a tiempo.
+- Comparar las principales herramientas de software de gestión ágil (Jira, Trello, Azure DevOps, Asana, Monday) con el fin de seleccionar la plataforma más adecuada según la madurez del equipo y las necesidades del proyecto.

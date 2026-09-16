@@ -1,0 +1,12 @@
+node_modules/
+.qa/
+tmp/
+__pycache__/
+*.py[cod]
+~$*
+*.log
+.env
+.env.*
+!.env.example
+output/*
+!output/*.docx

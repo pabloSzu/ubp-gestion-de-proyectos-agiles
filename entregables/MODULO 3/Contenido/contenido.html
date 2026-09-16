@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestión de Proyectos Ágiles · Módulo 3</title>
+<style>
+:root{
+  --ink:#172333; --soft:#536173; --faint:#7c8794; --line:#dfe5eb; --paper:#ffffff; --cream:#fbf8f1;
+  --navy:#173f67; --blue:#2878a9; --blue-soft:#eaf4fa; --teal:#16877b; --teal-soft:#e8f6f3;
+  --amber:#c68a24; --amber-soft:#fbf2dd; --plum:#76549f; --plum-soft:#f2edf8; --coral:#c25555; --coral-soft:#fbeeee;
+}
+@page{ size:A4; margin:16mm 0; }
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ margin:0; background:#e8edf2; color:var(--ink); font:11.25pt/1.64 Georgia,"Times New Roman",serif; }
+.page{ width:190mm; margin:8mm auto; background:var(--paper); box-shadow:0 8px 34px rgba(18,39,61,.16); }
+.opener{ min-height:265mm; padding:27mm 23mm 20mm; color:#fff; background:linear-gradient(145deg,#102d4a 0%,#184f72 62%,#14796f 100%); position:relative; overflow:hidden; break-after:page; display:flex; flex-direction:column; }
+.opener::before,.opener::after{ content:""; position:absolute; border-radius:50%; pointer-events:none; }
+.opener::before{ width:250mm; height:250mm; right:-145mm; top:-125mm; border:1px solid rgba(255,255,255,.14); box-shadow:0 0 0 18mm rgba(255,255,255,.035),0 0 0 38mm rgba(255,255,255,.025); }
+.opener::after{ width:110mm; height:110mm; left:-60mm; bottom:-60mm; background:radial-gradient(circle,rgba(198,138,36,.52),transparent 68%); }
+.opener>*{ position:relative; z-index:1; }
+.module-number{ font:800 76pt/.82 "Segoe UI",Arial,sans-serif; color:rgba(255,255,255,.14); margin-top:16mm; }
+.eyebrow{ font:800 8.5pt/1.3 "Segoe UI",Arial,sans-serif; letter-spacing:.16em; text-transform:uppercase; color:#f2bd55; }
+.opener h1{ font-size:31pt; line-height:1.08; max-width:145mm; margin:7px 0 13px; letter-spacing:-.015em; }
+.opener .subtitle{ max-width:137mm; margin:0; color:rgba(255,255,255,.84); font-size:13pt; font-style:italic; text-align:left; }
+.chapter-map{ margin-top:auto; padding-top:15px; border-top:1px solid rgba(255,255,255,.24); }
+.chapter-map .label{ font:800 8pt "Segoe UI",Arial,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.64); }
+.chapter-map ol{ columns:2; column-gap:18mm; margin:10px 0 0; padding:0; list-style-position:inside; font:9pt/1.75 "Segoe UI",Arial,sans-serif; color:rgba(255,255,255,.9); }
+.chapter-map li{ break-inside:avoid; }
+.content{ padding:18mm 23mm 24mm; }
+.epigraph{ margin:0 0 24px; padding:16px 19px; background:var(--cream); border:1px solid #ece3d2; border-left:5px solid var(--amber); border-radius:8px; break-inside:avoid; }
+.epigraph p{ margin:0; color:#374657; font-size:11.4pt; font-style:italic; text-align:left; }
+p{ margin:0 0 11px; text-align:justify; hyphens:auto; }
+strong{ color:#111c29; }
+h2{ position:relative; margin:32px 0 12px; padding:12px 15px 11px 18px; border-radius:0 9px 9px 0; border-left:5px solid var(--blue); background:linear-gradient(90deg,var(--blue-soft),#fff 88%); color:var(--navy); font-size:18pt; line-height:1.18; break-after:avoid; }
+h2:nth-of-type(4n+2){ border-left-color:var(--teal); background:linear-gradient(90deg,var(--teal-soft),#fff 88%); color:#12655d; }
+h2:nth-of-type(4n+3){ border-left-color:var(--plum); background:linear-gradient(90deg,var(--plum-soft),#fff 88%); color:#5d3e83; }
+h2:nth-of-type(4n){ border-left-color:var(--amber); background:linear-gradient(90deg,var(--amber-soft),#fff 88%); color:#815b19; }
+h2 + p{ color:#3f4d5d; font-size:11.8pt; line-height:1.62; }
+h3{ margin:23px 0 8px; padding:0 0 6px 12px; border-left:3px solid var(--teal); color:#1d5e68; font:700 13.2pt/1.25 "Segoe UI",Arial,sans-serif; break-after:avoid; }
+table{ width:100%; border-collapse:separate; border-spacing:0; margin:15px 0 20px; border:1px solid var(--line); border-radius:9px; overflow:hidden; font:9.1pt/1.42 "Segoe UI",Arial,sans-serif; }
+caption{ padding:0 0 8px; color:var(--soft); font-weight:700; text-align:left; }
+thead{ display:table-header-group; }
+th{ background:#203d59; color:#fff; padding:9px 10px; text-align:left; vertical-align:top; }
+td{ padding:9px 10px; border-top:1px solid var(--line); vertical-align:top; }
+tbody tr:nth-child(even) td{ background:#f7f9fb; }
+tr{ break-inside:avoid; }
+figure{ margin:18px 0 22px; break-inside:avoid; }
+.diagrama-conceptual{ border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fbfcfe; }
+.diagrama-conceptual svg{ width:100%; height:auto; display:block; padding:8px; }
+figcaption{ padding:10px 14px; border-top:1px solid var(--line); background:var(--cream); color:var(--soft); font:8.8pt/1.5 "Segoe UI",Arial,sans-serif; }
+.image-figure{ border:1px solid #d7dfe7; border-radius:11px; overflow:hidden; box-shadow:0 8px 24px rgba(21,52,80,.12); }
+.image-figure img{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; }
+.visual-editorial{ border-color:#cad8e5; box-shadow:0 10px 28px rgba(21,52,80,.14); }
+.visual-editorial img{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; background:#fff; }
+.criterio-profesional,.mito{ margin:17px 0 21px; padding:14px 17px; border-radius:8px; break-inside:avoid; font:9.8pt/1.56 "Segoe UI",Arial,sans-serif; }
+.criterio-profesional{ background:var(--teal-soft); border:1px solid #c9e8e2; border-left:5px solid var(--teal); }
+.criterio-profesional strong:first-child{ display:block; margin-bottom:4px; color:#0f6e65; font-size:8.2pt; letter-spacing:.1em; text-transform:uppercase; }
+.mito{ display:grid; grid-template-columns:auto 1fr; gap:7px 12px; background:linear-gradient(90deg,var(--coral-soft) 0 25%,#f5faf8 25%); border:1px solid #ead7d7; border-left:5px solid var(--coral); }
+.mito strong{ color:#a33e3e; text-transform:uppercase; letter-spacing:.06em; }
+.mito strong:nth-of-type(2){ color:#117568; }
+ol,ul{ padding-left:22px; }
+li{ margin-bottom:7px; }
+.caso-resuelto{ counter-reset:caso; margin:15px 0; padding:0; list-style:none; }
+.caso-resuelto li{ position:relative; margin:0 0 9px; padding:11px 13px 11px 45px; border:1px solid var(--line); border-radius:8px; background:#fbfcfd; break-inside:avoid; }
+.caso-resuelto li::before{ counter-increment:caso; content:counter(caso); position:absolute; left:12px; top:11px; width:23px; height:23px; border-radius:50%; display:grid; place-items:center; background:var(--plum); color:#fff; font:800 9pt "Segoe UI",Arial,sans-serif; }
+.recursos-audiovisuales{ display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0; list-style:none; }
+.recursos-audiovisuales li{ margin:0; padding:13px 15px 13px 18px; border:1px solid var(--line); border-left:5px solid #cf4137; border-radius:8px; background:#fff; break-inside:avoid; font:9.2pt/1.46 "Segoe UI",Arial,sans-serif; }
+.recursos-audiovisuales a{ color:#a52f29; text-decoration:none; }
+.recursos-audiovisuales a::after{ content:"  ↗"; }
+.content > h2:last-of-type{ margin-top:38px; }
+.content > h2:last-of-type ~ p{ margin-bottom:6px; font-size:9.8pt; line-height:1.4; }
+@media screen and (max-width:800px){ .page{ width:100%; margin:0; box-shadow:none; } .opener,.content{ padding-left:7vw; padding-right:7vw; } .chapter-map ol{ columns:1; } .mito{ display:block; background:var(--coral-soft); } .recursos-audiovisuales{ grid-template-columns:1fr; } }
+@media print{ body{ background:#fff; } .page{ width:auto; margin:0; box-shadow:none; } .opener{ min-height:265mm; } a{ color:inherit; } }
+</style>
+</head>
+<body>
+<main class="page">
+<header class="opener">
+  <div class="module-number">03</div>
+  <div class="eyebrow">Gestión de Proyectos Ágiles · UBP</div>
+  <h1>Planificación Ágil y Gestión del Producto</h1>
+  <p class="subtitle">De la visión a la entrega: decisiones de producto trazables, backlog saludable y aprendizaje validado.</p>
+  <nav class="chapter-map" aria-label="Contenidos del módulo"><div class="label">En este módulo</div><ol><li><a href="#seccion-1">Visión y objetivos del producto</a></li><li><a href="#seccion-2">Comprender necesidades e interesados</a></li><li><a href="#seccion-3">Product Backlog: organizar las necesidades</a></li><li><a href="#seccion-4">Épicas, funcionalidades, historias y tareas</a></li><li><a href="#seccion-5">Historias de usuario</a></li><li><a href="#seccion-6">Criterios de aceptación</a></li><li><a href="#seccion-7">Calidad y Definition of Done</a></li><li><a href="#seccion-8">Preparación del trabajo y Definition of Ready</a></li><li><a href="#seccion-9">Refinamiento del backlog</a></li><li><a href="#seccion-10">Priorizar necesidades y oportunidades</a></li><li><a href="#seccion-11">Producto mínimo viable y aprendizaje</a></li><li><a href="#seccion-12">Roadmap: comunicar la evolución del producto</a></li><li><a href="#seccion-13">Planificación de lanzamientos</a></li><li><a href="#seccion-14">Gestión del alcance</a></li><li><a href="#seccion-15">Evaluar y gestionar cambios</a></li><li><a href="#seccion-16">Fuentes para profundizar</a></li><li><a href="#seccion-17">Recursos audiovisuales sugeridos</a></li><li><a href="#seccion-18">Síntesis del módulo</a></li></ol></nav>
+</header>
+<article class="content" data-edicion="2026-09-15"><!-- GPA-REVISION-EDITORIAL-EBOOK -->
+
+<blockquote class="epigraph">
+<p>"El backlog del producto es la única fuente de verdad sobre lo que hace falta hacer, y nunca está completo: evoluciona mientras el producto y su entorno evolucionan." — Adaptado de la Guía Scrum</p>
+</blockquote>
+
+<p>En los módulos anteriores distinguimos la agilidad de los marcos que la ponen en práctica y estudiamos cómo funciona Scrum. Ahora la pregunta es otra: <strong>¿cómo decidimos qué vale la pena construir?</strong> El equipo de TurnoYa, una aplicación de turnos médicos, quiere reducir llamadas y ausentismo. Tiene muchas propuestas, pero capacidad limitada. Vamos a seguir sus decisiones desde el problema del usuario hasta el lanzamiento: formular objetivos, representar necesidades, ordenar el backlog, comprobar calidad y aprender con una entrega acotada. Las prácticas de producto que presentamos pueden utilizarse en distintos enfoques; cuando una responsabilidad o artefacto sea específico de Scrum, lo vamos a señalar.</p>
+
+<h2 id="seccion-1">1. Visión y objetivos del producto</h2>
+
+<p>La clínica pide una aplicación. Antes de aceptar una lista de pantallas, preguntá qué problema debería dejar de ocurrir y cómo notaríamos la mejora.</p>
+<p>Una <strong>visión de producto</strong> expresa el futuro deseado para usuarios y negocio: por qué existe el producto y qué cambio busca producir. Ayuda a elegir entre alternativas, aunque no garantiza éxito. Si TurnoYa busca facilitar el acceso a turnos médicos, una decisión de diseño debería poder explicarse por su aporte a ese propósito, además de por su viabilidad. La visión se contrasta con la investigación y el aprendizaje del equipo.</p><div class="criterio-profesional"><strong>Criterio profesional:</strong> Formulá una visión que permita descartar opciones, no solo inspirar. Si cualquier funcionalidad puede justificarse con ella, todavía no orienta decisiones de producto.</div>
+
+<p>Una visión bien redactada suele responder a un formato similar al propuesto por Geoffrey Moore (adaptado de la técnica del "elevator pitch"): <em>"Para [usuario objetivo] que [necesidad o problema], el [nombre del producto] es un [categoría de producto] que [beneficio clave / propuesta de valor]. A diferencia de [alternativa principal], nuestro producto [diferencial]."</em> Por ejemplo, para una aplicación de gestión de turnos médicos: <em>"Para pacientes de clínicas privadas que necesitan reservar y reprogramar turnos sin llamar por teléfono, TurnoYa es una aplicación móvil que permite gestionar toda la agenda médica familiar en menos de un minuto. A diferencia de los sistemas telefónicos tradicionales, TurnoYa funciona las 24 horas y envía recordatorios automáticos."</em> Nótese que esta visión no dice nada sobre si se usará React Native o Flutter, ni sobre si habrá notificaciones push o SMS: esas son decisiones de implementación que vendrán después.</p>
+
+<p>Un objetivo convierte la visión en un resultado observable. Para el semestre del piloto de TurnoYa proponemos que el 60 % de las reservas se realice por la aplicación y que el ausentismo disminuya un 15 % <strong>respecto de la tasa inicial</strong>. Son metas del escenario didáctico, no resultados obtenidos. Hay que definir el período, la población y cómo se medirá cada dato; un objetivo no demuestra que una funcionalidad causará esa mejora.</p><div class="caso-resuelto"><p><strong>Ejemplo resuelto: porcentaje y puntos porcentuales.</strong> Suponé que inicialmente faltan 20 pacientes de cada 100: la tasa es 20 %. Reducirla un 15 % relativo significa calcular 20 % × 0,85 = <strong>17 %</strong>, una disminución de 3 puntos porcentuales. Bajar 15 puntos porcentuales sería llegar al 5 %, una meta muy diferente. Antes de priorizar recordatorios, acordamos la definición y verificamos qué otras causas influyen en el ausentismo.</p></div><p>Es responsabilidad principal del <strong>Product Owner</strong> (o del Product Manager, según la estructura organizacional) mantener viva esta visión, comunicarla constantemente al equipo y a los stakeholders, y revisarla cuando el contexto de mercado cambie sustancialmente. Una visión que nadie recuerda o que quedó escrita en un documento olvidado no cumple su función: debe estar presente, por ejemplo, en el encabezado del tablero del equipo, repetida al inicio de cada Sprint Planning, o visible en la oficina o canal de comunicación del equipo.</p>
+
+<h3>1.1 Visión versus misión, y el North Star Metric</h3>
+
+<p>Conviene distinguir la visión de producto de la <strong>misión</strong> organizacional: la misión suele ser más amplia y estable, y describe el propósito general de la empresa (por ejemplo, "democratizar el acceso a la salud"), mientras que la visión de producto es más acotada y se refiere específicamente a lo que ese producto en particular aporta dentro de ese propósito mayor. Un mismo negocio puede tener una sola misión y, al mismo tiempo, varios productos con visiones propias, cada una alineada a la misión pero enfocada en su propio segmento de usuarios y problema.</p>
+
+<p>Una herramienta complementaria muy utilizada por equipos de producto maduros es el <strong>North Star Metric</strong> (métrica estrella del norte): una única métrica cuantitativa que mejor captura el valor central que el producto entrega a sus usuarios, y que sirve como indicador de si la visión se está cumpliendo en la práctica. Para la aplicación de turnos médicos, una North Star Metric razonable sería "cantidad de turnos efectivamente cumplidos (sin ausentismo) reservados a través de la app por semana", porque combina adopción (uso de la app) con el resultado que realmente importa (turnos cumplidos, no solo reservados). Esta métrica ayuda a evitar que el equipo optimice indicadores vanidosos (por ejemplo, "descargas totales de la app") que no reflejan verdadero valor entregado.</p>
+
+<h2 id="seccion-2">2. Comprender necesidades e interesados</h2>
+
+<p>¿La propuesta del gerente representa también la experiencia del paciente y de la recepcionista? Escuchar a quien paga no alcanza para comprender a quien usa.</p>
+<p>En el Módulo 1 identificamos a los interesados y distinguimos sus funciones. Aquí profundizamos qué necesitan, qué evidencia aportan y cómo participan en decisiones de producto. El mapa se revisa durante todo el proyecto, tanto en gestión predictiva como ágil: pueden aparecer nuevos usuarios, restricciones o actores. La frecuencia y el modo de revisión dependen del contexto, no de una oposición entre “identificar una vez” y “escuchar continuamente”.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Gestioná stakeholders según la influencia que ejercen y la evidencia que aportan. Escuchar a todos no significa asignar el mismo peso a todas las opiniones.</div>
+
+<h3>2.1 Tipos de stakeholders en contexto de producto</h3>
+
+<p>Conviene distinguir al menos cuatro categorías. Primero, los <strong>usuarios finales</strong>, que son quienes usan el producto directamente y cuya satisfacción es el termómetro último del éxito. Segundo, los <strong>clientes o patrocinadores</strong>, que pagan por el producto o autorizan el presupuesto, y que no siempre coinciden con los usuarios finales (por ejemplo, en un software de recursos humanos, el cliente que paga es la gerencia, pero los usuarios finales son los empleados que cargan sus datos). Tercero, los <strong>stakeholders internos</strong>, como equipos de soporte, ventas, legales, marketing o infraestructura, que dependen del producto o lo condicionan (por ejemplo, el área legal puede exigir que cierta funcionalidad cumpla con la Ley de Protección de Datos Personales antes de salir a producción). Cuarto, los <strong>stakeholders reguladores o externos</strong>, como organismos de control, proveedores críticos o socios estratégicos.</p>
+
+<h3>2.2 Técnicas de identificación y priorización de stakeholders</h3>
+
+<p>Una herramienta clásica y muy útil es la <strong>matriz de poder e interés</strong> (power/interest grid), que ubica a cada stakeholder en un cuadrante según su nivel de influencia sobre el producto y su nivel de interés en él. A quienes tienen alto poder y alto interés hay que gestionarlos de cerca, involucrándolos activamente en revisiones y decisiones clave (por ejemplo, el sponsor ejecutivo del proyecto). A quienes tienen alto poder pero bajo interés conviene mantenerlos satisfechos con información resumida y oportuna, sin saturarlos de detalle operativo. A quienes tienen bajo poder pero alto interés —típicamente usuarios avanzados o "power users"— conviene mantenerlos bien informados, porque pueden convertirse en aliados y evangelizadores del producto. Y a quienes tienen bajo poder y bajo interés basta con monitorearlos con esfuerzo mínimo.</p>
+
+<p>En Scrum, el equipo puede conversar directamente con usuarios e interesados para descubrir necesidades, probar soluciones y recibir feedback. Esa colaboración no autoriza a incorporar pedidos al Sprint por fuera de los acuerdos: las propuestas se hacen visibles y el Product Owner conserva la responsabilidad por el orden del Product Backlog. Si un pedido afecta el trabajo en curso, Developers y Product Owner examinan su impacto sobre el objetivo del Sprint. Escuchar al usuario y gestionar prioridades son funciones complementarias, no canales incompatibles.</p>
+
+<h3>2.3 Plan de comunicación con stakeholders</h3>
+
+<p>Identificar y clasificar a los stakeholders es solo el primer paso; el segundo, igualmente importante, es definir cómo y con qué frecuencia se comunicará cada grupo. Un plan de comunicación simple pero efectivo suele especificar, para cada categoría de stakeholder, qué información recibe, con qué periodicidad y por qué canal. Por ejemplo, el sponsor ejecutivo de la clínica podría recibir un resumen ejecutivo mensual con métricas de adopción y cumplimiento de objetivos, mientras que los usuarios avanzados (recepcionistas de las clínicas piloto) podrían participar de sesiones quincenales de feedback directo con el Product Owner. Formalizar esto evita dos problemas opuestos y igualmente dañinos: la sobrecomunicación (que satura a stakeholders con bajo interés y les hace perder el foco en lo relevante) y la subcomunicación (que genera desconfianza y sorpresas negativas en quienes tienen alto poder de decisión sobre el producto).</p>
+
+<figure class="image-figure">
+<img src="assets/vision-roadmap-backlog.png" alt="La evidencia de distintos stakeholders se conecta con una visión, se organiza en horizontes de roadmap y desciende hacia un backlog accionable.">
+<figcaption><strong>Lectura visual.</strong> La imagen muestra la trazabilidad que evita dos extremos: una visión sin ejecución y un backlog de tareas sin propósito estratégico.</figcaption>
+</figure>
+
+<figure class="diagrama-conceptual image-figure visual-editorial">
+<img src="assets/diagrama-vision-evidencia-editorial.png" alt="Trazabilidad desde la visión de producto hasta la evidencia de usuario">
+<figcaption>La planificación ágil conserva trazabilidad sin congelar el futuro: cada nivel agrega detalle, y la evidencia obtenida al entregar puede obligar a revisar decisiones estratégicas previas.</figcaption>
+</figure>
+
+<div class="mito"><strong>Mito:</strong> Un roadmap ágil es un cronograma con fechas menos precisas. <strong>Realidad:</strong> comunica dirección, resultados e hipótesis por horizontes; su valor está en alinear decisiones y cambiar cuando aparece evidencia.</div>
+
+<h2 id="seccion-3">3. Product Backlog: organizar las necesidades</h2>
+
+<div class="analogia"><p><strong>Analogía: preparar una comida y revisar la despensa.</strong> La visión explica para qué ocasión cocinamos; el backlog reúne opciones; el refinamiento permite entender ingredientes, trabajo y restricciones antes de elegir. Comprar todo lo imaginable no mejora la cena. La comparación ayuda a entender selección y preparación, pero un backlog no es una lista de compras cerrada: también contiene investigaciones, riesgos y necesidades que pueden cambiar al observar el producto.</p></div><p>TurnoYa tiene ideas de negocio, errores y mejoras técnicas. ¿Cómo evitamos que existan tres listas que compiten en secreto?</p>
+<p>El <strong>Product Backlog</strong> es la lista única, ordenada y emergente de todo lo que se conoce que es necesario para el producto: funcionalidades nuevas, mejoras, correcciones de errores, tareas técnicas (deuda técnica) y cualquier otro trabajo que agregue valor. A diferencia del roadmap, que es de alto nivel y aproximado, el backlog contiene ítems cada vez más detallados a medida que se acercan a la parte superior de la lista, siguiendo el principio de <strong>refinamiento progresivo</strong> (también llamado "DEEP": Detallado apropiadamente, Estimado, Emergente y Priorizado).</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Mantené un único backlog con orden explícito. Un ítem que nadie puede vincular con un objetivo, una necesidad o un riesgo no merece conservar prioridad por inercia.</div>
+
+<h3>3.1 Quién gestiona el backlog</h3>
+
+<p>Según la Guía Scrum, el <strong>Product Owner</strong> es el único responsable de la gestión del Product Backlog: decide qué contiene, cómo se ordena y qué se comunica al equipo, aunque puede delegar el trabajo de redacción a otros. Esto no significa que el Product Owner trabaje aislado: la construcción del backlog es, en la práctica, un proceso profundamente colaborativo, donde el equipo de desarrollo aporta factibilidad técnica y estimaciones, y los stakeholders aportan contexto de negocio y necesidades de usuario. Lo que sí es exclusivo del Product Owner es la decisión final sobre el orden: si dos personas priorizan el backlog de manera diferente, el producto pierde coherencia estratégica, por eso la autoridad debe estar concentrada en un solo rol.</p>
+
+<h3>3.2 Características de un buen backlog</h3>
+
+<p>Un backlog saludable cumple varias condiciones. Es <strong>único</strong>: no existen backlogs paralelos o listas de pedidos alternativas fuera del backlog oficial. Es <strong>ordenado</strong>: cada ítem tiene una posición relativa que refleja su prioridad, no hay "empates" ambiguos en la parte alta de la lista. Es <strong>transparente</strong>: cualquier stakeholder puede consultarlo y entender qué se está considerando y en qué orden. Está en <strong>refinamiento continuo</strong>: no se escribe una sola vez al inicio del proyecto y se congela, sino que se revisa y ajusta constantemente a medida que se aprende más sobre el producto, el mercado y la tecnología. Y, sobre todo, refleja <strong>valor</strong>: cada ítem debería poder justificar por qué está ahí y qué aporta, evitando el "backlog cementerio" donde se acumulan ideas que nadie prioriza nunca pero tampoco nadie elimina.</p>
+
+<p>Un error muy común en equipos que recién adoptan Scrum es confundir el backlog con una lista de tareas técnicas desordenada, o dejar que crezca sin límite hasta volverse inmanejable (backlogs de miles de ítems son, en la práctica, sinónimo de backlogs no gestionados). Una buena práctica es realizar limpiezas periódicas ("backlog grooming" en su sentido más literal de "peinar"), eliminando o archivando ítems que perdieron relevancia.</p>
+
+<h3>3.3 Product Backlog versus Sprint Backlog</h3>
+
+<p>Como vimos en el Módulo 2, el Product Backlog expresa necesidades emergentes del producto y el Product Owner responde por su gestión efectiva. El <strong>Sprint Backlog</strong> reúne el Sprint Goal, los elementos seleccionados y el plan de los Developers. Es un plan vivo que se actualiza al aprender, no una fotografía congelada ni una promesa de completar cada elemento. Developers y Product Owner pueden renegociar alcance sin poner en peligro el objetivo del Sprint ni reducir calidad.</p>
+
+<h2 id="seccion-4">4. Épicas, funcionalidades, historias y tareas</h2>
+
+<p>“Gestionar pagos” y “consultar un comprobante” no son unidades equivalentes. Elegir el tamaño del trabajo cambia qué podemos discutir y comprobar.</p>
+<p>Una propuesta como “gestionar pagos” no tiene el mismo tamaño que “consultar un comprobante”. Para conversar y coordinar podemos usar iniciativas, épicas, funcionalidades, historias y tareas. La taxonomía varía entre organizaciones y herramientas: no es una jerarquía universal exigida por Scrum. Aquí vamos a utilizar iniciativa → épica → funcionalidad → historia → tarea como convención de los ejemplos, sin convertir cada nivel en un trámite obligatorio.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Agregá niveles de jerarquía solo cuando ayuden a coordinar escala y trazabilidad. En productos chicos, una taxonomía excesiva puede costar más que el problema que intenta resolver.</div>
+
+<p>Una <strong>épica</strong> es un cuerpo de trabajo grande que agrupa varias historias de usuario relacionadas y que, por su tamaño, no puede completarse en un solo sprint; suele tomar varios sprints o incluso meses. Por ejemplo, "Gestión de pagos dentro de la aplicación" podría ser una épica que agrupa historias como "como usuario quiero pagar con tarjeta de crédito", "como usuario quiero pagar con billetera virtual", "como usuario quiero ver el historial de pagos", etc. Una épica típicamente se mantiene en el backlog con poco detalle mientras está lejos en el tiempo, y se va desglosando en historias de usuario concretas a medida que se acerca el momento de trabajarla (esto es, precisamente, el refinamiento progresivo mencionado antes).</p>
+
+<p>Una <strong>funcionalidad o feature</strong> es un nivel intermedio, opcional según el marco de trabajo utilizado (es muy usado en SAFe y en organizaciones grandes con múltiples equipos), que describe una capacidad entregable del producto, de tamaño mediano, que puede agrupar varias historias de usuario pero que sí puede completarse en un plazo acotado (por ejemplo, un lanzamiento o un horizonte de planificación acordado). Siguiendo el ejemplo anterior, "Pago con billetera virtual" podría ser una feature dentro de la épica "Gestión de pagos", compuesta a su vez por varias historias de usuario ("conectar cuenta de billetera", "confirmar pago", "ver comprobante").</p>
+
+<p>Es importante notar que estos niveles son una herramienta de organización, no una burocracia obligatoria: equipos pequeños con un solo producto y un backlog acotado muchas veces trabajan directamente con historias de usuario, sin necesidad de definir épicas formales. La jerarquía se vuelve más necesaria cuanto más grande es el producto y cuantos más equipos trabajan sobre el mismo backlog.</p>
+
+<table>
+<caption>Ejemplo de jerarquía de trabajo: de la épica a las historias de usuario</caption>
+<thead>
+<tr><th>Nivel</th><th>Ejemplo</th><th>Duración típica</th></tr>
+</thead>
+<tbody>
+<tr><td>Iniciativa</td><td>Digitalizar la experiencia completa del paciente en la clínica</td><td>Varios trimestres o un año</td></tr>
+<tr><td>Épica</td><td>Gestión de pagos dentro de la aplicación</td><td>Varios sprints (uno o más meses)</td></tr>
+<tr><td>Funcionalidad (feature)</td><td>Pago con billetera virtual</td><td>Uno o dos sprints</td></tr>
+<tr><td>Historia de usuario</td><td>Como paciente, quiero conectar mi cuenta de billetera virtual, para no tener que cargar los datos de mi tarjeta cada vez</td><td>Una fracción de un sprint</td></tr>
+<tr><td>Tarea</td><td>Implementar la integración con la API de la billetera virtual</td><td>Horas, dentro de una historia</td></tr>
+</tbody>
+</table>
+
+<h2 id="seccion-5">5. Historias de usuario</h2>
+
+<p>“Agregar un botón” prescribe una solución. “Reprogramar sin llamar a recepción” nos permite conversar sobre una necesidad.</p>
+<p>Una <strong>historia de usuario</strong> (user story) es una forma de representar una necesidad con valor para alguien. Scrum no exige que todos los elementos del backlog adopten ese formato. Se trata de una descripción breve, escrita desde la perspectiva del usuario, de una funcionalidad que aporta valor. Fue popularizada por Mike Cohn y Kent Beck en el contexto de Extreme Programming, con una idea central: la historia no es una especificación completa, sino un <strong>recordatorio para tener una conversación</strong> entre el Product Owner, el equipo y, si es posible, el usuario real. Toda la documentación detallada surge de esa conversación y de los criterios de aceptación, no del enunciado breve de la historia.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Leé cada historia como una invitación a conversar sobre valor. El formato “Como… quiero… para…” no compensa una necesidad desconocida ni una solución prescripta sin evidencia.</div>
+
+<h3>5.1 Formato "Como... quiero... para..."</h3>
+
+<p>El formato más difundido para redactar historias de usuario es: <em>"Como [tipo de usuario], quiero [acción o funcionalidad], para [beneficio u objetivo]."</em> Este formato, atribuido a Connextra, obliga a explicitar tres elementos clave: quién se beneficia, qué necesita hacer y por qué le importa. El "para qué" es el elemento más frecuentemente omitido por equipos inexpertos, y es justamente el más valioso, porque le da contexto al equipo de desarrollo para tomar mejores decisiones de diseño incluso en detalles no especificados explícitamente.</p>
+
+<p>Por ejemplo, para la aplicación de turnos médicos mencionada antes: <em>"Como paciente con turnos recurrentes, quiero poder reservar un turno igual al de la semana anterior con un solo toque, para no tener que repetir todo el proceso de búsqueda cada vez que necesito un control de rutina."</em> Nótese cómo el "para qué" (evitar repetir el proceso completo) sugiere directamente una solución de diseño: un botón de "repetir turno anterior", en lugar de simplemente acelerar el flujo de búsqueda estándar.</p>
+
+<h3>5.2 Buenas prácticas: el criterio INVEST</h3>
+
+<p>Bill Wake propuso el acrónimo <strong>INVEST</strong> como checklist de calidad para historias de usuario bien escritas. Es una de las herramientas más citadas en la literatura ágil y conviene dominarla en profundidad.</p>
+
+<ul>
+<li><strong>Independiente (Independent):</strong> la historia debería poder priorizarse, estimarse y desarrollarse sin depender obligatoriamente de que otra historia se complete primero. En la práctica es imposible eliminar el 100% de las dependencias, pero deben minimizarse, porque las dependencias fuertes generan cuellos de botella y complican la planificación del sprint.</li>
+<li><strong>Negociable (Negotiable):</strong> la historia no es un contrato cerrado ni una especificación rígida; su redacción debe dejar espacio para que el "cómo" se discuta y se ajuste en la conversación entre Product Owner y equipo de desarrollo, sin perder de vista el "qué" y el "para qué".</li>
+<li><strong>Valiosa (Valuable):</strong> explicá el beneficio para usuarios, negocio o sostenibilidad del producto. Una mejora técnica puede reducir riesgo, habilitar capacidad o proteger la confiabilidad. Puede ser un elemento propio del backlog; no es obligatorio esconderla dentro de una historia funcional ni inventar un usuario. Lo importante es hacer explícito su propósito y acordar cómo verificar el resultado.</li><li><strong>Estimable (Estimable):</strong> el equipo debe poder dar una estimación razonable de esfuerzo. Si no puede hacerlo, generalmente es señal de que la historia es demasiado ambigua o demasiado grande, y necesita más conversación o descomponerse.</li>
+<li><strong>Pequeña (Small):</strong> debe caber cómodamente dentro de un sprint, idealmente ocupando una fracción menor de la capacidad del equipo, para permitir terminar varias historias por sprint y reducir el riesgo de quedar con trabajo a medio terminar al cierre.</li>
+<li><strong>Testeable (Testable):</strong> debe existir una forma clara de verificar que la historia está terminada, lo cual conecta directamente con los criterios de aceptación (sección 6). Si no se puede escribir al menos un criterio de aceptación verificable, la historia no está lista para desarrollarse.</li>
+</ul>
+
+<p>Un antipatrón frecuente es escribir historias que en realidad son tareas técnicas disfrazadas ("como sistema quiero..."), o historias tan grandes que en la jerga ágil se llaman <strong>"épicas disfrazadas de historias"</strong>. La técnica de descomposición más usada frente a este problema es dividir por criterios funcionales (por tipo de dato, por regla de negocio, por flujo alternativo, por plataforma), evitá dividir historias de valor solo por capas técnicas (por ejemplo, separar "hacer el backend" y "hacer el frontend" en dos historias distintas rompe el principio de "valiosa e independiente", porque ninguna de las dos partes es utilizable por sí sola).</p>
+
+<h3>5.3 El rol de las personas de usuario en la redacción de historias</h3>
+
+<p>Escribir buenas historias de usuario requiere saber con precisión quién es el usuario al que se refiere el "Como...". Muchos equipos apoyan esta tarea con <strong>personas</strong>: arquetipos semificticios de usuarios reales, construidos a partir de investigación (entrevistas, encuestas, datos de uso), que resumen sus objetivos, frustraciones y contexto de uso. Para la aplicación de turnos médicos, dos personas útiles podrían ser "Marta, 68 años, paciente crónica con controles mensuales, poca familiaridad con tecnología" y "Julián, 34 años, padre de dos hijos, usuario intensivo del celular, agenda turnos para toda la familia desde el trabajo". Redactar historias pensando específicamente en estas personas (en lugar de un genérico e indefinido "el usuario") ayuda a que el equipo tome mejores decisiones de diseño: por ejemplo, para Marta puede ser crítico un tamaño de fuente grande y un flujo con pocos pasos, mientras que para Julián puede ser más valiosa la posibilidad de gestionar varios perfiles familiares desde una sola cuenta.</p>
+
+<p>Entre los antipatrones más comunes al redactar historias, además de las "épicas disfrazadas" ya mencionadas, vale la pena señalar la <strong>historia técnica sin valor explícito</strong> (que ya vimos), la <strong>historia ambigua</strong> (que no especifica de qué usuario se trata ni qué beneficio busca, por ejemplo "mejorar el rendimiento de la app"), y la <strong>historia de solución en lugar de necesidad</strong>, que prescribe una implementación específica en vez de describir el problema a resolver (por ejemplo, "como usuario quiero un botón verde en la esquina superior derecha" en lugar de "como usuario quiero identificar rápidamente si mi turno fue confirmado"), lo cual le quita al equipo de desarrollo la posibilidad de proponer mejores soluciones técnicas o de diseño.</p>
+
+<h2 id="seccion-6">6. Criterios de aceptación</h2>
+
+<p>Dos personas dicen que la reserva funciona, pero probaron situaciones diferentes. ¿Qué evidencia permite acordar el resultado?</p>
+<p>Los <strong>criterios de aceptación</strong> son las condiciones específicas y verificables que una historia de usuario debe cumplir para considerarse terminada desde el punto de vista funcional. Complementan a la historia (que da el contexto y el "por qué") con el detalle preciso de comportamiento esperado (el "qué exactamente"). Sin criterios de aceptación claros, cada persona del equipo puede interpretar la historia de manera distinta, y el resultado suele ser retrabajo y frustración en la revisión.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Escribí criterios que permitan observar éxito, alternativas y bordes. Si dos personas pueden probar la misma historia y llegar a conclusiones distintas, la aceptación todavía es ambigua.</div>
+
+<p>Un formato muy utilizado para redactar criterios de aceptación es <strong>Gherkin</strong> (Dado / Cuando / Entonces), popularizado por herramientas de Behavior Driven Development (BDD) como Cucumber: <em>"Dado [contexto inicial], cuando [acción del usuario], entonces [resultado esperado]."</em> Este formato facilita acordar ejemplos y vincularlos con pruebas automatizadas; para ejecutarlos se necesita implementar los pasos y preparar datos y entornos.</p>
+
+<table>
+<caption>Ejemplo de historia de usuario con criterios de aceptación</caption>
+<thead>
+<tr><th>Elemento</th><th>Contenido</th></tr>
+</thead>
+<tbody>
+<tr><td>Historia de usuario</td><td>Como paciente registrado, quiero recibir un recordatorio por notificación push 24 horas antes de mi turno, para no olvidarme y evitar perder el turno.</td></tr>
+<tr><td>Criterio de aceptación 1</td><td>Dado que tengo un turno confirmado para mañana a las 10:00, cuando se cumplan las 24 horas antes del turno, entonces recibo una notificación push con el nombre del profesional, el horario y la dirección de la clínica.</td></tr>
+<tr><td>Criterio de aceptación 2</td><td>Dado que desactivé las notificaciones push en la configuración de la app, cuando se cumplan las 24 horas antes del turno, entonces no recibo la notificación push pero sí un correo electrónico equivalente.</td></tr>
+<tr><td>Criterio de aceptación 3</td><td>Dado que cancelé mi turno antes de las 24 horas previas, cuando llegue el momento en que se hubiera enviado el recordatorio, entonces no se envía ninguna notificación.</td></tr>
+<tr><td>Criterio de aceptación 4 (negativo)</td><td>Dado que no tengo conexión a internet en el momento del envío, cuando se restablezca la conexión dentro de las 2 horas siguientes, entonces la notificación se entrega igualmente; si supera ese plazo, se descarta.</td></tr>
+</tbody>
+</table>
+
+<p>Nótese cómo el ejemplo incluye no solo el "camino feliz" (criterio 1) sino también casos alternativos y de borde (criterios 2, 3 y 4). Un error muy frecuente es escribir un único criterio de aceptación que describe solamente el escenario ideal, dejando sin cubrir los casos excepcionales que suelen ser, justamente, los que más bugs generan en producción. La cantidad depende del comportamiento y del riesgo: no hay una cuota fija. Si los criterios describen muchos resultados independientes, conviene evaluar dividir la historia; si falta cubrir un caso crítico, no debe omitirse para mantener una lista corta.</p>
+
+<h2 id="seccion-7">7. Calidad y Definition of Done</h2>
+
+<p>Una pantalla puede funcionar en la demostración y seguir siendo insegura. ¿Qué debe verificarse antes de llamar terminado al incremento?</p>
+<p>La <strong>Definition of Done</strong> (Definición de Terminado) sí es un elemento formal de la Guía Scrum: es el acuerdo explícito y compartido que describe el estado que debe alcanzar un incremento de producto para considerarse completo, haciendo explícito el estándar de calidad y favoreciendo la transparencia. Cuando una historia "cumple con la Definition of Done", eso significa que el trabajo realmente agrega valor liberable, no solamente que "el código está escrito".</p><div class="criterio-profesional"><strong>Criterio profesional:</strong> La DoD debe representar calidad liberable y aplicarse sin excepciones oportunistas. Rebajarla para “cerrar” el Sprint solo desplaza costo y oculta trabajo pendiente.</div>
+
+<p>En software, una DoD puede exigir revisión de código, pruebas relevantes, integración, documentación necesaria y verificaciones de seguridad. Si la organización tiene un estándar, constituye el mínimo; si no, el Scrum Team establece una definición adecuada al producto. Los Developers deben cumplirla. Los criterios de aceptación verifican comportamientos específicos, pero una aprobación individual del Product Owner no sustituye la DoD. Todo incremento debe cumplir el mismo estándar necesario para ser utilizable: no se llama “Done” a una historia que todavía requiere trabajo esencial de calidad para completar el incremento. Las condiciones de lanzamiento —como una ventana de despliegue— pueden gestionarse por separado sin ocultar trabajo pendiente.</p>
+
+<h3>7.1 Diferencia entre DoR y DoD</h3>
+
+<p>Es habitual que estudiantes y hasta profesionales confundan ambos conceptos, por lo que conviene compararlos de forma explícita.</p>
+
+<table>
+<caption>Definition of Ready (DoR) vs. Definition of Done (DoD)</caption>
+<thead>
+<tr><th>Aspecto</th><th>Definition of Ready (DoR)</th><th>Definition of Done (DoD)</th></tr>
+</thead>
+<tbody>
+<tr><td>Momento de aplicación</td><td>Antes de que la historia entre al sprint (en el refinamiento o en la planificación)</td><td>Al finalizar el trabajo sobre la historia, antes de darla por completada</td></tr>
+<tr><td>Pregunta que responde</td><td>¿Estamos en condiciones de empezar a trabajar esto?</td><td>¿Terminamos realmente esto, con calidad y de forma entregable?</td></tr>
+<tr><td>Formalidad en Scrum</td><td>Práctica recomendada, no exigida explícitamente por la Guía Scrum</td><td>Elemento formal definido en la Guía Scrum</td></tr>
+<tr><td>Quién la define</td><td>El equipo, a veces con el Product Owner</td><td>El Scrum Team, respetando el mínimo organizacional; los Developers la cumplen</td></tr>
+<tr><td>Ejemplo de criterio</td><td>La historia tiene criterios de aceptación y fue estimada</td><td>El código pasó revisión, tiene pruebas automatizadas y fue desplegado en ambiente de prueba</td></tr>
+</tbody>
+</table>
+
+<figure class="image-figure">
+<img src="assets/refinamiento-mvp-feedback.png" alt="Un equipo transforma necesidades de pacientes y personal clínico en historias verificables, un experimento mínimo y feedback de uso.">
+<figcaption><strong>Lectura visual.</strong> La escena vincula refinamiento, criterios de aceptación y MVP como partes de un mismo circuito de aprendizaje, no como documentos independientes.</figcaption>
+</figure>
+
+<figure class="diagrama-conceptual image-figure visual-editorial">
+<img src="assets/diagrama-ready-done-editorial.png" alt="Flujo de una historia desde la necesidad hasta Done con filtros de Ready y aceptación">
+<figcaption>El esquema compara preparación y calidad: Ready representa un acuerdo opcional, no una puerta obligatoria de Scrum. Done exige cumplir la DoD para producir un incremento utilizable. Los criterios de aceptación precisan el comportamiento de la historia; su relación con ambos acuerdos no impone una secuencia de aprobaciones.</figcaption>
+</figure>
+
+<div class="mito"><strong>Mito:</strong> Un MVP es la versión barata e incompleta del producto final. <strong>Realidad:</strong> es el experimento mínimo que permite validar una hipótesis con usuarios y decidir si conviene invertir, cambiar o detenerse.</div>
+
+<h2 id="seccion-8">8. Preparación del trabajo y Definition of Ready</h2>
+
+<p>¿Entendemos lo suficiente para empezar o estamos pidiendo eliminar toda incertidumbre? Esa diferencia determina si el acuerdo de entrada ayuda o bloquea.</p>
+<p>La <strong>Definition of Ready</strong>, o Definición de Listo, es una práctica opcional: un acuerdo para conversar sobre si entendemos lo suficiente como para seleccionar trabajo. Scrum no exige una DoR ni que desaparezca toda incertidumbre antes de empezar. Puede ayudar a revelar dudas evitables, pero una lista rígida de aprobaciones puede bloquear aprendizaje y colaboración. Si el equipo la adopta, debe revisar su utilidad y no tratarla como un contrato de traspaso del Product Owner a los Developers.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Usá la DoR como protección colaborativa frente a la incertidumbre evitable, nunca como una barrera burocrática para rechazar trabajo al Product Owner.</div>
+
+<p>Una DoR típica podría incluir, entre otros, los siguientes criterios: la historia está redactada en formato estándar y cumple INVEST; tiene criterios de aceptación definidos y validados con el Product Owner; fue estimada por el equipo de desarrollo; no tiene dependencias externas bloqueantes sin resolver (por ejemplo, esperar la habilitación de una API de un proveedor externo); se identificaron los mockups o diseños de interfaz necesarios, si aplica; y el equipo entiende de qué se trata sin necesitar aclaraciones adicionales críticas. Es fundamental remarcar que la DoR es un acuerdo interno del equipo, no una imposición externa, y que cada equipo debería construir la suya propia y revisarla periódicamente en las retrospectivas.</p>
+
+<h2 id="seccion-9">9. Refinamiento del backlog</h2>
+
+<p>La próxima historia tiene una dependencia desconocida. Conviene descubrirla ahora, no cuando la mitad del Sprint ya pasó.</p>
+<p>El <strong>refinamiento del backlog</strong> es la actividad continua de descomponer y precisar elementos, agregar detalle, orden y tamaño. En Scrum no es un evento formal adicional ni tiene una duración o porcentaje de capacidad obligatorio en la Guía vigente. El equipo puede acordar sesiones y conversaciones según sus necesidades. Una sesión de una hora en TurnoYa es un ejemplo de organización, no una regla universal.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Refiná lo suficiente para decidir el próximo horizonte, no todo el futuro. El detalle anticipado de ítems lejanos se convierte rápidamente en inventario obsoleto.</div>
+
+<h3>9.1 Cuándo y cómo se realiza</h3>
+
+<p>Conviene preparar el trabajo cercano antes de seleccionarlo. Durante el refinamiento se descomponen elementos, aclaran criterios, investigan dudas y dependencias y revisan orden y tamaño. No hay un horizonte obligatorio ni es necesario cumplir una Definition of Ready: si el equipo adoptó ese acuerdo opcional, lo usa para conversar sobre preparación. Los ítems lejanos pueden mantener menos detalle porque todavía es probable que cambien.</p><h3>9.2 Quién participa</h3>
+
+<p>El Product Owner lidera la sesión aportando contexto de negocio y prioridad, pero la participación activa del equipo de desarrollo es indispensable, porque son quienes aportan la factibilidad técnica y las estimaciones. Según el contexto, puede sumarse un diseñador UX/UI, un arquitecto técnico, o incluso usuarios clave invitados puntualmente para validar una funcionalidad compleja. Es una mala práctica que el Product Owner refine el backlog en soledad y luego "entregue" las historias ya terminadas al equipo: eso reduce el compromiso y la comprensión compartida, y suele derivar en historias mal estimadas o rechazadas en la planificación.</p>
+
+<h3>9.3 Un ejemplo de sesión de refinamiento</h3>
+
+<p>Para hacerlo concreto, una sesión de refinamiento de una hora para el equipo de la aplicación de turnos médicos podría organizarse así: los primeros diez minutos se dedican a revisar rápidamente el estado del backlog y confirmar cuáles son las tres o cuatro historias de mayor prioridad que se van a refinar ese día; los siguientes treinta minutos se dedican a desglosar la épica "Integración con calendario del profesional" en historias más pequeñas, discutiendo con el equipo los casos de borde (¿qué pasa si dos pacientes reservan el mismo horario al mismo tiempo?) y redactando criterios de aceptación en conjunto; los últimos veinte minutos se dedican a re-estimar dos historias que ya existían en el backlog pero cuyo entendimiento cambió tras una conversación con el área legal. Al finalizar, el Product Owner reordena el backlog reflejando lo conversado, y dos o tres historias quedan efectivamente listas (cumpliendo la Definition of Ready) para entrar en el próximo Sprint Planning. Este ritmo sostenido, sprint tras sprint, es lo que evita el escenario contrario, mucho más común de lo deseable, en el que la Sprint Planning se transforma en una sesión improvisada de refinamiento de emergencia porque nadie preparó el backlog con anticipación.</p>
+
+<h2 id="seccion-10">10. Priorizar necesidades y oportunidades</h2>
+
+<p>Cuando todos los pedidos parecen urgentes, necesitamos explicitar criterios antes de decidir el orden.</p>
+<p>Priorizar bien es, probablemente, la habilidad más importante —y más subestimada— de un Product Owner. Un backlog extenso sin un criterio de priorización explícito termina ordenándose según quién grita más fuerte (el stakeholder más insistente, el gerente de turno) en lugar de según el valor real que aporta cada ítem. A continuación se desarrollan cuatro técnicas ampliamente usadas en la industria.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Elegí la técnica de priorización según la conversación necesaria: criticidad de alcance, satisfacción, economía de demora o relación valor-esfuerzo. Ninguna fórmula reemplaza el juicio.</div>
+
+<h3>10.1 MoSCoW</h3>
+
+<p>MoSCoW es un acrónimo que clasifica cada ítem del backlog en cuatro categorías: <strong>Must have</strong> (debe tenerse: sin esto el producto o release no tiene sentido ni es viable), <strong>Should have</strong> (debería tenerse: es importante pero el producto puede lanzarse sin ello si es estrictamente necesario), <strong>Could have</strong> (podría tenerse: deseable pero de bajo impacto si se deja afuera) y <strong>Won't have this time</strong> (no se hará esta vez: explícitamente fuera de alcance del período actual, aunque podría reconsiderarse más adelante). Es una técnica simple y muy efectiva para conversaciones de alcance con stakeholders no técnicos, aunque tiene la debilidad de que, si no se aplica con disciplina, todos los ítems terminan clasificados como "Must have" (fenómeno conocido informalmente como "inflación de MoSCoW"). Una buena práctica es limitar los "Must have" a no más del 60% del esfuerzo total disponible.</p>
+
+<table>
+<caption>Técnica MoSCoW aplicada a una app de turnos médicos (release de lanzamiento)</caption>
+<thead>
+<tr><th>Categoría</th><th>Ejemplo de funcionalidad</th><th>Justificación</th></tr>
+</thead>
+<tbody>
+<tr><td>Must have</td><td>Reservar y cancelar turnos</td><td>Es la funcionalidad núcleo; sin ella no hay producto</td></tr>
+<tr><td>Should have</td><td>Recordatorios automáticos por notificación</td><td>Reduce el ausentismo significativamente, pero el producto funciona sin esto en el día uno</td></tr>
+<tr><td>Could have</td><td>Valoración del profesional después del turno</td><td>Agrega valor pero no es crítico para el lanzamiento inicial</td></tr>
+<tr><td>Won't have this time</td><td>Pago de consultas dentro de la app</td><td>Requiere integración con pasarela de pago y cumplimiento normativo adicional; queda para una fase posterior</td></tr>
+</tbody>
+</table>
+
+<h3>10.2 Modelo de Kano</h3>
+
+<p>El modelo de Kano, desarrollado por Noriaki Kano, clasifica las funcionalidades según cómo impactan en la satisfacción del usuario, distinguiendo entre el esfuerzo invertido y el nivel de satisfacción que generan. Identifica cinco categorías principales: los <strong>atributos básicos</strong> (o "de higiene"), que el usuario da por sentado y cuya ausencia genera fuerte insatisfacción pero cuya presencia no genera entusiasmo especial (por ejemplo, que la app no se caiga); los <strong>atributos de desempeño</strong>, donde la satisfacción crece de forma lineal con la cantidad o calidad ofrecida (por ejemplo, la velocidad de carga); los <strong>atributos de deleite o excitantes</strong>, que el usuario no espera pero que, si están, generan un salto grande en satisfacción (por ejemplo, que la app sugiera automáticamente el mejor horario según el historial del paciente); los <strong>atributos indiferentes</strong>, que no afectan la satisfacción en ningún sentido; y los <strong>atributos inversos</strong>, cuya presencia en realidad disgusta a una parte de los usuarios (por ejemplo, exceso de notificaciones). Esta técnica se aplica habitualmente mediante encuestas específicas a usuarios (la "encuesta de Kano", con preguntas funcionales y disfuncionales), y es especialmente valiosa para identificar oportunidades de diferenciación competitiva más allá de lo obvio.</p>
+
+<h3>10.3 WSJF (Weighted Shortest Job First)</h3>
+
+<p>WSJF es una técnica cuantitativa proveniente del marco SAFe (Scaled Agile Framework), pensada para maximizar el retorno económico del trabajo priorizado, especialmente útil cuando hay muchos ítems de tamaño y valor muy diferentes compitiendo por el mismo tiempo del equipo. Se calcula como el cociente entre el <strong>costo de la demora</strong> (Cost of Delay) y el <strong>tamaño del trabajo</strong> (Job Size, generalmente medido en tamaño relativo o duración estimada): <em>WSJF = Costo de la Demora / Tamaño del trabajo</em>. El Costo de la Demora, a su vez, se estima sumando tres componentes evaluados con una escala relativa (por ejemplo, la secuencia de Fibonacci: 1, 2, 3, 5, 8, 13, 20): el <strong>valor de negocio y para el usuario</strong>, la <strong>criticidad temporal</strong> (cuánto se degrada el valor si se pospone) y la <strong>reducción de riesgo u oportunidad habilitadora</strong> (si ese trabajo abre la puerta a otras oportunidades de valor). La lógica de fondo es intuitiva: conviene priorizar primero lo que genera mucho valor por unidad de esfuerzo y cuyo retraso resulta más costoso, en lugar de simplemente lo que "vale más" en términos absolutos, sin considerar cuánto cuesta hacerlo ni cuánto se pierde por demorarlo.</p>
+
+<p>Veamos un ejemplo numérico simplificado con dos funcionalidades candidatas para la aplicación de turnos médicos. La funcionalidad A, "recordatorios automáticos", tiene valor de negocio 8, criticidad temporal 5 y reducción de riesgo 2 (Costo de la Demora = 15), con un tamaño de trabajo estimado de 3, lo que da un WSJF de 5. La funcionalidad B, "telemedicina por videollamada", tiene valor de negocio 13, criticidad temporal 3 y reducción de riesgo 5 (Costo de la Demora = 21), pero con un tamaño de trabajo mucho mayor, estimado en 13, lo que da un WSJF de aproximadamente 1,6. Aunque la funcionalidad B tiene mayor valor absoluto, su WSJF es notablemente menor, porque requiere mucho más esfuerzo para materializarse: el modelo recomienda priorizar primero la funcionalidad A. Esto ilustra el valor central de WSJF: evita el error común de priorizar por "lo que más impacto suena tener" sin considerar el costo real de construirlo.</p>
+
+<h3>10.4 Value vs. Effort (Matriz de Valor y Esfuerzo)</h3>
+
+<p>Esta es la técnica más simple y visual de las cuatro: se ubica cada ítem del backlog en una matriz de dos ejes, valor (para el usuario o el negocio) y esfuerzo (de desarrollo), típicamente en escalas de "alto" y "bajo". Esto genera cuatro cuadrantes: <strong>alto valor / bajo esfuerzo</strong> ("quick wins" o victorias rápidas, que deberían priorizarse primero porque maximizan el retorno con mínima inversión); <strong>alto valor / alto esfuerzo</strong> (proyectos grandes que requieren planificación cuidadosa y quizás descomposición en partes entregables); <strong>bajo valor / bajo esfuerzo</strong> (tareas de relleno, que pueden hacerse si sobra capacidad pero no deberían competir con lo anterior); y <strong>bajo valor / alto esfuerzo</strong> (candidatos a descartar o posponer indefinidamente). Es una técnica ideal para talleres colaborativos con stakeholders no técnicos, porque es visual, rápida y no requiere cálculos.</p>
+
+<table>
+<caption>Comparación de técnicas de priorización de backlog</caption>
+<thead>
+<tr><th>Técnica</th><th>Tipo</th><th>Cuándo conviene usarla</th><th>Limitación principal</th></tr>
+</thead>
+<tbody>
+<tr><td>MoSCoW</td><td>Cualitativa, por categorías</td><td>Definir alcance de un release con stakeholders no técnicos</td><td>Tiende a inflar la categoría "Must have" si no se aplica con disciplina</td></tr>
+<tr><td>Kano</td><td>Cualitativa, orientada a satisfacción del usuario</td><td>Descubrir funcionalidades diferenciadoras o de deleite</td><td>Requiere investigación de usuarios (encuestas), consume tiempo</td></tr>
+<tr><td>WSJF</td><td>Cuantitativa, económica</td><td>Backlogs grandes en organizaciones con múltiples equipos (ej. SAFe)</td><td>Requiere disciplina de estimación; puede sentirse artificial en equipos chicos</td></tr>
+<tr><td>Value vs. Effort</td><td>Semicuantitativa, visual</td><td>Talleres rápidos de priorización con stakeholders diversos</td><td>Escalas subjetivas (alto/bajo) pueden variar mucho entre participantes</td></tr>
+</tbody>
+</table>
+
+<p class="bloque-narrativo"><strong>De describir pedidos a comprobar valor.</strong> Ya podemos escribir, preparar y ordenar trabajo. Ahora necesitamos decidir qué experimento mínimo y qué horizonte de entrega justifican invertir en esas opciones.</p><h2 id="seccion-11">11. Producto mínimo viable y aprendizaje</h2>
+
+<p>Antes de construir todas las mejoras, ¿cuál es la prueba más pequeña que nos permitiría saber si los pacientes prefieren este canal?</p>
+<p>El <strong>Producto Mínimo Viable</strong> (Minimum Viable Product, MVP) es, según la definición de Eric Ries en "The Lean Startup", la versión de un producto nuevo que permite al equipo recoger la máxima cantidad de aprendizaje validado sobre los clientes con el mínimo esfuerzo posible. Es un concepto frecuentemente malinterpretado: no significa "un producto de baja calidad" ni "la primera parte de un producto más grande construida a las apuradas", sino un <strong>experimento diseñado para aprender</strong>, con la menor inversión posible, si una hipótesis de negocio es válida antes de comprometer recursos mayores.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Definí el MVP por la hipótesis que debe poner a prueba y la evidencia que decidirá el paso siguiente. “Menos funcionalidades” no es una estrategia de aprendizaje por sí misma.</div>
+
+<p>Un ejemplo célebre y muy citado en la literatura de producto es el de <strong>Zappos</strong> (la tienda online de calzado): antes de invertir en inventario y logística, el fundador Nick Swinmurn validó la hipótesis de que la gente compraría zapatos online sacando fotos de zapatos en tiendas físicas locales, publicándolos en un sitio web simple y, cuando alguien compraba, yendo él mismo a comprar el par en la tienda física para enviarlo. No había inventario real ni infraestructura de e-commerce sofisticada: había un experimento mínimo que validó la demanda real antes de escalar. Otro ejemplo frecuentemente citado es el de <strong>Dropbox</strong>, que utilizó un video de demostración para comunicar una solución de sincronización y comprobar interés antes de ampliar su lanzamiento, usado para medir el interés (medido en registros a una lista de espera) sin confundir registros interesados con uso sostenido o disposición a pagar.</p>
+
+<p>En el contexto de desarrollo de software más convencional (no necesariamente una startup en etapa de validación de mercado), el MVP suele entenderse como el subconjunto más pequeño de funcionalidades que permite lanzar un producto usable y obtener feedback real de usuarios en producción, en lugar de esperar meses o años para lanzar una versión "completa". Es útil aquí distinguir el MVP de un concepto relacionado pero distinto: el <strong>MMF</strong> (Minimum Marketable Feature, funcionalidad mínima comercializable), que es la porción más pequeña de funcionalidad que puede lanzarse de forma independiente y generar valor comercial, sin necesariamente ser "todo el producto". Un producto maduro puede seguir lanzando MMFs incrementales durante años, mucho después de haber superado la etapa de MVP.</p>
+
+<h3>11.1 Variantes de MVP según el tipo de aprendizaje buscado</h3>
+
+<p>No todos los MVP se construyen de la misma forma, porque no todos buscan validar lo mismo. Conviene distinguir al menos tres variantes frecuentes en la literatura de producto y de startups.</p>
+
+<table>
+<caption>Variantes de MVP según el tipo de experimento</caption>
+<thead>
+<tr><th>Variante de MVP</th><th>En qué consiste</th><th>Ejemplo</th></tr>
+</thead>
+<tbody>
+<tr><td>MVP de página de interés (landing page o smoke test)</td><td>Se publica una página describiendo el producto antes de construirlo, para medir interés real (registros, clics)</td><td>Dropbox midiendo registros a partir de un video explicativo</td></tr>
+<tr><td>MVP tipo "concierge"</td><td>El servicio se entrega manualmente y de forma transparente, en contacto cercano con el usuario, para aprender sobre su necesidad</td><td>Personal de una clínica que ayuda a reservar y reprogramar turnos de forma manual durante un piloto</td></tr>
+<tr><td>MVP tipo "mago de Oz" (Wizard of Oz)</td><td>El usuario interactúa con una interfaz aparentemente automatizada, pero detrás hay personas ejecutando el proceso manualmente</td><td>Un prototipo de reservas con procesamiento manual detrás de la interfaz; el piloto protege datos y comunica sus condiciones de participación</td></tr>
+</tbody>
+</table>
+
+<p>En el caso de la aplicación de turnos médicos, un MVP razonable no sería lanzar la app completa con todas las funcionalidades del roadmap, sino lanzar únicamente la reserva y cancelación de turnos en una sola clínica piloto, midiendo si los pacientes efectivamente prefieren este canal al teléfono antes de invertir en recordatorios automáticos, integración con calendario médico o telemedicina. Si la hipótesis central (que los pacientes prefieren reservar digitalmente) no se valida, todo el resto del roadmap pierde sentido tal como estaba planteado, y es mucho más barato descubrir eso con un MVP acotado que después de construir el producto completo.</p>
+
+<h2 id="seccion-12">12. Roadmap: comunicar la evolución del producto</h2>
+
+<p>Los interesados necesitan conocer la dirección del producto sin confundir una posibilidad futura con una fecha prometida.</p>
+<p>El <strong>Product Roadmap</strong>, o hoja de ruta, comunica dirección y horizontes de evolución del producto. Ahora que conocemos necesidades, backlog y priorización, podemos construirlo con más criterio: vincula objetivos con iniciativas probables, sin convertir todo el futuro en un compromiso detallado. El Product Backlog contiene trabajo potencial de distintas escalas; el Sprint Backlog expresa el objetivo, la selección y el plan del Sprint actual. Ninguno sustituye al roadmap ni es “exactamente lo que se hará esta semana” para todo el producto.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Usá el roadmap para comunicar problemas, resultados y secuencia probable. Cuanto más lejano el horizonte, menor debe ser la precisión prometida.</div>
+
+<h3>12.1 Tipos de roadmap</h3>
+
+<p>Existen distintos formatos, y elegir el adecuado depende de la audiencia. El <strong>roadmap basado en fechas</strong> (timeline roadmap) organiza los grandes temas en un calendario (trimestres, meses), y es el más solicitado por gerencias y clientes porque parece dar certeza, pero en contextos ágiles es también el más riesgoso, porque genera expectativas de compromiso rígido que chocan con la naturaleza adaptativa del desarrollo. El <strong>roadmap basado en temas u objetivos</strong> (theme-based o goal-oriented roadmap) organiza el trabajo en grandes bloques temáticos ordenados por prioridad, sin fechas exactas, solo con horizontes aproximados ("ahora", "próximo", "después" — el formato "Now-Next-Later" popularizado por Janna Bastow). Este formato es el más recomendado en entornos ágiles porque comunica intención y secuencia sin prometer fechas que probablemente no se cumplan. El <strong>roadmap basado en resultados</strong> (outcome-based roadmap) va un paso más allá: en lugar de listar funcionalidades, lista los resultados de negocio o de usuario que se buscan lograr en cada horizonte (por ejemplo, "reducir el tiempo de checkout" en vez de "implementar pago con un clic"), dejando que el equipo determine cuál es la mejor solución técnica para lograr ese resultado.</p>
+
+<table>
+<caption>Comparación de tipos de Product Roadmap</caption>
+<thead>
+<tr><th>Tipo de roadmap</th><th>Qué comunica</th><th>Ventaja principal</th><th>Riesgo principal</th></tr>
+</thead>
+<tbody>
+<tr><td>Basado en fechas</td><td>Entregas atadas a un calendario</td><td>Da sensación de certeza a la dirección y clientes</td><td>Genera compromisos difíciles de cumplir; rigidiza el backlog</td></tr>
+<tr><td>Basado en temas (Now-Next-Later)</td><td>Grandes bloques de trabajo ordenados por horizonte relativo</td><td>Flexible y honesto sobre la incertidumbre</td><td>Puede resultar vago para stakeholders que necesitan fechas concretas</td></tr>
+<tr><td>Basado en resultados (outcomes)</td><td>Metas de negocio o de usuario a lograr, no funcionalidades específicas</td><td>Da autonomía al equipo para encontrar la mejor solución</td><td>Requiere madurez organizacional y confianza en el equipo</td></tr>
+<tr><td>Roadmap por releases</td><td>Conjunto de funcionalidades agrupadas por versión de lanzamiento</td><td>Útil para productos con lanzamientos formales (apps, software instalable)</td><td>Puede fomentar el "todo o nada" dentro de cada release</td></tr>
+</tbody>
+</table>
+
+<h3>12.2 Cómo se construye un roadmap</h3>
+
+<p>La construcción de un roadmap ágil sigue típicamente estos pasos. Primero, se parte de la visión y los objetivos vigentes del producto. Segundo, se identifican las grandes iniciativas o épicas candidatas (ver sección 4) que podrían contribuir a esos objetivos. Tercero, se prioriza ese conjunto de iniciativas usando alguna técnica de priorización (sección 10), considerando valor de negocio, esfuerzo estimado, riesgo y dependencias técnicas. Cuarto, se agrupan las iniciativas priorizadas en horizontes temporales relativos, evitando prometer fechas exactas más allá del corto plazo. Quinto, y crucial, el roadmap se revisa y ajusta periódicamente (por ejemplo, en cada planificación de release o trimestralmente), para incorporar evidencia; revisarlo no obliga a cambiarlo si sus supuestos siguen siendo válidos. El Product Owner es quien típicamente lidera esta construcción, pero con participación activa del equipo de desarrollo (para validar factibilidad técnica) y de los stakeholders clave (para validar alineación estratégica).</p>
+
+<p>En el roadmap de TurnoYa, <strong>Ahora</strong> incluye reservar y cancelar sobre una agenda confiable, evitando dobles reservas desde el piloto. <strong>Próximo</strong> puede incorporar sincronización automática con calendarios externos y valoración post-turno. <strong>Después</strong> mantiene telemedicina y pagos como opciones sujetas a investigación. Automatizar más integraciones puede esperar; la consistencia esencial de las reservas no puede omitirse. Los horizontes expresan dirección y aprendizaje, y se revisan con las clínicas sin convertir las iniciativas lejanas en promesas de fecha.</p><h2 id="seccion-13">13. Planificación de lanzamientos</h2>
+
+<p>Un incremento terminado y un lanzamiento a usuarios no siempre ocurren al mismo tiempo. Planificar esa decisión requiere mirar valor y condiciones de salida.</p>
+<p>Planificar un <strong>release</strong> significa decidir qué resultado se pondrá a disposición de usuarios, bajo qué condiciones y con qué pronóstico. Puede abarcar uno o varios Sprints, y una liberación no tiene que esperar a la Review. La <strong>entrega continua</strong> mantiene cambios listos para desplegar mediante un proceso confiable; todavía puede existir una decisión de liberación. En el <strong>despliegue continuo</strong>, los cambios que cumplen las verificaciones acordadas llegan automáticamente a producción. Son prácticas relacionadas, con distintos controles y niveles de automatización.</p><div class="criterio-profesional"><strong>Criterio profesional:</strong> Planificá releases con rangos y condiciones explícitas. Una fecha sin supuestos de velocidad, alcance y riesgo es una promesa aparente, no un pronóstico profesional.</div>
+
+<p>Aun así, en muchos contextos (por ejemplo, aplicaciones móviles sujetas a revisión de tiendas de aplicaciones, sistemas críticos que requieren ventanas de mantenimiento planificadas, o productos con comunicación de marketing asociada a cada versión) sigue siendo valioso planificar releases de forma explícita. Un plan de release típico incluye: el objetivo de negocio del release (qué problema resuelve o qué objetivo de producto atiende); el conjunto de épicas y funcionalidades incluidas, priorizadas; una estimación de la fecha aproximada, idealmente expresada como rango o basada en la velocidad histórica del equipo más que como fecha fija comprometida; los criterios de éxito que se medirán después del lanzamiento; y los riesgos y dependencias identificados (por ejemplo, la disponibilidad de un proveedor externo o la aprobación de un área legal). Es responsabilidad compartida entre el Product Owner (visión y prioridad) y el equipo de desarrollo (factibilidad y estimación) construir este plan, típicamente revisándolo y ajustándolo al final de cada sprint según el progreso real (burndown de release) en lugar de tratarlo como un compromiso inmutable fijado una sola vez.</p>
+
+<h2 id="seccion-14">14. Gestión del alcance</h2>
+
+<p>La fecha del piloto no se mueve y el equipo no puede ampliarse. ¿Qué podemos negociar sin sacrificar seguridad y calidad?</p>
+<p>En el Módulo 1 vimos que alcance, tiempo, costo y calidad requieren acuerdos en cualquier enfoque. En TurnoYa podemos mantener un equipo estable y una fecha de piloto, y ajustar funcionalidades comerciales dentro de esos límites. No significa que todo proyecto ágil tenga presupuesto y fecha fijos, ni que todo proyecto predictivo tolere sobrecostos. La decisión profesional consiste en reconocer qué restricciones son obligatorias, qué alcance puede negociarse y qué evidencia justifica el cambio.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Protegé tiempo, costo y calidad mediante decisiones transparentes de alcance. Flexibilidad no significa aceptar todo, sino ordenar compensaciones de valor.</div>
+
+<p>En Scrum, el Product Owner ordena necesidades y los Developers seleccionan trabajo con él durante la planificación. El alcance detallado puede aclararse y renegociarse durante el Sprint; se protege el Sprint Goal y no se reduce la calidad. No es necesario esperar una emergencia para adaptar el plan, pero tampoco se acepta trabajo sin considerar capacidad, dependencias y efecto sobre el objetivo.</p>
+
+<p>Otro concepto relevante para la gestión del alcance ágil es el de <strong>scope creep</strong> (deslizamiento de alcance), que en el enfoque tradicional se considera casi siempre indeseable, pero que en ágil requiere una lectura más matizada: agregar un ítem nuevo al Product Backlog no es, por sí solo, un problema, siempre que ese ítem compita limpiamente por prioridad con el resto y no se cuele directamente dentro de un sprint ya comprometido sin pasar por ese filtro. El verdadero riesgo de alcance en ágil no es que el backlog crezca (eso es normal y saludable, reflejo de aprendizaje), sino que el equipo pierda disciplina y empiece a aceptar cambios de último momento dentro de sprints en curso, lo que erosiona tanto la previsibilidad de las entregas como la moral del equipo.</p>
+
+<h2 id="seccion-15">15. Evaluar y gestionar cambios</h2>
+
+<p>Un pedido nuevo puede cambiar la prioridad sin autorizar cualquier interrupción. Veamos cómo convertirlo en una decisión trazable.</p>
+<p>Un cambio puede provenir de feedback, una nueva oportunidad, un defecto o una obligación. La gestión ágil busca evaluarlo con rapidez y hacer visible su costo de oportunidad. No elimina autorizaciones contractuales, controles de seguridad ni gobierno del proyecto: define un circuito proporcionado al impacto y al riesgo.</p>
+
+<div class="criterio-profesional"><strong>Criterio profesional:</strong> Canalizá el cambio hacia el backlog y hacé visible su costo de oportunidad. La agilidad acelera decisiones; no elimina la necesidad de explicar qué se desplaza y por qué.</div>
+
+<p>En Scrum, la propuesta se representa en el Product Backlog y compite por orden con el resto del trabajo. Además se examinan impacto, capacidad, dependencias y controles necesarios. El Product Owner responde por prioridades de producto, pero no puede sustituir las decisiones reservadas a patrocinadores, autoridades regulatorias o responsables de seguridad. En Kanban, las políticas de entrada y clases de servicio hacen explícito cómo se atiende el cambio.</p>
+
+<p>Conviene registrar motivo e impacto de los cambios relevantes, consultar a quienes aportan evidencia y comunicar qué se desplaza. Si se adapta un Sprint, Developers y Product Owner revisan su objetivo y plan; si el objetivo se vuelve obsoleto, el Product Owner puede cancelarlo. Los controles de cumplimiento siguen vigentes. La respuesta debe ser rápida cuando el riesgo lo exige, pero no hay una garantía universal de decidir “en días, no en semanas”.</p>
+
+<p>Supongamos, como escenario didáctico, que la clínica exige registrar consentimiento digital antes de confirmar determinados turnos, con una fecha límite. No estamos describiendo una norma real. El Product Owner consulta a personal clínico, legales, pacientes y seguridad; los Developers evalúan alternativas, esfuerzo y dependencias. Si cabe en un Sprint posterior sin incumplir la fecha, se prepara y ordena allí. Si afecta el actual, se renegocia el plan protegiendo el objetivo. El siguiente caso muestra el razonamiento completo.</p>
+
+<h3>15.1 Caso resuelto: priorizar un cambio regulatorio sin perder la estrategia</h3><p>En este escenario didáctico de TurnoYa, la clínica establece una obligación con fecha límite: ciertas especialidades deben registrar consentimiento informado digital antes de confirmar el turno. El Product Owner debe decidir cómo incorporarla sin convertir la urgencia en caos.</p><ol class="caso-resuelto"><li><strong>Reformular el pedido como resultado.</strong> El objetivo no es “agregar una pantalla”, sino permitir que los turnos regulados queden confirmados con consentimiento trazable antes de la fecha de vigencia.</li><li><strong>Identificar stakeholders y restricciones.</strong> Se consulta a legales, personal clínico, pacientes y seguridad. Surgen requisitos de accesibilidad, auditoría y protección de datos.</li><li><strong>Dividir la épica.</strong> Se crean historias para presentar el consentimiento, capturar aceptación, conservar evidencia y contemplar rechazo o revocación, cada una con criterios verificables.</li><li><strong>Comparar costo de demora.</strong> El incumplimiento impediría operar esas especialidades; su criticidad temporal supera funcionalidades comerciales del release. El cambio sube en el backlog.</li><li><strong>Proteger el Sprint.</strong> Si la fecha permite esperar, entra al próximo Sprint ya refinado. Si debe ingresar al actual, Developers y Product Owner revisan capacidad y renegocian alcance sin poner en riesgo el Sprint Goal; comunicarán el efecto sobre el roadmap. No basta con intercambiar una historia por otra de tamaño supuesto.</li><li><strong>Definir evidencia de éxito.</strong> Además de cumplir la DoD, se mide porcentaje de consentimientos completados sin asistencia y errores de confirmación durante el piloto.</li></ol><p><strong>Resultado:</strong> la regulación cambia la prioridad, pero no saltea el sistema de producto: pasa por evidencia, refinamiento, compensación de alcance y medición posterior.</p>
+
+<h2 id="seccion-16">Fuentes para profundizar</h2><ul><li><a href="https://scrumguides.org/scrum-guide.html">The Scrum Guide</a> (Schwaber y Sutherland, 2020). Responsabilidades, artefactos, compromisos y eventos.</li></ul>
+<p class="fuentes-oficiales"><strong>Fuente normativa:</strong> <a href="https://scrumguides.org/scrum-guide.html">The Scrum Guide, edición 2020</a>, para Product Goal, Product Backlog, refinamiento y Definition of Done. Historias, INVEST, DoR, MVP y técnicas de priorización se presentan como prácticas complementarias, no como requisitos de Scrum. Consulta: 15 de septiembre de 2026.</p><h2 id="seccion-17">Recursos audiovisuales sugeridos</h2>
+<p>Estos recursos complementan las explicaciones y permiten observar otras presentaciones de los conceptos. El contenido esencial está desarrollado en este documento.</p>
+<ul class="recursos-audiovisuales">
+<li><strong><a href="https://www.scrum.org/resources/introductory-video-series-scrum-product-backlog-product-goal">An Introductory Video Series to Scrum: Product Backlog &amp; Product Goal</a></strong><br>Scrum.org explica la relación entre el objetivo de producto y el backlog, clave para evitar listas de trabajo desconectadas de la estrategia.</li>
+<li><strong><a href="https://www.scrum.org/resources/product-backlog-refinement">Facilitating Product Backlog Refinement</a></strong><br>El recurso oficial muestra cómo facilitar conversaciones de refinamiento para crear entendimiento compartido sin convertirlas en especificación exhaustiva.</li>
+</ul>
+
+<h2 id="seccion-18">Síntesis del módulo</h2>
+
+<p>Partimos del problema y la visión de producto, contrastamos necesidades con interesados y construimos un backlog ordenado. Diferenciamos niveles de trabajo, historias y criterios de aceptación; distinguimos la DoD de la DoR opcional y estudiamos el refinamiento continuo. Con esa base abordamos priorización y MVP, y luego roadmap, lanzamientos, alcance y cambios. La dirección orienta el trabajo, pero la evidencia puede modificar el camino.</p>
+
+<p>Comparamos MoSCoW, Kano, WSJF y Valor vs. Esfuerzo como apoyos al juicio, no como decisiones automáticas. El MVP se define por aprendizaje buscado y el roadmap por dirección e hipótesis de evolución. La planificación de lanzamientos, el control de alcance y los cambios deben respetar restricciones, calidad y responsabilidades de gobierno. El caso de TurnoYa integró esas decisiones sin congelar el plan ni convertir urgencia en improvisación.</p>
+
+<p>El hilo conductor de todo el módulo es uno solo: en un contexto ágil, la planificación no es un evento que ocurre una vez al inicio del proyecto, sino una <strong>disciplina continua de toma de decisiones sobre valor</strong>, ejercida principalmente a través del backlog, y sostenida por conversaciones constantes entre el Product Owner, el equipo de desarrollo y los stakeholders. Dominar estas herramientas —visión, roadmap, backlog, historias de usuario, criterios de aceptación, DoR, DoD y técnicas de priorización— es, en definitiva, lo que separa a un equipo que simplemente "hace Scrum" de un equipo que genuinamente entrega valor de forma predecible y sostenida.</p>
+<p class="cierre-narrativo"><strong>Conexión del recorrido.</strong> Ahora tenemos una dirección, criterios de valor y trabajo preparado. El Módulo 4 incorpora disponibilidad, estimación y métricas para contrastar el plan con evidencia y comunicar pronósticos condicionados.</p></article>
+</main>
+</body>
+</html>

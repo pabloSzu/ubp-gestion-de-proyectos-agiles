@@ -1,0 +1,4 @@
+- Comprender los fundamentos conceptuales de la gestión de proyectos —incluyendo las nociones de proyecto, producto, operación, ciclo de vida y triple restricción— para distinguir con precisión el alcance y los límites de esta disciplina aplicada al desarrollo de software.
+- Analizar el enfoque predictivo o en cascada y sus variantes iterativas e incrementales para identificar en qué contextos de un proyecto de software resulta más adecuado aplicar cada uno.
+- Conocer el origen histórico de la agilidad, los cuatro valores y los doce principios del Manifiesto Ágil para fundamentar con criterio profesional la adopción de un enfoque ágil frente a uno tradicional.
+- Comparar los enfoques ágil, tradicional e híbrido de gestión de proyectos para poder seleccionar y justificar el enfoque más apropiado según el nivel de incertidumbre y las restricciones de cada proyecto concreto.

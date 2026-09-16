@@ -1,0 +1,4 @@
+- Formular la visión y los objetivos de un producto digital, aplicando el formato de elevator pitch y métricas medibles, para alinear al equipo y a los stakeholders en torno a un rumbo estratégico común.
+- Construir y mantener un Product Backlog priorizado, organizado en épicas, funcionalidades e historias de usuario redactadas bajo el criterio INVEST, para asegurar que el equipo siempre trabaje sobre el ítem de mayor valor disponible.
+- Redactar criterios de aceptación y aplicar la Definition of Ready y la Definition of Done, para garantizar que cada incremento de producto sea verificable, esté bien entendido antes de desarrollarse y cumpla estándares de calidad al finalizar.
+- Aplicar técnicas de priorización (MoSCoW, Kano, WSJF y Valor vs. Esfuerzo) y el concepto de Producto Mínimo Viable, para tomar decisiones de alcance, planificación de releases y gestión de cambios basadas en evidencia y no en intuición.

@@ -1,0 +1,4 @@
+- Analizar la composición y las características de los equipos ágiles multidisciplinarios, con el fin de comprender por qué su tamaño reducido y su estabilidad favorecen la entrega sostenida de valor.
+- Diferenciar el liderazgo ágil (servant leadership) del liderazgo tradicional de comando y control, con el propósito de identificar el estilo de conducción adecuado para sostener equipos autoorganizados.
+- Aplicar técnicas de comunicación, gestión de conflictos, feedback continuo y facilitación de retrospectivas, con la finalidad de fortalecer la mejora continua dentro del equipo y su relación con los stakeholders.
+- Evaluar casos representativos de adopción ágil, tanto exitosos como fallidos, con el objetivo de reconocer los desafíos organizacionales más comunes (resistencia al cambio, cargo cult agile, mal uso de métricas) y proponer estrategias de mitigación.
