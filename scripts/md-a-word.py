@@ -1,6 +1,7 @@
 """Genera Contenido.docx de un módulo a partir de su fuente contenido.md.
 
-Uso: python scripts/md-a-word.py --modulo 1 [--tipo contenido|actividades|respuestas|glosario|microobjetivos] [--salida ruta.docx]
+Uso: python scripts/md-a-word.py --modulo 1 [--tipo contenido|actividades|respuestas|glosario|microobjetivos]
+    python scripts/md-a-word.py --parcial 1 --tipo evaluacion|guia [--salida ruta.docx]
 
 Encabezado de la fuente: modulo, titulo, subtitulo y materia (nombre oficial de la
 materia; se usa en portada y pie). Para otra materia, copiar este script y
@@ -126,11 +127,13 @@ CAJAS_FILL = {}
 class BuilderMD(nativo.Builder):
     def __init__(self, doc, folder, cajas):
         super().__init__(doc, folder); self.cajas = cajas; self.stats['recuadros'] = 0
-    def module(self, tree, number, etiqueta='Contenido de estudio', indice=True):
+    def module(self, tree, number, etiqueta='Contenido de estudio', indice=True, color=None):
         """Portada, índice opcional y cuerpo; adapta Builder.module a los cuatro entregables."""
         article = tree.xpath('//article')[0]; title = tree.xpath('//h1')[0].text_content().strip()
         p = self.doc.add_paragraph('Gestión de Proyectos Ágiles', style='Subtitle'); p.paragraph_format.space_before = Cm(3)
-        p = self.doc.add_paragraph(f'Módulo {number}'); p.runs[0].font.size = Pt(16); p.runs[0].font.color.rgb = RGBColor.from_string(nativo.PALETTE[number - 1])
+        rot = number if isinstance(number, str) else f'Módulo {number}'
+        col = color if color is not None else number - 1
+        p = self.doc.add_paragraph(rot); p.runs[0].font.size = Pt(16); p.runs[0].font.color.rgb = RGBColor.from_string(nativo.PALETTE[col])
         self.doc.add_paragraph(title, style='Title')
         sub = tree.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," subtitle ")]')
         if sub and sub[0].text_content().strip(): self.doc.add_paragraph(sub[0].text_content().strip(), style='Subtitle')
@@ -226,6 +229,8 @@ TIPOS = {
     'contenido': ('Contenido', 'contenido.md', 'Contenido.docx', 'Contenido de estudio', True),
     'actividades': ('Actividades', 'actividades.md', 'Actividades.docx', 'Actividades formativas', True),
     'respuestas': ('Actividades', 'respuestas-docente.md', 'Respuestas-docente.docx', 'Respuestas orientativas para el docente', False),
+    'evaluacion': ('', 'evaluacion.md', 'Evaluacion.docx', 'Evaluación parcial', False),
+    'guia': ('', 'guia-docente.md', 'Guia-docente.docx', 'Guía de corrección para el docente', False),
     'glosario': ('Glosario', 'glosario.md', 'Glosario.docx', 'Glosario', False),
     'microobjetivos': ('Microobjetivos', 'microobjetivos.md', 'Microobjetivos.docx', 'Microobjetivos', False),
 }
@@ -242,16 +247,25 @@ def leer_fuente(ruta):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--modulo', type=int, required=True, choices=range(1, 6))
+    ap.add_argument('--modulo', type=int, choices=range(1, 6))
+    ap.add_argument('--parcial', type=int, choices=(1, 2))
     ap.add_argument('--tipo', choices=TIPOS, default='contenido')
     ap.add_argument('--salida', type=Path)
     a = ap.parse_args()
     carpeta, fuente, final, etiqueta, indice = TIPOS[a.tipo]
-    modulo_dir = BASE / 'entregables' / f'MODULO {a.modulo}'
-    folder = modulo_dir / carpeta
-    # Los datos del módulo (materia, título) salen del Contenido; la fuente propia puede ampliarlos.
-    meta, _ = leer_fuente(modulo_dir / 'Contenido' / 'contenido.md')
+    if a.tipo in ('evaluacion', 'guia'):
+        if not a.parcial: ap.error('--parcial es obligatorio para evaluaciones')
+        folder = BASE / 'entregables' / 'EVALUACIONES' / f'PARCIAL {a.parcial}'
+        meta = {'materia': 'Gestión de Proyectos Ágiles'}; rotulo = f'Parcial {a.parcial}'; color = a.parcial + 2
+    else:
+        if not a.modulo: ap.error('--modulo es obligatorio')
+        modulo_dir = BASE / 'entregables' / f'MODULO {a.modulo}'
+        folder = modulo_dir / carpeta
+        # Los datos del módulo (materia, título) salen del Contenido; la fuente propia puede ampliarlos.
+        meta, _ = leer_fuente(modulo_dir / 'Contenido' / 'contenido.md'); rotulo = f'Módulo {a.modulo}'; color = a.modulo - 1
     propio, src = leer_fuente(folder / fuente)
+    if a.tipo in ('evaluacion', 'guia', 'respuestas'):
+        nativo.chunks.__defaults__ = (10**6,)  # sin dividir párrafos: las consignas y criterios se leen enteros
     meta.update({k: v for k, v in propio.items() if v})
     if a.tipo != 'contenido' and 'subtitulo' not in propio: meta['subtitulo'] = ''
     blocks = parse_blocks(src.splitlines())
@@ -261,14 +275,14 @@ def main():
     doc_html = (f'<html><body><h1>{inline(meta.get("titulo", ""))}</h1><p class="subtitle">{inline(meta.get("subtitulo", ""))}</p>'
                 f'<article>{to_html(blocks)}</article></body></html>')
     tree = html.fromstring(doc_html).getroottree()
-    doc = Document(); nativo.styles(doc, nativo.PALETTE[a.modulo - 1])
-    b = BuilderMD(doc, folder, cajas); b.module(tree, a.modulo, etiqueta, indice)
+    doc = Document(); nativo.styles(doc, nativo.PALETTE[color])
+    b = BuilderMD(doc, folder, cajas); b.module(tree, rotulo, etiqueta, indice, color)
     # El exportador base rotula con el nombre de Gestión; se reemplaza por el de la materia.
     base_nombre = 'Gestión de Proyectos Ágiles'; materia = meta.get('materia', base_nombre)
     if materia != base_nombre:
         for par in list(doc.paragraphs) + list(doc.sections[0].footer.paragraphs):
             for r in par.runs: r.text = r.text.replace(base_nombre, materia)
-    doc.core_properties.title = f'{materia} Módulo {a.modulo} {etiqueta}'
+    doc.core_properties.title = f'{materia} {rotulo} {etiqueta}'
     doc.core_properties.subject = f'{etiqueta} de {materia}'
     # Filas de tablas comparativas sin cortes entre páginas (los recuadros sí pueden partirse).
     for t in doc.tables:
@@ -276,6 +290,6 @@ def main():
             for row in t.rows: row._tr.get_or_add_trPr().append(OxmlElement('w:cantSplit'))
     nativo.finalize(doc)
     out = a.salida or folder / final; doc.save(out)
-    print(json.dumps({'modulo': a.modulo, 'tipo': a.tipo, 'archivo': str(out), **b.stats}, ensure_ascii=False))
+    print(json.dumps({'rotulo': rotulo, 'tipo': a.tipo, 'archivo': str(out), **b.stats}, ensure_ascii=False))
 
 if __name__ == '__main__': main()

@@ -12,7 +12,7 @@ La carrera confirmada por Pablo es **Ingeniería en IA**. Consultar los [criteri
 
 `entregables/` contiene cinco módulos. Cada uno tiene exactamente las cuatro clases requeridas: Glosario, hasta 4 Microobjetivos iniciados por un verbo en infinitivo, Contenido y Actividades. Las Actividades pueden incluir preguntas, autoevaluaciones, casos, videos o prácticas con herramientas externas.
 
-También existen `entregables/EVALUACIONES/` y `entregables/PRESENTACIONES/`, actualmente sin archivos. Deben contener dos parciales —40 puntos para los primeros contenidos y 60 para la segunda parte— y presentaciones de materia, una por módulo y cierre, todas con la misma plantilla y hasta siete diapositivas. Esto describe el inventario; no implica que la materia esté terminada o validada.
+`entregables/EVALUACIONES/` contiene los dos parciales (ver la sección de evaluaciones al final). `entregables/PRESENTACIONES/` todavía no tiene archivos. Deben contener dos parciales —40 puntos para los primeros contenidos y 60 para la segunda parte— y presentaciones de materia, una por módulo y cierre, todas con la misma plantilla y hasta siete diapositivas. Esto describe el inventario; no implica que la materia esté terminada o validada.
 
 El paquete incluye además un mapa conceptual general. Pablo lo genera por separado; debe incorporarse a `entregables/MAPA CONCEPTUAL/` cuando esté disponible y no debe producirse automáticamente.
 
@@ -92,3 +92,11 @@ Alineados con el Contenido reescrito. Los tres entregables tienen fuente Markdow
 - **Microobjetivos:** 4 por módulo, cortos, con verbo en infinitivo. Pablo fijó el máximo en 4 (antes la regla decía de 4 a 6); se actualizaron las reglas generales.
 - **Glosarios:** rehechos a partir del Contenido nuevo (40, 48, 32, 32 y 25 términos), con la misma terminología y en orden de aparición. Se agregaron los términos nuevos (alcance, riesgo, WBS, agentes de IA, seguridad psicológica, métricas DORA, entre otros) y se quitaron los que ya no aparecen.
 - **Actividades:** 22 prácticas autónomas (5, 5, 4, 5 y 4) con situación, consignas numeradas y una guía de autoevaluación. Las respuestas orientativas no van en las actividades: están en `Actividades/respuestas-docente.md` y `Respuestas-docente.docx`, material del docente que no se entrega; los estudiantes pueden pedírselas al profesor. Retoman el asistente universitario, sin TurnoYa, y cada módulo incluye al menos una actividad sobre un caso real (Virtual Case File, Microsoft y Kanban, Zappos y HealthCare.gov, Klarna, Sentinel, ING, Spotify y Knight Capital). Las fuentes HTML anteriores se retiraron del repositorio y quedan respaldadas en `.qa/actividades-glosario-micro-2026-09-25/antes/`. `scripts/render-actividades-word.py` queda como exportador histórico.
+
+## Evaluaciones (25 de septiembre de 2026)
+
+Decisiones confirmadas por Pablo: Parcial 1 sobre los módulos 1 y 2 (40 puntos) y Parcial 2 sobre los módulos 3 a 5 (60 puntos); formato mixto (preguntas conceptuales y resolución de un caso); modalidad individual; IA permitida como apoyo con declaración de uso, sin defensa oral. Pendiente: formato y medio de entrega, marcado "a confirmar por la cátedra" en la portada.
+
+- **Parcial 1:** Parte A, 4 preguntas de 3 puntos; Parte B, 3 actividades (10, 8 y 10 puntos) sobre el caso de la app del comedor universitario: alcance, riesgos, enfoque, valor y organización del trabajo.
+- **Parcial 2:** Parte A, 6 preguntas de 3 puntos; Parte B, 4 actividades (12, 14, 10 y 6 puntos) sobre el mismo caso en su segunda etapa: visión, historias, WSJF, MVP, capacidad, pronóstico, métricas de flujo, agentes de IA, equipo, retrospectiva, deuda técnica y análisis de un caso real.
+- Cada parcial tiene `evaluacion.md` y `Evaluacion.docx` para estudiantes, y `guia-docente.md` y `Guia-docente.docx` con trazabilidad a los microobjetivos, respuestas esperadas y criterios de puntaje. Las sumas se verificaron con un script (40 y 60 exactos) y los cálculos de la guía están resueltos.

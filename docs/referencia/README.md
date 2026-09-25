@@ -4,6 +4,8 @@ Esta carpeta conserva una copia de las reglas generales vigentes al 25 de septie
 
 ## Orden de consulta
 
+0. `_REGLAS-GENERALES/COMO-HACER-UNA-MATERIA.md`: guía paso a paso para producir una materia con este método.
+
 1. `AGENTS-workspace.md`: propósito, límites y decisiones confirmadas.
 2. `_REGLAS-GENERALES/PAQUETE-OBLIGATORIO.md`: lista cerrada de materiales que Pablo debe entregar.
 3. `_REGLAS-GENERALES/ESTRUCTURA-MATERIA.md`: carpetas y estructura común de entregables.

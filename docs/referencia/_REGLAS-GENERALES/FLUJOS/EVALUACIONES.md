@@ -28,6 +28,10 @@ No trasladar automáticamente las reglas históricas de PAI3. Si un dato falta, 
 5. Incluir una rúbrica coherente con las consignas. Los ejes generales pueden ser concepto, aplicación, evidencia y comunicación, adaptados al dominio.
 6. Preparar criterios o solución esperada para corrección docente en un archivo separado cuando corresponda.
 
+## Archivos y exportación
+
+Cada parcial vive en `entregables/EVALUACIONES/PARCIAL N/` con dos fuentes Markdown: `evaluacion.md` (para estudiantes) y `guia-docente.md` (trazabilidad, respuestas esperadas y criterios de puntaje, solo para el docente). Se exportan con `scripts/md-a-word.py --parcial N --tipo evaluacion|guia` a `Evaluacion.docx` y `Guia-docente.docx`. Usar la misma sintaxis y recuadros que el Contenido. Verificar con un script que las partes sumen el puntaje de cada actividad y que el total sea exactamente 40 o 60.
+
 ## Control
 
 Resolver la evaluación completa antes de entregarla, comprobar tiempos razonables, ambigüedades, dependencias externas y accesibilidad de los recursos. Generar el Word final y revisar todas sus páginas. Mantener claramente separados el documento para estudiantes y la guía docente.
