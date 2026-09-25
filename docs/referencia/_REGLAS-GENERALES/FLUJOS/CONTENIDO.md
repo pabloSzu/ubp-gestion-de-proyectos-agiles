@@ -1,81 +1,107 @@
 # Flujo de trabajo — Contenido de un módulo UBP
 
-Este documento es la fuente de verdad para escribir o enriquecer el archivo de Contenido de cualquier materia. Se aplica junto con `../ESTRUCTURA-MATERIA.md` y `../ESTILO-EDITORIAL.md`; ante una contradicción, prevalecen esos dos documentos generales y la instrucción puntual del usuario.
+Este documento es la fuente de verdad para escribir o mejorar el Contenido de cualquier materia. Se aplica junto con `../ESTRUCTURA-MATERIA.md` y `../ESTILO-EDITORIAL.md`; ante una contradicción, prevalecen esos dos documentos generales y la instrucción puntual del usuario.
+
+Modelo vigente desde el 25 de septiembre de 2026, acordado con Pablo al reescribir el Módulo 1 de Gestión de Proyectos Ágiles. Ese módulo es el ejemplo de referencia: `GESTION-PROYECTOS-AGILES/entregables/MODULO 1/Contenido/contenido.md`.
+
+## Piezas del sistema
+
+| Pieza | Ubicación | Función |
+|---|---|---|
+| Guía central de la materia | `<MATERIA>/GUIA-CONTENIDO.md` | Qué tema va en cada módulo y con qué profundidad, caso conductor, casos reales ya usados y decisiones propias de la materia. Se crea a partir de `../PLANTILLA-GUIA-CONTENIDO.md`. |
+| Fuente del módulo | `<MATERIA>/entregables/MODULO <N>/Contenido/contenido.md` | Texto completo en Markdown con recuadros. Es lo único que se edita. |
+| Generador de Word | `<MATERIA>/scripts/md-a-word.py` (con `render-contenido-word-nativo.py`) | Produce `Contenido.docx` con portada, índice, estilos, tablas, figuras y recuadros de color. Copiarlos desde Gestión al iniciar una materia. |
+| Entregable | `Contenido.docx` en la misma carpeta | Lo único que se entrega. |
+
+Los módulos de materias anteriores que todavía tengan `contenido.html` conservan esa fuente hasta que se reescriban; no convertirlos sin pedido.
 
 ## Entrada y alcance
 
-La tarea debe identificar la carpeta de la materia y el número de módulo. El archivo objetivo habitual es `<MATERIA>/entregables/MODULO <N>/Contenido/contenido.html`.
-
-Si falta un dato que impide identificar un único archivo, solicitarlo. Editar solamente el HTML de Contenido y, cuando corresponda, `IMAGENES-PROPUESTAS.md` junto a él. No modificar Microobjetivos, Glosario, Actividades, Evaluaciones, Presentaciones, exportaciones ni otros módulos salvo pedido explícito. Cuando el pedido abarque la materia completa, también pueden actualizarse el programa, la documentación y los exportadores necesarios para conservar coherencia.
+La tarea debe identificar la materia y el número de módulo. Si falta un dato que impide identificar un único archivo, solicitarlo. Editar solamente `contenido.md`, `IMAGENES-PROPUESTAS.md` y, si cambia el reparto de temas o se usan casos nuevos, la `GUIA-CONTENIDO.md` de la materia. No modificar Microobjetivos, Glosario, Actividades, Evaluaciones, Presentaciones ni otros módulos salvo pedido explícito.
 
 ## Preparación obligatoria
 
-Antes de escribir:
+1. Leer completos `ESTRUCTURA-MATERIA.md`, `ESTILO-EDITORIAL.md` y este flujo.
+2. Leer la `GUIA-CONTENIDO.md` de la materia. Si no existe, crearla desde la plantilla antes de escribir el primer módulo, con el mapa de temas derivado del programa o de los contenidos mínimos.
+3. Leer completo el contenido actual del módulo, si existe, y los títulos de los módulos vecinos.
+4. Comprobar en el mapa de temas qué corresponde a este módulo, con qué profundidad, y qué se desarrolla en otro módulo (esto último se menciona en una línea y se sigue).
+5. Revisar la lista de casos reales ya usados para no repetirlos.
 
-1. Leer completos `ESTRUCTURA-MATERIA.md` y `ESTILO-EDITORIAL.md`.
-2. Leer completo el contenido del módulo si existe, junto con el temario o documentación propia de la materia que resulte necesaria.
-3. Revisar módulos vecinos para conservar convenciones de títulos, formato y profundidad.
-4. Usar Gestión como referencia de estructura y diseño vigente. Para ejemplos pedagógicos o técnicos compatibles, estudiar como referencia real los HTML de `SISTEMAS-INTERACTIVOS/entregables/MODULO 1/Contenido/` y los scripts `SISTEMAS-INTERACTIVOS/scripts/enrich-contenido-modulo*.mjs` pertinentes. Tomar el nivel pedagógico, no el CSS ni `Materia_Web`.
-5. Preservar cambios previos del usuario y registrar la estructura original para comprobar luego que no se haya perdido contenido.
+## Cómo escribir la fuente
 
-## Dos modalidades
+### Encabezado
 
-### Enriquecimiento de contenido existente
+```text
+---
+materia: Nombre oficial de la materia
+modulo: 1
+titulo: Título del módulo
+subtitulo: Una línea que resume el módulo.
+---
+```
 
-Conservar la narrativa válida y su sentido. No resumir ni reescribir desde cero. Integrar los recursos en puntos donde completen una relación, un razonamiento aplicado o un criterio que la prosa todavía no aporta.
+### Estructura
 
-Cuando el usuario solicite el patrón de enriquecimiento completo, incorporar:
+- Apertura sin título: una situación reconocible, qué se va a aprender y, en un recuadro `clave`, la presentación del caso conductor de la materia.
+- Un recuadro `clave` con lo que el estudiante va a poder hacer al terminar.
+- Secciones `## N. Título` y subsecciones `### N.M Título`. Cada sección arranca con un gancho antes de la definición.
+- Los conceptos fundamentales de la materia tienen sección propia: definición, cómo reconocerlo, ejemplo, preguntas para aplicarlo y errores típicos.
+- Cierre con `## Recursos audiovisuales sugeridos`, `## Para profundizar` y `## Síntesis del módulo` como último título, con un párrafo de próximo paso.
 
-- Entre 2 y 3 diagramas SVG inline para procesos, relaciones, ciclos, capas o comparaciones. Usar `<figure><svg viewBox="..." role="img" aria-label="...">...</svg><figcaption>...</figcaption></figure>`, sin CSS ni JavaScript inline. El pie debe explicar qué muestra y por qué importa.
-- Un caso resuelto paso a paso, retomando una situación ya presentada. Mostrar datos o supuestos, criterio, decisiones intermedias, resultado y lectura profesional. Verificar cálculos y unidades.
-- Entre 1 y 2 cajas con estructura `<div class="mito"><strong>Mito:</strong> ... <strong>Realidad:</strong> ...</div>`. La realidad debe explicar el mecanismo correcto.
-- Un recuadro por sección grande con estructura `<div class="criterio-profesional"><strong>Criterio profesional:</strong> ...</div>`. Debe orientar una decisión, no resumir la sección.
-- Una sección `Recursos audiovisuales sugeridos` inmediatamente antes de `Síntesis del módulo`, con 1 o 2 videos. Buscar cada video en la web, abrir el resultado y verificar URL, disponibilidad y título exacto durante la ejecución actual. Incluir una justificación específica.
-- Entre 2 y 4 propuestas en `IMAGENES-PROPUESTAS.md`: qué debe mostrar cada imagen, ubicación exacta y función didáctica. No generar imágenes sin aprobación.
+### Sintaxis
 
-### Escritura desde cero
+- Tablas Markdown con una línea `Tabla: título` inmediatamente debajo.
+- Imágenes: `![texto alternativo](assets/archivo.png "pie de figura")`.
+- Listas con `- ` o numeradas (la numeración escrita se respeta tal cual).
+- Listas anidadas con 4 espacios de sangría por nivel.
+- Citas o frases destacadas con `> ` al inicio de la línea (se muestran con sangría, cursiva y fondo suave).
+- Negrita para conceptos clave: el generador las colorea automáticamente.
 
-Si el archivo no existe o el usuario pide crearlo nuevamente, desarrollar el temario completo siguiendo el arco narrativo de `ESTRUCTURA-MATERIA.md`: apertura, objetivos o propósito, teoría en orden lógico, aplicación guiada, comparaciones pertinentes y síntesis final. Definir con el usuario cualquier insumo oficial ausente que pueda alterar sustancialmente el temario.
+### Recuadros
 
-Usar HTML semántico limpio con un solo `h1`, jerarquía coherente, tablas cuando comparen dimensiones reales y `Síntesis del módulo` como último `h2`. Puede conservarse un bloque `<style>` interno común para la edición y exportación; no agregar JavaScript ni dispersar estilos en cada elemento. La extensión orientativa no es una cuota que deba rellenarse.
+```text
+:::tipo Título del recuadro
+Párrafos o listas.
+:::
+```
 
-## Investigación y estilo
+| Tipo | Uso | Cantidad orientativa por módulo |
+|---|---|---|
+| `ejemplo` | Situación cotidiana que aclara un concepto mejor que cualquier otra cosa. Se escribe "Imaginate…", "Pensá en…" o se plantea directo. Nunca se rotula "Analogía". | 4 a 6 |
+| `real` | Caso real documentado: qué pasó, datos concretos, qué enseña, y al final `Fuente: [nombre](url)`. | 5 a 8 |
+| `clave` | Definición o idea que hay que recordar. | Una por concepto central |
+| `ensimple` | Resumen de dos o tres líneas, en criollo. | 3 a 5 |
+| `preguntas` | Preguntas prácticas para aplicar el concepto. Reemplaza al antiguo "Criterio profesional". | 3 a 6 |
+| `mito` | Párrafo `**Mito:** …`, línea en blanco, `**Realidad:** …`. | 1 a 3 |
+| `caso` | Caso resuelto paso a paso (puede ser didáctico, identificado como tal). | 1 a 2 |
+| `historia` | Dato histórico o anécdota de origen. | 0 a 2 |
+| `contexto` | Rótulo breve al abrir el bloque de un marco o enfoque ("Contexto: Scrum"), con una línea sobre qué reglas rigen. | Uno por bloque, solo si conviven varios marcos |
 
-Usar búsqueda web para datos actuales, estadísticas, funcionalidades de herramientas, casos reales y videos. No inventar URLs ni presentar como hecho una afirmación que no pudo verificarse. Preferir fuentes primarias o institucionales.
+No usar recuadros de "Criterio profesional". Un recuadro que no agrega comprensión se elimina.
 
-Escribir en español rioplatense con voseo natural, rigor académico y tono ameno. Evitar coloquialismos e infantilización. Cada recurso agregado debe ganarse su lugar por comprensión, transferencia o criterio profesional.
+## Investigación
 
-## Verificación y entrega
+Usar búsqueda web para todo dato, cifra, fecha, caso real, funcionalidad de herramienta y video. Preferir fuentes primarias o institucionales. No inventar URLs. Los casos reales llevan su fuente al final del recuadro; los escenarios inventados se identifican como didácticos. No escribir fechas de consulta en el cuerpo del texto.
 
-Antes de terminar, comprobar:
+Cuando un módulo necesite una imagen nueva, describirla en `IMAGENES-PROPUESTAS.md` (qué muestra, dónde va, para qué sirve) y no generarla sin aprobación.
 
-- alcance de archivos respetado;
-- contenido original preservado cuando se trató de un enriquecimiento;
-- un solo `h1` y `Síntesis del módulo` como cierre;
-- cantidades, estructura semántica y accesibilidad de los elementos pedidos;
-- ausencia de atributos `style` dispersos y de JavaScript nuevo; el bloque `<style>` editorial común sí puede conservarse;
-- videos abiertos y verificados en la ejecución actual;
-- ninguna imagen generada sin aprobación.
+## Generar y revisar el Word
 
-Si el módulo presenta varios enfoques, comprobar además:
+1. Ejecutar `python scripts/md-a-word.py --modulo N` desde la carpeta de la materia. Si el Word está abierto, cerrar el archivo o usar `--salida` con otra ruta temporal.
+2. Convertir el Word a PDF con LibreOffice (`C:/Program Files/LibreOffice/program/soffice.exe --headless --convert-to pdf`) en una carpeta auxiliar y revisar todas las páginas como imagen.
+3. Controlar: recuadros sin títulos huérfanos al pie de página, filas de tabla sin cortes, imágenes completas, enlaces activos, índice correcto y ausencia de huecos grandes.
+4. El PDF es solo control temporal: no se guarda en `entregables/` ni se entrega.
 
-- cada bloque identifica por texto el contexto vigente;
-- el vocabulario aparece después de su definición;
-- existe una transición antes de cambiar de framework, nivel o sistema de trabajo;
-- las prácticas opcionales se distinguen de las reglas obligatorias;
-- la comparación y la combinación aparecen después de enseñar las alternativas por separado.
+## Verificación final
 
-El Contenido final siempre se entrega en Word para Gestión y futuras materias. Si la tarea es solo diagnóstico o edición de fuente, indicar que la exportación final sigue pendiente. Para toda entrega de Contenido terminado, aplicar estas comprobaciones:
+- alcance de archivos respetado y temas coherentes con el mapa de la guía;
+- conceptos centrales desarrollados, no solo nombrados;
+- cantidades de recuadros dentro de lo orientativo, sin rótulos "Analogía" ni "Criterio profesional";
+- casos reales verificados, con fuente, y registrados en la guía;
+- ningún guion usado como puntuación en la prosa;
+- `Síntesis del módulo` como último título;
+- Word generado y revisado página por página.
 
-- usar el HTML como fuente editorial, no como entregable sustituto;
-- convertir SVG y recursos complejos a imágenes de buena resolución, manteniendo el texto y las tablas editables;
-- conservar portada, jerarquía cromática, imágenes, pies de figura, cajas y enlaces activos;
-- renderizar el `.docx` resultante y revisar visualmente todas sus páginas o tramos antes de entregarlo;
-- tratar el PDF exclusivamente como control temporal cuando el renderizador lo necesite, sin entregarlo ni mantener una edición paralela.
+Si el módulo presenta varios enfoques, comprobar además que cada bloque identifica su contexto, que el vocabulario aparece después de su definición, que hay transiciones al cambiar de enfoque y que las comparaciones aparecen después de enseñar cada alternativa por separado.
 
-Informar qué se agregó o escribió por número de sección, los videos con enlace, las propuestas de imágenes y las verificaciones realizadas. No declarar completa una tarea que exigía videos si no se verificaron mediante búsqueda real.
-
-## Revisión narrativa antes de profundizar
-
-Cuando el pedido abarque la calidad del Contenido de una materia completa, revisar primero el recorrido entre módulos y los títulos/subtítulos de cada uno. Registrar diagnóstico, orden propuesto, cobertura pendiente de cotejo con el programa y problemas de diseño. Luego leer íntegramente y mejorar módulo por módulo. Reordenar cuando el pedido lo autorice, conservando el desarrollo válido y actualizando numeración, índice, referencias y transiciones. Una revisión de estructura no acredita una revisión editorial completa ni autoriza declarar perfectos los Word.
-
+Informar qué cambió por sección, los casos reales incorporados, los videos, las propuestas de imágenes y las verificaciones realizadas.

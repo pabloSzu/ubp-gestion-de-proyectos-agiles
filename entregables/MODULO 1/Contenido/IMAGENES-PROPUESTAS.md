@@ -22,3 +22,8 @@ Las tres propuestas fueron aprobadas por el pedido de generación del 14 de sept
 - **Ubicación sugerida:** sección 8, “Origen de la agilidad”, antes de la sección dedicada al Manifiesto Ágil.
 - **Función didáctica:** representa el Manifiesto como una síntesis de experiencias previas y no como el nacimiento repentino de todas las prácticas ágiles.
 - **Archivo:** `assets/snowbird-origen-agilidad.png`.
+
+## Propuestas de la reescritura del 25 de septiembre de 2026 (pendientes de aprobación)
+
+- **De la patineta al auto** (sección 7.4 y 12.2). Dos filas: arriba, rueda → chasis → carrocería → auto, con una cara triste hasta el final; abajo, patineta → monopatín → bicicleta → moto → auto, con caras cada vez más contentas. Función: mostrar de un vistazo la diferencia entre entregar partes inútiles y entregar versiones utilizables. Inspirada en Henrik Kniberg; debe ser una ilustración propia, no una copia de la original.
+- **La Mona Lisa por partes o por capas** (secciones 7.2 y 7.3). Izquierda: el cuadro completado de a franjas terminadas (incremental). Derecha: boceto completo que gana definición en cada versión (iterativo). Función: fijar la diferencia entre iterar e incrementar. Inspirada en Jeff Patton; ilustración propia.

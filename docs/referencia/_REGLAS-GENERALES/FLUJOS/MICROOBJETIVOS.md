@@ -11,7 +11,7 @@ Editar solamente ese archivo salvo pedido explícito. No modificar Contenido, Gl
 ## Procedimiento
 
 1. Leer completos `ESTRUCTURA-MATERIA.md` y `ESTILO-EDITORIAL.md`.
-2. Leer completo `Contenido/contenido.html` del mismo módulo. Si no existe, detener la escritura y explicar que faltan los contenidos que deben fundamentar los objetivos.
+2. Leer completo `Contenido/contenido.md` del mismo módulo (o `contenido.html` en módulos que todavía no se reescribieron). Si no existe, detener la escritura y explicar que faltan los contenidos que deben fundamentar los objetivos.
 3. Leer los microobjetivos existentes y los de módulos vecinos para mantener formato y evitar solapamientos.
 4. Identificar los aprendizajes centrales y las capacidades observables que el módulo realmente desarrolla.
 5. Redactar entre **4 y 6 microobjetivos**, cada uno comenzado por un **verbo en infinitivo**. Usar la estructura **verbo + contenido** y agregar finalidad cuando aporte precisión.

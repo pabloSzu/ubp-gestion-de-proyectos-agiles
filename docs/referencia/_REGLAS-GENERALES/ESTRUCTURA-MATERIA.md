@@ -8,7 +8,7 @@ Modelo común de organización y entregables para Gestión de Proyectos y todas 
 Programa.docx                 → programa general de la materia
 entregables/
 ├── MODULO 1.. N/
-│   ├── Contenido/       → contenido.html (fuente interna) + Contenido.docx (entregable final obligatorio)
+│   ├── Contenido/       → contenido.md (fuente) + Contenido.docx (entregable final obligatorio)
 │   ├── Microobjetivos/  → microobjetivos.md (fuente) + Microobjetivos.docx
 │   ├── Glosario/        → glosario.md (fuente) + Glosario.docx
 │   └── Actividades/     → actividades.html (fuente) + Actividades.docx o .pdf
@@ -19,7 +19,7 @@ entregables/
 └── MAPA CONCEPTUAL/     → mapa general producido por Pablo de manera separada
 ```
 
-En la raíz también se conservan la documentación particular, los scripts reproducibles y los auxiliares internos necesarios. El programa describe la materia completa y no se guarda dentro de un módulo.
+En la raíz también se conservan la documentación particular, los scripts reproducibles y los auxiliares internos necesarios. Cada materia tiene en su raíz una `GUIA-CONTENIDO.md`, archivo central creado desde `PLANTILLA-GUIA-CONTENIDO.md`, con el mapa de temas por módulo, el caso conductor y los casos reales usados. El programa describe la materia completa y no se guarda dentro de un módulo.
 
 Cada materia define además cuántos módulos tiene (PAI3: 7, Gestión de Proyectos Ágiles: 5) según sus contenidos mínimos oficiales — no hay un número fijo, se deriva del temario de la universidad.
 
@@ -27,7 +27,7 @@ Cada materia define además cuántos módulos tiene (PAI3: 7, Gestión de Proyec
 
 Cada módulo no es una lista de temas: es una unidad con arco propio. El arco narrativo común de un módulo es el siguiente. Glosario y Actividades se mantienen como entregables separados:
 
-1. **Apertura/gancho** — una cita (`<blockquote>`) o situación real que engancha antes de entrar en teoría.
+1. **Apertura/gancho** — una situación reconocible que engancha antes de entrar en teoría, y la presentación del caso conductor de la materia.
 2. **Objetivos** — los microobjetivos del módulo, presentados al principio para que el estudiante sepa a dónde va.
 3. **Conceptos clave / teoría** — el desarrollo de cada tema del temario, en orden lógico (de lo general a lo específico).
 4. **Sección interactiva o aplicada** — en PAI3 esto era un simulador/juego en la versión web; en un formato Word/PDF equivale a un caso resuelto paso a paso, un ejemplo numérico trabajado, o un ejercicio guiado dentro del propio contenido (no solo en Actividades).
@@ -52,8 +52,8 @@ Criterio de selección: cada entrada del glosario debe ser un **término técnic
 
 ## Contenido (el "libro" de cada módulo)
 
-- HTML semántico como fuente: un único `<h1>` por módulo, `<h2>`/`<h3>` por sección, `<p>`, `<table>`, `<ul>/<ol>`, `<blockquote>` para citas/ganchos. Puede incluir un único bloque `<style>` interno para la vista editorial y la exportación; evitar estilos repetidos en atributos y no incorporar JavaScript al contenido académico.
-- Extensión orientativa por módulo: ~9.000-11.000 palabras (~35-40 páginas exportadas). Se puede ajustar según cuántos módulos tenga la materia, para acercarse a un total razonable (PAI3 y GPA apuntaron ambos a ~200 páginas totales).
+- Markdown como fuente (`contenido.md`), con encabezado de metadatos, secciones `##`/`###`, tablas, imágenes y recuadros `:::tipo`. La sintaxis completa y los tipos de recuadro están en `FLUJOS/CONTENIDO.md`.
+- Extensión orientativa por módulo: ~8.000-10.000 palabras (~28-35 páginas exportadas). Se puede ajustar según cuántos módulos tenga la materia, para acercarse a un total razonable (PAI3 y GPA apuntaron ambos a ~200 páginas totales).
 - Cierra siempre con una sección "Síntesis del módulo".
 - Si conviven frameworks, metodologías o prácticas, cada uno forma un bloque cerrado y rotulado. No introducir vocabulario de otro enfoque antes de explicarlo. Las comparaciones y combinaciones aparecen después de los bloques independientes.
 
@@ -84,14 +84,12 @@ La materia tiene exactamente dos evaluaciones parciales. La primera vale **40 pu
 
 ## Contenido final en Word y fuentes internas
 
-- El contenido se redacta primero en HTML, que funciona como fuente de verdad editorial y guía visual. El entregable final de Contenido **siempre es Word (.docx)** para Gestión de Proyectos Ágiles y las materias futuras, por decisión explícita de Pablo. HTML es fuente interna, no otro entregable.
-- Para el **Word obligatorio de Contenido**, no alcanza con una conversión básica de texto. El exportador debe reproducir con la mayor fidelidad estable posible la jerarquía visual del HTML: portada, títulos, paleta, tablas, recuadros, imágenes, pies de figura, enlaces y saltos de página.
-- Los elementos que Word no interpreta de manera confiable —en especial SVG inline, gradientes o composiciones complejas— se rasterizan a PNG de buena resolución durante la exportación. El cuerpo narrativo, los títulos, las listas, los enlaces y las tablas deben permanecer nativos y editables en el `.docx`.
-- La conversión puede partir de `html-to-docx`, pero debe incluir el preprocesamiento y los ajustes OOXML necesarios para conservar el sistema visual. Ver `scripts/render-contenido-word.js` de Gestión de Proyectos Ágiles como patrón actualizado.
-- Todo Word final debe renderizarse y revisarse visualmente después de generarlo. No se considera terminado con una validación de estructura o con la sola apertura del archivo.
-- PDF no es un entregable de Contenido. Puede producirse temporalmente si el renderizador lo necesita para revisar el Word; se guarda en carpetas auxiliares y no se entrega. No mantener una edición académica paralela en PDF.
-- Referencia técnica histórica de conversión a **PDF**, para otro alcance solicitado explícitamente: Playwright headless (`scripts/render-ebook-support-pdfs.js`, patrón usado en PAI3).
-- El "libro completo" de la materia (todos los módulos de Contenido unidos) se arma con un script tipo `build-book.js` que concatena los HTML de cada módulo y genera un único .docx; no reemplaza los Word por módulo.
+- El contenido se redacta en `contenido.md`, que es la fuente de verdad editorial. El entregable final de Contenido **siempre es Word (.docx)** para Gestión de Proyectos Ágiles y las materias futuras, por decisión explícita de Pablo. El Markdown es fuente interna, no otro entregable.
+- El Word se genera con `scripts/md-a-word.py` (apoyado en `render-contenido-word-nativo.py`), ambos en Gestión de Proyectos Ágiles; para una materia nueva se copian a su carpeta `scripts/`. Produce portada, índice navegable, estilos nativos, paleta de color, tablas con encabezados repetidos, figuras con pie, enlaces y recuadros de color, todo editable.
+- Las imágenes se guardan como PNG en `Contenido/assets/`. Las imágenes nuevas se proponen en `IMAGENES-PROPUESTAS.md` y se generan solo con aprobación.
+- Todo Word final debe renderizarse y revisarse visualmente página por página (Word → PDF con LibreOffice → imágenes). No se considera terminado con una validación de estructura o con la sola apertura del archivo.
+- PDF no es un entregable de Contenido. Se produce solo como control temporal en carpetas auxiliares. No mantener una edición académica paralela en PDF.
+- Materias o módulos anteriores con fuente HTML (`contenido.html`) conservan su exportador histórico hasta que se reescriban.
 
 ## Presentaciones (.pptx)
 
@@ -103,7 +101,7 @@ Se clonan desde una `PLANTILLA.pptx` reemplazando solo texto (no se generan desd
 2. **Apertura (slide "MÓDULO N")** — hook corto de dos líneas que anticipa qué se va a comprender/entender en el módulo.
 3-6. **Cuatro slides de contenido**, cada una con:
    - `heading`: un concepto o subtema central del módulo (frase corta, no una oración larga).
-   - `body`: 2 líneas — una explicativa y, en al menos una slide, una analogía o cita breve entre comillas que aterrice el concepto (ej. "El mutex es la llave del único baño del bar...").
+   - `body`: 2 líneas — una explicativa y, en al menos una slide, un ejemplo, un caso real o una cita breve entre comillas que aterrice el concepto (ej. "El mutex es la llave del único baño del bar...").
    - `hook`: frase de transición corta que conecta con la próxima slide ("Comprenderemos...", "Nos servirá para entender...", "Analizaremos...", "Las actividades nos van a ayudar a...").
    - La última de las cuatro (slide 6) suele orientarse a la práctica/actividades del módulo ("Manos a la obra").
 7. **Cierre** — cierre o agradecimiento cuando la presentación utilice siete diapositivas.
@@ -116,7 +114,7 @@ El paquete obligatorio se limita al Programa, los cuatro entregables por módulo
 
 ## Plataforma web de PAI3 (caso particular)
 
-El trabajo exigido por la universidad son los entregables académicos finales en el formato solicitado. Las fuentes HTML/Markdown, los recursos auxiliares y las herramientas de producción no se envían automáticamente por estar dentro de `entregables/`.
+El trabajo exigido por la universidad son los entregables académicos finales en el formato solicitado. Las fuentes Markdown o HTML, los recursos auxiliares y las herramientas de producción no se envían automáticamente por estar dentro de `entregables/`.
 
 PAI3 tiene una plataforma web complementaria en `SISTEMAS-INTERACTIVOS/Materia_Web/`, creada por iniciativa propia. Sus simuladores, juegos, quizzes y convenciones técnicas pertenecen a esa experiencia particular. Gestión y las materias futuras se trabajan mediante entregables; no crear plataformas ni replicar `Materia_Web/` salvo pedido explícito.
 

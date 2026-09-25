@@ -11,7 +11,7 @@ Editar solamente ese archivo salvo pedido explícito. No modificar Contenido, Mi
 ## Procedimiento
 
 1. Leer completos `ESTRUCTURA-MATERIA.md` y `ESTILO-EDITORIAL.md`.
-2. Leer completo `Contenido/contenido.html` del mismo módulo. Si no existe, detener la escritura y explicar que el glosario debe derivarse del contenido enseñado.
+2. Leer completo `Contenido/contenido.md` del mismo módulo (o `contenido.html` en módulos que todavía no se reescribieron). Si no existe, detener la escritura y explicar que el glosario debe derivarse del contenido enseñado.
 3. Leer el glosario actual y glosarios de módulos vecinos para conservar convenciones y detectar términos ya definidos.
 4. Construir un inventario de nombres de marcos, roles, prácticas, artefactos, métricas, herramientas, técnicas y siglas disciplinares que aparecen o se enseñan en el módulo.
 5. Seleccionar solamente términos técnicos cuya definición separada ayude a comprender el módulo. No imponer una cantidad fija.

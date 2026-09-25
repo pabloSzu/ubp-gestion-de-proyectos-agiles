@@ -20,7 +20,7 @@ Todas usan la misma plantilla y cada archivo tiene un máximo de **7 diapositiva
 
 Para cada módulo, usar como referencia el patrón de portada, apertura, desarrollo y cierre. Ajustar la cantidad a la necesidad real sin superar siete diapositivas. La presentación general y la de cierre respetan el mismo máximo.
 
-Cada diapositiva debe comunicar una idea central, con texto breve, jerarquía visible y apoyo visual pertinente. Conservar analogías útiles, evitar párrafos del Word copiados completos y no reducir un concepto hasta volverlo incorrecto.
+Cada diapositiva debe comunicar una idea central, con texto breve, jerarquía visible y apoyo visual pertinente. Conservar los ejemplos y casos reales más claros del contenido, evitar párrafos del Word copiados completos y no reducir un concepto hasta volverlo incorrecto.
 
 ## Control
 

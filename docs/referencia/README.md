@@ -1,6 +1,6 @@
 # Referencia de trabajo del workspace
 
-Esta carpeta conserva una copia de las reglas generales vigentes al 16 de septiembre de 2026 para que el repositorio de Gestión de Proyectos Ágiles pueda comprenderse fuera del workspace completo.
+Esta carpeta conserva una copia de las reglas generales vigentes al 25 de septiembre de 2026 para que el repositorio de Gestión de Proyectos Ágiles pueda comprenderse fuera del workspace completo.
 
 ## Orden de consulta
 
