@@ -14,7 +14,7 @@ Editar solamente ese archivo salvo pedido explícito. No modificar Contenido, Gl
 2. Leer completo `Contenido/contenido.md` del mismo módulo (o `contenido.html` en módulos que todavía no se reescribieron). Si no existe, detener la escritura y explicar que faltan los contenidos que deben fundamentar los objetivos.
 3. Leer los microobjetivos existentes y los de módulos vecinos para mantener formato y evitar solapamientos.
 4. Identificar los aprendizajes centrales y las capacidades observables que el módulo realmente desarrolla.
-5. Redactar entre **4 y 6 microobjetivos**, cada uno comenzado por un **verbo en infinitivo**. Usar la estructura **verbo + contenido** y agregar finalidad cuando aporte precisión.
+5. Redactar **hasta 4 microobjetivos** (habitualmente 3 o 4), cada uno comenzado por un **verbo en infinitivo**. Usar la estructura **verbo + contenido** y agregar finalidad cuando aporte precisión.
 
 ## Criterios editoriales
 
@@ -24,7 +24,9 @@ Editar solamente ese archivo salvo pedido explícito. No modificar Contenido, Gl
 - Evitar objetivos vagos como “conocer el tema”, acumulaciones de muchos verbos y resultados que el contenido no enseña.
 - Evitar duplicaciones: cada objetivo debe aportar una dimensión de aprendizaje diferente.
 - Mantener el formato de lista Markdown usado por la materia, sin introducciones ni cierres innecesarios.
+- Escribirlos cortos y claros, como el ejemplo confirmado por Pablo: "Entender las distintas metodologías ágiles del mercado actual". Sin guiones como incisos ni enumeraciones de técnicas entre paréntesis.
+- Generar el Word con `scripts/md-a-word.py --modulo N --tipo microobjetivos`.
 
 ## Verificación y entrega
 
-Comprobar que haya entre 4 y 6 objetivos, que todos empiecen con un verbo en infinitivo y que respondan al contenido real. Informar qué se creó o ajustó y cómo se distribuye la cobertura temática.
+Comprobar que haya como máximo 4 objetivos, breves (una línea), que todos empiecen con un verbo en infinitivo y que respondan al contenido real. Informar qué se creó o ajustó y cómo se distribuye la cobertura temática.

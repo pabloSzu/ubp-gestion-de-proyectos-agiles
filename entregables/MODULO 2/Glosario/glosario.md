@@ -1,63 +1,95 @@
-**Scrum**: Marco de trabajo ágil ligero que define roles, eventos y artefactos para desarrollar productos de forma incremental mediante ciclos cortos llamados Sprints.
+**Marco de trabajo (*framework*)**: estructura mínima de reglas, responsabilidades y momentos que el equipo completa con sus propias prácticas. Scrum es un marco de trabajo.
 
-**Teoría empírica de control de procesos**: Enfoque de gestión que sostiene que el conocimiento proviene de la experiencia y la toma de decisiones se basa en lo observado, aplicado en Scrum a través de los pilares de transparencia, inspección y adaptación.
+**Método**: forma organizada de mejorar cómo se trabaja, que puede aplicarse sobre el proceso existente. Kanban es un método.
 
-**Transparencia**: Pilar de Scrum que exige que todos los aspectos relevantes del proceso y del trabajo sean visibles y comprensibles para quienes son responsables del resultado.
+**Práctica**: técnica concreta que puede usarse dentro de distintos marcos, como programar en pareja.
 
-**Inspección**: Pilar de Scrum que consiste en examinar frecuentemente los artefactos y el progreso hacia los objetivos, para detectar variaciones o problemas de forma temprana.
+**Scrum**: marco liviano que ayuda a personas, equipos y organizaciones a generar valor mediante soluciones adaptativas para problemas complejos. Organiza el trabajo en Sprints.
 
-**Adaptación**: Pilar de Scrum que implica ajustar el proceso o el producto en cuanto una inspección revela que algo se desvía de lo aceptable o deseado.
+**Guía de Scrum**: documento breve y gratuito, mantenido por Ken Schwaber y Jeff Sutherland, que define las reglas de Scrum. La versión vigente es de 2020.
 
-**Product Owner**: Persona responsable de maximizar el valor del producto, priorizando y gestionando el Product Backlog según el valor de negocio de cada elemento.
+**Empirismo**: idea de que el conocimiento viene de la experiencia y de que las decisiones se toman a partir de lo que se observa.
 
-**Scrum Master**: Rol responsable de que el equipo comprenda y aplique correctamente Scrum, actuando como líder servicial que elimina impedimentos y protege al equipo.
+**Transparencia, inspección y adaptación**: los tres pilares del empirismo en Scrum: hacer visible el trabajo, revisarlo con frecuencia y ajustarlo cuando lo observado contradice el plan.
 
-**Developers (Equipo de Desarrollo)**: Conjunto multifuncional de personas comprometidas a crear, en cada Sprint, cualquier aspecto de un incremento de producto utilizable.
+**Valores de Scrum**: compromiso, foco, apertura, respeto y coraje.
 
-**Sprint**: Ciclo de tiempo fijo (timebox), generalmente de una a cuatro semanas, durante el cual el equipo Scrum produce un incremento de producto terminado.
+**Scrum Team**: equipo de diez personas o menos, multifuncional y autogestionado, formado por un Product Owner, un Scrum Master y los Developers.
 
-**Sprint Planning**: Evento que da inicio al Sprint, en el que el equipo define el objetivo del Sprint, selecciona los elementos del Product Backlog a trabajar y planifica cómo realizarlos.
+**Product Owner**: responsable de maximizar el valor del producto y de gestionar el Product Backlog. Es una sola persona.
 
-**Daily Scrum**: Evento diario de 15 minutos en el que los Developers inspeccionan su progreso hacia el objetivo del Sprint y ajustan su plan de trabajo a corto plazo.
+**Developers**: integrantes del Scrum Team que construyen el incremento de cada Sprint, sean programadores, diseñadores, especialistas en datos u otros perfiles.
 
-**Sprint Review**: Evento de cierre del Sprint en el que el equipo presenta el incremento a los interesados y se discuten ajustes futuros al Product Backlog.
+**Scrum Master**: responsable de que Scrum funcione y de que el equipo sea cada vez más efectivo. Enseña el marco, facilita y ayuda a remover impedimentos.
 
-**Sprint Retrospective**: Evento final del Sprint en el que el equipo reflexiona sobre su propio proceso de trabajo y define mejoras concretas para el próximo ciclo.
+**Impedimento**: obstáculo que impide que el trabajo avance.
 
-**Product Backlog**: Lista emergente y priorizada de todo lo necesario para mejorar el producto, mantenida principalmente por el Product Owner.
+**Artefacto**: elemento de Scrum que hace visible el trabajo o el valor. Son tres: Product Backlog, Sprint Backlog e Incremento.
 
-**Sprint Backlog**: Plan del equipo de desarrollo para un Sprint específico, compuesto por el objetivo del Sprint, los elementos seleccionados y las tareas necesarias para completarlos.
+**Product Backlog**: lista ordenada y viva de todo lo que se necesita para mejorar el producto. Es la única fuente de trabajo del equipo.
 
-**Incremento**: Suma acumulada de todos los elementos del Product Backlog completados durante un Sprint y en Sprints anteriores, que cumple con la Definición de Terminado.
+**Product Goal**: objetivo de producto a largo plazo al que apunta todo el Product Backlog.
 
-**Definición de Terminado (Definition of Done)**: Conjunto de criterios de calidad acordados por el equipo que determinan cuándo un elemento de trabajo puede considerarse completamente finalizado.
+**Sprint Backlog**: plan del Sprint, formado por el objetivo, los elementos elegidos del Product Backlog y el plan de trabajo para lograrlo.
 
-**Kanban**: Método de gestión visual del flujo de trabajo, originado en el Sistema de Producción Toyota, basado en visualizar tareas, limitar el trabajo en curso y optimizar el flujo continuo.
+**Sprint Goal**: único objetivo que da coherencia al trabajo de un Sprint y que el equipo se compromete a lograr.
 
-**Sistema pull (extracción)**: Modelo de trabajo en el que una nueva tarea se incorpora al flujo únicamente cuando hay capacidad disponible para procesarla, en lugar de asignarse de antemano.
+**Incremento (Scrum)**: paso concreto hacia el Product Goal: trabajo terminado, verificado y utilizable que cumple la Definition of Done.
 
-**Límite WIP (Work In Progress)**: Restricción numérica sobre la cantidad de elementos de trabajo que pueden estar simultáneamente activos en una etapa del flujo, utilizada para acelerar la entrega y evitar la sobrecarga.
+**Definition of Done**: lista de criterios de calidad que todo incremento tiene que cumplir para considerarse terminado.
 
-**Lead time**: Tiempo total transcurrido desde que una tarea ingresa al sistema de trabajo hasta que se completa por completo.
+**Timebox**: duración máxima de un evento de Scrum.
 
-**Extreme Programming (XP)**: Metodología ágil centrada en prácticas técnicas de ingeniería de software, como el pair programming, TDD, la integración continua y el refactoring, orientadas a sostener la calidad del código.
+**Sprint**: ciclo de duración fija, de un mes o menos, en el que se crea un incremento. Contiene a todos los demás eventos.
 
-**Test-Driven Development (TDD)**: Práctica de escribir primero una prueba automatizada que define el comportamiento esperado, y luego el código mínimo necesario para que esa prueba pase, seguido de refactorización.
+**Sprint Planning**: evento en el que el Scrum Team acuerda por qué el Sprint es valioso, qué se hará y cómo.
 
-**Integración continua (CI)**: Práctica de fusionar el código de todo el equipo en un repositorio compartido con alta frecuencia, ejecutando pruebas automatizadas en cada integración.
+**Daily Scrum**: evento diario de quince minutos en el que los Developers revisan el avance hacia el Sprint Goal y ajustan el plan.
 
-**Refactoring**: Proceso de mejorar la estructura interna del código sin alterar su comportamiento externo, reduciendo la deuda técnica acumulada.
+**Sprint Review**: evento en el que el Scrum Team y los interesados inspeccionan el resultado del Sprint y deciden qué adaptar.
 
-**Lean**: Filosofía de gestión originada en la manufactura, centrada en maximizar el valor para el cliente mientras se elimina sistemáticamente el desperdicio (muda) del proceso.
+**Sprint Retrospective**: evento en el que el Scrum Team revisa cómo trabajó y acuerda mejoras.
 
-**Desperdicio (muda)**: Cualquier actividad o resultado que consume recursos sin generar valor real para el cliente; en desarrollo de software incluye, entre otros, el trabajo parcialmente hecho y los defectos.
+**Kanban**: método para gestionar y mejorar el flujo de trabajo: hacer visible el trabajo, limitar cuánto se hace a la vez y mejorar de forma continua.
 
-**Scrumban**: Enfoque híbrido que combina la estructura de roles y rituales de Scrum con el flujo continuo y los límites WIP propios de Kanban.
+**Tablero Kanban**: representación visual del flujo, con una columna por cada etapa real del trabajo y una tarjeta por cada elemento.
 
-**Crystal**: Familia de metodologías ágiles desarrollada por Alistair Cockburn, calibrada según el tamaño del equipo y la criticidad del sistema a construir.
+**Política explícita**: regla escrita que indica cómo se trabaja, por ejemplo cuándo una tarjeta puede pasar a la columna siguiente.
 
-**Feature Driven Development (FDD)**: Marco ágil que organiza el desarrollo alrededor de funcionalidades (features) concretas y valiosas para el cliente, con fuerte énfasis en el modelado de dominio.
+**Trabajo en curso (WIP, *Work In Progress*)**: todo lo que se empezó y todavía no se terminó.
 
-**Dynamic Systems Development Method (DSDM)**: Marco ágil que fija el tiempo y el costo del proyecto como restricciones no negociables, dejando el alcance como variable de ajuste mediante la técnica MoSCoW.
+**Límite WIP**: cantidad máxima de elementos que puede haber a la vez en una etapa o en todo el tablero.
 
-**Técnica MoSCoW**: Método de priorización de requisitos que los clasifica en Must have, Should have, Could have y Won't have, utilizado especialmente en DSDM.
+**Cuello de botella**: etapa del flujo que frena al resto y donde se acumula el trabajo.
+
+**Ley de Little**: relación que indica que, en un sistema estable, el tiempo promedio de entrega es igual al trabajo en curso promedio dividido por la cantidad de elementos terminados por período.
+
+**Extreme Programming (XP)**: enfoque ágil creado por Kent Beck que reúne prácticas técnicas para construir software que se pueda cambiar con confianza.
+
+**Programación en pareja (*pair programming*)**: práctica en la que dos personas trabajan en la misma tarea y la misma computadora: una escribe el código y la otra lo revisa y piensa la estrategia.
+
+**Desarrollo guiado por pruebas (TDD, *Test-Driven Development*)**: práctica que consiste en escribir primero una prueba automática, después el código mínimo para que pase y, por último, mejorar el diseño.
+
+**Integración continua**: práctica de unir el código de todo el equipo varias veces por día y ejecutar pruebas automáticas en cada integración.
+
+**Refactorización**: mejora de la estructura interna del código sin cambiar lo que hace.
+
+**Lean**: filosofía de gestión, nacida en el sistema de producción de Toyota, que busca maximizar el valor para el cliente y eliminar el desperdicio.
+
+**Desperdicio (*muda*)**: todo lo que consume tiempo o recursos sin aportar valor al cliente.
+
+**Jidoka**: principio de Toyota según el cual el proceso se detiene cuando aparece una anomalía, para no seguir produciendo con defectos.
+
+**Andon**: tablero luminoso que, en las plantas de Toyota, avisa dónde se detectó un problema.
+
+**Just in time**: principio de producir solo lo que se necesita, cuando se necesita y en la cantidad necesaria.
+
+**Scrum con Kanban**: combinación que conserva todas las reglas de Scrum y le suma prácticas de Kanban, como límites WIP y métricas de flujo.
+
+**Scrumban**: combinación más libre de Scrum y Kanban, usada sobre todo con trabajo imprevisible, en la que el equipo define qué conserva de cada enfoque.
+
+**Crystal**: familia de métodos ágiles creada por Alistair Cockburn, que adapta el proceso al tamaño del equipo y a la criticidad del sistema.
+
+**Feature Driven Development (FDD)**: enfoque ágil creado por Jeff De Luca y Peter Coad que organiza el trabajo alrededor de funcionalidades pequeñas y valiosas.
+
+**Dynamic Systems Development Method (DSDM)**: enfoque ágil nacido en el Reino Unido en 1994 que fija tiempo y costo y ajusta el alcance.

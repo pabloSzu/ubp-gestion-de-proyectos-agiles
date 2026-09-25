@@ -1,51 +1,79 @@
-**Proyecto**: Esfuerzo temporal, con inicio y fin definidos, emprendido para crear un producto, servicio o resultado único.
+**Proyecto**: esfuerzo temporal que se realiza para crear un resultado único. Tiene un inicio, un final y un objetivo concreto.
 
-**Gestión de proyectos**: Disciplina que aplica conocimientos, habilidades, herramientas y técnicas a las actividades de un proyecto para satisfacer sus requisitos y objetivos.
+**Gestión de proyectos**: coordinación de personas, tiempo, dinero y decisiones para alcanzar el objetivo de un proyecto. Incluye planificar, prever problemas, comunicar avances y revisar resultados.
 
-**Producto**: Resultado tangible o intangible generado por uno o varios proyectos, con un ciclo de vida propio que puede extenderse por años más allá de la finalización del proyecto que lo originó.
+**Producto**: resultado que un proyecto crea y que sigue evolucionando durante años, mientras sea útil para sus usuarios.
 
-**Operación**: Conjunto de actividades permanentes y repetitivas que sostienen el funcionamiento cotidiano de un negocio, sin fecha de finalización prevista.
+**Operación**: trabajo continuo y repetitivo que mantiene funcionando algo que ya existe, como la mesa de ayuda o el mantenimiento de los servidores.
 
-**Ciclo de vida del proyecto**: Conjunto de fases —inicio, planificación, ejecución, monitoreo y control, y cierre— que atraviesa todo proyecto, independientemente del enfoque metodológico elegido.
+**Equipo de producto**: equipo estable que trabaja de forma continua sobre un mismo producto, en lugar de armarse y disolverse para cada proyecto.
 
-**Triple restricción**: Modelo que describe la tensión entre alcance, tiempo y costo en un proyecto, y cómo la calidad del resultado depende del equilibrio logrado entre esas tres variables.
+**Alcance**: conjunto de resultados, características y trabajo que el proyecto se compromete a entregar. Define qué está adentro y qué queda afuera.
 
-**Stakeholder (interesado)**: Persona, grupo u organización cuyos intereses se ven afectados, directa o indirectamente, por el desarrollo y el resultado de un proyecto.
+**Alcance del producto**: características que tendrá el resultado: qué va a poder hacer y cómo va a funcionar.
 
-**Sponsor**: Persona u organización que autoriza y financia el proyecto, y ante quien el responsable de gestión rinde cuentas sobre su avance y resultados.
+**Alcance del proyecto**: trabajo que hay que realizar para lograr el alcance del producto.
 
-**Matriz poder-interés**: Herramienta que clasifica a los stakeholders según su nivel de poder o influencia y su nivel de interés en el proyecto, para priorizar las estrategias de comunicación.
+**Entregable**: resultado concreto y verificable que produce un proyecto, como un documento, una pantalla o un sistema funcionando.
 
-**Matriz RACI**: Herramienta que asigna a cada actividad del proyecto los roles de Responsable, Accountable (aprobador), Consultado e Informado, clarificando responsabilidades entre los participantes.
+**Criterios de aceptación**: condiciones concretas y comprobables que un entregable tiene que cumplir para considerarse terminado y correcto.
 
-**Enfoque predictivo (cascada)**: Modelo de gestión que planifica el proyecto en detalle desde el inicio y avanza de manera lineal y secuencial a través de fases claramente delimitadas.
+**Estructura de desglose del trabajo (EDT o WBS, *Work Breakdown Structure*)**: división de un resultado grande en partes cada vez más chicas, hasta llegar a piezas que se puedan asignar, estimar y controlar.
 
-**Enfoque iterativo**: Modelo de trabajo organizado en ciclos repetidos durante los cuales se revisa y refina el mismo producto o componente a partir del aprendizaje obtenido.
+**Expansión descontrolada del alcance (*scope creep*)**: incorporación de trabajo nuevo sin revisar su impacto en tiempo, costo y calidad. Suele ocurrir con pedidos pequeños que se suman.
 
-**Enfoque incremental**: Modelo de trabajo que entrega el producto en partes sucesivas, cada una sumando funcionalidad nueva y utilizable sobre lo ya construido.
+**Gold plating**: agregado de extras que nadie pidió, por iniciativa del propio equipo. Consume tiempo y no aporta valor a quien usa el resultado.
 
-**Enfoque ágil**: Modelo de gestión iterativo e incremental que prioriza la entrega temprana y continua de valor, la colaboración con el cliente y la adaptación ante el cambio por sobre la planificación rígida.
+**Triple restricción (triángulo de hierro)**: relación entre alcance, tiempo y costo, que se afectan entre sí. La calidad queda en el centro, como resultado de mantener las tres en equilibrio.
 
-**Manifiesto Ágil**: Documento fundacional del movimiento ágil, redactado en 2001 por diecisiete profesionales del desarrollo de software, que establece cuatro valores y doce principios.
+**Ley de Brooks**: observación de Frederick Brooks (1975) según la cual sumar personas a un proyecto de software atrasado lo atrasa todavía más.
 
-**Control de cambios**: Proceso formal de la gestión tradicional mediante el cual se analiza, aprueba o rechaza una solicitud de modificación al alcance, tiempo o costo de un proyecto.
+**Riesgo**: evento incierto que, si ocurre, afecta los objetivos del proyecto. Se evalúa por su probabilidad y su impacto.
 
-**Backlog de producto**: Lista priorizada de funcionalidades, mejoras y correcciones pendientes de un producto, gestionada de forma continua por el Product Owner en los marcos ágiles.
+**Respuestas al riesgo**: cuatro formas clásicas de tratar un riesgo: evitarlo, reducirlo, transferirlo o aceptarlo.
 
-**Product Owner**: Rol ágil responsable de maximizar el valor del producto, gestionar el backlog y representar la voz del cliente y del negocio ante el equipo de desarrollo.
+**Incertidumbre**: falta de conocimiento sobre qué hay que construir o cómo construirlo. Se reduce probando, no solo planificando.
 
-**Scrum Master**: Rol ágil encargado de facilitar la correcta aplicación del marco de trabajo, remover impedimentos del equipo y proteger su foco de interrupciones externas.
+**Interesado (*stakeholder*)**: persona, grupo u organización que puede afectar al proyecto o verse afectado por él.
 
-**Sprint**: Ciclo de trabajo de duración fija, generalmente entre una y cuatro semanas, al cabo del cual el equipo entrega un incremento de producto potencialmente utilizable.
+**Rol**: función y responsabilidades que alguien cumple dentro de un proyecto.
 
-**Retrospectiva**: Ceremonia ágil en la que el equipo reflexiona periódicamente sobre su propio proceso de trabajo con el fin de identificar mejoras concretas para el ciclo siguiente.
+**Patrocinador (*sponsor*)**: persona o área que respalda el proyecto, aporta el presupuesto y toma las decisiones de alto nivel.
 
-**Entrega de valor**: Principio central de la gestión ágil según el cual el éxito de un proyecto se mide por la utilidad real que sus entregas generan para el cliente o usuario final, y no solo por el cumplimiento formal de plan, alcance y presupuesto.
+**Matriz de poder e interés**: herramienta que ubica a cada interesado según cuánto puede influir en el proyecto y cuánto le importa, para decidir cómo relacionarse con él.
 
-**Deuda técnica**: Costo implícito de retrabajo futuro que se genera cuando se elige una solución técnica rápida o subóptima en lugar de la mejor solución posible, en pos de una entrega más veloz.
+**Matriz RACI**: herramienta que indica, para cada actividad, quién la realiza (R), quién la aprueba (A), a quién se consulta (C) y a quién se informa (I).
 
-**Enfoque híbrido**: Modelo de gestión que combina prácticas predictivas y ágiles dentro de un mismo proyecto u organización, aplicando cada una según la naturaleza de cada componente del trabajo.
+**Ciclo de vida del proyecto**: recorrido de un proyecto desde su inicio hasta su cierre, organizado en inicio, planificación, ejecución, monitoreo y control, y cierre.
 
-**Modelo Cynefin**: Marco desarrollado por Dave Snowden que clasifica los problemas de decisión en dominios simple, complicado, complejo y caótico, útil para diagnosticar qué enfoque de gestión resulta más adecuado en cada caso.
+**Enfoque predictivo**: forma de trabajar que define alcance, tiempo y costo al principio y luego ejecuta el plan controlando que se cumpla.
 
-**Informe CHAOS**: Relevamiento periódico publicado por el Standish Group desde 1994 sobre las tasas de éxito, fracaso y desvío de los proyectos de tecnología de la información.
+**Modelo en cascada**: versión clásica del enfoque predictivo en software, con etapas sucesivas de requisitos, diseño, programación, pruebas y entrega.
+
+**Enfoque iterativo**: forma de trabajar que mejora el mismo resultado en vueltas sucesivas, aprendiendo de cada una.
+
+**Iteración**: cada una de las vueltas de trabajo en las que se construye, se revisa y se mejora un resultado.
+
+**Enfoque incremental**: forma de trabajar que entrega el resultado por partes, cada una terminada y utilizable.
+
+**Incremento**: parte nueva y utilizable que se suma a lo que ya existía.
+
+**Agilidad**: forma de trabajar que acorta el tiempo entre tomar una decisión y comprobar si fue buena, mediante ciclos cortos de construcción, feedback y ajuste.
+
+**Manifiesto Ágil**: texto publicado en 2001 por diecisiete profesionales reunidos en Snowbird (Utah), que expresa los cuatro valores de la agilidad.
+
+**Principios ágiles**: doce principios del Manifiesto Ágil que llevan sus valores a la práctica cotidiana.
+
+**Valor**: beneficio real que un resultado produce para quienes lo usan o para la organización que lo impulsa.
+
+**Ciclo de feedback (construir, medir, aprender)**: ciclo en el que se construye algo, se observa cómo funciona en la realidad, se aprende y se decide qué hacer después.
+
+**Hipótesis de valor**: afirmación sobre qué beneficio va a producir una solución y cómo se va a comprobar.
+
+**Control de cambios**: procedimiento formal para evaluar y aprobar un cambio en un proyecto predictivo, analizando su impacto en alcance, tiempo y costo.
+
+**Enfoque híbrido**: combinación consciente de trabajo predictivo y ágil cuando distintas partes de un proyecto lo justifican.
+
+**Línea de base (*baseline*)**: solución o medición de referencia que permite comparar si una alternativa nueva realmente mejora algo.
+
+**Experimento**: prueba acotada que produce aprendizaje. A diferencia de una entrega, no necesariamente deja algo listo para usar.

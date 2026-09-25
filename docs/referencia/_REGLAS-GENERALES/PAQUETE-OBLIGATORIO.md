@@ -11,7 +11,7 @@ Un programa de la materia con los módulos y sus contenidos. Si la universidad s
 La cantidad de módulos depende del programa. Cada módulo contiene exactamente estas cuatro clases de entregables:
 
 1. **Glosario**: vocabulario técnico enseñado en el contenido del módulo.
-2. **Microobjetivos**: entre **4 y 6**, redactados con un **verbo en infinitivo al comienzo** y orientados a los aprendizajes generales del módulo. Ejemplo: “Entender las distintas metodologías ágiles del mercado actual”. No crear un microobjetivo por cada subtítulo.
+2. **Microobjetivos**: **hasta 4** (habitualmente 3 o 4), redactados con un **verbo en infinitivo al comienzo** y orientados a los aprendizajes generales del módulo. Ejemplo: “Entender las distintas metodologías ágiles del mercado actual”. No crear un microobjetivo por cada subtítulo.
 3. **Contenido**: desarrollo pedagógico completo del módulo.
 4. **Actividades**: combinación pertinente de preguntas, ejercicios, autoevaluaciones, casos, prácticas con herramientas externas, visualización de videos con preguntas u otras propuestas de aplicación. Deben basarse en lo enseñado por el módulo.
 

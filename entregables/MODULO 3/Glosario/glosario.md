@@ -1,55 +1,63 @@
-**Visión de producto**: declaración breve y estable en el tiempo que describe el propósito de un producto, el usuario objetivo y el beneficio central que aporta, sirviendo de guía para todas las decisiones de priorización.
+**Visión del producto**: descripción del futuro que el producto busca crear: para quién existe, qué problema resuelve y qué lo hace distinto.
 
-**North Star Metric**: métrica única que mejor representa el valor real que un producto entrega a sus usuarios, usada para verificar si la visión se está cumpliendo en la práctica.
+**Working Backwards**: método de Amazon que consiste en escribir el comunicado de prensa y las preguntas frecuentes de un producto antes de construirlo, para pensarlo desde el cliente.
 
-**Stakeholder**: persona o grupo que puede afectar o verse afectado por las decisiones sobre un producto, incluyendo usuarios finales, clientes, áreas internas y organismos reguladores.
+**Objetivo de producto**: resultado observable que muestra si el producto se acerca a su visión. Puede referirse al beneficio, al comportamiento de los usuarios o a la calidad técnica.
 
-**Matriz de poder e interés**: herramienta que clasifica a los stakeholders según su nivel de influencia y de interés en el producto, para definir la estrategia de comunicación adecuada con cada uno.
+**Punto porcentual**: diferencia absoluta entre dos porcentajes. Bajar del 40 % al 30 % es una reducción de 10 puntos porcentuales, que equivale a una reducción relativa del 25 %.
 
-**Product Roadmap**: documento de alto nivel que comunica la dirección estratégica de un producto en distintos horizontes de tiempo, conectando la visión con el backlog operativo.
+**North Star Metric**: métrica única que resume el valor central que un producto entrega a sus usuarios.
 
-**Roadmap Now-Next-Later**: formato de hoja de ruta organizado en tres horizontes relativos (ahora, próximo, después) en lugar de fechas exactas, adecuado para contextos de alta incertidumbre.
+**Indicador de vanidad**: número que crece y se ve bien, pero no dice nada sobre el valor que se entrega.
 
-**Product Backlog**: lista única, ordenada y en refinamiento continuo de todo el trabajo conocido y necesario para un producto, gestionada por el Product Owner.
+**Plan de comunicación**: definición de qué información recibe cada interesado, con qué frecuencia y por qué canal.
 
-**Sprint Backlog**: subconjunto de ítems del Product Backlog que el equipo de desarrollo selecciona y se compromete a completar durante un sprint, junto con el plan para lograrlo.
+**DEEP**: sigla en inglés que resume las condiciones de un buen Product Backlog: detallado adecuadamente, estimado, emergente y priorizado.
 
-**Product Owner**: rol responsable de maximizar el valor del producto y de gestionar el Product Backlog, siendo la única persona con autoridad para decidir su contenido y orden.
+**Épica**: bloque grande de trabajo, demasiado grande para un solo Sprint, que se divide en funcionalidades e historias.
 
-**Épica**: cuerpo de trabajo grande que agrupa varias historias de usuario relacionadas y que, por su tamaño, requiere varios sprints para completarse.
+**Funcionalidad (*feature*)**: capacidad concreta del producto que forma parte de una épica y agrupa varias historias. Es un nivel opcional.
 
-**Funcionalidad (feature)**: capacidad entregable de tamaño intermedio entre la épica y la historia de usuario, que agrupa varias historias y puede completarse en un plazo acotado.
+**Historia de usuario**: necesidad pequeña escrita desde el punto de vista de quien la tiene, con el formato "como… quiero… para…". Se puede entregar y usar por sí sola.
 
-**Historia de usuario**: descripción breve de una funcionalidad escrita desde la perspectiva del usuario, en formato "Como... quiero... para...", que funciona como recordatorio para una conversación posterior.
+**Tarea**: pieza del trabajo técnico necesario para completar una historia. Sola no le sirve a ningún usuario.
 
-**INVEST**: criterio de calidad para historias de usuario que exige que sean Independientes, Negociables, Valiosas, Estimables, Pequeñas y Testeables.
+**Tres C (tarjeta, conversación, confirmación)**: las tres partes de una historia de usuario según Ron Jeffries: la idea escrita, el diálogo que aclara los detalles y los criterios que permiten comprobarla.
 
-**Criterio de aceptación**: condición específica y verificable que una historia de usuario debe cumplir para considerarse funcionalmente terminada.
+**INVEST**: sigla propuesta por Bill Wake (2003) para revisar una historia: independiente, negociable, valiosa, estimable, pequeña y testeable.
 
-**Gherkin (Dado/Cuando/Entonces)**: formato estructurado para redactar criterios de aceptación, muy utilizado en Behavior Driven Development, que facilita su conversión en pruebas automatizadas.
+**Dado, Cuando, Entonces (*Given, When, Then*)**: formato para escribir criterios de aceptación que describe una situación inicial, una acción y el resultado esperado.
 
-**Definition of Ready (DoR)**: acuerdo del equipo sobre las condiciones mínimas que debe cumplir una historia de usuario para poder entrar a un sprint.
+**BDD (*Behavior-Driven Development*)**: desarrollo guiado por comportamiento. Enfoque que describe el comportamiento esperado con ejemplos que pueden convertirse en pruebas automáticas.
 
-**Definition of Done (DoD)**: acuerdo explícito sobre el estado que debe alcanzar un incremento de producto para considerarse completo, garantizando calidad y transparencia.
+**Definition of Ready**: acuerdo opcional, que no forma parte de Scrum, sobre cuándo una historia está suficientemente clara para empezar a trabajarla.
 
-**Refinamiento del backlog (Backlog Refinement)**: proceso continuo de agregar detalle, estimaciones y orden a los ítems del Product Backlog, realizado con participación del Product Owner y del equipo de desarrollo.
+**Refinamiento del backlog**: actividad continua de preparar el Product Backlog: dividir elementos, agregar detalle y criterios, detectar dependencias, estimar y reordenar.
 
-**MoSCoW**: técnica de priorización que clasifica los ítems del backlog en Must have, Should have, Could have y Won't have this time.
+**Priorización**: decisión sobre el orden del trabajo según su valor, su urgencia, su esfuerzo y sus riesgos.
 
-**Modelo de Kano**: técnica que clasifica funcionalidades según su impacto en la satisfacción del usuario, distinguiendo entre atributos básicos, de desempeño, de deleite, indiferentes e inversos.
+**MoSCoW**: técnica de priorización que clasifica cada elemento como *Must have* (imprescindible), *Should have* (importante), *Could have* (deseable) o *Won't have this time* (no esta vez).
 
-**WSJF (Weighted Shortest Job First)**: técnica cuantitativa de priorización, propia del marco SAFe, que ordena el trabajo dividiendo el costo de la demora por el tamaño del trabajo.
+**Modelo de Kano**: modelo propuesto por Noriaki Kano que clasifica las funcionalidades según cómo afectan la satisfacción: básicas, de desempeño y de entusiasmo.
 
-**Costo de la Demora (Cost of Delay)**: estimación del valor que se pierde por posponer un ítem del backlog, compuesto por valor de negocio, criticidad temporal y reducción de riesgo.
+**WSJF (*Weighted Shortest Job First*)**: técnica de priorización de SAFe que divide el costo de la demora por el tamaño del trabajo.
 
-**Matriz de Valor y Esfuerzo**: herramienta visual de priorización que ubica cada ítem del backlog según su valor y su esfuerzo estimado, identificando victorias rápidas y candidatos a descartar.
+**Costo de la demora**: valor que se pierde por postergar un trabajo. En WSJF suma el valor, la urgencia temporal y la reducción de riesgo.
 
-**Producto Mínimo Viable (MVP)**: versión de un producto que permite obtener el máximo aprendizaje validado sobre los usuarios con la mínima inversión de esfuerzo posible.
+**Matriz de valor y esfuerzo**: técnica visual que ubica cada elemento según su valor y su esfuerzo, para identificar victorias rápidas y trabajo para descartar.
 
-**MMF (Minimum Marketable Feature)**: porción más pequeña de funcionalidad que puede lanzarse de forma independiente y generar valor comercial, sin ser todo el producto.
+**Producto mínimo viable (MVP, *Minimum Viable Product*)**: versión de un producto nuevo que permite obtener la mayor cantidad de aprendizaje validado con el menor esfuerzo posible.
 
-**Release Planning**: proceso de decidir qué conjunto de historias o funcionalidades conformarán una entrega del producto y en qué momento aproximado se pondrá a disposición de los usuarios.
+**Aprendizaje validado**: conocimiento sobre los usuarios que se obtiene con evidencia de un experimento real, no con suposiciones.
 
-**Triángulo de hierro invertido**: representación de la gestión ágil del alcance en la que el tiempo y el costo se mantienen fijos, mientras el alcance es la variable que se ajusta según el valor priorizado.
+**MVP de página de interés (*landing page*)**: tipo de MVP que describe el producto antes de construirlo y mide cuánta gente se interesa.
 
-**Scope creep (deslizamiento de alcance)**: crecimiento no controlado del alcance de un proyecto o sprint, considerado riesgoso cuando ocurre sin pasar por el proceso de priorización del backlog.
+**MVP conserje (*concierge*)**: tipo de MVP en el que una persona presta el servicio a mano, y el usuario lo sabe.
+
+**MVP mago de Oz (*Wizard of Oz*)**: tipo de MVP en el que el usuario ve una interfaz que parece automática, pero detrás hay personas haciendo el trabajo.
+
+**Roadmap**: hoja de ruta que comunica la dirección del producto y la secuencia probable de su evolución, con menos precisión cuanto más lejano es el horizonte.
+
+**Ahora, próximo, después (*Now, Next, Later*)**: formato de roadmap que organiza el trabajo por horizontes, sin fechas exactas.
+
+**Plan de lanzamiento (*release plan*)**: definición de qué se pone a disposición de los usuarios, con qué objetivo, bajo qué condiciones y con qué fecha aproximada.

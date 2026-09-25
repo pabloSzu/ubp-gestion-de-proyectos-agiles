@@ -1,6 +1,6 @@
 """Genera Contenido.docx de un módulo a partir de su fuente contenido.md.
 
-Uso: python scripts/md-a-word.py --modulo 1 [--salida ruta.docx]
+Uso: python scripts/md-a-word.py --modulo 1 [--tipo contenido|actividades|respuestas|glosario|microobjetivos] [--salida ruta.docx]
 
 Encabezado de la fuente: modulo, titulo, subtitulo y materia (nombre oficial de la
 materia; se usa en portada y pie). Para otra materia, copiar este script y
@@ -126,6 +126,25 @@ CAJAS_FILL = {}
 class BuilderMD(nativo.Builder):
     def __init__(self, doc, folder, cajas):
         super().__init__(doc, folder); self.cajas = cajas; self.stats['recuadros'] = 0
+    def module(self, tree, number, etiqueta='Contenido de estudio', indice=True):
+        """Portada, índice opcional y cuerpo; adapta Builder.module a los cuatro entregables."""
+        article = tree.xpath('//article')[0]; title = tree.xpath('//h1')[0].text_content().strip()
+        p = self.doc.add_paragraph('Gestión de Proyectos Ágiles', style='Subtitle'); p.paragraph_format.space_before = Cm(3)
+        p = self.doc.add_paragraph(f'Módulo {number}'); p.runs[0].font.size = Pt(16); p.runs[0].font.color.rgb = RGBColor.from_string(nativo.PALETTE[number - 1])
+        self.doc.add_paragraph(title, style='Title')
+        sub = tree.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," subtitle ")]')
+        if sub and sub[0].text_content().strip(): self.doc.add_paragraph(sub[0].text_content().strip(), style='Subtitle')
+        self.doc.add_paragraph(etiqueta, style='Subtitle')
+        self.doc.add_page_break()
+        if indice and article.xpath('./h2'):
+            self.doc.add_paragraph('Recorrido del módulo' if etiqueta.startswith('Contenido') else etiqueta, style='Heading 1')
+            for i, h in enumerate(article.xpath('./h2'), 1):
+                q = self.doc.add_paragraph(); nativo.hyperlink(q, h.text_content().strip(), '#' + self.prefix + h.get('id', f'seccion-{i}'))
+                q.paragraph_format.space_after = Pt(4)
+            self.doc.add_page_break()
+        elif not indice:
+            h = self.doc.add_paragraph(etiqueta, style='Heading 1'); nativo.shade(h, 'EAF4FA')
+        for e in article: self.block(e)
     def block(self, e, fill=None, level=0):
         if isinstance(e.tag, str) and e.tag == 'div' and e.get('class') == 'caja':
             return self.caja(self.cajas[e.get('data-ref')])
@@ -137,6 +156,8 @@ class BuilderMD(nativo.Builder):
             return
         if isinstance(e.tag, str) and e.tag == 'p' and e.get('class') == 'item-anidado':
             nivel = int(e.get('data-nivel', '0')); p = self.doc.add_paragraph()
+            if nivel == 0 and re.match(r'\d+\.', e.text_content().strip()):
+                self.numerado(p, e); return
             mark = p.add_run('•◦▪▫'[min(nivel, 3)] + '\t'); mark.font.color.rgb = RGBColor.from_string('12655D'); mark.bold = True
             nativo.runs(p, nativo.clean(nativo.tokens(e)))
             f = p.paragraph_format; izq = Cm(.65 + .75 * nivel)
@@ -200,43 +221,61 @@ class BuilderMD(nativo.Builder):
         sp = self.doc.add_paragraph(); sp.paragraph_format.space_after = Pt(4)
         self.stats['recuadros'] += 1
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--modulo', type=int, required=True, choices=range(1, 6))
-    ap.add_argument('--salida', type=Path)
-    a = ap.parse_args()
-    folder = BASE / 'entregables' / f'MODULO {a.modulo}' / 'Contenido'
-    src = (folder / 'contenido.md').read_text(encoding='utf-8')
-    meta = {}
+# Entregables del módulo: carpeta, fuente, archivo final, rótulo de portada y si lleva índice.
+TIPOS = {
+    'contenido': ('Contenido', 'contenido.md', 'Contenido.docx', 'Contenido de estudio', True),
+    'actividades': ('Actividades', 'actividades.md', 'Actividades.docx', 'Actividades formativas', True),
+    'respuestas': ('Actividades', 'respuestas-docente.md', 'Respuestas-docente.docx', 'Respuestas orientativas para el docente', False),
+    'glosario': ('Glosario', 'glosario.md', 'Glosario.docx', 'Glosario', False),
+    'microobjetivos': ('Microobjetivos', 'microobjetivos.md', 'Microobjetivos.docx', 'Microobjetivos', False),
+}
+
+def leer_fuente(ruta):
+    """Devuelve (metadatos, texto sin encabezado)."""
+    src = ruta.read_text(encoding='utf-8').replace('\r\n', '\n'); meta = {}
     fm = re.match(r'---\n(.*?)\n---\n', src, re.S)
     if fm:
         for l in fm.group(1).splitlines():
             k, _, v = l.partition(':'); meta[k.strip()] = v.strip()
         src = src[fm.end():]
+    return meta, src
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--modulo', type=int, required=True, choices=range(1, 6))
+    ap.add_argument('--tipo', choices=TIPOS, default='contenido')
+    ap.add_argument('--salida', type=Path)
+    a = ap.parse_args()
+    carpeta, fuente, final, etiqueta, indice = TIPOS[a.tipo]
+    modulo_dir = BASE / 'entregables' / f'MODULO {a.modulo}'
+    folder = modulo_dir / carpeta
+    # Los datos del módulo (materia, título) salen del Contenido; la fuente propia puede ampliarlos.
+    meta, _ = leer_fuente(modulo_dir / 'Contenido' / 'contenido.md')
+    propio, src = leer_fuente(folder / fuente)
+    meta.update({k: v for k, v in propio.items() if v})
+    if a.tipo != 'contenido' and 'subtitulo' not in propio: meta['subtitulo'] = ''
     blocks = parse_blocks(src.splitlines())
     cajas = {}
-    def registrar(bs):
-        for b in bs:
-            if b[0] == 'caja': cajas[str(id(b))] = b
-    registrar(blocks)
+    for bl in blocks:
+        if bl[0] == 'caja': cajas[str(id(bl))] = bl
     doc_html = (f'<html><body><h1>{inline(meta.get("titulo", ""))}</h1><p class="subtitle">{inline(meta.get("subtitulo", ""))}</p>'
                 f'<article>{to_html(blocks)}</article></body></html>')
     tree = html.fromstring(doc_html).getroottree()
     doc = Document(); nativo.styles(doc, nativo.PALETTE[a.modulo - 1])
-    b = BuilderMD(doc, folder, cajas); b.module(tree, a.modulo)
+    b = BuilderMD(doc, folder, cajas); b.module(tree, a.modulo, etiqueta, indice)
     # El exportador base rotula con el nombre de Gestión; se reemplaza por el de la materia.
     base_nombre = 'Gestión de Proyectos Ágiles'; materia = meta.get('materia', base_nombre)
     if materia != base_nombre:
         for par in list(doc.paragraphs) + list(doc.sections[0].footer.paragraphs):
             for r in par.runs: r.text = r.text.replace(base_nombre, materia)
-    doc.core_properties.title = f'{materia} Módulo {a.modulo}'
-    doc.core_properties.subject = f'Contenido de {materia}'
+    doc.core_properties.title = f'{materia} Módulo {a.modulo} {etiqueta}'
+    doc.core_properties.subject = f'{etiqueta} de {materia}'
     # Filas de tablas comparativas sin cortes entre páginas (los recuadros sí pueden partirse).
     for t in doc.tables:
         if len(t.rows) > 1:
             for row in t.rows: row._tr.get_or_add_trPr().append(OxmlElement('w:cantSplit'))
     nativo.finalize(doc)
-    out = a.salida or folder / 'Contenido.docx'; doc.save(out)
-    print(json.dumps({'modulo': a.modulo, 'archivo': str(out), **b.stats}, ensure_ascii=False))
+    out = a.salida or folder / final; doc.save(out)
+    print(json.dumps({'modulo': a.modulo, 'tipo': a.tipo, 'archivo': str(out), **b.stats}, ensure_ascii=False))
 
 if __name__ == '__main__': main()

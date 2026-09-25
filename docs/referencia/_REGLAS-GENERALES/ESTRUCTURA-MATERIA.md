@@ -11,7 +11,9 @@ entregables/
 │   ├── Contenido/       → contenido.md (fuente) + Contenido.docx (entregable final obligatorio)
 │   ├── Microobjetivos/  → microobjetivos.md (fuente) + Microobjetivos.docx
 │   ├── Glosario/        → glosario.md (fuente) + Glosario.docx
-│   └── Actividades/     → actividades.html (fuente) + Actividades.docx o .pdf
+│   └── Actividades/     → actividades.md (fuente) + Actividades.docx
+
+Los cuatro Word del módulo se generan con `scripts/md-a-word.py --modulo N --tipo contenido|actividades|glosario|microobjetivos`.
 ├── EVALUACIONES/
 │   ├── PARCIAL 1/       → 40 puntos, primeros contenidos
 │   └── PARCIAL 2/       → 60 puntos, segunda parte
@@ -40,7 +42,7 @@ Ver [[ESTILO-EDITORIAL]] para el tono de la narrativa.
 
 ## Microobjetivos
 
-Entre **4 y 6 por módulo**. Cada microobjetivo empieza obligatoriamente con un **verbo en infinitivo** y engloba un aprendizaje general del módulo. Puede seguir el formato **verbo + contenido + finalidad**, pero la finalidad no debe volverlo artificialmente largo.
+**Hasta 4 por módulo** (habitualmente 3 o 4), por indicación de Pablo del 25 de septiembre de 2026. Breves: una línea, sin listas de técnicas ni incisos. Cada microobjetivo empieza obligatoriamente con un **verbo en infinitivo** y engloba un aprendizaje general del módulo. Puede seguir el formato **verbo + contenido + finalidad**, pero la finalidad no debe volverlo artificialmente largo.
 
 Ejemplo confirmado: “Entender las distintas metodologías ágiles del mercado actual”.
 

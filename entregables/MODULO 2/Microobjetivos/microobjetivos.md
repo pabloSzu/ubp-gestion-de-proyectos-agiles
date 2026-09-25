@@ -1,4 +1,4 @@
-- Explicar los pilares de la teoría empírica de control de procesos (transparencia, inspección y adaptación) que sustentan el marco Scrum, para comprender por qué su estructura de roles, eventos y artefactos resulta adecuada frente a problemas complejos de desarrollo de software.
-- Describir los roles, eventos y artefactos de Scrum, junto con los principios y prácticas centrales de Kanban (visualización del flujo y límites WIP), de Extreme Programming (prácticas técnicas de ingeniería) y de Lean (los siete desperdicios), para reconocer las herramientas concretas que cada marco aporta a la gestión de un proyecto ágil.
-- Comparar Scrum, Kanban, XP, Lean, Scrumban y otros marcos ágiles (Crystal, FDD, DSDM) en función de su naturaleza, mecanismos de control y contextos de aplicación, para distinguir con precisión sus similitudes y diferencias.
-- Aplicar criterios prácticos de selección de enfoque ágil (previsibilidad de la demanda, madurez del equipo, cultura organizacional y restricciones de tiempo/costo/alcance) a un escenario de proyecto concreto, para fundamentar la elección de un marco de trabajo adecuado a un contexto real.
+- Entender las distintas metodologías y marcos ágiles del mercado actual y el problema que resuelve cada uno.
+- Explicar cómo funciona Scrum a partir de sus fundamentos, responsabilidades, artefactos y eventos.
+- Comprender cómo Kanban, XP y Lean mejoran el flujo, la calidad técnica y el valor del trabajo.
+- Comparar los enfoques ágiles para elegir o combinar el más adecuado en un contexto concreto.

@@ -1,51 +1,49 @@
-**Equipo multidisciplinario (cross-functional team)**: grupo de trabajo que reúne colectivamente todas las habilidades necesarias para llevar un incremento de producto de punta a punta, sin depender de otros equipos externos.
+**Equipo multifuncional**: equipo que reúne, entre todos sus integrantes, las habilidades necesarias para crear un resultado utilizable sin depender de otros.
 
-**Autoorganización**: capacidad del equipo de decidir internamente cómo y quién realiza el trabajo, dentro de un marco de objetivos y prioridades definido por el Product Owner y la organización.
+**Autogestión**: capacidad del equipo de decidir internamente quién hace qué, cuándo y cómo, dentro de límites claros. La Guía de Scrum usa este término; el Manifiesto hablaba de autoorganización.
 
-**Servant leadership (liderazgo de servicio)**: modelo de liderazgo en el que el líder prioriza remover obstáculos, desarrollar a las personas y habilitar al equipo, en lugar de dirigir y controlar desde una posición jerárquica.
+**Acuerdos de trabajo (*working agreements*)**: reglas que el equipo define en conjunto sobre cómo quiere trabajar, que sirven de referencia cuando surge un desacuerdo.
 
-**Liderazgo situacional**: enfoque que adapta el grado de guía y acompañamiento del líder según el nivel de madurez y autonomía que haya alcanzado el equipo.
+**Liderazgo de servicio (*servant leadership*)**: estilo de liderazgo, formulado por Robert Greenleaf en 1970, en el que el líder crea las condiciones para que el equipo haga su mejor trabajo en lugar de darle órdenes.
 
-**Modelo de Tuckman**: marco que describe las etapas de evolución de un equipo (Formación, Conflicto, Normalización, Desempeño y Disolución) y explica por qué el conflicto inicial es un paso natural y necesario.
+**Modelo de Tuckman**: modelo de Bruce Tuckman (1965) que describe cuatro etapas de un equipo: formación, conflicto, normalización y desempeño. Es una orientación, no una secuencia obligatoria.
 
-**Working agreements (acuerdos de trabajo)**: reglas explícitas que el equipo define en conjunto sobre cómo quiere trabajar, usadas como referencia neutral para resolver desacuerdos.
+**Seguridad psicológica**: sensación de que se puede preguntar, discrepar o equivocarse sin ser castigado ni humillado. Fue el factor más importante en el Proyecto Aristóteles de Google.
 
-**Feedback SBI (Situación-Comportamiento-Impacto)**: técnica para dar retroalimentación específica, describiendo la situación concreta, el comportamiento observado y su impacto, evitando juicios generales.
+**Comunicación sincrónica**: comunicación en tiempo real, como una reunión o una videollamada. Conviene para decisiones complejas y conflictos.
 
-**Seguridad psicológica**: condición de un equipo en la que sus integrantes pueden expresar dudas, errores o desacuerdos sin temor a consecuencias negativas.
+**Comunicación asincrónica**: comunicación que cada persona lee cuando puede, como mensajes o documentos. Conviene para informar y dejar registro.
 
-**Mapeo de stakeholders**: técnica que clasifica a las personas interesadas en un proyecto según su nivel de interés e influencia, para definir el tipo y la frecuencia de comunicación adecuados con cada grupo.
+**Radiador de información**: tablero o gráfico visible que muestra el estado del trabajo sin que nadie tenga que preguntar.
 
-**Radiador de información**: elemento visual (tablero, gráfico, panel de métricas) que comunica el estado del trabajo de forma visible y permanente, sin necesidad de que alguien pregunte activamente.
+**SBI (Situación, Comportamiento, Impacto)**: técnica para dar feedback que describe una situación concreta, el comportamiento observado y su efecto.
 
-**Sprint Review**: evento de Scrum al final del sprint cuyo objetivo es inspeccionar colaborativamente el resultado del trabajo y adaptar el Product Backlog, y no una simple demostración unidireccional de funcionalidades.
+**Teatro ágil**: situación en la que se conservan los nombres de los eventos y las prácticas ágiles, pero se pierde su propósito.
 
-**Retrospectiva**: evento de Scrum en el que el equipo inspecciona su propia forma de trabajar y define ajustes concretos para el período siguiente, como mecanismo central de mejora continua.
+**Acuerdo Primario (*Prime Directive*)**: premisa propuesta por Norman Kerth para las retrospectivas: todos hicieron el mejor trabajo posible con lo que sabían y tenían en ese momento.
 
-**Acuerdo Primario (Prime Directive)**: premisa que sostiene toda retrospectiva sana, según la cual se asume que todos hicieron el mejor trabajo posible dado lo que sabían y los recursos disponibles en ese momento.
+**Kaizen**: palabra japonesa que significa "cambio para mejor". Filosofía de mejora continua en pasos pequeños, en la que participa todo el equipo.
 
-**Kaizen**: filosofía de origen japonés que promueve la mejora continua a través de pequeños cambios frecuentes y sostenidos, en lugar de grandes transformaciones puntuales.
+**Ciclo PDCA (*Plan, Do, Check, Act*)**: ciclo de mejora que consiste en planificar un cambio, probarlo en pequeño, verificar su efecto y decidir si se adopta, se ajusta o se descarta.
 
-**Ciclo PDCA (Plan-Do-Check-Act)**: ciclo de mejora continua que consiste en planificar un cambio, ejecutarlo a pequeña escala, verificar su efecto y actuar en consecuencia, repitiéndose de forma indefinida.
+**Deuda técnica**: costo futuro de los atajos que se toman en el software para avanzar más rápido. Como una deuda financiera, genera intereses: cada cambio posterior cuesta más.
 
-**Deuda técnica**: metáfora que describe las decisiones de diseño tomadas para avanzar más rápido a corto plazo, a costa de mayor esfuerzo de mantenimiento futuro si no se gestionan conscientemente.
+**Entrega continua (*continuous delivery*)**: práctica que mantiene el software siempre listo para salir a producción; la decisión de lanzar la toma una persona.
 
-**Definición de Terminado (Definition of Done)**: estándar de calidad explícito y compartido que todo incremento de producto debe cumplir antes de considerarse completo.
+**Despliegue continuo (*continuous deployment*)**: práctica en la que todo cambio que pasa las pruebas automáticas sale a producción sin intervención humana.
 
-**Integración Continua (CI)**: práctica de ingeniería que consiste en integrar el trabajo de todo el equipo al repositorio compartido con alta frecuencia, verificando automáticamente que cada cambio no rompa el sistema.
+**DevOps**: movimiento cultural y conjunto de prácticas que une desarrollo y operaciones: quienes construyen el software también se hacen responsables de que funcione en producción.
 
-**Entrega Continua / Despliegue Continuo (CD)**: prácticas que mantienen el software en un estado permanentemente listo para producción (entrega continua) o que automatizan también el paso final de publicarlo (despliegue continuo).
+**Métricas DORA**: cuatro métricas propuestas por el programa de investigación DORA para medir la entrega de software: frecuencia de despliegue, tiempo desde el cambio hasta producción, porcentaje de cambios que fallan y tiempo de recuperación.
 
-**DevOps**: movimiento cultural y conjunto de prácticas que busca reducir la brecha entre los equipos de desarrollo y de operaciones, compartiendo la responsabilidad sobre el funcionamiento del sistema en producción.
+**Scrum of Scrums**: mecanismo de coordinación en el que un representante de cada equipo participa en una reunión periódica para resolver dependencias y bloqueos.
 
-**Escalado ágil**: conjunto de enfoques y frameworks que buscan coordinar el trabajo de múltiples equipos ágiles sobre un mismo producto u organización.
+**SAFe (*Scaled Agile Framework*)**: marco muy estructurado para coordinar muchos equipos ágiles, con niveles de programa y de portafolio.
 
-**Scrum of Scrums**: mecanismo liviano de escalado ágil basado en una reunión periódica entre representantes de distintos equipos Scrum para coordinar dependencias.
+**LeSS (*Large-Scale Scrum*)**: propuesta para escalar Scrum con los mínimos agregados posibles: los equipos comparten Product Owner, Product Backlog, Definition of Done y Sprint.
 
-**SAFe (Scaled Agile Framework)**: framework de escalado ágil extenso y prescriptivo, con múltiples niveles de coordinación, adecuado para organizaciones grandes con estructuras jerárquicas preexistentes.
+**Squad y tribu**: nombres que usaba Spotify para sus equipos pequeños y autónomos (squads) y para los grupos de equipos relacionados (tribus). Otras empresas, como ING, los adoptaron.
 
-**LeSS (Large-Scale Scrum)**: enfoque de escalado ágil que busca aplicar Scrum a varios equipos manteniéndolo lo más simple y fiel posible a sus reglas originales.
+**Agilidad organizacional**: extensión de los principios ágiles más allá de los equipos de desarrollo, hacia el presupuesto, la estructura, Recursos Humanos y la dirección.
 
-**Agilidad organizacional (Business Agility)**: extensión de los principios ágiles más allá del equipo de desarrollo hacia el resto de las funciones de la organización (finanzas, recursos humanos, dirección).
-
-**Cargo cult agile**: patrón de adopción superficial de la agilidad en el que se copian los rituales y el vocabulario sin adoptar realmente los valores y principios que les dan sentido.
+**Adopción superficial**: adopción de los nombres y los rituales ágiles sin cambiar la forma de decidir, la autoridad ni los incentivos.

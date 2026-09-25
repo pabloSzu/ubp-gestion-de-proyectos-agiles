@@ -25,9 +25,10 @@ Editar solamente ese archivo salvo pedido explícito. No modificar Contenido, Mi
 - Evitar definiciones circulares, promocionales o dependientes de otra entrada no explicada.
 - Diferenciar términos cercanos cuando la materia los contraste; no fusionar conceptos que cumplen funciones distintas.
 - Mantener una denominación canónica y evitar duplicados por mayúsculas, traducciones o variantes singulares/plurales.
+- Usar la misma denominación que el Contenido; si el término tiene nombre en inglés, incluirlo entre paréntesis.
 - Seguir el orden predominante de la materia; si no existe una convención, usar el orden de primera aparición en el contenido para acompañar la progresión pedagógica.
 
 ## Verificación y entrega
 
-Comprobar formato uniforme, ausencia de duplicados, correspondencia con el contenido y exclusión de vocabulario genérico. Informar cuántos términos se agregaron, corrigieron o retiraron y señalar cualquier decisión terminológica relevante.
+Generar el Word con `scripts/md-a-word.py --modulo N --tipo glosario`. Comprobar formato uniforme, ausencia de guiones como puntuación, ausencia de duplicados, correspondencia con el contenido y exclusión de vocabulario genérico. Informar cuántos términos se agregaron, corrigieron o retiraron y señalar cualquier decisión terminológica relevante.
 
